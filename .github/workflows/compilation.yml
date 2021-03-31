@@ -32,3 +32,7 @@ jobs:
           mkdir build
           cmake -S . -B build -DJS_WITH_CODE=OFF
           cmake --build build
+
+      - name: create zip archive
+        run: |
+          cmake --build build --target archive

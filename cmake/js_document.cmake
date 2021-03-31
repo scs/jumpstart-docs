@@ -35,6 +35,8 @@ function(js_script file)
             DEPENDS ${markdownlint_list}
     )
 
+    js_add_to_global_archive_file_list(${file}.pdf)
+
     pandoc_resource_files(${file}.pdf ${CMAKE_CURRENT_SOURCE_DIR} ${code})
 
     file(GLOB_RECURSE logos "${JS_CMAKE_DIR}/latex/logos/*.png")
@@ -84,6 +86,8 @@ function(js_exercise file)
             DEPENDS ${markdownlint_list}
     )
 
+    js_add_to_global_archive_file_list(${file}.pdf ${file}_solution.pdf)
+
     pandoc_resource_files(${file}_solution.pdf ${CMAKE_CURRENT_SOURCE_DIR} ${code})
     pandoc_resource_files(${file}.pdf ${CMAKE_CURRENT_SOURCE_DIR} ${code})
 
@@ -115,6 +119,8 @@ function(js_slides file)
             PARAMS -t beamer -f markdown-implicit_figures -V lang=de-CH -V aspectratio=1610
             DEPENDS ${markdownlint_list}
     )
+
+    js_add_to_global_archive_file_list(${file}.pdf)
 
     file(GLOB_RECURSE logos "${JS_CMAKE_DIR}/latex/logos/*.png")
     pandoc_resource_files(${file}.pdf ${JS_CMAKE_DIR}/latex/ ${logos})
@@ -149,4 +155,29 @@ function(js_add_images project_target)
     pandoc_resource_files(${project_target} ${drawio_binary_dir} ${drawio_images})
     pandoc_resource_files(${project_target} ${latex_binary_dir} ${latex_images})
     pandoc_resource_files(${project_target} ${CMAKE_CURRENT_SOURCE_DIR} ${normal_images})
+endfunction()
+
+function(js_add_to_global_archive_file_list)
+    get_property(local_list GLOBAL PROPERTY global_archive_file_list)
+    foreach (arg ${ARGV})
+        list(APPEND local_list ${CMAKE_CURRENT_BINARY_DIR}/${arg})
+    endforeach ()
+    set_property(GLOBAL PROPERTY global_archive_file_list ${local_list})
+endfunction()
+
+function(js_global_file_archive TARGET)
+    get_property(global_archive_file_list GLOBAL PROPERTY global_archive_file_list)
+    message(STATUS "global_archive_file_list=${global_archive_file_list}")
+    add_custom_command(
+            OUTPUT ${TARGET}.zip
+            COMMAND
+            ${CMAKE_COMMAND} -E tar "cfv" "${TARGET}.zip" --format=zip ${global_archive_file_list}
+            DEPENDS ${global_archive_file_list}
+            COMMENT "Create archive: ${TARGET}.zip"
+    )
+
+    add_custom_target(
+            ${TARGET}
+            DEPENDS ${TARGET}.zip
+    )
 endfunction()
