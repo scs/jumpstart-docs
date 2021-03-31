@@ -1,0 +1,34 @@
+name: compilation
+
+on: [push, pull_request]
+
+jobs:
+  compilation:
+    strategy:
+      fail-fast: false
+    runs-on: ubuntu-20.04
+    env:
+      DISPLAY: ":99"
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: "install and start xvfb as a workaround for drawio-desktop does not work without an X server"
+        run: |
+          sudo apt install -y --no-install-recommends desktop-file-utils xvfb
+          Xvfb :99 &
+
+      - name: "install ansible"
+        run: |
+          sudo apt-get install -y --no-install-recommends python3-pip
+          sudo pip3 install ansible
+
+      - name: "install prerequisites by using ansible-role-docmake"
+        run: |
+          git clone https://github.com/langchr86/ansible-role-docmake.git
+          ./ansible-role-docmake/run_local.sh
+
+      - name: configure and build
+        run: |
+          mkdir build
+          cmake -S . -B build -DJS_WITH_CODE=OFF
+          cmake --build build
