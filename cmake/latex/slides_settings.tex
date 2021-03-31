@@ -1,0 +1,21 @@
+
+\usetheme[block=fill,progressbar=frametitle]{metropolis}
+
+\titlegraphic{\includegraphics[height=1.1cm]{logos/scs_logo_text.png}}
+
+\hypersetup{colorlinks=true,linkcolor=,urlcolor=[rgb]{0.95 0.4 0.5}}
+
+
+% add vspace before/after code blocks and change font size
+\BeforeBeginEnvironment{Shaded}{\vspace{1mm}\footnotesize}
+\AfterEndEnvironment{Shaded}{\vspace{2mm}\normalsize}
+
+
+% helper for multi column page (sum of all columns need to be 1.0)
+\newcommand{\colBegin}[1]{\begin{columns}[T,onlytextwidth]\begin{column}{#1\textwidth}}
+\newcommand{\colNext}[1]{\end{column}\begin{column}{#1\textwidth}}
+\newcommand{\colEnd}{\end{column}\end{columns}\vspace{3mm}}
+
+
+% change \emph (markdown syntax: *...*)
+\renewcommand{\emph}[1]{\alert{#1}}
