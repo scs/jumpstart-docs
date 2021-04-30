@@ -92,8 +92,8 @@ function(js_exercise file)
     pandoc_resource_files(${file}.pdf ${CMAKE_CURRENT_SOURCE_DIR} ${code})
 
     file(GLOB_RECURSE logos "${JS_CMAKE_DIR}/latex/logos/*.png")
-    pandoc_resource_files(${file}_solution.pdf ${CMAKE_SOURCE_DIR}/latex/ ${logos})
-    pandoc_resource_files(${file}.pdf ${CMAKE_SOURCE_DIR}/latex/ ${logos})
+    pandoc_resource_files(${file}_solution.pdf ${JS_CMAKE_DIR}/latex/ ${logos})
+    pandoc_resource_files(${file}.pdf ${JS_CMAKE_DIR}/latex/ ${logos})
 
     js_add_images(${file}_solution.pdf)
     js_add_images(${file}.pdf)
