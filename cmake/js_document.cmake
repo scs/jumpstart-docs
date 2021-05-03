@@ -11,23 +11,24 @@ include(docmake/markdownlint)
 set(JS_CMAKE_DIR ${CMAKE_CURRENT_LIST_DIR})
 
 
-function(js_script file)
+function(js_script name)
+    set(pdf_name ${name}.pdf)
     file(GLOB_RECURSE code "code/*.*")
 
     gpp_preprocessor(
-            SOURCES ${file}.md
+            SOURCES ${name}.md
             OUTPUT_LIST script_md
             INCLUDE_PATHS ${JS_CMAKE_DIR}/latex/
     )
 
     setup_markdownlint(
-            SOURCES ${file}.md
+            SOURCES ${name}.md
             OUTPUT_LIST markdownlint_list
             STYLE_FILE ${JS_CMAKE_DIR}/markdownlint.yml
     )
 
     pandoc_document(
-            TARGET ${file}.pdf
+            TARGET ${pdf_name}
             SOURCES ${script_md}
             TEMPLATE ${JS_CMAKE_DIR}/latex/templates/eisvogel/eisvogel.tex
             HEADERS ${JS_CMAKE_DIR}/latex/script_settings.tex
@@ -35,41 +36,43 @@ function(js_script file)
             DEPENDS ${markdownlint_list}
     )
 
-    js_add_to_global_archive_file_list(${file}.pdf)
+    js_add_to_global_archive_file_list(${pdf_name})
 
-    pandoc_resource_files(${file}.pdf ${CMAKE_CURRENT_SOURCE_DIR} ${code})
+    pandoc_resource_files(${pdf_name} ${CMAKE_CURRENT_SOURCE_DIR} ${code})
 
     file(GLOB_RECURSE logos "${JS_CMAKE_DIR}/latex/logos/*.png")
-    pandoc_resource_files(${file}.pdf ${JS_CMAKE_DIR}/latex/ ${logos})
+    pandoc_resource_files(${pdf_name} ${JS_CMAKE_DIR}/latex/ ${logos})
 
-    js_add_images(${file}.pdf)
+    js_add_images(${pdf_name})
 endfunction()
 
-function(js_exercise file)
+function(js_exercise name)
+    set(pdf_name ${name}.pdf)
+    set(solution_pdf_name ${name}_solution.pdf)
     file(GLOB_RECURSE code "code/*.*")
 
     gpp_preprocessor(
-            SOURCES ${file}.md
+            SOURCES ${name}.md
             OUTPUT_LIST solution_md
             DEFINES solution
             INCLUDE_PATHS ${JS_CMAKE_DIR}/latex/
     )
 
     gpp_preprocessor(
-            SOURCES ${file}.md
+            SOURCES ${name}.md
             OUTPUT_LIST exercise_md
             DEFINES exercise
             INCLUDE_PATHS ${JS_CMAKE_DIR}/latex/
     )
 
     setup_markdownlint(
-            SOURCES ${file}.md
+            SOURCES ${name}.md
             OUTPUT_LIST markdownlint_list
             STYLE_FILE ${JS_CMAKE_DIR}/markdownlint.yml
     )
 
     pandoc_document(
-            TARGET ${file}_solution.pdf
+            TARGET ${solution_pdf_name}
             SOURCES ${solution_md}
             TEMPLATE ${JS_CMAKE_DIR}/latex/templates/eisvogel/eisvogel.tex
             HEADERS ${JS_CMAKE_DIR}/latex/script_settings.tex
@@ -78,7 +81,7 @@ function(js_exercise file)
     )
 
     pandoc_document(
-            TARGET ${file}.pdf
+            TARGET ${pdf_name}
             SOURCES ${exercise_md}
             TEMPLATE ${JS_CMAKE_DIR}/latex/templates/eisvogel/eisvogel.tex
             HEADERS ${JS_CMAKE_DIR}/latex/script_settings.tex
@@ -86,46 +89,47 @@ function(js_exercise file)
             DEPENDS ${markdownlint_list}
     )
 
-    js_add_to_global_archive_file_list(${file}.pdf ${file}_solution.pdf)
+    js_add_to_global_archive_file_list(${pdf_name} ${solution_pdf_name})
 
-    pandoc_resource_files(${file}_solution.pdf ${CMAKE_CURRENT_SOURCE_DIR} ${code})
-    pandoc_resource_files(${file}.pdf ${CMAKE_CURRENT_SOURCE_DIR} ${code})
+    pandoc_resource_files(${solution_pdf_name} ${CMAKE_CURRENT_SOURCE_DIR} ${code})
+    pandoc_resource_files(${pdf_name} ${CMAKE_CURRENT_SOURCE_DIR} ${code})
 
     file(GLOB_RECURSE logos "${JS_CMAKE_DIR}/latex/logos/*.png")
-    pandoc_resource_files(${file}_solution.pdf ${JS_CMAKE_DIR}/latex/ ${logos})
-    pandoc_resource_files(${file}.pdf ${JS_CMAKE_DIR}/latex/ ${logos})
+    pandoc_resource_files(${solution_pdf_name} ${JS_CMAKE_DIR}/latex/ ${logos})
+    pandoc_resource_files(${pdf_name} ${JS_CMAKE_DIR}/latex/ ${logos})
 
-    js_add_images(${file}_solution.pdf)
-    js_add_images(${file}.pdf)
+    js_add_images(${solution_pdf_name})
+    js_add_images(${pdf_name})
 endfunction()
 
-function(js_slides file)
+function(js_slides name)
+    set(pdf_name ${name}.pdf)
     gpp_preprocessor(
-            SOURCES ${file}.md
+            SOURCES ${name}.md
             OUTPUT_LIST slides_md
             INCLUDE_PATHS ${JS_CMAKE_DIR}/latex/
     )
 
     setup_markdownlint(
-            SOURCES ${file}.md
+            SOURCES ${name}.md
             OUTPUT_LIST markdownlint_list
             STYLE_FILE ${JS_CMAKE_DIR}/markdownlint.yml
     )
 
     pandoc_document(
-            TARGET ${file}.pdf
+            TARGET ${pdf_name}
             SOURCES ${slides_md}
             HEADERS ${JS_CMAKE_DIR}/latex/slides_settings.tex
             PARAMS -t beamer -f markdown-implicit_figures -V lang=de-CH -V aspectratio=1610
             DEPENDS ${markdownlint_list}
     )
 
-    js_add_to_global_archive_file_list(${file}.pdf)
+    js_add_to_global_archive_file_list(${pdf_name})
 
     file(GLOB_RECURSE logos "${JS_CMAKE_DIR}/latex/logos/*.png")
-    pandoc_resource_files(${file}.pdf ${JS_CMAKE_DIR}/latex/ ${logos})
+    pandoc_resource_files(${pdf_name} ${JS_CMAKE_DIR}/latex/ ${logos})
 
-    js_add_images(${file}.pdf)
+    js_add_images(${pdf_name})
 endfunction()
 
 
