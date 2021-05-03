@@ -1,100 +1,249 @@
 <#include meta/exercise.md>
 
 ---
-author: Christian Lang (clang)
 title: "Arbeitsblatt: Build-Systeme"
 ---
 
 
-Projekt strukturieren und aufsetzen
-===================================
 
-In dieser Aufgabe sollen Sie explizit nicht das die CMake-Funktion `prcpp_code` verwenden,
-sondern von Grund auf ein neues Projekt aufsetzen.
-Gliedern Sie dies auch in das `workspace`-Repo ein.
-Damit dieses Sub-Projekt auch in das Hauptprojekt aufgenommen wird,
-müssen Sie im Top-Level `CMakeLists.txt` einen entsprechenden weiteren `add_subdirectory()` Eintrag erstellen.
+Datei-Struktur
+==============
 
-Wir verwenden in dieser Übung kein `cpplint`. Zudem definieren wir das CMake Target für die Applikation
-und die Tests komplett unabhängig und deshalb ohne eigene Basis-Library.
+Am Anfang eines Projektes stellt sich die Frage,
+wie der Source-Code, die Unit-Tests, andere Ressource-Files, Libraries, etc.
+im Repository organisiert werden sollen.
+Auch sollte man sich überlegen,
+welche Produkte aus einem Repo resultieren sollen;
+dies meist in Form von Libraries oder Executables.
+
+Ein üblicher Ansatz kann sein,
+das Repo nach einzelnen Deliverables zu organisieren
+und darin nach Source-Code, Unit-Test-Code und weiteren Ressourcen aufzuteilen.
+Sollte nur ein Deliverable pro Repo verwaltet werden,
+kann die erste Hierarchie-Stufe weggelassen werden.
+Zudem ergibt es sehr häufig Sinn,
+bei wachsender Anzahl Source-Files den Source-Folder thematisch in Unterordner aufzuteilen.
+
 
 Aufgabe
 -------
 
-* Erstellen Sie einen Unterordner `build_system` im `workspace` Repo.
-* Erstellen Sie eine `CMakeLists.txt`-Datei in welcher Sie das Projekt definieren.
-  Orientieren Sie sich am `example`-Projekt.
-* Strukturieren Sie ihr Projekt in weiteren Unterordner.
-  Diese sollen bereits jetzt Dateien für ihr Hauptprogramm (`src`) und Unittests (`unittest`) vorsehen.
-* Folgende Dateien sollen im Projekt enthalten sein:
-  * `main.cpp`
-  * `student.h` und `student.cpp`
-  * `module.h` und `module.cpp`
-* Definieren Sie ein Executable-Target mit dem Namen `build_system_app`.
-  Tragen Sie die dazugehörigen Source-Dateien einzeln ein.
-* Definieren Sie ihren Unterordner als Include-Ordner.
-* Setzten Sie die bereits definierten Compiler-Flags in der Variable `cxxflags` in ihrem Executable-Target.
+* Entpacken Sie den `code` Unterordner an einem geeigneten Ort.
+* Analysieren Sie die File-Struktur und versuchen Sie alle möglichen Deliverables/Binaries zu erkennen.
 
-Bevor Sie das Projekt kompilieren können, müssen Sie zuerst die Implementation der nächsten Aufgabe erledigen.
 
 <#ifdef solution>
 
 Lösung
 ------
 
-CMakeLists.txt
-
-\lstinputlisting[firstline=1, lastline=14]{code/CMakeLists.txt}
-
+* Header-Only:
+  * `libs/catch/catch.hpp`
+  * `src/utils/*.hpp`
+* Eigene Library:
+  * `src/logging/logger.cpp`
+* Binaries:
+  * main-app: `src/main.cpp`
+  * test-app: `test/main.cpp`
 
 <#endif>
 
 
 
-Implementation
-==============
+Build-System mit CMake
+======================
 
-Nun sollen Sie die vorbereiteten Dateien mit Inhalt füllen. Die Aufgabe ist, die öffentlichen Klassen `Student` und
-`Module` zu implementieren und in einem Executable zu verwenden. Das Executable soll folgenden Output zur Runtime
-generieren:
+Üblicherweise bringen die mächtigeren IDEs für C++ ein eigenes Build-System mit.
+Dies hat zwar gute Tool-Unterstützung,
+ist meist aber nicht für portable oder cross-kompilierte Projekte geeignet.
+Und auf Basis von reinem `make` sollte man heute auch nicht mehr arbeiten.
+Die Komplexität und je nachdem auch Kompatibilitäts-Probleme nehmen sonst schnell Überhand.
 
-~~~
-Module: prcpp, ECTS: 3
-Module: sysad, ECTS: 3
-~~~
+CMake ist ein Meta-Build-System,
+welches eine Abstraktionsschicht über rohe Build-Systeme wie `make` legt.
+Zudem bietet es Unterstützung für unterschiedliche Tools, wie `gcc`, `vc`, `clang`, `make`, `ninja`, etc.
 
-Die Klasse `Module` ist ein purer Datencontainer mit öffentlichen Attributen und evtl. passenden Konstruktoren.
+Seit der Version 2017 verfügt VisualStudio über integrierte Unterstützung für CMake.
+Das bedeutet, dass nicht mehr das eigene Build-System von Microsoft zum Einsatz kommt.
+Zudem gibt es bereits IDEs, wie CLion, die komplett auf eigene Systeme verzichten
+und direkt auf CMake als Projekt-Verwaltung aufbauen.
+Natürlich kann ein Projekt aber auch nur mit CMake
+und dem entsprechenden Compiler ohne jegliche IDE gebaut werden.
 
-Die Klasse `Student` soll einen Default-Konstruktor und folgende Methoden anbieten:
+Der typische Workflow, um ein CMake-basiertes Projekt zu kompilieren, sieht folgendermassen aus:
 
-~~~ {.cpp}
-size_t GetModuleCount();
-Module GetModule(size_t index);
-bool AddModule(Module new_module);
-bool RemoveModule(size_t index);
-~~~
+1. CMake-Cache erzeugen.
+   Dies geschieht mittels dem `cmake` Tool
+   oder der Unterstützung einer entsprechenden IDE.
+   Dadurch wird das `CMakeLists.txt` gelesen
+   und ein Build-System mit z.B. `ninja` oder `make` erzeugt.
+1. Das erzeugte Build-System kann nun das komplette Projekt selbständig kompilieren.
+1. Sollte sich die CMake-Konfiguration ändern,
+   wird dies ebenfalls durch das erzeugte Build-System erkannt und angepasst.
 
-Die interne Verwaltung der Module soll mittels statischem Array implementiert werden:
-
-~~~ {.cpp}
-static constexpr size_t kMaxModules = 4;
-Module modules_[kMaxModules];
-~~~
-
-Die Klasse `Module` soll eine Member-Variable für die Anzahl ECTS-Punkte und eine für den Modul-Namen besitzen.
-Verwenden sie `std::string` für den Namen.
 
 Aufgabe
 -------
 
-* Definieren und Implementieren Sie die Klassen `Student` und `Module`.
-* Verwenden Sie `#pragma once` in allen Header-Dateien als erste Instruktion um Mehrfach-Inkludierung des
-  Präprozessors zu verhindern.
-* Verwenden Sie `#include <cassert>` um bei Bedarf Assertions zu schreiben.
-* Implementiere Sie `main.cpp`.
-  Die Applikation soll einen Studenten instanziieren und die zwei dazugehörigen Module einfügen.
-  Danach sollen alle Module des Studenten auf der Konsole ausgedruckt werden.
-  Nun können Sie die Applikation kompilieren und starten.
+* Im entpackten `code`-Ordner finden Sie eine Vorlage für die CMake-Konfiguration: `CMakeLists_exercise.txt`.
+  Benennen Sie diese zu `CMakeLists.txt` um und
+  öffnen Sie dieses CMake-Projekt (`code`-Ordner) in CLion.
+  Dies sollte automatisch den CMake-Cache erzeugen.
+* Versuchen Sie das `CMakeLists.txt` so zu vervollständigen,
+  dass man die Hauptapplikation bauen kann.
+  Lesen Sie dazu die Dokumentation der folgenden Befehle: `set`, `target_include_directories`, `add_executable`
+* Beachten Sie: alle Pfadangaben sind relativ zur Position der aufrufenden Datei: `CMakeLists.txt`.
+
+
+<#ifdef solution>
+
+Lösung
+------
+
+~~~ {.cmake}
+cmake_minimum_required(VERSION 3.5)
+
+# project settings
+project(bit_fields)
+set(BF_TARGET bit-fields)
+
+# main app target
+set(BF_TARGET_APP ${BF_TARGET}-app)
+add_executable(${BF_TARGET_APP}
+  "src/logging/logger.cpp"
+  "src/main.cpp"
+)
+target_include_directories(${BF_TARGET_APP} INTERFACE
+  "libs"
+  "src"
+)
+~~~
+
+<#endif>
+
+
+
+Globbing vs. statische Datei-Liste
+==================================
+
+Wenn die Anzahl Source-Code Dateien wächst,
+kann es ohne entsprechende Unterstützung der IDE mühsam sein,
+jede `.cpp` Datei einzeln im `CMakeLists.txt` einzutragen.
+Deshalb unterstützt CMake Globbing, ähnlich wie dies in den meisten Shells verwendet wird.
+
+Dies verhindert, dass die CMake-Konfiguration jeweils angepasst werden muss,
+wenn sich der Verzeichnisbaum verändert.
+Allerdings kann dies auch zu Problemen führen,
+da CMake nicht selber wissen kann, wenn neue Dateien hinzugekommen sind.
+Deshalb muss in solchen Fällen ein erneutes Generieren des CMake-Caches manuell ausgelöst werden.
+
+
+Aufgabe
+-------
+
+* Versuchen Sie, mittels Globbing, das Erstellen der Source-Datei-Liste im `CMakeLists.txt` zu automatisieren.
+
+
+<#ifdef solution>
+
+Lösung
+------
+
+~~~ {.cmake}
+# search all relevant files
+file(GLOB_RECURSE BF_SRC_ALL "src/*.c*")
+...
+add_executable(${BF_TARGET_APP} ${BF_SRC_ALL})
+~~~
+
+<#endif>
+
+
+
+Vorbereitung für Unittesting
+============================
+
+Ein häufig erster Schritt in einem neuen Projekt ist die Einrichtung eines Unittest-Frameworks.
+Da die damit erstellten Tests in C/C++ üblicherweise zu einem eigenen Binary/Delivery kompiliert werden,
+muss dieses auch im Build-System eingebaut werden.
+
+Damit der Source-Code für die Applikation und die Tests jeweils nur einmal gebaut werden müssen,
+ergibt es meist Sinn, den produktiven Code in eine Library auszulagern.
+Diese Library kann dann einerseits in die Applikation, andererseits in das Test-Binary gelinkt werden.
+
+
+Aufgabe
+-------
+
+* Trennen Sie die Kompilierung in Applikation und Library auf.
+  Verwenden Sie unter anderem dafür die folgenden Befehle: `add_library`, `target_link_libraries`.
+* Evaluieren Sie die unterschiedlichen Optionen von `add_library`.
+  Welcher Library-Typ ist am geeignetsten?
+* Nur `main.cpp` soll für die Applikation kompiliert werden.
+  Alle anderen Dateien im `src` Ordner sollen zur Library gehören.
+* Führen Sie die Applikation über die Konsole aus.
+
+
+<#ifdef solution>
+
+Lösung
+------
+
+* Eine `STATIC` Library ist hier am geeignetsten,
+  da wir die Applikation als ein einziges Binary liefern
+  und keine Laufzeitabhängigkeiten haben möchten.
+  Dasselbe gilt für das Test-Binary.
+  Meist muss man dies aber gar nicht erst angeben.
+  Dann kann der Aufrufer selber definieren,
+  wie interne Libraries gelinkt werden:
+  [`BUILD_SHARED_LIBS`](https://cmake.org/cmake/help/latest/variable/BUILD_SHARED_LIBS.html)
+
+~~~ {.cmake}
+# search all relevant files
+file(GLOB_RECURSE BF_SRC_MAIN "src/main.c*")
+file(GLOB_RECURSE BF_SRC_ALL "src/*.c*")
+list(REMOVE_ITEM BF_SRC_ALL ${BF_SRC_MAIN})
+
+# internal library target
+set(BF_TARGET_LIB ${BF_TARGET}-lib)
+add_library(${BF_TARGET_LIB} STATIC ${BF_SRC_ALL})
+target_include_directories(${BF_TARGET_LIB} INTERFACE "libs" "src")
+
+# main app target
+set(BF_TARGET_APP ${BF_TARGET}-app)
+add_executable(${BF_TARGET_APP} ${BF_SRC_MAIN})
+target_link_libraries(${BF_TARGET_APP} PRIVATE ${BF_TARGET_LIB})
+~~~
+
+<#endif>
+
+
+
+Unittest-Framework Catch2 einrichten
+====================================
+
+Um Unittests möglichst ausführlich aber doch einfach schreiben zu können,
+existieren viele unterschiedliche Frameworks, wie z.B: `googletest`, `boost.test` oder `catch2`.
+Catch2 ist dabei das modernste aber auch sehr schlanke Pendant aus dieser Liste.
+Wenn kein mächtiges Mocking-Framework oder ähnliche weiterführenden Mechaniken benötigt werden,
+reicht dies vollkommen aus.
+Zudem ist es als Header-Only-Implementation verfügbar
+und lässt sich entsprechend einfach im Build-System einbinden.
+
+Zuerst muss die Datei `test/main.cpp` erstellt und darin eine entsprechende Main-Funktion implementiert werden.
+Dieses neue Main kann als Basis für das Test-Binary fungieren.
+Die vorbereitete Library kann zu diesem Binary gelinkt werden.
+
+
+Aufgabe
+-------
+
+* Lesen Sie die Dokumentation von Catch2 betreffend
+  [main()-Implementation](https://github.com/catchorg/Catch2/blob/devel/docs/configuration.md#main-implementation)
+  und implementieren Sie `main.cpp` für die Tests.
+* Ergänzen Sie das Build-System durch das Test-Binary.
+  Verfahren Sie dabei wie bereits für die Hauptapplikation.
+* Führen Sie die Test-Applikation über die Konsole aus.
 
 
 <#ifdef solution>
@@ -103,43 +252,43 @@ Lösung
 ------
 
 main.cpp
-\lstinputlisting[language=C++]{code/src/main.cpp}
 
-student.h
-\lstinputlisting[language=C++]{code/src/student.h}
+\lstinputlisting{code/test/main.cpp}
 
-student.cpp
-\lstinputlisting[language=C++]{code/src/student.cpp}
 
-module.h
-\lstinputlisting[language=C++]{code/src/module.h}
+CMakeLists.txt
 
-module.cpp
-\lstinputlisting[language=C++]{code/src/module.cpp}
+~~~ {.cmake}
+file(GLOB_RECURSE BF_TEST_ALL "test/*.c*")
+...
+# unit test target
+set(BF_TARGET_TEST ${BF_TARGET}-test)
+add_executable(${BF_TARGET_TEST} ${BF_TEST_ALL})
+target_link_libraries(${BF_TARGET_TEST} PRIVATE ${BF_TARGET_LIB})
+~~~
 
 <#endif>
 
 
 
-Unit-Tests
-==========
+Unittest-Integration in CMake
+=============================
 
-Im letzten Teil soll mittels dem verfügbaren Test-Framework Catch2 einige Tests
-für die Klasse `Student` geschrieben werden.
-Dazu müssen Sie nur den Header `catch2/catch.hpp` in ihrer Test-Datei inkludieren.
-Nennen Sie diese Datei `student_test.cpp` und plazieren Sie sie im Ordner `unittest`.
-Zudem müssen Sie einen Einstiegspunkt für das Test-Executable definieren.
-Dies machen Sie mittels einer weiteren `main.cpp` und folgendem Inhalt:
+CMake ist neben seiner Aufgabe als Build-System aber noch mehr.
+Es bietet z.B. auch Unterstützung für die Paketierung und das Deployment von Applikationen.
+Allerdings werden diese Funktionen häufig durch übergeordnete Systeme verwaltet, wie z.B. der `Yocto`-Toolchain.
 
-\lstinputlisting[language=C++]{code/unittest/main.cpp}
+Trotzdem kann es für kleinere Projekte nützlich sein,
+gewisse solche erweiterten Funktionen von CMake zu verwenden.
+Die eingerichteten Unittests können z.B. für CMake so deklariert werden,
+dass sie direkt durch CMake gestartet werden können.
 
 
 Aufgabe
 -------
 
-* Erstellen Sie die Datei `main.cpp` im dafür vorbereiteten Unterordner `unittest`.
-* Erstellen Sie die Datei `student_test.cpp` und implementieren Sie entsprechenden Tests.
-* Ergänzen Sie die Datei `CmakeLists.txt` um das neue Testprojekt. Dies soll ein weiteres Executable-Target sein.
+* Deklarieren Sie das Test-Binary für CMake als Test. Studieren Sie dazu die Befehle: `enable_testing`, `add_test`.
+* Führen Sie die Tests entweder direkt durch `make test` oder über das Configuration-DropDown in CLion aus.
 
 
 <#ifdef solution>
@@ -147,51 +296,20 @@ Aufgabe
 Lösung
 ------
 
-Ergänzen Sie `CMakeLists.txt` um folgende Zeilen:
-\lstinputlisting[firstline=16]{code/CMakeLists.txt}
-
-student_test.cpp
-\lstinputlisting[language=C++]{code/unittest/student_test.cpp}
+~~~ {.cmake}
+enable_testing()
+add_test(unittest ${BF_TARGET_TEST})
+~~~
 
 <#endif>
 
 
 
-Memory-Checking mit Valgrind
-============================
+<#ifdef solution>
 
-In C++ operieren Sie auf der echten Maschine ihres Systems und haben deshalb weniger Sicherheits-Mechanismen
-als z.B. in einer JVM. Ein übliches Problem ist falscher Code, welcher auf Speicher operiert, welcher
-entweder nicht initialisiert wurde oder gar nicht dem aktuellen Prozess gehört. Im ersten Fall erzeugt dies
-unter Umständen ein unerwartetes/falsches Verhalten der Applikation, im zweiten Fall führt dies zum Absturz
-mit dem Fehler `SIGSEGV` oder eben *Segmentation-Fault*.
+Endversion von CMakeLists.txt
+=============================
 
-Um solche Probleme zu analysieren und zu debuggen gibt es unter Linux das freie Tool `valgrind`.
-Im Standard-Modus analysiert es die Alloziierung und Verwendung allen Speichers ihrer Applikation
-und meldet eventuelle Probleme.
-Dies wird intern so implementiert, dass `valgrind` denn Allocator der C++-Runtime austauscht
-und somit jede Memory-Allozierung selber durchführen und überwachen kann.
+\lstinputlisting{code/CMakeLists.txt}
 
-Sie können `valgrind` entweder über die Konsole laufen lassen oder direkt über CLion.
-Konfigurieren müssen Sie dazu nichts. Siehe:
-[CLion - Valgrind Memcheck](https://www.jetbrains.com/help/clion/memory-profiling-with-valgrind.html)
-
-Versuchen Sie z.B. die Methode `Student::RemoveModule` so zu manipulieren, dass der Loop auf mehr Zellen
-operiert als er eigentlich sollte. Je mehr er vom eigentlichen Memory abweicht, desto wahrscheinlicher
-erhalten Sie nicht nur Warnungen sondern einen *Segfault*.
-
-
-
-Zukunft
-=======
-
-Im weiteren Verlauf des Unterrichts werden Sie viele eigene kleine Projekte erstellen.
-Verwenden Sie dazu jeweils nicht mehr selber geschriebenen CMake-Code sondern die CMake-Funktion `prcpp_code`.
-Für jedes Projekt können Sie also einen neuen Unterordner im `workspace`-Repo einrichten,
-diesen Unterordner im bestehenden Top-Level `CMakeLists.txt` einfügen
-und ihr eigenes `CMakeLists.txt` folgendermassen schreiben:
-
-~~~ {.cmake}
-include(prcpp_code)
-prcpp_code(<ihr_projekt_name>)
-~~~
+<#endif>
