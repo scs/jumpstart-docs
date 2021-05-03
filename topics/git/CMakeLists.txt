@@ -1,3 +1,4 @@
 include(js_document)
 
-js_slides(git_slides git_slides.md)
+file(GLOB_RECURSE files *.md)
+js_slides(git_slides ${files})
