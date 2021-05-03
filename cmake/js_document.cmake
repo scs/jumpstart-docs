@@ -11,18 +11,19 @@ include(docmake/markdownlint)
 set(JS_CMAKE_DIR ${CMAKE_CURRENT_LIST_DIR})
 
 
-function(js_script name)
+function(js_script name sources)
+    set(sources ${sources} ${ARGN})
     set(pdf_name ${name}.pdf)
     file(GLOB_RECURSE code "code/*.*")
 
     gpp_preprocessor(
             SOURCES ${name}.md
             OUTPUT_LIST script_md
-            INCLUDE_PATHS ${JS_CMAKE_DIR}/latex/
+            INCLUDE_PATHS ${JS_CMAKE_DIR}/latex/ ${CMAKE_CURRENT_SOURCE_DIR}
     )
 
     setup_markdownlint(
-            SOURCES ${name}.md
+            SOURCES ${sources}
             OUTPUT_LIST markdownlint_list
             STYLE_FILE ${JS_CMAKE_DIR}/markdownlint.yml
     )
@@ -46,7 +47,8 @@ function(js_script name)
     js_add_images(${pdf_name})
 endfunction()
 
-function(js_exercise name)
+function(js_exercise name sources)
+    set(sources ${sources} ${ARGN})
     set(pdf_name ${name}.pdf)
     set(solution_pdf_name ${name}_solution.pdf)
     file(GLOB_RECURSE code "code/*.*")
@@ -55,18 +57,18 @@ function(js_exercise name)
             SOURCES ${name}.md
             OUTPUT_LIST solution_md
             DEFINES solution
-            INCLUDE_PATHS ${JS_CMAKE_DIR}/latex/
+            INCLUDE_PATHS ${JS_CMAKE_DIR}/latex/ ${CMAKE_CURRENT_SOURCE_DIR}
     )
 
     gpp_preprocessor(
             SOURCES ${name}.md
             OUTPUT_LIST exercise_md
             DEFINES exercise
-            INCLUDE_PATHS ${JS_CMAKE_DIR}/latex/
+            INCLUDE_PATHS ${JS_CMAKE_DIR}/latex/ ${CMAKE_CURRENT_SOURCE_DIR}
     )
 
     setup_markdownlint(
-            SOURCES ${name}.md
+            SOURCES ${sources}
             OUTPUT_LIST markdownlint_list
             STYLE_FILE ${JS_CMAKE_DIR}/markdownlint.yml
     )
@@ -102,16 +104,18 @@ function(js_exercise name)
     js_add_images(${pdf_name})
 endfunction()
 
-function(js_slides name)
+function(js_slides name sources)
+    set(sources ${sources} ${ARGN})
     set(pdf_name ${name}.pdf)
+
     gpp_preprocessor(
             SOURCES ${name}.md
             OUTPUT_LIST slides_md
-            INCLUDE_PATHS ${JS_CMAKE_DIR}/latex/
+            INCLUDE_PATHS ${JS_CMAKE_DIR}/latex/ ${CMAKE_CURRENT_SOURCE_DIR}
     )
 
     setup_markdownlint(
-            SOURCES ${name}.md
+            SOURCES ${sources}
             OUTPUT_LIST markdownlint_list
             STYLE_FILE ${JS_CMAKE_DIR}/markdownlint.yml
     )

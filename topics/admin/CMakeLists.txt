@@ -1,4 +1,4 @@
 include(js_document)
 
-js_script(feedback)
-js_slides(introduction)
+js_script(feedback feedback.md)
+js_slides(introduction introduction.md)
