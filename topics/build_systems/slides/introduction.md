@@ -2,33 +2,15 @@ Einführung
 ==========
 
 
-Kompilierung im Vergleich
--------------------------
+Ziel
+----
 
-\colBegin{0.5}
+\large
 
-Java/.Net
-
-* kompiliert zu *Bytecode*
-* Optimierungen zur *Runtime*
-* Linking zur *Runtime*
-
-\colNext{0.5}
-
-C/C++
-
-* kompiliert zu *Objectcode*
-* Optimierungen zur *Compiletime*
-* Linking zur *Compile*- oder *Runtime*
-
-\colEnd
-
-
-Kompilierung im Vergleich
--------------------------
-
-\centering
-![Vergleich Kompilation Java vs. C/C++](images/compilation.pdf)
+* Was ist ein *Build-System*?
+* Beispiele anhand *CMake*
+* Wie/Wo läuft eine Applikation?
+* Continuous Integration/Deployment
 
 
 Build-Probleme

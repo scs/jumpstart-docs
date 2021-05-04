@@ -5,6 +5,10 @@ CMake
 CMake
 -----
 
+CMake dient hier als Beispiel,
+um zu veranschaulichen,
+was die Kern-Aufgaben eines Build-Systems sind.
+
 * Definiert *High-Level*-Abhängigkeiten
 * Generiert *rohes* Build-System
 * rohes Build-System *überwacht* Änderungen
@@ -101,3 +105,8 @@ Build-Systeme sind produktiver Code
 * Das Build-System ist *Teil* des Produktes
 * Muss *versioniert* werden
 * Kann ebenfalls mit Funktionen etc. strukturiert werden:
+
+  ~~~ {.cmake .numberLines}
+  include(prcpp_code)
+  prcpp_code(mein_projekt)
+  ~~~
