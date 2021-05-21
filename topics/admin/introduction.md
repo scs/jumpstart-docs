@@ -85,6 +85,7 @@ Tools
 \vspace{1cm}
 ### Vorbereitung
 
+* GitHub-Account
 * Laptop (je nachdem zu zweit)
 * Virtualbox installieren
 * VM als Appliance importieren
