@@ -31,7 +31,6 @@ In `~/.gitconfig`
 
 ~~~ {.numberLines}
 [alias]
-  pushfwl = push --force-with-lease
   co = checkout
   cob = checkout -b
   st = status --short
@@ -68,7 +67,7 @@ git gui
 git log --oneline
 
 // now append the staged changes to the selected commit
-gitfix <commit-hash>
+git fix <commit-hash>
 
 // this results in rebasing and therefore changing the history upon the selected commit
 ~~~
