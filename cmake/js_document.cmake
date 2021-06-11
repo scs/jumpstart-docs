@@ -15,11 +15,15 @@ function(js_script name sources)
     set(sources ${sources} ${ARGN})
     set(pdf_name ${name}.pdf)
     file(GLOB_RECURSE code "code/*.*")
+    list(FILTER code EXCLUDE REGEX ".*/target/.*")
+
+    file(GLOB_RECURSE include_paths "${CMAKE_CURRENT_SOURCE_DIR}/*.*")
+    list(FILTER include_paths EXCLUDE REGEX ".*/target/.*")
 
     gpp_preprocessor(
             SOURCES ${name}.md
             OUTPUT_LIST script_md
-            INCLUDE_PATHS ${JS_CMAKE_DIR}/latex/ ${CMAKE_CURRENT_SOURCE_DIR}
+            INCLUDE_PATHS ${JS_CMAKE_DIR}/latex/ ${include_paths}
     )
 
     setup_markdownlint(
@@ -53,19 +57,23 @@ function(js_exercise name sources)
     set(pdf_name ${name}.pdf)
     set(solution_pdf_name ${name}_solution.pdf)
     file(GLOB_RECURSE code "code/*.*")
+    list(FILTER code EXCLUDE REGEX ".*/target/.*")
+
+    file(GLOB_RECURSE include_paths "${CMAKE_CURRENT_SOURCE_DIR}/*.*")
+    list(FILTER include_paths EXCLUDE REGEX ".*/target/.*")
 
     gpp_preprocessor(
             SOURCES ${name}.md
             OUTPUT_LIST solution_md
             DEFINES solution
-            INCLUDE_PATHS ${JS_CMAKE_DIR}/latex/ ${CMAKE_CURRENT_SOURCE_DIR}
+            INCLUDE_PATHS ${JS_CMAKE_DIR}/latex/ ${include_paths}
     )
 
     gpp_preprocessor(
             SOURCES ${name}.md
             OUTPUT_LIST exercise_md
             DEFINES exercise
-            INCLUDE_PATHS ${JS_CMAKE_DIR}/latex/ ${CMAKE_CURRENT_SOURCE_DIR}
+            INCLUDE_PATHS ${JS_CMAKE_DIR}/latex/ ${include_paths}
     )
 
     setup_markdownlint(
@@ -110,10 +118,13 @@ function(js_slides name sources)
     set(sources ${sources} ${ARGN})
     set(pdf_name ${name}.pdf)
 
+    file(GLOB_RECURSE include_paths "${CMAKE_CURRENT_SOURCE_DIR}/*.*")
+    list(FILTER include_paths EXCLUDE REGEX ".*/target/.*")
+
     gpp_preprocessor(
             SOURCES ${name}.md
             OUTPUT_LIST slides_md
-            INCLUDE_PATHS ${JS_CMAKE_DIR}/latex/ ${CMAKE_CURRENT_SOURCE_DIR}
+            INCLUDE_PATHS ${JS_CMAKE_DIR}/latex/ ${include_paths}
     )
 
     setup_markdownlint(

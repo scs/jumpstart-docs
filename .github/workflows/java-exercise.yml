@@ -1,0 +1,25 @@
+name: Java exercise
+on:
+  - push
+  - pull_request
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: compile
+        working-directory: topics/testing/code
+        run: mvn install -DskipTests=true
+
+      - name: lint
+        working-directory: topics/testing/code
+        run: mvn pmd:check
+
+      - name: check format
+        working-directory: topics/testing/code
+        run: mvn spotless:check
+
+      - name: run tests
+        working-directory: topics/testing/code
+        run: mvn test

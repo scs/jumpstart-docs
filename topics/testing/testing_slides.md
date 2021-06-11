@@ -6,14 +6,19 @@ Testing
 Ziel
 -------
 
-* Du hast für eine Applikation Unittests, Integrationstests und Systemtests geschrieben
+* Du hast für eine Applikation Unittests geschrieben
 * Du kannst TDD und BDD anwenden, und kennst die Unterschiede
 * Du kennst die Unterschiede zwischen Unittest, Integrationstest und Systemtest
 * Du kennst folgende Techniken, um Tests wartbarer zu gestalten:
   * Setup/Teardown für Tests
   * Parametrisierte Tests
   * Enclosed Tests
-  * Testdatenbank
+
+Teil 1
+-------
+
+\huge
+> TDD
 
 Was helfen einem Tests?
 -------
@@ -38,6 +43,7 @@ TDD
 * Alias Detroit/Chicago School, Classicist Approach
 * Test from inside out
 * Avoid Mocks
+* Design wächst bei der Implementierung, könnte Overengineering verhindern.
 
 Ablauf:
 
@@ -51,7 +57,7 @@ Ablauf:
 Red Green Refactor
 -------
 
-![Editor Wars](images/tdd.png)
+![TDD](images/tdd.png)
 
 Definition Unittest TDD
 -------
@@ -63,38 +69,46 @@ Ausser natürlich Memory und CPU
 Dependencies wurden schon von anderen Unittest getestet.
 * Rule of Thumb: Laufzeit < 1s
 
-Demo Unittest einer Funktion
+Naming von Tests
 -------
 
-Übung Unittest einer Funktion
+1. Variante:  
+`public void testStackPopsNullWhenEmpty()`  
+Schlecht lesbar da Wörter zusammenkleben.  
+Kein visueller Unterschied zwischen Leerzeichen und zusammengesetztem Wort.  
+Kein visueller Unterschied zwischen Arrange, Act und Assert.
+
+2. Variante:  
+`public void whenStackEmpty_thenPopsNull()`  
+Schlecht lesbar da Wörter zusammenkleben.  
+Kein visueller Unterschied zwischen Leerzeichen und zusammengesetztem Wort.  
+Das Resultat ist eigentlich wichtiger als das Act und das Assert, es sollte zuerst kommen.
+
+Naming von Tests
 -------
 
-Übung Mob Review
-------
+In diesem Block präferierte Variante:  
+`public void pops_null_when_empty()`  
+Gut lesbar, mit dem Testnamen sogar ein englischer Satz.  
+Das wichtigste ist zuerst.  
+Zeigt einem schneller, wenn die Klasse zuviel macht.
 
-* Ziel: bessere Code Qualität
-* Verschiedene Level
-  * Design + Naming
-  * Funktionalität
-  * Konsistenz
-  * Best Practices
-  * Typos
-  * Lesbarkeit erhöhen
-
-Übung TDD mit mehreren Klassen
+Demo Unittest einer Funktion (MyStack)
 -------
 
-Übung Mob Review 2
-------
-
-Parametrized Tests Demo
+Zusammenfassung Demo Unittest einer Funktion (MyStack)
 -------
 
-Übung Parametrized Test
+* Mit möglichst einfachem Verhalten starten, dann zu komplexeren erweitern
+* Mit dem Testnamen das getestete Verhalten beschreiben
+* Von der Assertion starten, und den Test rückwärts aufbauen, um unnötigen Code zu vermeiden
+* Alles was nicht zum Test gehört in Konstanten auslagern
+
+Übung Unittest einer Funktion (RomanNumerals)
 -------
 
-Übung async Peer Review
-------
+Demo Parametrized Tests (RomanNumerals)
+-------
 
 Parametrized Tests in anderen Sprachen: PHP + PHPUnit
 -------
@@ -111,12 +125,54 @@ Parametrized Tests in anderen Sprachen: JavaScript + Jest 2
 
 \lstinputlisting[language=C, firstline=45, lastline=70, basicstyle=\tiny]{assets/EDatePicker.spec.js}
 
+Übung Unittest einer Funktion Parametrized (LeapYear)
+-------
+
+Demo Nested verwenden (LeapYear)
+-------
+
+Zusammenfassung Nested verwenden (LeapYear)
+-------
+
+* Mit nested Tests können unterschiedliche Verhalten gruppiert werden
+* Ziel: Nur mit der Signatur des Tests kann das Verhalten der Klasse aufgezeigt werden
+
+Arrange, Act, Assert
+-------
+
+* Arrange, Act und Assert in Tests trennen mit einer Leerzeile.
+* Arrange: Setup für den Test, je nachdem Manipulation des States.
+* Act: Trigger, der das zu testende Verhalten auslöst.
+* Assert: Überprüfen, dass nur das gewünschte Verhalten ausgelöst wurde.
+* *Kontrovers:* Diese Teile können auch wiederholt werden, falls ein Verhalten mit mehreren Schritten getestet wird.
+
+Übung TDD mit mehreren Klassen (TrailerDetector)
+-------
+
+Zusammenfassung TDD mit mehreren Klassen (TrailerDetector)
+-------
+
+* Funktionalität in neue Klasse auslagern + gleich integrieren, Test bleibt grün
+* Neue Tests zur ausgelagerten Klasse hinzufügen, alle Tests bleiben grün
+* Refactoring dazwischen nicht vergessen
+* Am Schluss Tests für detailliertes Verhalten an den Ort der Implementation verschieben
+
+Teil 2
+-------
+
+\huge
+> BDD
+
 BDD
 -------
 
 * Alias London School, Mockist Approach
 * From Outside in
 * Interaktion zwischen Units werden getestet
+* Design der Interaktion zwischen Klassen wird vorab definiert
+
+BDD Ablauf
+-------
 
 Ablauf:
 
@@ -136,7 +192,7 @@ Definition Unittest BDD
 * Verwendet keine shared Ressourcen (Datenbanken, Ports, Filesystem)  
 Ausser natürlich Memory und CPU
 * Testet eine Unit (Klasse in OO, Funktion in FP)  
-*Dependencies werden gemockt.*
+* Dependencies werden gemockt.
 * Rule of Thumb: Laufzeit < 1s
 
 Red Green Refactor on steroids
@@ -144,35 +200,20 @@ Red Green Refactor on steroids
 
 ![Editor Wars](images/bdd.png)
 
-Demo Test Klasse mit State
+Demo Test Klasse mit State (BankKata)
 -------
 
-Weitere Helper für Tests
+Übung BDD (Bankkata)
 -------
 
-* Konstanten
-* Builder
-* Matcher
-* Hilfsmethoden (use with caution)
-
-Übung Test Klasse mit State
+Übung BDD (TrailerDetector)
 -------
 
-Übung sync Peer Review
+Levels for Tests
 ------
 
-Enclosed Tests Demo
--------
-
-Übung Enclosed Tests
--------
-
-Übung async Peer Review
-------
-
-Enclosed Tests in anderen Sprachen
--------
-TODO: nur falls ich beispiele finde
+\centering
+![testing_scopes](images/testing_scopes.pdf){height=95%}
 
 Integrationtest
 -------
@@ -194,12 +235,6 @@ Beispiel:
 TODO: Anpassung Email im Test in Ecamp
 TODO: Hinzufügen von zweitem Lager für einen Test
 TODO: Rega TestdatabaseSetup
-
-Übung Integrationstest
--------
-
-Übung async Peer Review
-------
 
 Systemtests
 -------
