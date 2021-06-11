@@ -45,6 +45,7 @@ function(js_script name sources)
     pandoc_resource_files(${pdf_name} ${JS_CMAKE_DIR}/latex/ ${logos})
 
     js_add_images(${pdf_name})
+    js_add_assets(${pdf_name})
 endfunction()
 
 function(js_exercise name sources)
@@ -102,6 +103,7 @@ function(js_exercise name sources)
 
     js_add_images(${solution_pdf_name})
     js_add_images(${pdf_name})
+    js_add_assets(${pdf_name})
 endfunction()
 
 function(js_slides name sources)
@@ -134,6 +136,7 @@ function(js_slides name sources)
     pandoc_resource_files(${pdf_name} ${JS_CMAKE_DIR}/latex/ ${logos})
 
     js_add_images(${pdf_name})
+    js_add_assets(${pdf_name})
 endfunction()
 
 
@@ -163,6 +166,12 @@ function(js_add_images project_target)
     pandoc_resource_files(${project_target} ${drawio_binary_dir} ${drawio_images})
     pandoc_resource_files(${project_target} ${latex_binary_dir} ${latex_images})
     pandoc_resource_files(${project_target} ${CMAKE_CURRENT_SOURCE_DIR} ${normal_images})
+endfunction()
+
+function(js_add_assets project_target)
+    file(GLOB_RECURSE assets "assets/*.*")
+
+    pandoc_resource_files(${project_target} ${CMAKE_CURRENT_SOURCE_DIR} ${assets})
 endfunction()
 
 function(js_add_to_global_archive_file_list)
