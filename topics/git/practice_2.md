@@ -17,6 +17,11 @@ Selbständig ausprobieren
   * `squash`
   * `edit`
   * `reword`
+
+
+Selbständig ausprobieren
+------------------------
+
 * Aliases
 * Bisect
 * Patches erstellen und einspielen
