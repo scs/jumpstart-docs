@@ -116,6 +116,27 @@ Beim Schreiben der Commit Message sollten folgende Regeln beachtet werden:
   * [uboot_commit_message_conventions]
 
 
+Beschreibungs-Präfix
+--------------------
+
+Kann helfen, um schnell eine bestimmte *Art* von Commits zu finden.
+
+Präfix  Bedeutung
+------  ---------
+`+`     Erweiterung von Funktionalität (rückwärts kompatibel))
+`*`     Veränderung von Funktionalität (nicht mehr rückwärts kompatibel)
+`-`     Entfernen von Funktionalität
+`!`     Fehlerbehebung
+`c`     Kommentare und Kosmetik
+`~`     Refactoring
+
+Zum Beispiel:
+
+~~~
+* replace IPC API Create() function by CreateFor()
+~~~
+
+
 Integration von anderen Git Repos
 ---------------------------------
 
