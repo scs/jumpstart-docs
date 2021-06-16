@@ -85,7 +85,8 @@ Tools
 \vspace{1cm}
 ### Vorbereitung
 
-* GitHub-Account
+* [GitHub-Account](https://github.com/signup)
+* [DockerHub-Account](https://hub.docker.com/signup)
 * Laptop (je nachdem zu zweit)
 * Virtualbox installieren
 * VM als Appliance importieren
