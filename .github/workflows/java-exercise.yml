@@ -23,3 +23,7 @@ jobs:
       - name: run tests
         working-directory: topics/testing/code
         run: mvn test
+
+      - name: run integration tests
+        working-directory: topics/testing/code
+        run: mvn verify

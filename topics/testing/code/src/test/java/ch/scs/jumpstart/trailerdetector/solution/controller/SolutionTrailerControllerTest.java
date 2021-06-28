@@ -60,7 +60,8 @@ class SolutionTrailerControllerTest {
 
   @Test
   public void return_404_and_no_body_if_macAddress_belongs_to_unknown_trailer() {
-    when(trailerRepository.getByNetworkDeviceMac(notNull())).thenReturn(of(new Trailer()));
+    when(trailerRepository.findByNetworkDevices_MacAddress(notNull()))
+        .thenReturn(of(new Trailer()));
 
     assertThat(
         solutionTrailerController.getAndUpdateTrailersByMacAddresses(List.of(MAC_1)),
@@ -69,9 +70,12 @@ class SolutionTrailerControllerTest {
 
   @Test
   public void return_matched_trailer_number_if_found() {
-    when(trailerRepository.getByNetworkDeviceMac(MAC_1)).thenReturn(Optional.of(TRAILER_2));
-    when(trailerRepository.getByNetworkDeviceMac(MAC_2)).thenReturn(Optional.of(TRAILER_1));
-    when(trailerRepository.getByNetworkDeviceMac(MAC_3)).thenReturn(Optional.of(TRAILER_1));
+    when(trailerRepository.findByNetworkDevices_MacAddress(MAC_1))
+        .thenReturn(Optional.of(TRAILER_2));
+    when(trailerRepository.findByNetworkDevices_MacAddress(MAC_2))
+        .thenReturn(Optional.of(TRAILER_1));
+    when(trailerRepository.findByNetworkDevices_MacAddress(MAC_3))
+        .thenReturn(Optional.of(TRAILER_1));
 
     assertThat(
         solutionTrailerController.getAndUpdateTrailersByMacAddresses(List.of(MAC_1, MAC_2, MAC_3)),

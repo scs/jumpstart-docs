@@ -4,10 +4,20 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
+import javax.persistence.*;
 
+@Entity
 public class Trailer {
+  @SuppressWarnings("unused")
+  @Id
+  @GeneratedValue
+  private int id;
+
+  @Column(unique = true)
   private Integer trailerNumber;
-  private final Set<String> networkDevices = new HashSet<>();
+
+  @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+  private final Set<NetworkDevice> networkDevices = new HashSet<>();
 
   public Integer getTrailerNumber() {
     return trailerNumber;
@@ -17,11 +27,15 @@ public class Trailer {
     this.trailerNumber = trailerNumber;
   }
 
-  public void addNetworkDevice(String s) {
+  public Set<NetworkDevice> getNetworkDevices() {
+    return networkDevices;
+  }
+
+  public void addNetworkDevice(NetworkDevice s) {
     networkDevices.add(s);
   }
 
-  public void removeNetworkDevices(Collection<String> s) {
+  public void removeNetworkDevices(Collection<NetworkDevice> s) {
     networkDevices.removeAll(s);
   }
 

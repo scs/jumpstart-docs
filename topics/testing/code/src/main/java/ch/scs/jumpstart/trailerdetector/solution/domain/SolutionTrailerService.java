@@ -2,12 +2,10 @@ package ch.scs.jumpstart.trailerdetector.solution.domain;
 
 import static java.util.function.Predicate.not;
 
+import ch.scs.jumpstart.trailerdetector.exercise.domain.NetworkDevice;
 import ch.scs.jumpstart.trailerdetector.exercise.domain.Trailer;
 import ch.scs.jumpstart.trailerdetector.exercise.domain.TrailerRepository;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 import org.apache.commons.lang3.tuple.Pair;
 
@@ -23,6 +21,12 @@ public class SolutionTrailerService {
 
   public Optional<Trailer> findAndUpdateTrailersByMacAddresses(List<String> macAddresses) {
     var macTrailerMap = getMacTrailerMap(macAddresses);
+    var networkDevices =
+        macTrailerMap.values().stream()
+            .map(Trailer::getNetworkDevices)
+            .flatMap(Collection::stream)
+            .filter(networkDevice -> macAddresses.contains(networkDevice.getMacAddress()))
+            .collect(Collectors.toSet());
     if (macTrailerMap.isEmpty()) {
       return Optional.empty();
     }
@@ -30,8 +34,8 @@ public class SolutionTrailerService {
     try {
       macTrailerMap.values().stream()
           .filter(not(matchedTrailer::equals))
-          .forEach(trailer -> trailer.removeNetworkDevices(macAddresses));
-      macAddresses.forEach(matchedTrailer::addNetworkDevice);
+          .forEach(trailer -> trailer.removeNetworkDevices(networkDevices));
+      macAddresses.stream().map(NetworkDevice::new).forEach(matchedTrailer::addNetworkDevice);
       trailerRepository.saveAll(Set.copyOf(macTrailerMap.values()));
     } catch (Exception ignored) {
 
@@ -41,7 +45,7 @@ public class SolutionTrailerService {
 
   private Map<String, Trailer> getMacTrailerMap(List<String> macAddresses) {
     return macAddresses.stream()
-        .map(s -> Pair.of(s, trailerRepository.getByNetworkDeviceMac(s)))
+        .map(s -> Pair.of(s, trailerRepository.findByNetworkDevices_MacAddress(s)))
         .filter(stringOptionalPair -> stringOptionalPair.getRight().isPresent())
         .map(
             stringOptionalPair ->
