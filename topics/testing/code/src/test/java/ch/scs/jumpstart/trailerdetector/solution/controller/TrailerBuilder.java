@@ -1,5 +1,6 @@
 package ch.scs.jumpstart.trailerdetector.solution.controller;
 
+import ch.scs.jumpstart.trailerdetector.exercise.domain.NetworkDevice;
 import ch.scs.jumpstart.trailerdetector.exercise.domain.Trailer;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -31,7 +32,7 @@ public class TrailerBuilder {
   public Trailer build() {
     var trailer = new Trailer();
     trailer.setTrailerNumber(trailerNumber);
-    macAddresses.forEach(trailer::addNetworkDevice);
+    macAddresses.stream().map(NetworkDevice::new).forEach(trailer::addNetworkDevice);
     return trailer;
   }
 }
