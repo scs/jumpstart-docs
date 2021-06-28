@@ -36,3 +36,11 @@ jobs:
       - name: create zip archive
         run: |
           cmake --build build --target archive
+
+      - name: add archive to build output
+        uses: actions/upload-artifact@v2
+        with:
+          name: "jumpstart"
+          path: |
+            build/topics/*/*.pdf
+            build/topics/*/code
