@@ -192,21 +192,18 @@ Definition Unittest BDD
 * Verwendet keine shared Ressourcen (Datenbanken, Ports, Filesystem)  
 Ausser natürlich Memory und CPU
 * Testet eine Unit (Klasse in OO, Funktion in FP)  
-* Dependencies werden gemockt.
+* Dependencies werden gemockt
 * Rule of Thumb: Laufzeit < 1s
 
 Red Green Refactor on steroids
 -------
 
-![Editor Wars](images/bdd.png)
+![BDD](images/bdd.png)
 
 Demo Test Klasse mit State (BankKata)
 -------
 
 Übung BDD (Bankkata)
--------
-
-Übung BDD (TrailerDetector)
 -------
 
 Levels for Tests
@@ -215,15 +212,30 @@ Levels for Tests
 \centering
 ![testing_scopes](images/testing_scopes.pdf){height=95%}
 
-Integrationtest
+Integrationstest
 -------
 
-* Ziel: Die Haupt Features der Komponenten funktionieren funktionieren auch mit DB, Filesystem oder Socket's
+* Ziel: Die Hauptfeatures der Komponenten funktionieren auch mit DB, Filesystem oder Sockets
 * Es werden nicht mehr alle Fehlerfälle der Subkomponenten getestet
 * Abwägen zwischen Laufzeit und Testabdeckung
 
-Demo Integrationtest
+Demo Integrationstest (RegaGis, AddressLookupServiceIT)
 -------
+
+Fragen bei Integrationstests
+-------
+
+* Separierung Integrationstests/Unittests
+  * Maven:
+    * `maven-surefire-plugin (*Test, target: test)`
+    * `maven-failsafe-plugin (*IT, target: verify)`
+* Welche Aspekte möchte ich testen?
+  * z.b. echte WebRequests vs in Memory aufruf von Controllern
+  * Muss das Verhalten einer Library auch getestet werden (z.b. wenn man die Library updated)
+  * Muss die korrekte Verwendung der Library getestet werden (z.b. DB Transaktion richtig öffnen und schliessen)
+* Wie viele Aspekte möchte ich in einem Test testen?
+* Wie stelle ich sicher, dass ein definierter Stand beim Teststart da ist?
+* Sind am Ende des Tests alle Ressourcen wieder aufgeräumt, auch bei einem Fehlschlag?
 
 Fixtures
 -------
@@ -232,9 +244,16 @@ Fixtures
 * Durch Fixtures entstehen Abhängigkeiten zwischen den Tests
 
 Beispiel:
-TODO: Anpassung Email im Test in Ecamp
-TODO: Hinzufügen von zweitem Lager für einen Test
-TODO: Rega TestdatabaseSetup
+
+* Fixtures mit Dependencies: [CampTestData.php](https://github.com/ecamp/ecamp3/blob/0d3dada43fad56b23e7d7498b3c64430757c718f/backend/module/eCampCore/test/Data/CampTestData.php)
+* Abhängigkeiten zwischen Fixtures (Neu 2 Camps) [commit](https://github.com/BacLuc/ecamp3/commit/0d3dada43fad56b23e7d7498b3c64430757c718f)
+* GeoObjectStatusControllerIT
+
+Levels for Tests
+------
+
+\centering
+![testing_scopes](images/testing_scopes.pdf){height=95%}
 
 Systemtests
 -------
@@ -246,13 +265,27 @@ Systemtests
 * Es können auch mehrere Systemteile (z.b. unterschiedliche Services)  
 hochgefahren werden.
 * Lokale Ausführung oft nicht mehr möglich
-  
 
-Übung Systemtest
+Demo Systemtest (PTTS Frontend)
 -------
 
-Übung async Peer Review
-------
+Demo Systemtest (PTTS Backend Editor WebUI)
+-------
 
-Demo Systemtest
+Fragen bei Systemtests
+-------
+
+* Wie interagiere ich mit dem System?
+* Wo hänge ich Simulatoren ein?
+* Welchen State hat die Applikation, wenn ein Test beginnt?
+  * Reset auf definierten Stand vor dem Test
+  * Tests hängen voneinander ab
+* Wie lade ich Testdaten?
+* Laufzeit der Tests?
+* Parallelisierung der Tests?
+
+Reserve
+-------
+
+Übung BDD (TrailerDetector)
 -------
