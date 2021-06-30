@@ -1,0 +1,12 @@
+cmake_minimum_required(VERSION 3.10)
+
+function(get_subdirs result parent)
+    file(GLOB_RECURSE children ${parent} LIST_DIRECTORIES true ${parent}/*.*)
+    set(dirlist)
+    foreach(child ${children})
+        if(IS_DIRECTORY ${child})
+            list(APPEND dirlist ${child})
+        endif()
+    endforeach()
+    set(${result} ${dirlist} PARENT_SCOPE)
+endfunction()

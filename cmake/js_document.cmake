@@ -7,6 +7,8 @@ include(docmake/pandoc)
 include(docmake/latex)
 include(docmake/markdownlint)
 
+include(helpers)
+
 
 set(JS_CMAKE_DIR ${CMAKE_CURRENT_LIST_DIR})
 
@@ -17,7 +19,7 @@ function(js_script name sources)
     file(GLOB_RECURSE code "code/*.*")
     list(FILTER code EXCLUDE REGEX ".*/target/.*")
 
-    file(GLOB_RECURSE include_paths "${CMAKE_CURRENT_SOURCE_DIR}/*.*")
+    get_subdirs(include_paths ${CMAKE_CURRENT_SOURCE_DIR})
     list(FILTER include_paths EXCLUDE REGEX ".*/target/.*")
 
     gpp_preprocessor(
@@ -59,7 +61,7 @@ function(js_exercise name sources)
     file(GLOB_RECURSE code "code/*.*")
     list(FILTER code EXCLUDE REGEX ".*/target/.*")
 
-    file(GLOB_RECURSE include_paths "${CMAKE_CURRENT_SOURCE_DIR}/*.*")
+    get_subdirs(include_paths ${CMAKE_CURRENT_SOURCE_DIR})
     list(FILTER include_paths EXCLUDE REGEX ".*/target/.*")
 
     gpp_preprocessor(
@@ -118,7 +120,7 @@ function(js_slides name sources)
     set(sources ${sources} ${ARGN})
     set(pdf_name ${name}.pdf)
 
-    file(GLOB_RECURSE include_paths "${CMAKE_CURRENT_SOURCE_DIR}/*.*")
+    get_subdirs(include_paths ${CMAKE_CURRENT_SOURCE_DIR})
     list(FILTER include_paths EXCLUDE REGEX ".*/target/.*")
 
     gpp_preprocessor(
