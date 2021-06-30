@@ -509,6 +509,38 @@ Und dann remote den key ins authorized_keys File einfügen.
 
 Private Key erstellen: `ssh-keygen -t rsa -b 4096`
 
+Authentication Agents
+-------
+
+* *Nie persönliche private Keys auf remote Maschinen kopieren*
+* Hier einige Implementationen:
+  * Windows: pageant
+  * Windows: ssh-agent (Mit git bash mitgeliefert, oder mit openssh)
+  * Linux: ssh-agent
+
+\centering
+![ssh-agent-forwarding](images/ssh-agent-forwarding.jpeg){width=60%}
+
+Putty Agent forwarding
+-------
+
+\centering
+![ssh-agent-forwarding](images/putty-ssh-agent-forwarding.png){height=80%}
+
+Command line Agent forwarding
+-------
+
+* shell: `ssh -A`
+* ssh config:
+
+```
+Host jumpstart
+  User vagrant
+  Hostname localhost
+  Port 2222
+  ForwardAgent yes
+```
+
 Pipe + Redirection
 -------
 
