@@ -447,6 +447,23 @@ Logs
 * Falls nichts weiterhilft, kann man noch im syslog nachschauen:  
 `less /var/log/syslog`
 
+journalctl
+-------
+
+* Programm um Logs von journald (Logging Service von systemd) zu filtern
+* Nur für logs, die auch im journald landen
+  * keine selbst angelegten Logs (von z.b. log4j)
+  * keine Logs von docker (falls nicht so konfiguriert)
+* Boot messages: `journalctl -b`
+* Filtern nach Zeit: `journalctl --since "1 hour ago"`  
+  `journalctl --since "2015-06-26 23:15:00" --until "2015-06-26 23:20:00"`
+* Nach Unit: `sudo journalctl -u cron.service`
+* Follow: `journalctl -f`
+* Neuste Meldungen zuerst: `journalctl -r`, springe ans Ende: `journalctl -e`
+* Output Formate können definiert werden (z.b. jsonwill, json-pretty, cat)
+
+Quelle: [www.loggly.com/ultimate-guide/using-journalctl](https://web.archive.org/web/20210630131216/https://www.loggly.com/ultimate-guide/using-journalctl/?CMP=KNC-TAD-GGL-SW_DACH_X_PP_CPC_LD_EN_PROD_SW-LGL-12302661008~119270368964_g_c_-b~497490656877~~1003297~~)
+
 SSH
 -------
 
