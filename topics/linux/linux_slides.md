@@ -179,7 +179,32 @@ Achtung: öffnet Hilfe in split window
 
 tmux
 -------
-TODO
+
+* Programm um mehrere Shells als Tabs oder im Split Mode zu öffnen
+  * Die einzelnen Teile im Split Mode heissen *Pane* bei tmux
+  * Auch *T*erminal *Mu*ltiple*x*er
+* Kann auch Session Management
+  * Wenn die SSH Verbindung unterbrochen wird, kann man die alte Session wieder öffnen
+  * Man kann auch mehrere Sessions für mehrere parallele Tasks offen halten
+* Setzt auf Modes und Shortcuts für die Interaktion
+* Starten: `tmux`
+
+tmux 2
+-------  
+
+* Prefix Key: `Ctrl + b`, braucht man vor jedem tmux Befehl/Shortcut
+* Split Pane:
+  * `%` horizontal
+  * `"` vertikal
+* Switch Pane:
+  * `q` Nummeriert die Panes, mit `[0-9]` die Pane auswählen
+* Neues Window (Tab): `c`
+  * Navigieren zwischen Windows: `n` für next, `p` für previous, `0-9` um direkt zu Fenster zu springen.
+* Exit Pane/Window: `exit` oder `Ctrl + d`
+* Close Session: Close all Panes/Windows in Session
+* Detach Session: `d`
+* List Sessions: `tmux ls`
+* Attach to Session: `tmux attach -t SESSION_NUMBER`
 
 users, roles and permissions
 ==============
