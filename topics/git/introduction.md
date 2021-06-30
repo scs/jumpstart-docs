@@ -23,6 +23,7 @@ Was macht Git?
 * *diffs* und *patches*
 * Identifizierung von Objekten, Commits, etc. passiert über *Hashes*
 * bei `git push`/`git fetch` wird der Objekt-Store *synchronisiert*
+* Netzwerk-Kommunikation ist *komprimiert*
 
 ### Wie funktioniert Git intern?
 
