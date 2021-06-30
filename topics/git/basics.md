@@ -25,10 +25,10 @@ Reflog
 ------
 
 * `reflog` zeigt *alle* Commits an
-  * z.B. alle Commits auf dem `master` vor einer Woche:
+  * z.B. alle Commits auf dem `main` vor einer Woche:
 
     ~~~ {.bash}
-    git reflog master@{one.week.ago}
+    git reflog main@{one.week.ago}
     ~~~
 
 * zeigt auch *nicht mehr referenzierte Commits* an

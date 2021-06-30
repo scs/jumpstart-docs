@@ -183,8 +183,8 @@ Tips and Tricks
 * do use `reset --hard` to *change references* to other commits
 
   ~~~ {.bash}
-  git rebase feature/whatever master
-  git checkout master
+  git rebase feature/whatever main
+  git checkout main
   git reset --hard feature/whatever
   ~~~
 
@@ -217,7 +217,7 @@ Cherry-Picking
 
         F'-G'-H'  <-- short_branch
        /
-    A-B  <-- master
+    A-B  <-- main
        \
         C-D-E-F-G-H  <-- long_branch
   ~~~
@@ -228,25 +228,25 @@ Rebasing
 
 * do *use* `rebase` -- do not think it is too dangerous
 
-* *update/rebase* your feature branch to new root (e.g. master)
+* *update/rebase* your feature branch to new root (e.g. main)
 
   ~~~ {.bash}
   git checkout feature/whatever
-  git rebase master
+  git rebase main
   ~~~
 
-* use only the *last 3 commits* to rebase to new root (e.g. master)
+* use only the *last 3 commits* to rebase to new root (e.g. main)
 
   ~~~ {.bash}
   git checkout feature/whatever
-  git rebase --onto master HEAD~3
+  git rebase --onto main HEAD~3
   ~~~
 
-* *manipulate history* of your branch until a certain root (e.g. master)
+* *manipulate history* of your branch until a certain root (e.g. main)
 
   ~~~ {.bash}
   git checkout feature/whatever
-  git rebase -i master
+  git rebase -i main
   ~~~
 
 * this opens the *editor* and allows to select changes:
@@ -297,7 +297,7 @@ Conflicts
 
 
 -------   ------   ------   --------
-master    local    ours     upstream
+main      local    ours     upstream
 feature   remote   theirs
 ------------------------------------
 
@@ -306,7 +306,7 @@ feature   remote   theirs
 * if using *merge*
 
   ~~~ {.bash}
-  git checkout master
+  git checkout main
   git merge feature
   ~~~
 
@@ -316,7 +316,7 @@ feature   remote   theirs
 
   ~~~ {.bash}
   git checkout feature
-  git rebase master
+  git rebase main
   ~~~
 
 \colEnd

@@ -40,7 +40,7 @@ Strukturieren eines PR
 * bearbeitet ein Feature $\to$ genau das was im *Issue-Task* definiert ist
 * ein separater *Feature-Branch* (je nach Grösse auch mehrere)
 * möglichst *nicht zu gross* $\to$ Task in mehrere PRs aufteilen
-* basiert auf master/development Branch
+* basiert auf main/development Branch
 * basiert bei Bedarf auf anderem Feature-Branch (je nach Workflow nicht `rebase` sondern `merge`)
 
 
@@ -49,7 +49,7 @@ Vor dem Öffnen eines PR
 
 * *Aufräumen* der History
 * Gute *Beschreibung* und Links hinzufügen
-* auf master (main, development) rebasen
+* auf main (oder development) rebasen
 * Das alles ermöglicht Reviews auf *höherem Level*, ohne sich mit Details abzulenken
 * Wir machen die saubere Git History nicht nur für die History, sondern um:
   * ein *effizientes Review* machen zu können
@@ -145,7 +145,7 @@ Abschluss
 
 Der Prozess ist beendet, nachdem alle/genügend Reviewer den PR *akzeptiert* haben.
 
-1. Der PR-Author *rebased* den Feature-Branch auf den aktuellen master/development Branch
+1. Der PR-Author *rebased* den Feature-Branch auf den aktuellen main/development Branch
 1. `git push --force-with-lease`
 1. Mittels "Merge"-Button in PR-GUI (Bitbucket, etc.) *abschliessen*
 1. Dabei kann der Feature-Branch direkt *entfernt* werden

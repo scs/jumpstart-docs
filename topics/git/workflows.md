@@ -59,7 +59,7 @@ Git workflows:
 git checkout -b feature
 git commit
 git commit
-git checkout master
+git checkout main
 git commit
 git commit
 
@@ -77,10 +77,10 @@ git reset --hard HEAD~1
 
 // rebase
 git checkout feature
-git rebase master
+git rebase main
 
-// update master
-git checkout master
+// update main
+git checkout main
 git merge feature
 ~~~
 
@@ -122,8 +122,8 @@ git checkout feature1
 git commit
 git commit
 
-// master progresses
-git checkout master
+// main progresses
+git checkout main
 git commit
 git commit
 ~~~
@@ -131,9 +131,9 @@ git commit
 \colNext{0.5}
 
 ~~~ {.bash .numberLines}
-// feature1 rebased to master
+// feature1 rebased to main
 git checkout feature1
-git rebase master
+git rebase main
 
 // normal rebase would create
 // merge conflict here
