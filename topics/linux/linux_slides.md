@@ -597,9 +597,12 @@ Stattdessen beim Programm die Option für Password Prompt verwenden.
   * `Tab` bringt den Eintrag auf die Kommandozeile, ohne ihn auszuführen
   * `Enter` führt den Eintrag direkt aus
 
-Linux File System
+Linux Directory Struktur
 -------
-TODO
+
+\centering
+![Linux Directory Struktur](images/Linux-Directory-Structure.jpeg){height=80%}  
+[Quelle: https://www.tecmint.com](https://web.archive.org/web/20210226103146/https://www.tecmint.com/linux-directory-structure-and-important-files-paths-explained/linux-directory-structure/)
 
 Daemons
 -------
