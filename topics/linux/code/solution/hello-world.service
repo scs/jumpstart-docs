@@ -1,0 +1,8 @@
+[Unit]
+After=systemd-user-sessions.service
+
+[Service]
+ExecStart=/usr/local/bin/hello-world
+
+[Install]
+WantedBy=multi-user.target
