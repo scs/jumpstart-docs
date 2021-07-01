@@ -73,7 +73,7 @@ History
   * `Tab` bringt den Eintrag auf die Kommandozeile, ohne ihn auszuführen
   * `Enter` führt den Eintrag direkt aus
 
-Live savers
+Bevor man etwas Gefährliches macht
 -------
 
 * Bei Unsicherheit: in Sandbox testen.
