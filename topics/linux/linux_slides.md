@@ -606,4 +606,89 @@ Linux Directory Struktur
 
 Daemons
 -------
-TODO
+
+* Prozesse hängen normalerweise an dem Prozess, der sie gestartet hat
+* Mit einem `&` am Ende des Befehls kann man den Prozess in den Hintergrund verschieben
+  * Wenn man die Shell schliesst, wird der Prozess trotzdem abgebrochen
+
+```shell
+# $$ gibt die PID es momentan laufenden Prozesses aus
+$ ps fu $$
+USER         PID  TIME COMMAND
+vagrant    44484  0:00 -bash
+vagrant    44634  0:00    \_ ps fu
+```
+
+Daemons 2
+-------
+
+```shell
+# in der bash eine neue bash starten -> startet neuen Prozess
+$ bash
+$ ps fu $$
+USER         PID TIME COMMAND
+vagrant    44484 0:00 -bash
+vagrant    44607 0:00  \_ bash
+vagrant    44634 0:00      \_ ps fu
+```
+
+Daemons 3
+-------
+
+```shell
+# in dieser bash einen Hintergrund Prozess starten
+$ watch echo 1 &
+$ ps fu $$
+USER         PID    TIME COMMAND
+vagrant    44484    0:00 -bash
+vagrant    44607    0:00  \_ bash
+vagrant    44677    0:00      \_ watch echo 1
+vagrant    44706    0:00      \_ ps fu
+
+# Den parent Prozess des Hintergrund Prozesses killen
+$ kill -9 44607
+# Hintergrund Prozess ist weg
+$ ps fu 44677
+USER         PID  TIME COMMAND
+```
+
+Systemd
+-------
+
+* Package um Daemons (Hintergrund Prozesse) zu verwalten
+* System und Sitzungsmanager für Linux (Verwendet in Ubuntu, Fedora, Debian...)
+* Bootstrapped das Betriebssystem
+* Definiert Abhängigkeiten zwischen den Units
+* .service File in /etc/systemd, um Dienste zu konfigurieren
+* Minimale Möglichkeiten für HealthCheck + Restart, das reicht aber meistens
+* Befehle:
+  * Status: `service hardware-init status`
+  * Starten/Stoppen/Restart: `sudo service hardware-init (start|stop|restart)`
+  * Nach Änderung von .service file neu laden: `sudo systemctl reload hardware-init.service`
+  * Enable: `sudo systemctl enable hardware-init.service`
+  * Disable: `sudo systemctl disable hardware-init.service`
+  
+* Abhängigkeitsbaum Anzeigen: `systemctl list-dependencies`
+* Analyse: `systemd-analyze`
+
+Systemd .service file
+-------
+
+```
+[Unit]
+# This service needs systemd-modules-load.service started
+# stops when systemd-modules-load stops
+Requires=systemd-modules-load.service
+# This service should be started after systemd-modules-load.service
+# But does not wait on its completion
+After=systemd-modules-load.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/hardware-init start
+ExecStop=/usr/local/bin/hardware-init stop
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
+```
