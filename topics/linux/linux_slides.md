@@ -127,6 +127,48 @@ Access via rsync daemon:
 Demo rsync verwenden Anhand von manpage
 -------
 
+Pipe + Redirection
+-------
+
+\huge
+
+> Write programs that do one thing and do it well.  
+*Write programs to work together.  
+Write programs to handle text streams, because that is a universal interface.*
+
+Pipe + Redirection
+-------
+
+* Programme in Linux können auf verschiedene Art und Weise verbunden werden
+* Pipe: `|`
+
+![pipe](images/pipe.png)
+
+Beispiel:
+
+```shell
+env | sort
+```
+
+Der Output des vorherigen Programms wird schon vor dem Programmende in die Pipe eingefügt.
+Dies ermöglicht eine parallelisierte Ausführung.
+
+```shell
+i=0; while true; do ((i=i+1)); echo "test$i"; sleep 0.5; done \
+| egrep "2|4|6|8"
+```
+
+Pipe + Redirection
+-------
+
+* Output Redirection mit `>`  
+  Output von Programm in File schreiben: `ls -l > lsoutput`
+* Output an File anhängen mit  `>>`  
+  `ls -l >> lsoutput`
+* Input Redirection mit `<`  
+  `grep "myfile" < lsoutput`  
+  *Achtung* schlechtes Beispiel für grep, einfacher: `grep "myfile" lsoutput`
+
 Aufgabe Bash Befehle in Linux
 -------
 
@@ -554,48 +596,6 @@ Host jumpstart
   Port 2222
   ForwardAgent yes
 ```
-
-Pipe + Redirection
--------
-
-\huge
-
-> Write programs that do one thing and do it well.  
-*Write programs to work together.  
-Write programs to handle text streams, because that is a universal interface.*
-
-Pipe + Redirection
--------
-
-* Programme in Linux können auf verschiedene Art und Weise verbunden werden
-* Pipe: `|`  
-
-![pipe](images/pipe.png)
-
-Beispiel:
-
-```shell
-env | sort
-```
-
-Der Output des vorherigen Programms wird schon vor dem Programmende in die Pipe eingefügt.
-Dies ermöglicht eine parallelisierte Ausführung.
-
-```shell
-i=0; while true; do ((i=i+1)); echo "test$i"; sleep 0.5; done \
-| egrep "2|4|6|8"
-```
-
-Pipe + Redirection
--------
-
-* Output Redirection mit `>`  
-Output von Programm in File schreiben: `ls -l > lsoutput`
-* Output an File anhängen mit  `>>`  
-`ls -l >> lsoutput`
-* Input Redirection mit `<`  
-`grep "myfile" < lsoutput`  
-*Achtung* schlechtes Beispiel für grep, einfacher: `grep "myfile" lsoutput`
 
 Linux Directory Struktur
 -------
