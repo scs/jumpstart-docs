@@ -423,6 +423,27 @@ Dies für den produktiven Gebrauch wieder entfernen!
 * Bei Fehler abbrechen: `set -e`  
 Normalerweise fährt das Script nach einem Fehler fort.  
 Dies kann zu Problemen führen, deshalb das Skript bei einem Fehler abbrechen lassen.
+  
+Scripts Beispiel
+-------
+
+```shell
+#!/bin/sh
+
+set -e
+
+# Das Skript könnte von überall aufgerufen werden.
+# In $0 ist der Pfad dieses Skripts,
+# mit realpath in absoluten Pfad umwandeln.
+SCRIPT_DIR=$(dirname $(realpath $0))
+TOPLEVEL_DIR=$(realpath $SCRIPT_DIR/../..)
+HOST=auto@bls-m
+
+cd $TOPLEVEL_DIR
+ant -f startup zip.prod-depl.generic
+sh $SCRIPT_DIR/deploy-testdata bls $HOST
+sh $SCRIPT_DIR/deploy-rsync startup/target-ant/productive-depl-generic.zip $HOST
+```
 
 Aufgabe Hello World Service 1
 -------
