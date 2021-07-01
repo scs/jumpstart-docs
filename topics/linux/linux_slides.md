@@ -55,6 +55,9 @@ File manipulation
 * Löschen:
   * File: `rm movedfile`
   * Directory: `rm -r mydir`
+* Mit bash (nicht mit sh) können Platzhalter verwendet werden:
+  * Liste alles auf, das mit D anfängt: `ls ~/D*`
+  * Liste alles auf, das in einem Subfolder von Home ist: `ls ~/**/`
   
 History
 -------
