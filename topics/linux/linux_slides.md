@@ -55,6 +55,20 @@ File manipulation
 * Löschen:
   * File: `rm movedfile`
   * Directory: `rm -r mydir`
+  
+History
+-------
+
+* Jeden Befehl, den man ausführt, wird nach der Ausführung in ~/.bash_history gespeichert
+* Deshalb *keine Passwörter* in einem Befehl eingeben.  
+  Stattdessen beim Programm die Option für Password Prompt verwenden.
+* Mit `history` kannst du die History ausgeben. Diese kann lang sein, deshalb eventuell: `history | less`
+* Mit `UP`/`DOWN` kannst du den letzten/nächsten Eintrag auf die Kommandozeile holen
+* Mit `Ctrl+R` kannst du die History durchsuchen
+  * Nochmals `Ctrl+R` führt dich zum nächsten match
+  * `Ctrl + Shift + R` führt dich zum vorherigen match
+  * `Tab` bringt den Eintrag auf die Kommandozeile, ohne ihn auszuführen
+  * `Enter` führt den Eintrag direkt aus
 
 Live savers
 -------
@@ -582,20 +596,6 @@ Output von Programm in File schreiben: `ls -l > lsoutput`
 * Input Redirection mit `<`  
 `grep "myfile" < lsoutput`  
 *Achtung* schlechtes Beispiel für grep, einfacher: `grep "myfile" lsoutput`
-
-History
--------
-
-* Jeden Befehl, den man ausführt, wird nach der Ausführung in ~/.bash_history gespeichert
-* Deshalb *keine Passwörter* in einem Befehl eingeben.  
-Stattdessen beim Programm die Option für Password Prompt verwenden.
-* Mit `history` kannst du die History ausgeben. Diese kann lang sein, deshalb eventuell: `history | less`
-* Mit `UP`/`DOWN` kannst du den letzten/nächsten Eintrag auf die Kommandozeile holen
-* Mit `Ctrl+R` kannst du die History durchsuchen
-  * Nochmals `Ctrl+R` führt dich zum nächsten match
-  * `Ctrl + Shift + R` führt dich zum vorherigen match
-  * `Tab` bringt den Eintrag auf die Kommandozeile, ohne ihn auszuführen
-  * `Enter` führt den Eintrag direkt aus
 
 Linux Directory Struktur
 -------
