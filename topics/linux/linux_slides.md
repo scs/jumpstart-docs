@@ -719,3 +719,16 @@ WantedBy=multi-user.target
 
 Aufgabe Hello World Service 2
 ------
+
+Zusammenfassung
+------
+
+* Wer/Wo/Was bin ich?, Basic Commands
+* Bevor man etwas Gefährliches macht
+* Pipe + Redirection
+* Editors
+* Linux Permissions
+* Scripts
+* Root, Package Management, journalctl
+* SSH
+* Daemons
