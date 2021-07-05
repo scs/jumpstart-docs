@@ -63,6 +63,12 @@ Links
 * [reproducible_builds]
 * [yocto_reproducible_builds]
 
+*Externer Code*
+
+[stackoverflow_copy_paste_bugs]: https://stackoverflow.blog/2019/11/26/copying-code-from-stack-overflow-you-might-be-spreading-security-vulnerabilities/
+
+* [stackoverflow_copy_paste_bugs]
+
 \colNext{0.5}
 
 *CI/CD*

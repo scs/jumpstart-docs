@@ -13,6 +13,8 @@ Libraries
 * Wo findet man *weitere* Libraries etc.?
   * OpenSource: [github.com](https://github.com), [gitlab.com](https://gitlab.com)
   * Diskussionen: [stackoverflow.com](https://stackoverflow.com)
+    $\break\to$ nicht nur copy-paste sondern alles nochmals *verstehen/überarbeiten*
+    $\break\to$ [stackoverflow_copy_paste_bugs]
 
 
 Libraries einbetten
