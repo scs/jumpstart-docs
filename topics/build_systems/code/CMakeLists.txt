@@ -13,7 +13,7 @@ list(REMOVE_ITEM BF_SRC_ALL ${BF_SRC_MAIN})
 # internal library target
 set(BF_TARGET_LIB ${BF_TARGET}-lib)
 add_library(${BF_TARGET_LIB} STATIC ${BF_SRC_ALL})
-target_include_directories(${BF_TARGET_LIB} INTERFACE "libs" "src")
+target_include_directories(${BF_TARGET_LIB} PUBLIC "libs" "src")
 
 # main app target
 set(BF_TARGET_APP ${BF_TARGET}-app)
