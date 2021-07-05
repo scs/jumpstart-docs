@@ -3,6 +3,7 @@ package ch.scs.jumpstart.bankkata.solution;
 import static org.mockito.Mockito.*;
 
 import java.time.LocalDate;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class SolutionAccountAcceptanceTest {
@@ -11,13 +12,22 @@ class SolutionAccountAcceptanceTest {
   private static final LocalDate DATE_3 = LocalDate.parse("2021-06-15");
   private static final LocalDate DATE_4 = LocalDate.parse("2021-06-16");
 
+  private SolutionConsole console;
+  private SolutionClock clock;
+  private SolutionAccount account;
+
+  @BeforeEach
+  public void setup() {
+    console = mock(SolutionConsole.class);
+    SolutionConsoleAccountPrinter consoleAccountPrinter =
+        new SolutionConsoleAccountPrinter(console);
+    clock = mock(SolutionClock.class);
+    account = new SolutionAccount(clock, consoleAccountPrinter);
+  }
+
   @Test
   public void print_the_ledger_of_the_account() {
-    SolutionConsole console = mock(SolutionConsole.class);
-    var consoleAccountPrinter = new SolutionConsoleAccountPrinter(console);
-    var clock = mock(SolutionClock.class);
     when(clock.getLocalDate()).thenReturn(DATE_1, DATE_2, DATE_3, DATE_4);
-    var account = new SolutionAccount(clock, consoleAccountPrinter);
 
     account.deposit(100);
     account.withdraw(75);
