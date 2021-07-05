@@ -76,6 +76,7 @@ Reproduzierbarkeit & Nachvollziehbarkeit
 * *Debugging*
   * Log-Files
   * Stack-Traces
+  * Kernel-Dumps
 
 
 Reproduzierbarkeit & Nachvollziehbarkeit
