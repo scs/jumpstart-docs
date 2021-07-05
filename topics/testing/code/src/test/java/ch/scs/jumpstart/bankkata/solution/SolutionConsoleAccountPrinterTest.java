@@ -39,10 +39,10 @@ class SolutionConsoleAccountPrinterTest {
 
     var inOrder = inOrder(console);
     inOrder.verify(console).printLine("Date       || Amount || Balance");
-    inOrder.verify(console).printLine("15/06/2021 ||      1 ||       1");
-    inOrder.verify(console).printLine("15/06/2021 ||     20 ||      20");
-    inOrder.verify(console).printLine("15/06/2021 ||    200 ||     200");
-    inOrder.verify(console).printLine("15/06/2021 ||   2000 ||    2000");
+    inOrder.verify(console).printLine("2021-06-15 ||      1 ||       1");
+    inOrder.verify(console).printLine("2021-06-15 ||     20 ||      20");
+    inOrder.verify(console).printLine("2021-06-15 ||    200 ||     200");
+    inOrder.verify(console).printLine("2021-06-15 ||   2000 ||    2000");
   }
 
   @Test
@@ -54,7 +54,7 @@ class SolutionConsoleAccountPrinterTest {
 
     var inOrder = inOrder(console);
     inOrder.verify(console).printLine("Date       || Amount || Balance");
-    inOrder.verify(console).printLine("16/06/2021 ||     20 ||      20");
-    inOrder.verify(console).printLine("15/06/2021 ||      1 ||       1");
+    inOrder.verify(console).printLine("2021-06-16 ||     20 ||      20");
+    inOrder.verify(console).printLine("2021-06-15 ||      1 ||       1");
   }
 }

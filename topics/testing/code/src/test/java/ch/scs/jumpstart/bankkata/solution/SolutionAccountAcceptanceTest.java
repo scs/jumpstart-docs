@@ -6,17 +6,17 @@ import java.time.LocalDate;
 import org.junit.jupiter.api.Test;
 
 class SolutionAccountAcceptanceTest {
+  private static final LocalDate DATE_1 = LocalDate.parse("2021-01-01");
+  private static final LocalDate DATE_2 = LocalDate.parse("2021-06-12");
+  private static final LocalDate DATE_3 = LocalDate.parse("2021-06-15");
+  private static final LocalDate DATE_4 = LocalDate.parse("2021-06-16");
+
   @Test
   public void print_the_ledger_of_the_account() {
     SolutionConsole console = mock(SolutionConsole.class);
     var consoleAccountPrinter = new SolutionConsoleAccountPrinter(console);
     var clock = mock(SolutionClock.class);
-    when(clock.getLocalDate())
-        .thenReturn(
-            LocalDate.parse("2021-01-01"),
-            LocalDate.parse("2021-06-12"),
-            LocalDate.parse("2021-06-15"),
-            LocalDate.parse("2021-06-16"));
+    when(clock.getLocalDate()).thenReturn(DATE_1, DATE_2, DATE_3, DATE_4);
     var account = new SolutionAccount(clock, consoleAccountPrinter);
 
     account.deposit(100);
@@ -27,10 +27,10 @@ class SolutionAccountAcceptanceTest {
 
     var inOrder = inOrder(console);
     inOrder.verify(console).printLine("Date       || Amount || Balance");
-    inOrder.verify(console).printLine("16/06/2021 ||   -250 ||    1275");
-    inOrder.verify(console).printLine("15/06/2021 ||   1500 ||    1525");
-    inOrder.verify(console).printLine("12/06/2021 ||    -75 ||      25");
-    inOrder.verify(console).printLine("01/01/2021 ||    100 ||     100");
+    inOrder.verify(console).printLine(DATE_4 + " ||   -250 ||    1275");
+    inOrder.verify(console).printLine(DATE_3 + " ||   1500 ||    1525");
+    inOrder.verify(console).printLine(DATE_2 + " ||    -75 ||      25");
+    inOrder.verify(console).printLine(DATE_1 + " ||    100 ||     100");
     inOrder.verifyNoMoreInteractions();
   }
 }
