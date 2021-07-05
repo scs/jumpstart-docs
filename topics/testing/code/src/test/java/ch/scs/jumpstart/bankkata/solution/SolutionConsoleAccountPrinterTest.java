@@ -25,24 +25,7 @@ class SolutionConsoleAccountPrinterTest {
   public void print_header_if_no_statement_line() {
     consoleAccountPrinter.print(Collections.emptyList());
 
-    verify(console).printLine("Date       || Amount || Balance");
-  }
-
-  @Test
-  public void always_print_last_digit_on_same_index() {
-    consoleAccountPrinter.print(
-        List.of(
-            SolutionStatementLine.of(1, D_2021_06_15, 1),
-            SolutionStatementLine.of(20, D_2021_06_15, 20),
-            SolutionStatementLine.of(200, D_2021_06_15, 200),
-            SolutionStatementLine.of(2000, D_2021_06_15, 2000)));
-
-    var inOrder = inOrder(console);
-    inOrder.verify(console).printLine("Date       || Amount || Balance");
-    inOrder.verify(console).printLine("2021-06-15 ||      1 ||       1");
-    inOrder.verify(console).printLine("2021-06-15 ||     20 ||      20");
-    inOrder.verify(console).printLine("2021-06-15 ||    200 ||     200");
-    inOrder.verify(console).printLine("2021-06-15 ||   2000 ||    2000");
+    verify(console).printLine("Date || Amount || Balance");
   }
 
   @Test
@@ -53,8 +36,8 @@ class SolutionConsoleAccountPrinterTest {
             SolutionStatementLine.of(20, D_2021_06_16, 20)));
 
     var inOrder = inOrder(console);
-    inOrder.verify(console).printLine("Date       || Amount || Balance");
-    inOrder.verify(console).printLine("2021-06-16 ||     20 ||      20");
-    inOrder.verify(console).printLine("2021-06-15 ||      1 ||       1");
+    inOrder.verify(console).printLine("Date || Amount || Balance");
+    inOrder.verify(console).printLine(D_2021_06_16 + " || 20 || 20");
+    inOrder.verify(console).printLine(D_2021_06_15 + " || 1 || 1");
   }
 }

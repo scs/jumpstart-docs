@@ -26,11 +26,11 @@ class SolutionAccountAcceptanceTest {
     account.print();
 
     var inOrder = inOrder(console);
-    inOrder.verify(console).printLine("Date       || Amount || Balance");
-    inOrder.verify(console).printLine(DATE_4 + " ||   -250 ||    1275");
-    inOrder.verify(console).printLine(DATE_3 + " ||   1500 ||    1525");
-    inOrder.verify(console).printLine(DATE_2 + " ||    -75 ||      25");
-    inOrder.verify(console).printLine(DATE_1 + " ||    100 ||     100");
+    inOrder.verify(console).printLine("Date || Amount || Balance");
+    inOrder.verify(console).printLine(DATE_4 + " || -250 || 1275");
+    inOrder.verify(console).printLine(DATE_3 + " || 1500 || 1525");
+    inOrder.verify(console).printLine(DATE_2 + " || -75 || 25");
+    inOrder.verify(console).printLine(DATE_1 + " || 100 || 100");
     inOrder.verifyNoMoreInteractions();
   }
 }
