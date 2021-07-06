@@ -135,32 +135,136 @@ Date       ||   Amount ||  Balance
 01.01.2021 ||      100 ||      100
 ```
 
-TrailerDetector
+MovieRental Teil 1: Refactoring mit TDD
 --------
 
-Dein Kunde, ein Transportunternehmen, möchte den Anhänger seines Sattelschleppers automatisch erkennen.
-Im Anhänger sind bis zu 3 Sensoren eingebaut, mit denen ein Gerät im Lastwagen per TCP/IP kommunizieren kann.
-Die MAC-Adressen der Sensoren sind bekannt und können dann während der Fahrt wieder ermittelt werden.
-Leider werden manchmal neue Sensoren eingebaut.
-Dafür hat dein Mitarbeiter L.B. einen Service geschrieben, der Anhand einer zuvor gefüllten Datenbank
-mit den MAC-Adressen die Nummer des Anhängers ermittelt.  
-Der Algorithmus, um die Anhängernummer zu ermitteln, ist einfach gehalten:  
+In dieser Übung geht es um einen Videoverleih. Im Laden sind verschiedene Filme, abgebildet durch die Klasse Movie,
+ verfügbar. Ein Kunde (Customer) kann einen Film ausleihen (abgebildet durch Rental) für ein oder mehrere Tage
+ ausleihen.
+Es gibt für die Filme verschiedene Preiskategorien (PriceCode). Für die Kunden möchtest du eine Übersicht
+über die momentan offenen Beträge drucken. Auf diese Funktionalität kannst du mit dem CustomerController zugreifen.
+Das kannst das ganze auch interaktiv ausprobieren. Wenn du JumpstartApplication::main ausführst, dann ist auf
+[http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html) ein simples ui, mit dem du Filme,
+Kunden und Ausleihungen erfassen und die Quittung ausgeben kannst. (Das UI verwendet die Lösung als Implementation).
 
-1. Falls es nur eine MAC Adresse hat, nimm den Anhänger, an dem die MAC Addresse hängt.
-2. Falls eine Mehrheit der Sensoren in der DB am gleichen Anhänger hängt, nimm diesen Anhänger.
-3. Falls es keine klaren Mehrheitsverhältnisse gibt, nimm einfach den ersten Anhänger.
+Leider ist die Funktionalität für den Belegdruck in der Entity Customer implementiert. Weiter ist die Logik für
+die Preisberechnung vermischt mit der Formatierung des Textes für den Beleg. Der Beleg soll jetzt auch
+als JSON zur Verfügung gestellt werden, damit es mit einem WebFrontend dargestellt werden kann. Das Interface
+für das WebFrontend ist schon definiert, siehe CustomerController::getJsonInvoice und RentalStatement.
+Um Daten als JSON zu serialisieren, verwenden wir in Java Libraries. Dann können wir einfach eine Klasse definieren,
+und die Library (In diesem Fall Spring zusammen mit Jackson) konvertiert diese Klasse automatisch in JSON.
 
-Danach sollen die Sensoren in der DB an den Anhänger gehängt/verschoben werden, der ausgewählt wurde.
-Am Ende wird die Anhängernummer als Response zurückgegeben.
+In dieser Übung wirst du geführt zuerst die bestehende Funktionalität unter Test bringen und dann auslagern,
+um die zusätzlich gewünschte Funktionalität zu implementieren. Für diese Übung verwenden wir TDD, d.h. es werden
+nur Repositories (die Datenbank) gemockt.
 
-Jetzt sollen zwei Verbesserungen implementiert werden:
+### Funktionalität unter Test bringen
 
-1. Wenn es einen Fehler beim Update der Anhänger gibt, soll trotzdem die Anhängernummer mit einem HttpStatus 200
-zurückgegeben werden.
-2. Für einen zweiten Kunden soll es noch eine "Spezial MAC Adresse" Regel geben. Die haben gewisse Sensoren,
-die sicher im gleichen Anhänger bleiben. Diese sollen Präzedenz vor der Mehrheitsregel haben.  
-Den Fall, dass zwei "Spezial MAC Adressen" im gleichen Anhänger sind, musst du nicht beachten.
-Der Einfachheit halber fangen wir mit einer einzigen hart kodierten "Spezial MAC Adresse" an.
+Vervollständige die Tests in SolutionCustomerControllerTest, so dass die Code Coverage in
+CustomerController und Customer fast 100% beträgt.
+(Bis auf die Methode getJsonInvoice in CustomerController ist alles getestet.)
 
-Leider ist L.B. gerade in den Ferien und hat alles in den Controller gepackt.
-Implementiere diese zwei zusätzlichen Features.
+### Verschieben des Aufrufs
+
+Der Code für die Preisberechnung und Formatierung ist momentan in der Entity. Entities sollen aber keine Logik
+enthalten. Wir wollen die Funktionalität schlussendlich auf die beiden Klassen RentalStatementFactory und
+RentalStatementTextFormatter aufteilen. Dabei wollen wir bei jedem Schritt die Testabdeckung behalten oder sogar
+erweitern. Dieser Schritt ist sehr simpel: Implementiere die Funktionalität von RentalStatementFactory mit
+`return customer.statement()`. Übergib dann die Klasse RentalStatementFactory im Konstruktor der Klasse
+CustomerController. Ändere dann die Methode CustomerController::getInvoice: statt direkt customer.statement()
+aufzurufen, rufe RentalStatementFactory::createStatement auf. Lasse alle Tests laufen, ist alles covered?
+
+### Inline von Customer::statement
+
+Jetzt kannst du mit Test Coverage die Methode RentalStatementFactory::createStatement umbauen.
+Wir fangen an, indem wir die Methode Customer.statement() inlinen (`Ctrl + Alt + N`). Dies ist ein von der IDE
+unterstütztes Refactoring, somit sollte die Funktionalität nicht ändern. Aber du überprüfst das natürlich, indem du
+die Tests laufen lässt. Wir haben jetzt eine neue Klasse mit Funktionalität, aber ohne Unittests. Um die Klasse
+RentalStatementFactory später refactoren zu können, müssen wir sie auch wieder unter Test bringen. Auch bei TDD
+sollte man die Klassen nicht indirekt (z.b. über den CustomerControllerTest) testen.
+
+### Refactoring von RentalStatementFactory::createStatement
+
+Jetzt kannst du die beiden Concerns (Preisberechnung und Formatierung) innerhalb der Methode trennen.
+Um die Preisberechnung zu speichern, kannst du schon die Klassen RentalStatement und RentalStatementMovie verwenden.
+Lasse wie immer danach die Tests laufen.
+
+### Extrahieren der Formatierung
+
+Jetzt extrahieren wir den Formatierungsteil aus der Klasse RentalStatementFactory in die Klasse
+RentalStatementTextFormatter. In einem ersten Schritt verwenden wir aber noch RentalStatementTextFormatter in der
+Klasse RentalStatementFactory, damit wir die Unittests von RentalStatementFactory noch verwenden können.
+Verschiebe die Formatierungslogik von RentalStatementFactory in RentalStatementTextFormatter, und übergib die Klasse
+RentalStatementTextFormatter im Konstruktor der Klasse RentalStatementFactory. Rufe dann in
+RentalStatementFactory::createStatement RentalStatementTextFormatter::format auf. Jetzt haben wir wieder eine neue
+Klasse ohne Unittests. Schreibe Unitests für die Klasse RentalStatementTextFormatter. Um dir das Leben einfacher zu
+machen, ist schon der RentalStatementBuilder vorbereitet. Die Tests für RentalStatementTextFormatter sind jetzt
+einfacher zu schreiben, da du dir nicht mehr um die Preisberechnung Gedanken machen musst.
+Du gibst ein paar Strings und Floats als Input, und überprüfst, dass Newlines und Tabs richtig dazwischen gesetzt
+werden.
+
+### Ändern des Interfaces von RentalStatementFactory
+
+Wir wollen ja das RentalStatement selbst auch auf der API ausgeben können. Deshalb wollen wir, dass
+RentalStatementFactory::createStatement ein RentalStatement ausgibt. Dann können wir selber im Caller
+(CustomerController) entscheiden, ob wir das noch formattieren wollen, oder nicht.
+Dazu musst du folgendes machen:
+
+1. Entferne den Aufruf von RentalStatementTextFormatter::format aus RentalStatementFactory::createStatement
+1. Das Interface ändert sich, also musst du jetzt die Tests von RentalStatementTextFormatter anpassen.
+1. In RentalStatementFactory brauchst du jetzt keinen RentalStatementTextFormatter mehr, du kannst ihn als Konstruktor
+   Parameter entfernen.
+1. CustomerController braucht jetzt aber RentalStatementTextFormatter, füge ihn deshalb hier als Konstruktor Parameter
+   hinzu.
+1. Ändere den Code in CustomerController::getInvoice so, dass du zuerst das RentalStatement mit
+   RentalStatementFactory::createStatement erzeugst, und dann dieses mit RentalStatementTextFormatter::format
+   formatierst. Jetzt sollte alles wieder kompilieren und alle Tests grün sein.
+
+### Implementieren von CustomerController::getJsonInvoice
+
+Implementiere jetzt den Test CustomerControllerTest::return_json_invoice und die Methode
+CustomerController::getJsonInvoice.
+
+### Refactoring der Tests
+
+Jetzt musst du in CustomerControllerTest nicht mehr alle Fälle für die Formatierung beachten.
+Hier brauchst du die beiden notFound Tests für die getInvoice Methode plus einen Erfolgsfall.
+Die Spezialfälle für die Preisberechnung kannst du jetzt in RentalStatementFactoryTest testen. Die Spezialfälle
+für die Formatierung gehören in RentalStatementTextFormatterTest. Plus du hast die zusätzliche Funktionalität
+implementiert. Überlege, welche Tests du jetzt verschieben/löschen kannst, und mache das dann.
+
+MovieRental Teil 2: Integrationstests
+--------
+
+Jetzt geht es darum, für die MovieRental Funktionalität einen Integrationstest zu schreiben.
+Die erste Frage, die man sich stellen muss: Was möchte ich im Integrationstest testen, was im Unittest?
+In dieser Übung ist die Frage schon für dich beantwortet, wir diskutieren am Ende noch zusammen,
+ob die Aufteilung sinnvoll war. Ignoriere hier mal die Spring Magic, sondern copy paste die Verwendung
+von WebTestClient und passie sie wenn nötig an.
+
+### Implementieren der Tests
+
+Implementiere die momentan leeren Tests in SpringCustomerControllerIT.
+
+### Testreihenfolge
+
+Wenn du jetzt den Test `add_customer_and_return_added_customer` zuletzt laufen lässt (am einfachsten in
+`zadd_customer_and_return_added_customer` umbenennen), laufen die Tests nicht mehr durch.
+Leider wird die Spring Application am Anfang der Klasse gestartet,
+die Datenbank ist somit zwischen den einzelnen Testmethoden die gleiche. Du musst also entweder in der mit
+@BeforeEach annotierten Methode einen initialen Datenbankzustand herstellen, oder in einer neuen @AfterEach Methode
+die Datenbank aufräumen. Ändere den Test so, dass die Testreihenfolge egal ist.
+
+### Zusatzaufgabe Aufteilung Integrationstest/Unittest
+
+Überlege dir, welchen Teil der Funktionalität du mit einem Integrationstest, welchen du mit einem Unittest getestet
+hättest. Bist du mit der Lösung einverstanden?
+
+### Zusatzaufgabe Ungültiger Request
+
+Schreibe einen Test, bei dem du ein ungültiges JSON an einen POST Endpoint sendest.
+Welchen HTTP Statuscode erwartest du, welcher kommt zurück?
+Finde mit einer Suchmaschine heraus, wie du den erwarteten HTTP Status Code zurückgeben kannst.
+Frameworks und Libraries sind super, man muss sie aber auch richtig verwenden. Und manchmal verhalten sie sich
+in gewissen Edge Cases anders, als du dir das wünschst. Deshalb sind Integrationstests wichtig, bei denen man die
+Library/das Framework auch testet.

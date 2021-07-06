@@ -146,10 +146,10 @@ Arrange, Act, Assert
 * Assert: Überprüfen, dass nur das gewünschte Verhalten ausgelöst wurde.
 * *Kontrovers:* Diese Teile können auch wiederholt werden, falls ein Verhalten mit mehreren Schritten getestet wird.
 
-Übung TDD mit mehreren Klassen (TrailerDetector)
+Übung TDD mit mehreren Klassen (MovieRental Teil 1)
 -------
 
-Zusammenfassung TDD mit mehreren Klassen (TrailerDetector)
+Zusammenfassung TDD mit mehreren Klassen (MovieRental Teil 1)
 -------
 
 * Funktionalität in neue Klasse auslagern + gleich integrieren, Test bleibt grün
