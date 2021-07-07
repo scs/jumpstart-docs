@@ -409,8 +409,8 @@ Scripts
 * Während der Entwicklung kann das Skript mit dem Interpreter aufgerufen werden.  
 z. B. `bash myscript`, `python myscript`
 * Für den produktiven Einsatz sollte der Interpreter mit der shebang line (1. Zeile) angegeben werden  
-`!#/usr/bin/sh`  
-`!#/usr/bin/python`  
+`#!/usr/bin/sh`  
+`#!/usr/bin/python`  
 Dann muss man den Interpreter nicht erraten, sondern kann einfach `/usr/local/bin/myscript` aufrufen.
 
 Scripts
