@@ -38,13 +38,27 @@ Infrastruktur
 
 *Tools*:
 
+\colBegin{0.5}
+
+Configuration Management
+
 * Ansible
 * Chef
 * Puppet
-* Terraform
-* Vagrant
+
+\colNext{0.5}
+
+Infrastructure Management
+
+* Terraform (Cloud: AWS, Azure, etc.)
+* Vagrant (nur für lokale Entwickler-VMs)
+
+Container
+
 * Kubernetes
 * Docker Compose
+
+\colEnd
 
 
 Ansible

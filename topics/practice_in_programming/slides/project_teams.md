@@ -11,7 +11,7 @@ Effizientes Arbeiten
   * Know-How-Austausch
 * *Prozesse*
   * Requirements-Engineering
-  * Task-Planing
+  * Task-Planning
   * Daily/Weekly-Meetings
   * Reviews
   * Kunden-Feedback
