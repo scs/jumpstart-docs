@@ -64,83 +64,12 @@ Implementiere die Funktion LeapYear::isLeapYear für Jahre > 0 nach folgenden Re
 1. Ein Jahr ist trotz Regel 1 kein Schaltjahr, wenn es durch 100 Teilbar ist.
 1. Ein Jahr ist trotz Regel 2 ein Schaltjahr, wenn es durch 400 Teilbar ist.
 
-BankKata
---------
-
-In dieser Übung sollst du die Transaktionen eines Bankkontos in der Konsole ausgeben.
-Und zwar sollen die Transaktionen von neu nach alt aufgelistet werden.
-Weiter soll der Kontostand nach jeder Transaktion ausgegeben werden.
-
-Beispiel: Gegeben seien folgende Transaktionen:
-
-1. 2021-01-01 Einzahlung: 100
-1. 2021-06-12 Auszahlung: 75
-1. 2021-06-15 Einzahlung: 1500
-1. 2021-06-16 Auszahlung: 250
-
-Dann soll auf der Konsole folgendes ausgegeben werden:
-
-```shell
-Date || Amount || Balance
-2021-06-16 || -250 || 1275
-2021-06-15 || 1500 || 1525
-2021-06-15 || -75 || 25
-2021-01-01 || 100 || 100
-```
-
-Das Ziel ist, dass du Mockito.mock, Mockito.when, Mockito.verify und Mockito.inOrder verwendest.
-Mockito.inOrder brauchst du, um die Reihenfolge der Methodenaufrufe zu überprüfen. Mockito.verify überprüft nur,
-ob irgendwann in deinem Test die Methode mit den definierten Parametern aufgerufen wird.
-Du brauchst für diese Übung keine MatcherAssert.assertThat von Hamcrest.
-
-\textbf{Es ist nicht erlaubt, das Interface der Klasse Account zu ändern.} Interface nicht ändern heisst: keine public oder
-protected Methoden hinzufügen oder entfernen. Die Signatur der Methoden darf nicht geändert werden.
-Du darfst einen public Konstruktor hinzufügen.
-
-\lstinputlisting[language=Java]{code/src/main/java/ch/scs/jumpstart/bankkata/exercise/Account.java}
-
-### Grundaufgabe
-
-Vorgehen:
-
-1. Schreibe einen Acceptance Test für die Klasse Account.
-    1. Du wirst dafür die Clock mocken müssen. Du musst also eine Wrapper Klasse (z.b. Clock) schreiben,
-    bei der die Klasse Account das Datum für die Transaktion abfragen kann.
-    1. Du wirst dafür den Konsolenoutput (in Java statisch mit System.out.println) überprüfen müssen. Auch hier brauchst
-    du eine Wrapper Klasse.
-    1. Überlege dir vor dem Implementieren des Tests das Design. Soll die Klasse Account auch den Konsolen Output
-    formattieren? Welche Klasse sorgt dafür, dass die Transaktionen von neu nach alt sortiert werden?
-    Welche Klasse summiert den Kontostand? Was sind die Interfaces der verschiedenen Klassen?
-1. Implementiere die Klasse Account Test driven. Du brauchst für die Klasse Account jetzt zusätzlich einen Unittest.
-1. Implementiere alle weiteren Klassen aus deinem Design Test driven. Wenn du den letzten Unittest der letzten Klasse
-implementierst, sollte der Acceptance Test auch grün werden. Danach das Refactoring nicht vergessen.
-
-### Zusatzaufgabe: Formatierung
-
-#### Datum formatieren
-\
-Formatiere das Datum so, wie im deutschen Sprachgebrauch üblich:  
-06.06.2016 statt 2016-06-06
-
-#### Zahlen ausrichten
-\
-Richte die Zahlen so aus, dass immer die gleiche Stelle übereinander ausgegeben wird.
-Das Konto ist limitiert auf 8 stellige Beträge.
-
-```shell
-Date       ||   Amount ||  Balance
-16.06.2021 ||     -250 ||     1275
-15.06.2021 ||     1500 ||     1525
-12.06.2021 ||      -75 ||       25
-01.01.2021 ||      100 ||      100
-```
-
 MovieRental Teil 1: Refactoring mit TDD
 --------
 
 In dieser Übung geht es um einen Videoverleih. Im Laden sind verschiedene Filme, abgebildet durch die Klasse Movie,
- verfügbar. Ein Kunde (Customer) kann einen Film ausleihen (abgebildet durch Rental) für ein oder mehrere Tage
- ausleihen.
+verfügbar. Ein Kunde (Customer) kann einen Film ausleihen (abgebildet durch Rental) für ein oder mehrere Tage
+ausleihen.
 Es gibt für die Filme verschiedene Preiskategorien (PriceCode). Für die Kunden möchtest du eine Übersicht
 über die momentan offenen Beträge drucken. Auf diese Funktionalität kannst du mit dem CustomerController zugreifen.
 Das kannst das ganze auch interaktiv ausprobieren. Wenn du JumpstartApplication::main ausführst, dann ist auf
@@ -232,6 +161,77 @@ Hier brauchst du die beiden notFound Tests für die getInvoice Methode plus eine
 Die Spezialfälle für die Preisberechnung kannst du jetzt in RentalStatementFactoryTest testen. Die Spezialfälle
 für die Formatierung gehören in RentalStatementTextFormatterTest. Plus du hast die zusätzliche Funktionalität
 implementiert. Überlege, welche Tests du jetzt verschieben/löschen kannst, und mache das dann.
+
+BankKata
+--------
+
+In dieser Übung sollst du die Transaktionen eines Bankkontos in der Konsole ausgeben.
+Und zwar sollen die Transaktionen von neu nach alt aufgelistet werden.
+Weiter soll der Kontostand nach jeder Transaktion ausgegeben werden.
+
+Beispiel: Gegeben seien folgende Transaktionen:
+
+1. 2021-01-01 Einzahlung: 100
+1. 2021-06-12 Auszahlung: 75
+1. 2021-06-15 Einzahlung: 1500
+1. 2021-06-16 Auszahlung: 250
+
+Dann soll auf der Konsole folgendes ausgegeben werden:
+
+```shell
+Date || Amount || Balance
+2021-06-16 || -250 || 1275
+2021-06-15 || 1500 || 1525
+2021-06-15 || -75 || 25
+2021-01-01 || 100 || 100
+```
+
+Das Ziel ist, dass du Mockito.mock, Mockito.when, Mockito.verify und Mockito.inOrder verwendest.
+Mockito.inOrder brauchst du, um die Reihenfolge der Methodenaufrufe zu überprüfen. Mockito.verify überprüft nur,
+ob irgendwann in deinem Test die Methode mit den definierten Parametern aufgerufen wird.
+Du brauchst für diese Übung keine MatcherAssert.assertThat von Hamcrest.
+
+\textbf{Es ist nicht erlaubt, das Interface der Klasse Account zu ändern.} Interface nicht ändern heisst: keine public oder
+protected Methoden hinzufügen oder entfernen. Die Signatur der Methoden darf nicht geändert werden.
+Du darfst einen public Konstruktor hinzufügen.
+
+\lstinputlisting[language=Java]{code/src/main/java/ch/scs/jumpstart/bankkata/exercise/Account.java}
+
+### Grundaufgabe
+
+Vorgehen:
+
+1. Schreibe einen Acceptance Test für die Klasse Account.
+    1. Du wirst dafür die Clock mocken müssen. Du musst also eine Wrapper Klasse (z.b. Clock) schreiben,
+    bei der die Klasse Account das Datum für die Transaktion abfragen kann.
+    1. Du wirst dafür den Konsolenoutput (in Java statisch mit System.out.println) überprüfen müssen. Auch hier brauchst
+    du eine Wrapper Klasse.
+    1. Überlege dir vor dem Implementieren des Tests das Design. Soll die Klasse Account auch den Konsolen Output
+    formattieren? Welche Klasse sorgt dafür, dass die Transaktionen von neu nach alt sortiert werden?
+    Welche Klasse summiert den Kontostand? Was sind die Interfaces der verschiedenen Klassen?
+1. Implementiere die Klasse Account Test driven. Du brauchst für die Klasse Account jetzt zusätzlich einen Unittest.
+1. Implementiere alle weiteren Klassen aus deinem Design Test driven. Wenn du den letzten Unittest der letzten Klasse
+implementierst, sollte der Acceptance Test auch grün werden. Danach das Refactoring nicht vergessen.
+
+### Zusatzaufgabe: Formatierung
+
+#### Datum formatieren
+\
+Formatiere das Datum so, wie im deutschen Sprachgebrauch üblich:  
+06.06.2016 statt 2016-06-06
+
+#### Zahlen ausrichten
+\
+Richte die Zahlen so aus, dass immer die gleiche Stelle übereinander ausgegeben wird.
+Das Konto ist limitiert auf 8 stellige Beträge.
+
+```shell
+Date       ||   Amount ||  Balance
+16.06.2021 ||     -250 ||     1275
+15.06.2021 ||     1500 ||     1525
+12.06.2021 ||      -75 ||       25
+01.01.2021 ||      100 ||      100
+```
 
 MovieRental Teil 2: Integrationstests
 --------
