@@ -598,7 +598,7 @@ Authentication Agents
   * Linux: ssh-agent
 
 \centering
-![ssh-agent-forwarding](images/ssh-agent-forwarding.jpeg){width=60%}
+![ssh-agent-forwarding](images/ssh-agent-forwarding.pdf){width=60%}
 
 Putty Agent forwarding
 -------
