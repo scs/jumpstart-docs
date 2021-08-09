@@ -145,7 +145,7 @@ Pipe + Redirection
 * Programme in Linux können auf verschiedene Art und Weise verbunden werden
 * Pipe: `|`
 
-![pipe](images/pipe.png)
+![pipe](images/pipe.pdf)
 
 Beispiel:
 
