@@ -62,7 +62,7 @@ File manipulation
 History
 -------
 
-* Jeden Befehl, den man ausführt, wird nach der Ausführung in ~/.bash_history gespeichert
+* Jeder Befehl, den man ausführt, wird nach der Ausführung in ~/.bash_history gespeichert
 * Deshalb *keine Passwörter* in einem Befehl eingeben.  
   Stattdessen beim Programm die Option für Password Prompt verwenden.
 * Mit `history` kannst du die History ausgeben. Diese kann lang sein, deshalb eventuell: `history | less`
@@ -549,7 +549,7 @@ SSH
 * Steht für *S*ecure *Sh*ell
 * Stellt über das Netz eine Shell auf einem Computer zur Verfügung.  
 `ssh [USER@]HOST`
-* Für Windows gibt es verschiedene Implementationen, hier ein zwei Beispiele:
+* Für Windows gibt es verschiedene Implementationen, hier zwei Beispiele:
   * PuTTY (Mit GUI)
   * git bash hat openssh-client eingebaut.  
   git bash wird installiert, wenn man git auf Windows installiert.
