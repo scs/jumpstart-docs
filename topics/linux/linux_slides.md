@@ -178,11 +178,6 @@ Aufgabe Bash Befehle in Linux
 Editors
 ==============
 
-Editors
--------
-
-![Editor Wars](images/editor_war.png)
-
 Nano
 -------
 
