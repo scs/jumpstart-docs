@@ -57,7 +57,7 @@ Ablauf:
 Red Green Refactor
 -------
 
-![TDD](images/tdd.png)
+![TDD](images/tdd.pdf){height=95%}
 
 Definition Unittest TDD
 -------
@@ -198,7 +198,7 @@ Ausser natürlich Memory und CPU
 Red Green Refactor on steroids
 -------
 
-![BDD](images/bdd.png)
+![BDD](images/bdd.pdf){height=120%}
 
 Demo Test Klasse mit State (BankKata)
 -------
