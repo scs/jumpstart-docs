@@ -198,6 +198,10 @@ Vi/Vim
 
 ![vi modes](images/vi-modes.png)
 
+[modes.png](https://github.com/nilp0inter/Vim-for-Muggles/blob/8ba350ff6f993d6bbb5ae17a8b03dac16eb2c05d/modes.png) von
+ [Roberto Abdelkader Martínez Pérez](https://github.com/nilp0inter), Lizenz:
+ [CC BY 4.0](http://creativecommons.org/licenses/by/4.0/)
+
 Vi/Vim 2
 -------
 
