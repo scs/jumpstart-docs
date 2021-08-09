@@ -133,15 +133,6 @@ Demo rsync verwenden Anhand von manpage
 Pipe + Redirection
 -------
 
-\huge
-
-> Write programs that do one thing and do it well.  
-*Write programs to work together.  
-Write programs to handle text streams, because that is a universal interface.*
-
-Pipe + Redirection
--------
-
 * Programme in Linux können auf verschiedene Art und Weise verbunden werden
 * Pipe: `|`
 
@@ -390,15 +381,6 @@ drwxr-s--- 2 postgres postgres 100 Jun 10 13:45 12-main.pg_stat_tmp
 
 Scripts
 ==============
-
-Scripts
--------
-
-\huge
-
-> *Write programs that do one thing and do it well.*  
-Write programs to work together.  
-Write programs to handle text streams, because that is a universal interface.
 
 Scripts
 -------
