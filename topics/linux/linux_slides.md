@@ -624,8 +624,10 @@ Linux Directory Struktur
 -------
 
 \centering
-![Linux Directory Struktur](images/Linux-Directory-Structure.jpeg){height=80%}  
-[Quelle: https://www.tecmint.com](https://web.archive.org/web/20210226103146/https://www.tecmint.com/linux-directory-structure-and-important-files-paths-explained/linux-directory-structure/)
+![Linux Directory Struktur](images/linux-directory-structure.pdf){height=90%}  
+Grafik benutzt Material von [Wikipedia](https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard), Lizenz:
+ [CC BY-SA](https://creativecommons.org/licenses/by-sa/3.0/)
+
 
 Daemons
 -------
