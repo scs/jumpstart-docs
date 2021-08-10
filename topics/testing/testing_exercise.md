@@ -180,6 +180,8 @@ Beispiel: Gegeben seien folgende Transaktionen:
 1. 2021-06-15 Einzahlung: 1500
 1. 2021-06-16 Auszahlung: 250
 
+\newpage
+
 Dann soll auf der Konsole folgendes ausgegeben werden:
 
 ```shell
