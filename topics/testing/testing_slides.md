@@ -272,5 +272,5 @@ Fragen bei Systemtests
 Reserve
 -------
 
-Übung BDD (TrailerDetector)
+Übung Integrationstests (MovieRental Part 2)
 -------
