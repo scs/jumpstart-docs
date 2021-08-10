@@ -110,21 +110,6 @@ Zusammenfassung Demo Unittest einer Funktion (MyStack)
 Demo Parametrized Tests (RomanNumerals)
 -------
 
-Parametrized Tests in anderen Sprachen: PHP + PHPUnit
--------
-
-\lstinputlisting[language=PHP, firstline=228, lastline=252, basicstyle=\tiny]{assets/CampCollaborationTest.php}
-
-Parametrized Tests in anderen Sprachen: JavaScript + Jest 1
--------
-
-\lstinputlisting[language=C, firstline=17, lastline=44, basicstyle=\tiny]{assets/EDatePicker.spec.js}
-
-Parametrized Tests in anderen Sprachen: JavaScript + Jest 2
--------
-
-\lstinputlisting[language=C, firstline=45, lastline=70, basicstyle=\tiny]{assets/EDatePicker.spec.js}
-
 Übung Unittest einer Funktion Parametrized (LeapYear)
 -------
 
