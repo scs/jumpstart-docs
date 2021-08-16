@@ -15,8 +15,6 @@ Inhalt
 * Aufgaben lösen
 * Concurrency vs. Parallelism
 * *Praxis Block 2*
-* Docker
-* *Praxis Block 3*
 * Weiterführendes
 
 <#include slides/project_teams.md>
@@ -26,6 +24,4 @@ Inhalt
 <#include slides/problem_solving.md>
 <#include slides/concurrency_vs_parallelism.md>
 <#include slides/practice_2.md>
-<#include slides/docker.md>
-<#include slides/practice_3.md>
 <#include slides/links.md>
