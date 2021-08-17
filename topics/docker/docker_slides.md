@@ -8,11 +8,19 @@ title: "Jumpstart - Docker"
 Inhalt
 ------
 
-* Docker
-* *Praxis Block 3*
+* Konzepte
+* Basics
+* *Praxis Block 1*
+* Orchestrieren
+* *Praxis Block 2*
+* Tipps und Tricks
 * Weiterführendes
 
-<#include slides/docker.md>
+<#include slides/concepts.md>
+<#include slides/basics.md>
 <#include slides/practice_1.md>
+<#include slides/orchestrate.md>
+<#include slides/practice_2.md>
+<#include slides/tipps.md>
 <#include slides/additional.md>
 <#include slides/links.md>
