@@ -220,7 +220,7 @@ function(js_global_file_archive TARGET)
     )
 
     add_custom_target(
-            ${TARGET}
+            ${TARGET}_archive
             DEPENDS ${TARGET}.zip
     )
 endfunction()

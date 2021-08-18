@@ -8,4 +8,4 @@ add_subdirectory(linux)
 add_subdirectory(practice_in_programming)
 add_subdirectory(testing)
 
-js_global_file_archive(archive)
+js_global_file_archive(jumpstart)
