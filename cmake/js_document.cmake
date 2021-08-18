@@ -16,13 +16,13 @@ set(JS_CMAKE_DIR ${CMAKE_CURRENT_LIST_DIR})
 function(js_script name sources)
     set(sources ${sources} ${ARGN})
     set(pdf_name ${name}.pdf)
-    file(GLOB_RECURSE code "code/*.*")
+    file(GLOB_RECURSE code "code/*")
     list(FILTER code EXCLUDE REGEX ".*/target/.*")
 
     get_subdirs(include_paths ${CMAKE_CURRENT_SOURCE_DIR})
     list(FILTER include_paths EXCLUDE REGEX ".*/target/.*")
     list(FILTER include_paths EXCLUDE REGEX ".*/code")
-    file(GLOB code_files "code/*.*")
+    file(GLOB code_files "code/*")
     list(APPEND include_paths ${code_files})
 
     gpp_preprocessor(
@@ -61,13 +61,13 @@ function(js_exercise name sources)
     set(sources ${sources} ${ARGN})
     set(pdf_name ${name}.pdf)
     set(solution_pdf_name ${name}_solution.pdf)
-    file(GLOB_RECURSE code "code/*.*")
+    file(GLOB_RECURSE code "code/*")
     list(FILTER code EXCLUDE REGEX ".*/target/.*")
 
     get_subdirs(include_paths ${CMAKE_CURRENT_SOURCE_DIR})
     list(FILTER include_paths EXCLUDE REGEX ".*/target/.*")
     list(FILTER include_paths EXCLUDE REGEX ".*/code")
-    file(GLOB code_files "code/*.*")
+    file(GLOB code_files "code/*")
     list(APPEND include_paths ${code_files})
 
     gpp_preprocessor(
@@ -129,7 +129,7 @@ function(js_slides name sources)
     get_subdirs(include_paths ${CMAKE_CURRENT_SOURCE_DIR})
     list(FILTER include_paths EXCLUDE REGEX ".*/target/.*")
     list(FILTER include_paths EXCLUDE REGEX ".*/code")
-    file(GLOB code_files "code/*.*")
+    file(GLOB_RECURSE code_files "code/*")
     list(APPEND include_paths ${code_files})
 
     gpp_preprocessor(
