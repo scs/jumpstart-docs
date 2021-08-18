@@ -125,6 +125,8 @@ endfunction()
 function(js_slides name sources)
     set(sources ${sources} ${ARGN})
     set(pdf_name ${name}.pdf)
+    file(GLOB_RECURSE code "code/*")
+    list(FILTER code EXCLUDE REGEX ".*/target/.*")
 
     get_subdirs(include_paths ${CMAKE_CURRENT_SOURCE_DIR})
     list(FILTER include_paths EXCLUDE REGEX ".*/target/.*")
@@ -153,6 +155,8 @@ function(js_slides name sources)
     )
 
     js_add_to_global_archive_file_list(${pdf_name})
+
+    pandoc_resource_files(${pdf_name} ${CMAKE_CURRENT_SOURCE_DIR} ${code})
 
     file(GLOB_RECURSE logos "${JS_CMAKE_DIR}/latex/logos/*.png")
     pandoc_resource_files(${pdf_name} ${JS_CMAKE_DIR}/latex/ ${logos})
