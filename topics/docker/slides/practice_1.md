@@ -2,8 +2,8 @@ Praxis Block 1
 ==============
 
 
-Docker
-------
+Interactive Tutorials
+---------------------
 
 *Übungen* von: [play_with_docker_classroom]
 
@@ -13,3 +13,6 @@ Docker
 * Orchestrierung mehrere Container mit `docker-compose`: [pwd_microservice-orchestration]
 
 Freier Playground: [play_with_docker_playground]
+
+Wenn der Playground nicht geeignet ist,
+kann die Docker-Installation in der *jumpstart-vm* verwendet werden.
