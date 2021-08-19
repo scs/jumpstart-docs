@@ -130,7 +130,7 @@ Persistenz
 * Persistenz wird *ausserhalb* gelöst (nicht im Container-Layer)
 
 \centering
-![docker_mounts](images/docker_mounts.png){width=60%}
+![docker_mounts](images/docker_storage.pdf){width=65%}
 
 ### Varianten
 

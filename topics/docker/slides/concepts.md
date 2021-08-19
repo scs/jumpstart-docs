@@ -32,7 +32,7 @@ Konzepte
 Container vs. Virtual Machine
 -----------------------------
 
-![virtualization_vs_containers](images/virtualization_vs_containers.png)
+![virtualization_vs_containers](images/virtualization_vs_containers.pdf)
 
 [containers_vs_vms]
 
@@ -63,7 +63,7 @@ Was ist Docker?
 Docker Architektur
 ------------------
 
-![docker_architecture](images/docker_architecture.png)
+![docker_architecture](images/docker_architecture.pdf)
 
 [docker_get_started]
 
@@ -94,7 +94,9 @@ Runtime: containerd
 \centering
 ![containerd_architecture](images/containerd_architecture.png){width=90%}
 
-[containerd.io/img/architecture.png](https://containerd.io/img/architecture.png)
+[architecture.png](https://containerd.io/img/architecture.png)
+by [The Linux Foundation](https://www.linuxfoundation.org)
+licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
 
 Docker Images
@@ -130,9 +132,13 @@ Docker Images
 
 ~~~ {.dockerfile}
 # syntax=docker/dockerfile:1
-FROM ubuntu:15.04
+
+FROM ubuntu:20.04
+
 COPY . /app
+
 RUN make /app
+
 CMD python /app/app.py
 ~~~
 
@@ -141,6 +147,22 @@ Beispiel von hier:
 
 \colNext{0.6}
 
-![container-layers](images/container-layers.jpg)
+Container based on ubuntu:20.04 image
+
+\small
+
+~~~
+------------------------------
+d3a3b2737d            200.0 MB  \
+                                |
+c86d237daa            190.0 KB  |
+                                > Image Layers
+d002db893a            1.203 KB  | (Read only)
+                                |
+91ef45d2ab                0 B  /
+------------------------------
+Thin Read/Write Layer        <-- Container Layer
+------------------------------
+~~~
 
 \colEnd
