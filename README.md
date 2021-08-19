@@ -28,6 +28,6 @@ Die Unterlagen sind in `markdown` (und `latex`) geschrieben
 und werden mithilfe von `pandoc` und weiteren Tools zu PDFs kompiliert.
 [docmake](https://github.com/langchr86/docmake) hilft mit der Integration in cmake.
 
-Falls externe Ressourcen verwendet werden, müssen die korrekt zitiert werden.
-Als Bilder von externen Ressourcen werden nur Bilder mit einer Creative Commons Lizenz
-verwendet. Die korrekte Verwendung ist hier beschrieben: [Creative Commons - Use & Remix](https://creativecommons.org/use-remix/)
+Falls externe Ressourcen verwendet werden, müssen diese korrekt zitiert werden.
+Es sind nur externe Ressourcen (z.B. Bilder) mit einer Creative Commons Lizenz erlaubt.
+Die korrekte Zitierung ist hier beschrieben: [Creative Commons - Use & Remix](https://creativecommons.org/use-remix/)
