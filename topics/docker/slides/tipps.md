@@ -2,14 +2,14 @@ Tipps und Tricks
 ================
 
 
-Tipps
------
+Container als "VM" verwenden
+----------------------------
 
 \colBegin{0.6}
 
-Als "VM" verwenden.
-
 ~~~ {.dockerfile}
+FROM ...
+
 ...
 
 # create user
@@ -44,28 +44,32 @@ ssh sdkuser@localhost -A -p 2201
 \colEnd
 
 
-Tipps
------
+SSH Agent im Container
+----------------------
 
-* SSH *authentication agent* im Docker mit `docker run`:
+SSH *authentication agent* im Docker mit `docker run`:
 
-  ~~~ {.bash}
-  docker run -it --rm \
-    --volume $SSH_AUTH_SOCK:/tmp/ssh_auth_sock \
-    --env SSH_AUTH_SOCK=/tmp/ssh_auth_sock \
-    <container_name/hash>
-  ~~~
+~~~ {.bash}
+docker run -it --rm \
+  --volume $SSH_AUTH_SOCK:/tmp/ssh_auth_sock \
+  --env SSH_AUTH_SOCK=/tmp/ssh_auth_sock \
+  <container_name/hash>
+~~~
 
-* Dateien im gleichen `RUN` Kommando *aufräumen*. So bleibt der Layer *klein*.
 
-  ~~~ {.dockerfile}
-  # install all needed packages
-  RUN apt-get update \
-      && apt-get install -y --no-install-recommends \
-          git-core \
-          rsync \
-      && rm -rf /var/lib/apt/lists/*
-  ~~~
+Layer klein halten
+------------------
+
+Dateien im gleichen `RUN` Kommando *aufräumen*. So bleibt der Layer *klein*.
+
+~~~ {.dockerfile}
+# install all needed packages
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        git-core \
+        rsync \
+    && rm -rf /var/lib/apt/lists/*
+~~~
 
 
 Multistage Build
@@ -108,25 +112,3 @@ COPY --from=build /build/my_app /bin/my_app
 \colEnd
 
 
-Container als Service
----------------------
-
-*Restart always*:
-
-~~~ {.bash}
-docker run -d --restart always <image_tag>
-~~~
-
-Oder besser mit *`docker-compose`*:
-
-~~~ {.yaml}
-version: '3'
-services:
-  <my_container>:
-    image: <image_tag>
-    restart: always
-~~~
-
-[docker_restart_policies]
-
-oder als Systemd-Unit: [docker_compose_systemd_unit]

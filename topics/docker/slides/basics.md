@@ -55,10 +55,10 @@ Build Context
 
 ~~~ {.bash}
 # hier wird "Dockerfile" im Kontext "." gesucht
-$ docker build .
+docker build .
 
 # hier wird das Dockerfile explizit angegeben (kann ausserhalb des Kontext liegen)
-$ docker build -f /path/to/a/docker_file .
+docker build -f /path/to/a/docker_file .
 ~~~
 
 
@@ -256,6 +256,27 @@ docker run -p 2222:22 -p 2323:23/tcp ...
 ~~~
 
 Es können auch Ports geöffnet werden die *nicht* `EXPOSE` sind.
+
+
+Netzwerk-IP-Pools
+-----------------
+
+Docker *Default-Netzwerk*: `172.18.0.1`
+$\break\to$ überschneidet sich genau mit dem *SCS internen Netz*!
+  
+Sollte *immer* im Docker Daemon konfiguriert werden: `/etc/docker/daemon.json`
+
+~~~ {.json}
+{
+  "bip": "172.28.0.1/24",
+  "default-address-pools": [
+    {"base":"172.28.0.0/16", "size":24}
+  ],
+  "dns": [
+    "172.18.0.100", "172.18.0.101", "172.20.4.1", "172.24.0.101", "8.8.8.8", "8.8.4.4"
+  ]
+}
+~~~
 
 
 Image-Registry

@@ -11,6 +11,7 @@ Docker
 [containers_vs_vms]: https://www.redhat.com/en/topics/containers/containers-vs-vms
 [podman]: https://podman.io/
 [docker_get_started]: https://docs.docker.com/get-started/overview/
+[container_wording]: https://www.tutorialworks.com/difference-docker-containerd-runc-crio-oci/
 [docker_volumes]: https://docs.docker.com/storage/volumes/
 [docker_bind_mounts]: https://docs.docker.com/storage/bind-mounts/
 [docker_tmpfs_mounts]: https://docs.docker.com/storage/tmpfs/
@@ -50,5 +51,13 @@ Docker
 * [pwd_beginner-linux]
 * [pwd_microservice-orchestration]
 * [play_with_docker_playground]
+
+*Alternativen*:
+
+[rkt]: https://github.com/rkt/rkt/
+[podman]: https://podman.io/
+
+* [rkt]
+* [podman]
 
 \colEnd

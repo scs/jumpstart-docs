@@ -12,8 +12,8 @@ Inhalt
 * Basics
 * *Praxis Block 1*
 * Orchestrieren
-* *Praxis Block 2*
 * Tipps und Tricks
+* *Praxis Block 2*
 * Weiterführendes
 
 <#include slides/concepts.md>

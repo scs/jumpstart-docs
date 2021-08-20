@@ -68,24 +68,25 @@ Docker Architektur
 [docker_get_started]
 
 
-Runtime: containerd
--------------------
+Standartisierte Schnittstellen
+------------------------------
 
-*OS*-Abstraktion:
+* Schnittstelle zu Container Engine $\to$ *Container Runtime interface (CRI)*
+  * Implementiert durch:
+    * `containerd`
+    * `CRI-O`
+  * Verwendet durch:
+    * Kubernetes
+    * (Docker)
+* Schnittstelle zu Container $\to$ *Open Container Initiative (OCI)*
+  * Definieren:
+    * `image-spec`
+    * `runtime-spec`
+  * Implementiert durch:
+    * `runc`
+* Diese Definitionen sind Teil der *Cloud Native Computing Foundation (CNCF)*
 
-* Windows
-* Linux
-
-Standardisierte Schnittstellen $\to$ *Open Container Initiative (OCI)*
-
-* `image-spec`
-* `runtime-spec`
-
-Featuring:
-
-* CLI client: *`runc`*
-* *Lifecycle* management
-* Teil der *Cloud Native Computing Foundation (CNCF)*
+Siehe: [container_wording]
 
 
 Runtime: containerd
@@ -94,6 +95,7 @@ Runtime: containerd
 \centering
 ![containerd_architecture](images/containerd_architecture.png){width=90%}
 
+\tiny
 [architecture.png](https://containerd.io/img/architecture.png)
 by [The Linux Foundation](https://www.linuxfoundation.org)
 licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
