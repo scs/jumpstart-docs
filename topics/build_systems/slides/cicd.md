@@ -33,7 +33,7 @@ Unterschied: [ci_vs_cd]
   * Automatisiertes Ausliefern in Produktiv-System
 
 \centering
-![ci_vs_cd](images/ci_vs_cd.png){height=55%}
+![ci_vs_cd](images/ci_vs_cd.pdf){height=50%}
 
 
 Was, Wann, Wo?

@@ -65,7 +65,7 @@ Ansible
 -------
 
 \centering
-![ansible_overview](images/ansible_overview.jpg){width=80%}
+![ansible_overview](images/ansible_overview.pdf){width=80%}
 
 [ansible_quick_guide]
 

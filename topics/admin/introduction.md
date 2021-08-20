@@ -56,6 +56,11 @@ Dabei spielen diverse Faktoren eine Rolle:
 \centering
 ![magic_triangle](images/magic_triangle.png){width=40%}
 
+\tiny
+[PM Dreieck.png](https://de.m.wikipedia.org/wiki/Datei:PM_Dreieck.png)
+by Konrad Krafft
+licensed under [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0)
+
 
 Ablauf
 ------
