@@ -1,7 +1,7 @@
 <#include meta/slides.md>
 
 ---
-title: "Jumpstart - Praxis im Programmieren"
+title: "Jumpstart - Tools und Verschiedenes"
 ---
 
 
