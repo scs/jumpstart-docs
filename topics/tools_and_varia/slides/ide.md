@@ -11,7 +11,8 @@ Typische Anforderungen
   * Debugging & Disassembly
 * Syntax Highlighting
 * Smart Code Traversal
-* Refactorings
+* Code Completion
+* Refactoring
 * Shortcuts
 * Auto Formatter
 * Support für BuildSystem
@@ -43,6 +44,7 @@ Editor (Basiert auf *Dateien*)    IDE (Basiert auf *Projekten*)
 ------                            ---
 Visual Studio Code                Visual Studio IDE
 Notepad++                         CLion / IntelliJ / PyCharm
+Sublime                           Eclipse
 
 
 Zusätzliche Tools
