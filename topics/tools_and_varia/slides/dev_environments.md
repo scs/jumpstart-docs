@@ -2,8 +2,8 @@ Entwicklungs-Umgebungen
 =======================
 
 
-Physisch oder virtuel?
-----------------------
+Physisch oder virtuell?
+-----------------------
 
 *Varianten*:
 
@@ -23,6 +23,30 @@ Physisch oder virtuel?
 * Test-Systeme
 * Produktive Server-Infrastruktur
 * Kapselung von Microservices/Tools
+
+
+Betriebssystem
+--------------
+
+Welches für welchen Einsatz?
+
+*Windows:*
+
+* Büro-Arbeiten
+* Entwicklung von Windows Apps (UWP)
+* Entwicklung mit C#
+* Bei spezieller Hardware (guter HW Support)
+
+*Linux:*
+
+* Server (-Infrastruktur)
+* Web-Entwicklung
+* Embedded Devices
+* Gratis / OpenSource
+
+*MacOS:*
+
+* Entwicklung von iOS Apps
 
 
 Infrastruktur
