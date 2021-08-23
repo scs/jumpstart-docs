@@ -12,12 +12,14 @@ $\to$ benötigt nur *1 CPU-Core*
 
 ### Verwendung
 
-* Concurrency: *zeitlich unabhängige Tasks*
+* Concurrency: *zeitlich unabhängige Tasks* (Async)
 * Parallelism: *Problem schneller lösen*
 
 
 Implementation von Concurrency
 ------------------------------
+
+\colBegin{0.6}
 
 *Architektur* einfach halten:
 
@@ -25,16 +27,34 @@ Implementation von Concurrency
 * Probleme in Prozesse aufteilen
 * Interprocess-Communication (*IPC*)
 
-Anstatt mehrere Threads für Concurrency: $\to$ *Event-Loop*
+Anstatt mehrere Threads für Concurrency:
+$\break\to$ *Event-Loop*
 
 * Definition: [wiki_event_loop]
 * *kooperatives Scheduling* (userspace)
 * baut meist auf *Betriebssystem*-Funktionen auf
-* diverse Libraries
-  * [win_main]
-  * [glib_main_event_loop]
-  * [sd_event]
-  * [boost_asio]
+
+\colNext{0.35}
+
+Diverse C/C++ Libraries
+
+* [win_main]
+* [glib_main_event_loop]
+* [sd_event]
+* [boost_asio]
+* C++20 Coroutines
+
+Andere Sprachen
+
+* Go (Goroutines)
+* Rust
+* Python
+* JavaScript
+* Flutter
+* Swing
+* JavaFX
+
+\colEnd
 
 
 Beispiel: sd-event
