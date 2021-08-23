@@ -89,5 +89,4 @@ Tools
 * [DockerHub-Account](https://hub.docker.com/signup)
 * Laptop (je nachdem zu zweit)
 * Virtualbox installieren
-* VM als Appliance importieren
-* Siehe: [github.com/scs/jumpstart-vm](https://github.com/scs/jumpstart-vm)
+* VM einrichten: [github.com/scs/jumpstart-vm](https://github.com/scs/jumpstart-vm)
