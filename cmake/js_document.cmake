@@ -210,7 +210,6 @@ endfunction()
 
 function(js_global_file_archive TARGET)
     get_property(global_archive_file_list GLOBAL PROPERTY global_archive_file_list)
-    message(STATUS "global_archive_file_list=${global_archive_file_list}")
     add_custom_command(
             OUTPUT ${TARGET}.zip
             COMMAND
