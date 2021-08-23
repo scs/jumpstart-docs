@@ -28,8 +28,8 @@ bei wachsender Anzahl Source-Files den Source-Folder thematisch in Unterordner a
 Aufgabe
 -------
 
-* Entpacken Sie den `code` Unterordner an einem geeigneten Ort.
-* Analysieren Sie die File-Struktur und versuchen Sie alle möglichen Deliverables/Binaries zu erkennen.
+* Den `code` Unterordner an einem geeigneten Ort entpacken.
+* Die File-Struktur analysieren und alle möglichen Deliverables/Binaries versuchen zu erkennen.
 
 
 <#ifdef solution>
@@ -85,14 +85,14 @@ Der typische Workflow, um ein CMake-basiertes Projekt zu kompilieren, sieht folg
 Aufgabe
 -------
 
-* Im entpackten `code`-Ordner finden Sie eine Vorlage für die CMake-Konfiguration: `CMakeLists_exercise.txt`.
-  Benennen Sie diese zu `CMakeLists.txt` um und
-  öffnen Sie dieses CMake-Projekt (`code`-Ordner) in CLion.
+* Die Vorlage für die CMake-Konfiguration: `CMakeLists_exercise.txt` im entpackten `code`-Ordner
+  zu `CMakeLists.txt` umbenennen
+  und mit CLion dieses CMake-Projekt (`code`-Ordner) öffnen.
   Dies sollte automatisch den CMake-Cache erzeugen.
-* Versuchen Sie das `CMakeLists.txt` so zu vervollständigen,
-  dass man die Hauptapplikation bauen kann.
-  Lesen Sie dazu die Dokumentation der folgenden Befehle: `set`, `target_include_directories`, `add_executable`
-* Beachten Sie: alle Pfadangaben sind relativ zur Position der aufrufenden Datei: `CMakeLists.txt`.
+* Das `CMakeLists.txt` so vervollständigen,
+  dass die Hauptapplikation gebaut werden kann.
+  Die Dokumentation zu folgenden Befehlen könnte helfen: `set`, `target_include_directories`, `add_executable`
+* Zu beachten: alle Pfadangaben sind relativ zur Position der aufrufenden Datei: `CMakeLists.txt`.
 
 
 <#ifdef solution>
@@ -141,7 +141,7 @@ Deshalb muss in solchen Fällen ein erneutes Generieren des CMake-Caches manuell
 Aufgabe
 -------
 
-* Versuchen Sie, mittels Globbing, das Erstellen der Source-Datei-Liste im `CMakeLists.txt` zu automatisieren.
+* Automatisieren der Erstellung der Source-Datei-Liste im `CMakeLists.txt` mittels Globbing.
 
 
 <#ifdef solution>
@@ -175,13 +175,13 @@ Diese Library kann dann einerseits in die Applikation, andererseits in das Test-
 Aufgabe
 -------
 
-* Trennen Sie die Kompilierung in Applikation und Library auf.
-  Verwenden Sie unter anderem dafür die folgenden Befehle: `add_library`, `target_link_libraries`.
-* Evaluieren Sie die unterschiedlichen Optionen von `add_library`.
+* Auftrennen der Kompilierung in separate Applikation und Library.
+  Folgende Befehle sind dazu nützlich: `add_library`, `target_link_libraries`.
+* Analysieren der unterschiedlichen Optionen von `add_library`.
   Welcher Library-Typ ist am geeignetsten?
 * Nur `main.cpp` soll für die Applikation kompiliert werden.
   Alle anderen Dateien im `src` Ordner sollen zur Library gehören.
-* Führen Sie die Applikation über die Konsole aus.
+* Ausführen der Applikation über die Konsole.
 
 
 <#ifdef solution>
@@ -238,12 +238,12 @@ Die vorbereitete Library kann zu diesem Binary gelinkt werden.
 Aufgabe
 -------
 
-* Lesen Sie die Dokumentation von Catch2 betreffend
+* Studieren der Dokumentation von Catch2 betreffend
   [main()-Implementation](https://github.com/catchorg/Catch2/blob/devel/docs/configuration.md#main-implementation)
-  und implementieren Sie `main.cpp` für die Tests.
-* Ergänzen Sie das Build-System durch das Test-Binary.
-  Verfahren Sie dabei wie bereits für die Hauptapplikation.
-* Führen Sie die Test-Applikation über die Konsole aus.
+  und Implementation von `main.cpp` für die Tests.
+* Erweiterung des Build-Systems durch das Test-Binary.
+  Dies kann ähnlich wie bei der Hauptapplikation bewerkstelligt werden.
+* Ausführen der Test-Applikation über die Konsole.
 
 
 <#ifdef solution>
@@ -287,8 +287,9 @@ dass sie direkt durch CMake gestartet werden können.
 Aufgabe
 -------
 
-* Deklarieren Sie das Test-Binary für CMake als Test. Studieren Sie dazu die Befehle: `enable_testing`, `add_test`.
-* Führen Sie die Tests entweder direkt durch `make test` oder über das Configuration-DropDown in CLion aus.
+* Deklaration des Test-Binary für CMake als Test.
+  Relevante Befehle: `enable_testing`, `add_test`.
+* Ausführen Tests entweder direkt durch `make test` oder über das Configuration-DropDown in CLion.
 
 
 <#ifdef solution>
