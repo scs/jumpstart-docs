@@ -47,6 +47,31 @@ Notepad++                         CLion / IntelliJ / PyCharm
 Sublime                           Eclipse
 
 
+IDE Empfehlungen
+----------------
+
+----
+Use Case                          IDE
+--------                          --------------------------------
+Text, Markdown                    Notepad++, PyCharm, vscode, Sublime
+
+Ansible                           PyCharm
+
+C/C++                             CLion
+
+C#                                Visual Studio IDE, Rider
+
+Java                              IntelliJ
+
+Python                            PyCharm
+
+Rust                              IntelliJ, vscode
+
+JavaScript, TypeScript, Angular   WebStorm, vscode, AngularIDE
+
+----
+
+
 Zusätzliche Tools
 -----------------
 
