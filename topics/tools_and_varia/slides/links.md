@@ -59,4 +59,17 @@ Links
 * [boost]
 * [poco]
 
+*Tools*
+
+[choco_create_packages]: https://docs.chocolatey.org/en-us/create/create-packages
+
+[pretty_putty]: https://github.com/jacektrocinski/pretty-putty
+[kitty]: http://www.9bis.net/kitty/#!index.md
+[solar_putty]: https://www.solarwinds.com/free-tools/solar-putty
+
+* [choco_create_packages]
+* [pretty_putty]
+* [kitty]
+* [solar_putty]
+
 \colEnd
