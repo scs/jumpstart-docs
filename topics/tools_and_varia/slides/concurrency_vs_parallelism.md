@@ -24,6 +24,7 @@ Implementation von Concurrency
 *Architektur* einfach halten:
 
 * 1 Thread pro Prozess
+  * *keine* Synchronisierung notwendig
 * Probleme in Prozesse aufteilen
 * Interprocess-Communication (*IPC*)
 
@@ -55,6 +56,13 @@ Andere Sprachen
 * JavaFX
 
 \colEnd
+
+
+Event-Loop vs. Threading
+------------------------
+
+\centering
+![eventloop_vs_threading](images/eventloop_vs_threading.pdf)
 
 
 Beispiel: sd-event
