@@ -33,7 +33,7 @@ Was will man immer:
 
 * *Code Traversal*
   * Projekt wächst
-  * (neue) Entwickler kennen sich im Code nicht aus
+  * (neue) Entwickler:innen kennen sich im Code nicht aus
 
 * Out-of-the-Box *Support* für die entsprechende *Sprache*
   * benötigt sonst viel Konfigurations-Aufwand (Plugins)

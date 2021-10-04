@@ -33,7 +33,7 @@ Projekt-Vorbereitung
   * Wie einfach auf- oder einzusetzten?
   * Wie ist die Stabilität, Wartbarkeit und Long Term Support?
 * *Automatisierung & Konsistenz*
-  * Nur einer macht den Initial-Aufwand
+  * Nur eine Person macht den Initial-Aufwand
   * Alle anderen arbeiten auf gleicher Infrastruktur
   * oder können diese automatisiert bei sich aufsetzten
 * *Ramp-Up*

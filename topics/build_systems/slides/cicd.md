@@ -42,18 +42,18 @@ Was, Wann, Wo?
 Faktoren:
 
 * Wie *gross* ist das Produkt?
-* Wie *viele* Mitarbeiter?
+* Wie *viele* Mitarbeitende?
 * Gewünschter *Release-Zyklus*?
 
 CI: $\to$ Sollte immer aufgesetzt werden
 
 * Hilft den Aufwand für *lokales Ausführen* der Tests zu reduzieren.
-* Erleichtert die *Skalierung* wenn Team grösser wird $\to$ Reviews.
+* Erleichtert die *Skalierung*, wenn Team grösser wird $\to$ Reviews.
 * Bildet *absolute Wahrheit* des Build-/Test-Ablaufs ab.
 
 CD: $\to$ Je nach Bedarf/Projekt
 
-* Verkürzt den *Feedback-Loop* mit dem Kunden.
+* Verkürzt den *Feedback-Loop* mit der Kundschaft.
 * Automatisierte *Release-Builds*
 
 

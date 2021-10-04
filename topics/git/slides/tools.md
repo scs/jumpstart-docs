@@ -48,7 +48,7 @@ Zu viele Tools
 
 * Man kann nicht *alle* Tools beherrschen
 * eingesetzte Tools nicht durch Team einschränken
-* jeder soll *seine* Tools einsetzten
+* alle sollen *ihre* bekannten Tools einsetzten
 
 ### Qual der Wahl
 

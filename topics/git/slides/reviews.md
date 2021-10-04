@@ -10,7 +10,7 @@ Warum Reviews?
   * Code-Qualität
   * Verteilung von Know-How
 * stellen einen gemeinsamen *Workflow* sicher
-* neue Mitarbeiter werden während dem produktiven Arbeiten *geschult*
+* neue Mitarbeitende werden während dem produktiven Arbeiten *geschult*
 
 
 Was sollte nicht im Review angeschaut werden?
@@ -122,10 +122,10 @@ Iterationen
 
 *Review*
 
-* Reviewer schaut PR als ganzes an um einen *Überblick* zu erhalten
-* Reviewer geht Schritt für Schritt durch alle *Commits* (chronologisch)
+* Reviewer:in schaut den PR als ganzes an, um einen *Überblick* zu erhalten
+* Reviewer:in geht Schritt für Schritt durch alle *Commits* (chronologisch)
   und erstellt *Kommentare* oder *Fragen*
-* Reviewer *akzeptiert oder lehnt den PR ab* $\to$ Zeichen, dass das Review beendet ist.
+* Reviewer:in *akzeptiert oder lehnt den PR ab* $\to$ Zeichen, dass das Review beendet ist.
 
 *Rework*
 
@@ -143,9 +143,9 @@ bis alle Verbesserungen umgesetzt und PR akzeptiert ist
 Abschluss
 ---------
 
-Der Prozess ist beendet, nachdem alle/genügend Reviewer den PR *akzeptiert* haben.
+Der Prozess ist beendet, nachdem alle/genügend Reviewer:innen den PR *akzeptiert* haben.
 
-1. Der PR-Author *rebased* den Feature-Branch auf den aktuellen main/development Branch
+1. Der:Die Ersteller:in *rebased* den Feature-Branch auf den aktuellen main/development Branch
 1. `git push --force-with-lease`
 1. Mittels "Merge"-Button in PR-GUI (Bitbucket, etc.) *abschliessen*
 1. Dabei kann der Feature-Branch direkt *entfernt* werden
@@ -173,6 +173,6 @@ Fazit
 *Denke auch immer an die Person auf der anderen Seite des Tools!*
 
 * Kommentare gehen an eine Person $\to$ Höflich
-  * Das gilt auch für den Empfänger
+  * Das gilt auch für den:die Empfänger:in
 * Nicht alles persönlich nehmen. Auch bei ungünstiger Formulierung. Sprache ist schwierig.
 * Bei wirklicher Beleidigung o.Ä. sofort mündlich Kontakt aufnehmen.

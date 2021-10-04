@@ -5,7 +5,7 @@ Praxis Block 2
 IDE kennenlernen
 ----------------
 
-*Jeder sein momentan eingesetztes Toolset*
+*Alle lernen ihr momentan eingesetztes Toolset besser kennen*
 
 * Debugging mit IDE
 * Shortcuts lernen: Cheat-Sheets

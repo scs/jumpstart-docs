@@ -90,9 +90,9 @@ git merge feature
 Feature-Branches
 ----------------
 
-* gehören dem *Ersteller*
-* nur der Ersteller darf ihn *push*en
-* der Ersteller darf die History des Branches *beliebig neu schreiben*
+* gehören dem:der *Ersteller:in*
+* nur der:die Ersteller:in darf ihn *push*en
+* der:die Ersteller:in darf die History des Branches *beliebig neu schreiben*
 * dazu wird ein *force* push benötigt: `git push --force-with-lease`
 
 \vspace{0.4cm}

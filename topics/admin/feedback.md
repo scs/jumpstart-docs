@@ -9,11 +9,11 @@ Einleitung
 ==========
 
 Folgend ein paar Fragen, betreffend dem Jumpstart.
-Es müssen nicht alle Fragen beantworten.
-Am besten einfach diejenigen zu welchen eine Meinung existiert
-und einen sinnvollen und konstruktiven Beitrag geleistet werden kann.
-Es kann auch einfach ein Häkchen gesetzte werden,
-bei Fragen die grundsätzlich zufriedenstellend waren.
+Du musst nicht alle Fragen beantworten.
+Am besten wählst du einfach diejenigen aus, zu welchen du eine Meinung hast
+und einen sinnvollen sowie konstruktiven Beitrag leisten kannst.
+Du kannst auch einfach ein Häkchen setzten,
+wenn die Frage grundsätzlich zufriedenstellend war.
 
 
 
@@ -24,12 +24,12 @@ Unterlagen
 
    \vspace{\stretch{1}}
 
-1. Gab es ein Thema, welches nicht behandelt wurde, aber interessiert wäre?
+1. Gab es ein Thema, welches nicht behandelt wurde, aber interessant wäre?
    Welches Thema war besonders spannend oder irrelevant?
 
    \vspace{\stretch{1}}
 
-1. Waren alle nötigen Informationen zu den Arbeitsblätter vorhanden?
+1. Waren alle nötigen Informationen zu den Arbeitsblättern vorhanden?
    War die Struktur genügend klar und übersichtlich?
    Gibt es spezifische Beispiele die verbessert werden könnten?
 
@@ -44,8 +44,7 @@ Unterricht
 
    \vspace{\stretch{1}}
 
-1. Ist die Verteilung von Vorlesung und gemeinsames
-   Lösen/Besprechen von Arbeitsblätter gut aufgeteilt?
+1. Ist die Verteilung von Vorlesung und gemeinsames Lösen/Besprechen von Arbeitsblättern gut aufgeteilt?
 
    \vspace{\stretch{1}}
 
@@ -59,7 +58,7 @@ Praxis
 
 
 1. Waren die verwendeten Tools bereits bekannt?
-   War das Einrichten zu schwer/einfach?
+   War das Einrichten zu schwierig/einfach?
 
    \vspace{\stretch{1}}
 
@@ -68,7 +67,7 @@ Praxis
 
    \vspace{\stretch{1}}
 
-1. War der Stoff und die Übungen praxisrelevant?
+1. Waren der Stoff und die Übungen praxisrelevant?
    Wie gut haben die Unterlagen geholfen,
    sich auf die Praxis vorzubereiten?
 

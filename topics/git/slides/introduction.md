@@ -20,13 +20,13 @@ Zentral vs. Dezentral
 
 ![decentral_vcs](images/central_vs_decentral_vcs.pdf)
 
-\colBegin{0.5}
+\colBegin{0.47}
 
-Entwickler *blockieren* sich
+Entwickler:innen *blockieren* sich
 
-\colNext{0.5}
+\colNext{0.53}
 
-Jeder Entwickler kann frei, *lokal* committen
+Jede:r Entwickler:in kann frei *lokal* committen
 
 \colEnd
 

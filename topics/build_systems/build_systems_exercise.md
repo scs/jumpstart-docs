@@ -194,8 +194,8 @@ Lösung
   und keine Laufzeitabhängigkeiten haben möchten.
   Dasselbe gilt für das Test-Binary.
   Meist muss man dies aber gar nicht erst angeben.
-  Dann kann der Aufrufer selber definieren,
-  wie interne Libraries gelinkt werden:
+  Dann kann beim Aufruf von CMake über CLI-Argumente definiert werden,
+  wie interne Libraries gelinkt werden sollen:
   [`BUILD_SHARED_LIBS`](https://cmake.org/cmake/help/latest/variable/BUILD_SHARED_LIBS.html)
 
 ~~~ {.cmake}
