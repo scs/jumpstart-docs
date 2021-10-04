@@ -12,6 +12,7 @@ Inhalt
 * Entwicklungs-Umgebungen
 * *Praxis Block 1*
 * IDE
+* Best Practice
 * Aufgaben lösen
 * Concurrency vs. Parallelism
 * *Praxis Block 2*
@@ -21,6 +22,7 @@ Inhalt
 <#include slides/dev_environments.md>
 <#include slides/practice_1.md>
 <#include slides/ide.md>
+<#include slides/best_practice.md>
 <#include slides/problem_solving.md>
 <#include slides/concurrency_vs_parallelism.md>
 <#include slides/practice_2.md>
