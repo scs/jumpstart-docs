@@ -50,6 +50,8 @@ Links
 [abseil]: https://abseil.io/
 [boost]: https://www.boost.org/
 [poco]: https://pocoproject.org/
+[active_forks]: https://github.com/techgaun/active-forks
+[vulnerabilities_in_code_examples]: https://arxiv.org/ftp/arxiv/papers/1910/1910.01321.pdf
 
 * [wiki_signal_slot]
 * [nano_signal_slot]
@@ -58,6 +60,8 @@ Links
 * [abseil]
 * [boost]
 * [poco]
+* [active_forks]
+* [vulnerabilities_in_code_examples]
 
 *Tools*
 

@@ -89,3 +89,40 @@ z.B: *GitHub*
   * Stark Template-isiert: [boost]
   * Einfach gehalten. Orientiert sich an Java: [poco]
 * Libraries/Treiber der Hardware
+
+
+Verwendung von Libraries aus dem Internet
+-----------------------------------------
+
+*Libraries:*
+
+* Wie gut ist die Dokumentation?
+* Gibt es Beispiel-Code oder Unit-Tests?
+* Lizenz(en) kompatibel?
+* Community noch aktiv?
+* Wie viele Maintainer?
+* Gibt es Issues und werden diese bearbeitet?
+* Gibt es bessere Forks? [active_forks]
+
+
+Verwendung von Code aus dem Internet
+------------------------------------
+
+*Stack-Overflow etc.:*
+
+* Code muss grundsätzlich als *gefährlich* betrachtet werden
+* Wenn einsetzten, dann:
+  * komplett verstehen
+  * An Code-Style anpassen
+  * Refactoren
+  * Unit-Tests schreiben
+
+\vspace{1cm}
+\huge
+***Nicht einfach Copy-Paste!!!***
+\normalsize
+\vspace{1cm}
+
+### Hintergrund
+
+Studie über die Gefahr von Code auf Code-Plattformen: [vulnerabilities_in_code_examples]
