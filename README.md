@@ -10,6 +10,9 @@ jumpstart-docs
   <a href="https://github.com/scs/jumpstart-docs/actions/workflows/java-exercise.yml?query=branch%3Amain+">
     <img src="https://github.com/scs/jumpstart-docs/actions/workflows/java-exercise.yml/badge.svg?branch=main" alt="Java exercise">
   </a>
+  <a href="https://github.com/scs/jumpstart-docs/actions/workflows/cmake-exercise.yml?query=branch%3Amain+">
+    <img src="https://github.com/scs/jumpstart-docs/actions/workflows/cmake-exercise.yml/badge.svg?branch=main" alt="CMake exercise">
+  </a>
 </p>
 
 Die SCS Jumpstart-Kurse bieten einen effizienten Einstieg in den praktischen Alltag eines Entwicklers.
