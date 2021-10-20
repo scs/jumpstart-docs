@@ -9,7 +9,7 @@ Links
 [try_github]: https://try.github.io/
 [cheatsheet]: https://gist.github.com/hofmannsven/6814451
 
-[learn_git_branching]: https://learngitbranching.js.org/?NODEMO
+[learn_git_branching]: https://learngitbranching.js.org
 [git_it]: https://github.com/jlord/git-it-electron
 [oh_my_git]: https://blinry.itch.io/oh-my-git
 [git_katas]: https://github.com/eficode-academy/git-katas
