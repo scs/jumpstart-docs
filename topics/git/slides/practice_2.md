@@ -33,10 +33,10 @@ Selbständig ausprobieren
 `rebase` anstatt `merge`
 ------------------------
 
-`setup.sh` erstellt ein Beispiel Repo mit Feature-Branch
+Script erstellt ein Beispiel Repo mit Feature-Branch
 
 ~~~ {.bash}
-cd git/code
+cd topics/git/code
 ./rebase_merge_example.sh
 ~~~
 
