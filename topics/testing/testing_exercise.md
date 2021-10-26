@@ -8,6 +8,16 @@ title: "Arbeitsblatt: Testing"
 Testing
 ===================================
 
+Leap Year
+--------
+
+Implementiere die Funktion LeapYear::isLeapYear für Jahre > 0 nach folgenden Regeln.  
+(Nein, nicht einfach java.time.Year::isLeap aufrufen)
+
+1. Ein Jahr ist ein Schaltjahr, wenn es durch 4 Teilbar ist.
+1. Ein Jahr ist trotz Regel 1 kein Schaltjahr, wenn es durch 100 Teilbar ist.
+1. Ein Jahr ist trotz Regel 2 ein Schaltjahr, wenn es durch 400 Teilbar ist.
+
 Roman Numerals
 --------
 
@@ -26,43 +36,33 @@ Die Methode RomanNumeralsConverter soll für die arabischen Zahlen 1 - 3999 die 
 Für Zahlen > 4000 gäbe es weitere Regeln, die sind momentan nicht wichtig.
 Für Zahlen `<=` 3999 gelten folgende Regeln:
 
-+ Falls die arabische Zahl einem der folgenden Werte entspricht, ist die römische Zahl die entsprechende einzelne Ziffer.
-  
-  Wert | Ziffer
-  - | -
-  1 | I
-  5 | V
-  10 | X
-  50 | L
-  100 | C
-  500 | D
-  1000 | M
-
 \newpage
-  
+
++ Falls die arabische Zahl einem der folgenden Werte entspricht, ist die römische Zahl die entsprechende einzelne Ziffer.
+
+  Wert | Ziffer
+    - | -
+      1 | I
+      5 | V
+      10 | X
+      50 | L
+      100 | C
+      500 | D
+      1000 | M
+
 + Die Ziffern können durch aneinanderreihen addiert werden. Dafür startet man mit der Ziffer mit dem höchsten Wert,
-und hängt dann falls nötig Ziffern mit tieferem Wert an. Man soll Ziffern mit möglichst hohem Wert verwenden.  
-(XX für 20 statt VVVV)
-  
+  und hängt dann falls nötig Ziffern mit tieferem Wert an. Man soll Ziffern mit möglichst hohem Wert verwenden.  
+  (XX für 20 statt VVVV)
+
   Römische Zahl | Addition | Summe
-  - | - | -
-    II | 1 + 1 | 2
-    XXVIII | 10 + 10 + 5 + 3 | 28
-  
+    - | - | -
+      II | 1 + 1 | 2
+      XXVIII | 10 + 10 + 5 + 3 | 28
+
 + Ausnahme: Subtraktionsregel:
     1. Für 4 und 9 verwendet man die Subtraktionsregel: IV = 5 - 1 = 4, IX = 10 - 1 = 9
     1. Für 40 und 90 auch, dort zieht man 10 ab: XL = 50 - 10 = 40, XC = 100 -10 = 90
     1. für 400 und 900 dasselbe mit 100 abziehen.
-
-Leap Year
---------
-
-Implementiere die Funktion LeapYear::isLeapYear für Jahre > 0 nach folgenden Regeln.  
-(Nein, nicht einfach java.time.Year::isLeap aufrufen)
-
-1. Ein Jahr ist ein Schaltjahr, wenn es durch 4 Teilbar ist.
-1. Ein Jahr ist trotz Regel 1 kein Schaltjahr, wenn es durch 100 Teilbar ist.
-1. Ein Jahr ist trotz Regel 2 ein Schaltjahr, wenn es durch 400 Teilbar ist.
 
 MovieRental Teil 1: Refactoring mit TDD
 --------
@@ -166,6 +166,8 @@ Die Spezialfälle für die Preisberechnung kannst du jetzt in `RentalStatementFa
 für die Formatierung gehören in `RentalStatementTextFormatterTest`. Plus du hast die zusätzliche Funktionalität
 implementiert. Überlege, welche Tests du jetzt verschieben/löschen kannst, und mache das dann.
 
+\newpage
+
 BankKata
 --------
 
@@ -179,8 +181,6 @@ Beispiel: Gegeben seien folgende Transaktionen:
 1. 2021-06-12 Auszahlung: 75
 1. 2021-06-15 Einzahlung: 1500
 1. 2021-06-16 Auszahlung: 250
-
-\newpage
 
 Dann soll auf der Konsole folgendes ausgegeben werden:
 
