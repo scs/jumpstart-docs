@@ -60,14 +60,6 @@ Was ist Docker?
 * [podman]
 
 
-Docker Architektur
-------------------
-
-![docker_architecture](images/docker_architecture.pdf)
-
-[docker_get_started]
-
-
 Standartisierte Schnittstellen
 ------------------------------
 
@@ -99,72 +91,3 @@ Runtime: containerd
 [architecture.png](https://containerd.io/img/architecture.png)
 by [The Linux Foundation](https://www.linuxfoundation.org)
 licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
-
-
-Docker Images
--------------
-
-\colBegin{0.3}
-
-*Image* $\neq$ *Container*
-$\break\to$ ähnlich wie in Code:
-
-\colNext{0.3}
-
-----      ----
-Code      Dockerfile
-Binary    Image
-Process   Container
-----      ----
-
-\colNext{0.4}
-\colEnd
-
-* Jedes Kommando im Dockerfile erzeugt neuen *read-only* Layer
-* Jeder Layer ist nur die *Differenz* zum vorherigen
-* Später entfernte Dateien sind zwar nicht mehr sichtbar,
-  aber benötigen in vorherigem Layer trotzdem *Speicherplatz*
-* *CoW*: wiederverwendete Layer werden nur referenziert und nicht kopiert
-
-
-Docker Images
--------------
-
-\colBegin{0.4}
-
-~~~ {.dockerfile}
-# syntax=docker/dockerfile:1
-
-FROM ubuntu:20.04
-
-COPY . /app
-
-RUN make /app
-
-CMD python /app/app.py
-~~~
-
-Beispiel von hier:
-[docker_storage_driver]
-
-\colNext{0.6}
-
-Container based on ubuntu:20.04 image
-
-\small
-
-~~~
-------------------------------
-d3a3b2737d            200.0 MB  \
-                                |
-c86d237daa            190.0 KB  |
-                                > Image Layers
-d002db893a            1.203 KB  | (Read only)
-                                |
-91ef45d2ab                0 B  /
-------------------------------
-Thin Read/Write Layer        <-- Container Layer
-------------------------------
-~~~
-
-\colEnd

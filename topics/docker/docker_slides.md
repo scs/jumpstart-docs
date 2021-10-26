@@ -11,6 +11,7 @@ Inhalt
 * Konzepte
 * Basics
 * *Praxis Block 1*
+* Integration
 * Orchestrieren
 * Tipps und Tricks
 * *Praxis Block 2*
@@ -19,6 +20,7 @@ Inhalt
 <#include slides/concepts.md>
 <#include slides/basics.md>
 <#include slides/practice_1.md>
+<#include slides/integration.md>
 <#include slides/orchestrate.md>
 <#include slides/tipps.md>
 <#include slides/practice_2.md>
