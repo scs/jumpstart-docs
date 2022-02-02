@@ -68,13 +68,13 @@ MovieRental Teil 1: Refactoring mit TDD
 --------
 
 In dieser Übung geht es um einen Videoverleih. Im Laden sind verschiedene Filme, abgebildet durch die Klasse Movie,
-verfügbar. Ein\*e Kunde\*in (Customer) kann einen Film (abgebildet durch Rental) für ein oder mehrere Tage
+verfügbar. Ein:e Kunde:in (Customer) kann einen Film (abgebildet durch Rental) für ein oder mehrere Tage
 ausleihen.
-Es gibt für die Filme verschiedene Preiskategorien (PriceCode). Für die Kunden\*innen möchtest du eine Übersicht
+Es gibt für die Filme verschiedene Preiskategorien (PriceCode). Für die Kunden:innen möchtest du eine Übersicht
 über die momentan offenen Beträge drucken. Auf diese Funktionalität kannst du mit dem CustomerController zugreifen.
 Du kannst das ganze auch interaktiv ausprobieren. Wenn du `JumpstartApplication::main` ausführst, dann ist auf
 [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html) ein simples ui, mit dem du Filme,
-Kunden\*innen und Ausleihungen erfassen und die Quittung ausgeben kannst. (Das UI verwendet die Lösung als Implementation).
+Kunden:innen und Ausleihungen erfassen und die Quittung ausgeben kannst. (Das UI verwendet die Lösung als Implementation).
 
 Leider ist die Funktionalität für den Belegdruck in der Entity Customer implementiert. Weiter ist die Logik für
 die Preisberechnung vermischt mit der Formatierung des Textes für den Beleg. Der Beleg soll jetzt auch
