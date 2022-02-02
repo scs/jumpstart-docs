@@ -263,9 +263,9 @@ Owner/Group
 
 Unter Linux kann man die Berechtigungen für eine Datei/Ordner auf drei Stufen definieren:
 
-* user: Besitzer\*in der Datei
+* user: Besitzer:in der Datei
 * group: Gruppe der Datei
-* other: Berechtigung für Benutzer\*innen, die weder Besitzer\*in der Datei sind, noch in der Gruppe der Datei sind.
+* other: Berechtigung für Benutzer:innen, die weder Besitzer:in der Datei sind, noch in der Gruppe der Datei sind.
 
 Ermitteln von user/group einer Datei/Directory:
 
@@ -441,7 +441,7 @@ Root
 Nachteil: Wenn jemandem dieses Recht entzogen werden soll, müssen sich alle anderen ein neues Passwort merken.  
 Weiter ist die Nachvollziehbarkeit schwieriger.
 * Bei neueren Systemen wird deshalb der Befehl `sudo` verwendet.
-Benutzer\*innen in einer bestimmten Gruppe dürfen mit `sudo` root Rechte erhalten. Meistens heisst die Gruppe sudo.  
+Benutzer:innen in einer bestimmten Gruppe dürfen mit `sudo` root Rechte erhalten. Meistens heisst die Gruppe sudo.  
 Sie müssen dafür in der Regel *ihr eigenes* Passwort nochmals eingeben.
 
 *Achtung:* mit der root shell aufpassen, man darf wirklich alles!
