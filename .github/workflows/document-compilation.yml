@@ -32,3 +32,10 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           path: build/topics/jumpstart.zip
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: |
+            build/topics/jumpstart.zip
