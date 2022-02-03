@@ -18,8 +18,8 @@ jumpstart-docs
 Die SCS Jumpstart-Kurse bieten einen effizienten Einstieg in den praktischen Alltag eines Entwicklers.
 
 Dieses Repo beinhaltet unter [Topics](topics) alle Unterlagen der unterschiedlichen Kurse.
-Die generierten PDFs und den Code können als Artefakt der Github Actions heruntergeladen werden:
-[Github action runs](https://github.com/scs/jumpstart-docs/actions?query=workflow%3Acompilation+branch%3Amain+)
+Die generierten PDFs und der Code können als Artefakt des Releases heruntergeladen werden:
+[Latest release](https://github.com/scs/jumpstart-docs/releases/latest)
 
 Die benötigten Tools und Accounts um am Kurs teilzunehmen sind unter
 [Vorbereitung](topics/admin/introduction.md#vorbereitung) aufgelistet.
