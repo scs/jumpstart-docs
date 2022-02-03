@@ -1,7 +1,9 @@
 package ch.scs.jumpstart.movierental.solution.refactor;
 
 import static ch.scs.jumpstart.movierental.solution.refactor.SolutionCustomerController.AddRental;
+import static org.hamcrest.MatcherAssert.*;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.*;
 import static org.hamcrest.Matchers.is;
 import static org.mockito.ArgumentMatchers.notNull;
 import static org.mockito.Mockito.*;
@@ -20,8 +22,6 @@ import ch.scs.jumpstart.movierental.solution.refactor.rentalstatement.SolutionRe
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
-import org.hamcrest.MatcherAssert;
-import org.hamcrest.Matchers;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -171,9 +171,9 @@ class SolutionCustomerControllerTest {
     var customer = CustomerBuilder.builder(CUSTOMER_NAME_1).withRental(MOVIE_3, 4).build();
     when(customerRepository.findById(CUSTOMER_NAME_1)).thenReturn(Optional.of(customer));
 
-    MatcherAssert.assertThat(
+    assertThat(
         controller.getJsonInvoice(CUSTOMER_NAME_1),
-        Matchers.is(
+        is(
             ok(
                 RentalStatementBuilder.builder(CUSTOMER_NAME_1)
                     .withStatementMovie(MOVIE_3.getTitle(), 5f)
