@@ -1,4 +1,18 @@
+image: bacluc2/jumpstart-gitpod:latest
+
+tasks:
+  - name: Start xvfb
+    command: sudo Xvfb :99 &
 
 vscode:
   extensions:
+    - anwar.papyrus-pdf
+    - llvm-vs-code-extensions.vscode-clangd
+    - ms-vscode.cmake-tools
+    - redhat.java
+    - twxs.cmake
+    - vscjava.vscode-java-debug
+    - vscjava.vscode-java-dependency
     - vscjava.vscode-java-pack
+    - vscjava.vscode-java-test
+    - vscjava.vscode-maven
