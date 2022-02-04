@@ -24,6 +24,10 @@ jobs:
           cmake -S . -B build -DJS_WITH_CODE=OFF
           cmake --build build
 
+      - name: create zip archive
+        run: |
+          cmake --build build --target jumpstart_archive
+
       - name: create release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
