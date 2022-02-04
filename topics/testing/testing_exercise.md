@@ -43,24 +43,24 @@ Für Zahlen `<=` 3999 gelten folgende Regeln:
 
 + Falls die arabische Zahl einem der folgenden Werte entspricht, ist die römische Zahl die entsprechende einzelne Ziffer.
 
-  Wert | Ziffer
-    - | -
-      1 | I
-      5 | V
-      10 | X
-      50 | L
-      100 | C
-      500 | D
-      1000 | M
+  | Wert | Ziffer
+  | - | -
+  |   1 | I
+  |   5 | V
+  |   10 | X
+  |   50 | L
+  |   100 | C
+  |   500 | D
+  |   1000 | M
 
 + Die Ziffern können durch aneinanderreihen addiert werden. Dafür startet man mit der Ziffer mit dem höchsten Wert,
   und hängt dann falls nötig Ziffern mit tieferem Wert an. Man soll Ziffern mit möglichst hohem Wert verwenden.  
   (XX für 20 statt VVVV)
 
   Römische Zahl | Addition | Summe
-    - | - | -
-      II | 1 + 1 | 2
-      XXVIII | 10 + 10 + 5 + 3 | 28
+   | - | - | -
+   |   II | 1 + 1 | 2
+   |   XXVIII | 10 + 10 + 5 + 3 | 28
 
 + Ausnahme: Subtraktionsregel:
     1. Für 4 und 9 verwendet man die Subtraktionsregel: IV = 5 - 1 = 4, IX = 10 - 1 = 9
