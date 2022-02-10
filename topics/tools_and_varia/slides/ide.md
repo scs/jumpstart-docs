@@ -71,6 +71,8 @@ JavaScript, TypeScript, Angular   WebStorm, vscode, AngularIDE
 
 ----
 
+Youtube Video: [ide_vs_text_editor]
+
 
 Zusätzliche Tools
 -----------------

@@ -21,9 +21,11 @@ Links
 
 [clion_reference_card]: https://resources.jetbrains.com/storage/products/clion/docs/CLion_ReferenceCard.pdf
 [intelli_reference_card]: https://resources.jetbrains.com/storage/products/intellij-idea/docs/IntelliJIDEA_ReferenceCard.pdf
+[ide_vs_text_editor]: https://www.youtube.com/watch?v=sgMvuEek4kM
 
 * [clion_reference_card]
 * [intelli_reference_card]
+* [ide_vs_text_editor]
 
 *Concurrency vs. Parallelism*
 
