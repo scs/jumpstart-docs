@@ -3,17 +3,10 @@
 jumpstart-docs
 ==============
 
-<p align="center">
-  <a href="https://github.com/scs/jumpstart-docs/actions/workflows/document-compilation.yml?query=branch%3Amain+">
-    <img src="https://github.com/scs/jumpstart-docs/actions/workflows/document-compilation.yml/badge.svg?branch=main" alt="Document compilation">
-  </a>
-  <a href="https://github.com/scs/jumpstart-docs/actions/workflows/java-exercise.yml?query=branch%3Amain+">
-    <img src="https://github.com/scs/jumpstart-docs/actions/workflows/java-exercise.yml/badge.svg?branch=main" alt="Java exercise">
-  </a>
-  <a href="https://github.com/scs/jumpstart-docs/actions/workflows/cmake-exercise.yml?query=branch%3Amain+">
-    <img src="https://github.com/scs/jumpstart-docs/actions/workflows/cmake-exercise.yml/badge.svg?branch=main" alt="CMake exercise">
-  </a>
-</p>
+[![Document compilation](https://github.com/scs/jumpstart-docs/actions/workflows/document-compilation.yml/badge.svg)](https://github.com/scs/jumpstart-docs/actions/workflows/document-compilation.yml)
+[![CMake exercise](https://github.com/scs/jumpstart-docs/actions/workflows/cmake-exercise.yml/badge.svg)](https://github.com/scs/jumpstart-docs/actions/workflows/cmake-exercise.yml)
+[![Docker exercise](https://github.com/scs/jumpstart-docs/actions/workflows/docker-exercise.yml/badge.svg)](https://github.com/scs/jumpstart-docs/actions/workflows/docker-exercise.yml)
+[![Java exercise](https://github.com/scs/jumpstart-docs/actions/workflows/java-exercise.yml/badge.svg)](https://github.com/scs/jumpstart-docs/actions/workflows/java-exercise.yml)
 
 Die SCS Jumpstart-Kurse bieten einen effizienten Einstieg in den praktischen Alltag eines Entwicklers.
 
