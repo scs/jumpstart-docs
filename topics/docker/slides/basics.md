@@ -20,17 +20,18 @@ RUN apt-get update \
     && apt-get install -y \
         git-core rsync
 
-# create user
-ARG user=sdkuser
+# create group
 ARG group=sdkuser
+ARG gid=1000
 RUN groupadd -o -g ${gid} ${group}
 ~~~
 
 \colNext{0.55}
 
 ~~~ {.dockerfile}
+# create user
+ARG user=sdkuser
 ARG uid=1000
-ARG gid=1000
 RUN useradd --no-log-init -d "/home/${user}" \
     -u ${uid} -g ${gid} -m -s /bin/bash ${user}
 
