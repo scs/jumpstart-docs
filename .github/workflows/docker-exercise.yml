@@ -1,0 +1,16 @@
+name: Docker exercise
+
+on:
+  - push
+  - pull_request
+
+jobs:
+  docker-exercise:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: build docker image
+        working-directory: topics/docker/code/hostcontrold-solution
+        run: |
+          docker build .
