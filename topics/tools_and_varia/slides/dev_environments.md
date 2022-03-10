@@ -11,6 +11,7 @@ Physisch oder virtuell?
 * lokale VM
 * VM im Rechenzentrum
 * Container (auf physischem PC, in VM oder in Cloud)
+* In der Cloud: [gitpod] oder [github_codespaces]
 
 *Verbindung*:
 

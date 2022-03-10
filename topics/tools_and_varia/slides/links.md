@@ -27,6 +27,34 @@ Links
 * [intelli_reference_card]
 * [ide_vs_text_editor]
 
+\colNext{0.5}
+
+*Tools*
+
+[choco_create_packages]: https://docs.chocolatey.org/en-us/create/create-packages
+
+[pretty_putty]: https://github.com/jacektrocinski/pretty-putty
+[kitty]: http://www.9bis.net/kitty/#!index.md
+[solar_putty]: https://www.solarwinds.com/free-tools/solar-putty
+
+[gitpod]: https://www.gitpod.io/
+[github_codespaces]: https://github.com/features/codespaces
+
+* [choco_create_packages]
+* [pretty_putty]
+* [kitty]
+* [solar_putty]
+* [gitpod]
+* [github_codespaces]
+
+\colEnd
+
+
+Links
+-----
+
+\colBegin{0.5}
+
 *Concurrency vs. Parallelism*
 
 [wiki_event_loop]: https://en.wikipedia.org/wiki/Event_loop
@@ -64,18 +92,5 @@ Links
 * [poco]
 * [active_forks]
 * [vulnerabilities_in_code_examples]
-
-*Tools*
-
-[choco_create_packages]: https://docs.chocolatey.org/en-us/create/create-packages
-
-[pretty_putty]: https://github.com/jacektrocinski/pretty-putty
-[kitty]: http://www.9bis.net/kitty/#!index.md
-[solar_putty]: https://www.solarwinds.com/free-tools/solar-putty
-
-* [choco_create_packages]
-* [pretty_putty]
-* [kitty]
-* [solar_putty]
 
 \colEnd
