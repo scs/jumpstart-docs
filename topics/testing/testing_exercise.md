@@ -67,6 +67,19 @@ Für Zahlen `<=` 3999 gelten folgende Regeln:
     1. Für 40 und 90 auch, dort zieht man 10 ab: XL = 50 - 10 = 40, XC = 100 -10 = 90
     1. für 400 und 900 dasselbe mit 100 abziehen.
 
+\newpage
+
+Mocking
+--------
+
+In dieser kurzen Übung sollst du `Mockito.mock`, `Mockito.when` und `Mockito.verify` verwenden, damit
+du dies in den weiteren Übungen (und auch sonst) verwenden kannst.
+Dazu verwenden wir die Klasse `MoviePrinter` und entwickeln deren Funktionalität test driven mit
+`MoviePrinterTest`. Wie du siehst hat die Klasse die 2 Dependencies `MovieRepository` und `Printer`.
+Mit `MovieRepository` holt man sich die movies, die man danach mit `Printer` ausgibt oder druckt.
+Das Interface der Klassen darf nicht verändert werden. Überlege kurz, welches Verhalten die Klasse
+`MoviePrinter` aufweisen soll. Implementiere danach die Klasse `MovieRepository` test driven.
+
 MovieRental Teil 1: Refactoring mit TDD
 --------
 
