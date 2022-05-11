@@ -134,6 +134,74 @@ Arrange, Act, Assert
 * Assert: Überprüfen, dass nur das gewünschte Verhalten ausgelöst wurde.
 * *Kontrovers:* Diese Teile können auch wiederholt werden, falls ein Verhalten mit mehreren Schritten getestet wird.
 
+Übung Mocking
+-------
+
+Zusammenfassung Mocking 1
+-------
+
+* Wenn man eine Methode eines Mocks nicht konfiguriert, dann gibt sie `null` zurück
+* Mit  
+`verify(mock[, verificationMode]).method(argumentMatcher);`  
+verifizieren, dass eine void Methode aufgerufen wurde
+* Mit  
+`when(mock.method(argumentMatcher)).thenReturn(returnValue)`  
+eine Methode stubben.  
+Wenn die Methode mit einem Argument aufgerufen wird, auf das `argumentMatcher` matched,
+dann gibt sie von jetzt an `returnValue` zurück.
+
+Zusammenfassung Mocking 2
+-------
+
+Mit
+
+```
+when(mock.method(argumentMatcher)).thenReturn(returnValue, returnValue2)
+```
+
+oder
+
+```
+when(mock.method(argumentMatcher))
+    .thenReturn(returnValue)
+    .thenReturn(returnValue2)
+```
+
+kann man beim ersten Aufruf returnValue und beim zweiten returnValue2 zurückgeben.
+
+Zusammenfassung Mocking 3
+-------
+
+Mit
+
+```
+  verifyNoMoreInteractions(mock[, mock2...]);
+```
+
+für keine weiteren Interaktionen
+oder
+
+```
+  verifyNoInteractions(mock[, mock2...]);
+```
+
+für gar keine Interaktionen
+prüfen, ob keine unbeabsichtigten Interaktionen mit Objekten passieren.
+
+
+Zusammenfassung Mocking 4
+-------
+
+Mit
+
+```
+    var inOrder = inOrder(mock);
+    inOrder.verify(mock).method(argumentMatcher1);
+    inOrder.verify(mock).method(argumentMatcher2);
+```
+
+Kann die Reihenfolge der Aufrufe geprüft werden.
+
 Übung TDD mit mehreren Klassen (MovieRental Teil 1)
 -------
 
