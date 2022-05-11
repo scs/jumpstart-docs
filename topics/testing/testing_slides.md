@@ -18,7 +18,7 @@ Teil 1
 -------
 
 \huge
-> TDD
+> Test Driven Development (TDD)
 
 Was helfen einem Tests?
 -------
@@ -149,7 +149,7 @@ Teil 2
 -------
 
 \huge
-> BDD
+> Behaviour Driven Development (BDD)
 
 BDD
 -------
