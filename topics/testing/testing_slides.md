@@ -202,6 +202,45 @@ Mit
 
 Kann die Reihenfolge der Aufrufe geprüft werden.
 
+Wording im Zusammenhang mit Mocking 1
+-------
+
+* *Dummy Object*: Ein Parameter oder Abhängigkeit die im Test nicht verwendet wird.  
+Das Verhalten des Objekts ändert den Test nicht. (z.b. das Object wird einfach durchgereicht)
+* *Fake Object*: Eine Implementation des gleichen Interfaces wie die reale Implementation,
+aber möglichst einfach. z.b. Wird nur das Verhalten implementiert, das auch im Test gebraucht wird.
+(z.b. implementation eines DB Repositories mit einer Liste)
+* *Stubs*: Das Verhalten einer Methode wird vorgegeben für einen oder mehrere Tests.
+Dies wird meistens nicht zwischen mehreren Testklassen geteilt, sondern für einzelne Testklassen
+neu definiert. Dafür wird meist ein Framework verwendet, das dies Unterstützt. (z.b. Mockito, Jest)
+
+Quelle: Effective Software Testing by Mauricio Aniche
+
+Wording im Zusammenhang mit Mocking 2
+-------
+
+* *Mocks*: Wie *Stubs*, sie speichern aber auch, wie oft sie aufgerufen wurden. Danach kann überprüft werden,
+wie oft eine Methode mit welchen Parametern aufgerufen wurde.
+* *Spies*: Wrapped das reale Objekt, damit man Interaktionen damit aufzeichenn kann.
+Das verhalten des realen Objekts wird nicht geändert. Danach kann überprüft werden,
+wie oft eine Methode mit welchen Parametern aufgerufen wurde.
+* *Simulator*: Versucht das Verhalten des originalen Interfaces mit einfacheren Mitteln zu simulieren.
+Je nach dem kann das Verhalten auch zur Laufzeit mittels manuellem User Input geändert werden.
+z.b. das Repository für eine Entity mit einer Liste in Memory implementieren.
+
+
+Quelle (ausser Simulator): Effective Software Testing by Mauricio Aniche
+
+Implementation von Mockito
+-------
+
+* Mockito.mock(javaClassOrInterface.class): Implementiert das Verhalten von *Mocks*
+* Mockito.spy(javaObject): Implementiert das Verhalten von *Spies*
+* Mockito.when(mockOrSpy): Implementiert das Verhalten von *Stubs* für *Mocks* oder *Spies*
+(*Spy* und *Stub* widersprechen sich eigentlich, ist aber so bei Mockito)
+* Mockito.verify(mockOrSpy): Wird verwendet, um die Aufgezeichneten Interaktionen zu verifizieren.
+
+
 Übung TDD mit mehreren Klassen (MovieRental Teil 1)
 -------
 
