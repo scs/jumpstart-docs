@@ -1,4 +1,4 @@
-FROM gitpod/workspace-full:latest
+FROM gitpod/workspace-full-vnc:latest
 
 ENV DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true
 
@@ -17,6 +17,8 @@ RUN sudo apt-get update \
         # needed for drawio-desktop
         desktop-file-utils \
         xvfb \
+        # pdf viewer which stays at the same page if the underlying pdf changes
+        okular \
     && sudo rm -rf /var/lib/apt/lists/* \
     && sudo pip --no-cache-dir install ansible
 
