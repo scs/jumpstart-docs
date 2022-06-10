@@ -29,6 +29,16 @@ Links
 
 \colNext{0.5}
 
+*Markup Lanuages*
+
+[json_tutorial]: https://www.guru99.com/json-tutorial-example.html
+[yaml_syntax]: https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html
+[markdown_guide]: https://www.markdownguide.org/basic-syntax/
+
+* [json_tutorial]
+* [yaml_syntax]
+* [markdown_guide]
+
 *Tools*
 
 [choco_create_packages]: https://docs.chocolatey.org/en-us/create/create-packages
