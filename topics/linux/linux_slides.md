@@ -671,7 +671,7 @@ Systemd
 * Befehle:
   * Status: `service hardware-init status`
   * Starten/Stoppen/Restart: `sudo service hardware-init (start|stop|restart)`
-  * Nach Änderung von .service file neu laden: `sudo systemctl reload hardware-init.service`
+  * Nach Änderung von .service file neu laden: `sudo systemctl daemon-reload`
   * Enable: `sudo systemctl enable hardware-init.service`
   * Disable: `sudo systemctl disable hardware-init.service`
   
