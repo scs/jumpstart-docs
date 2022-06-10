@@ -123,7 +123,7 @@ Nutze für diese Übung vim.
 1. Starte den Service nach systemd-user-sessions.service
 1. Vergiss nicht den Service zu enablen
 1. Nach jeder Änderung an der config musst du  
-   `systemctl reload hello-world.service`  
+   `sudo systemctl daemon-reload`  
    aufrufen, damit die Änderung einen Effekt hat.
 1. Passe das update Script so an, dass es den Service vor dem Update des Skripts stoppt, und danach wieder startet.
 1. Teste mit journald, was der hello-world service ausgibt.
