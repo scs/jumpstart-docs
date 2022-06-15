@@ -74,7 +74,7 @@ Nutze die Kommandozeile, um folgende Aufgaben auszuführen:
    ```
 
    <#endif>
-1. Verschiebe das Directory `tools/` in `exercise/anotherbasic`  
+1. Verschiebe das Directory `exercise/tools/` in `exercise/anotherbasic`  
    <#ifdef solution>
 
    ```
@@ -103,7 +103,7 @@ Dazu soll das Script folgende Schritte ausführen:
 1. Finde das File das zuletzt geändert wurde in code/hello_world_service/  
    (ls -t, head und pipe (`|`) werden helfen)
 1. Kopiere dieses File nach /usr/local/bin/hello-world
-1. Schau, dass /usr/local/bin/hello-world execute Berechtigung hat.  
+1. Stelle sicher, dass /usr/local/bin/hello-world execute Berechtigung hat.  
 
 <#ifdef solution>
 
