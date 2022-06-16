@@ -238,9 +238,11 @@ Die vorbereitete Library kann zu diesem Binary gelinkt werden.
 Aufgabe
 -------
 
-* Studieren der Dokumentation von Catch2 betreffend
-  [main()-Implementation](https://github.com/catchorg/Catch2/blob/devel/docs/configuration.md#main-implementation)
-  und Implementation von `main.cpp` für die Tests.
+* Implementation von `main.cpp` für die Tests.
+  Das File muss folgendermassen aussehen:
+
+  \lstinputlisting{code/test/main.cpp}
+
 * Erweiterung des Build-Systems durch das Test-Binary.
   Dies kann ähnlich wie bei der Hauptapplikation bewerkstelligt werden.
 * Ausführen der Test-Applikation über die Konsole.
@@ -250,11 +252,6 @@ Aufgabe
 
 Lösung
 ------
-
-main.cpp
-
-\lstinputlisting{code/test/main.cpp}
-
 
 CMakeLists.txt
 
