@@ -29,3 +29,9 @@ und werden mithilfe von `pandoc` und weiteren Tools zu PDFs kompiliert.
 Falls externe Ressourcen verwendet werden, müssen diese korrekt zitiert werden.
 Es sind nur externe Ressourcen (z.B. Bilder) mit einer Creative Commons Lizenz erlaubt.
 Die korrekte Zitierung ist hier beschrieben: [Creative Commons - Use & Remix](https://creativecommons.org/use-remix/)
+
+
+Ähnliche Projekte
+-----------------
+
+* [MIT - The Missing Semester](https://missing.csail.mit.edu)
