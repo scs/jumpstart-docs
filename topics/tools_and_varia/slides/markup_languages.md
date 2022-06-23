@@ -48,7 +48,7 @@ JSON
   "integerNumber": -123,
   "floatNumber": 3.1415,
   "integerArray": [ 1, 2, 3, 4 ],
-  "stringArray": [ "A", "B", "C" ],
+  "stringArray": [ "A", "B", "C" ]
 }
 ~~~
 
