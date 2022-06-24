@@ -19,6 +19,12 @@ Die benötigten Tools und Accounts um am Kurs teilzunehmen sind unter
 Die dazugehörige Entwicklungsumgebung ist hier dokumentiert: [jumpstart-vm](https://github.com/scs/jumpstart-vm)
 
 
+Aufnahmen
+---------
+
+Für SCS-Mitarbeiter existieren Aufzeichnungen des gesamten Kurses unter: `j:\Weiterbildung\Jumpstart\`
+
+
 Contributing
 -------------
 
