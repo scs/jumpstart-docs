@@ -65,7 +65,7 @@ Java                              IntelliJ
 
 Python                            PyCharm
 
-Rust                              IntelliJ, vscode
+Rust                              Clion, vscode
 
 JavaScript, TypeScript, Angular   WebStorm, vscode, AngularIDE
 
