@@ -28,12 +28,12 @@ public class RentalStatementFactory {
    */
 
   @SuppressWarnings("PMD.UnusedPrivateMethod")
-  private String step_1_3_2(Customer customer) {
+  private String step_1_4_2(Customer customer) {
     return customer.statement();
   }
 
   @SuppressWarnings("PMD.UnusedPrivateMethod")
-  private String step_1_3_3(Customer customer) {
+  private String step_1_4_3(Customer customer) {
     double totalAmount = 0;
     String result = "Rental Record for " + customer.getName() + "\n";
 
@@ -68,7 +68,7 @@ public class RentalStatementFactory {
   }
 
   @SuppressWarnings("PMD.UnusedPrivateMethod")
-  private String step1_3_4(Customer customer) {
+  private String step1_4_4(Customer customer) {
     // create data structure
     var rentalStatementMovies = new ArrayList<RentalStatementMovie>();
     for (Rental rental : customer.getRentals()) {
@@ -120,7 +120,7 @@ public class RentalStatementFactory {
   }
 
   @SuppressWarnings("PMD.UnusedPrivateMethod")
-  private String step1_3_5(Customer customer) {
+  private String step1_4_5(Customer customer) {
     // create data structure
     var rentalStatementMovies = new ArrayList<RentalStatementMovie>();
     for (Rental rental : customer.getRentals()) {
@@ -164,7 +164,7 @@ public class RentalStatementFactory {
   }
 
   @SuppressWarnings("PMD.UnusedPrivateMethod")
-  private RentalStatement step1_3_6(Customer customer) {
+  private RentalStatement step1_4_6(Customer customer) {
     var customerName = customer.getName();
 
     var rentalStatementMovies = new ArrayList<RentalStatementMovie>();
