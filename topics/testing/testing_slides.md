@@ -140,7 +140,8 @@ Arrange, Act, Assert
 Zusammenfassung Mocking 1
 -------
 
-* Wenn man eine Methode eines Mocks nicht konfiguriert, dann gibt sie `null` zurück
+* Wenn man eine Methode eines Mocks nicht konfiguriert, dann gibt sie einen default zurück  
+(null, 0, false oder leere collection)
 * Mit  
 `verify(mock[, verificationMode]).method(argumentMatcher);`  
 verifizieren, dass eine void Methode aufgerufen wurde
