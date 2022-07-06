@@ -34,11 +34,11 @@ public class RentalStatement {
     this.amountOwed = amountOwed;
   }
 
-  public List<RentalStatementMovie> getSolutionRentalStatementMovies() {
+  public List<RentalStatementMovie> getRentalStatementMovies() {
     return rentalStatementMovies;
   }
 
-  public void setSolutionRentalStatementMovies(List<RentalStatementMovie> rentalStatementMovies) {
+  public void setRentalStatementMovies(List<RentalStatementMovie> rentalStatementMovies) {
     this.rentalStatementMovies = rentalStatementMovies;
   }
 

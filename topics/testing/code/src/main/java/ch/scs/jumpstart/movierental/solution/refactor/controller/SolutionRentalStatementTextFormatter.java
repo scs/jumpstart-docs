@@ -9,8 +9,7 @@ public class SolutionRentalStatementTextFormatter {
   public String format(RentalStatement rentalStatement) {
     String result = "Rental Record for " + rentalStatement.getCustomerName() + "\n";
 
-    for (RentalStatementMovie rentalStatementMovie :
-        rentalStatement.getSolutionRentalStatementMovies()) {
+    for (RentalStatementMovie rentalStatementMovie : rentalStatement.getRentalStatementMovies()) {
       //noinspection StringConcatenationInLoop
       result +=
           "\t" + rentalStatementMovie.getTitle() + "\t" + rentalStatementMovie.getAmount() + "\n";
