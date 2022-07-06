@@ -103,6 +103,13 @@ In dieser Übung wirst du geführt zuerst die bestehende Funktionalität unter T
 um die zusätzlich gewünschte Funktionalität zu implementieren. Für diese Übung verwenden wir TDD, d.h. es werden
 nur Repositories (die Datenbank) gemockt.
 
+\newpage
+<!-- markdownlint-disable -->
+| Situation | | Ziel |
+:-------------------------:|:-------------------------: |:-------------------------:
+| ![Situation](code/src/main/java/ch/scs/jumpstart/movierental/situation-class.png){width=45%} | | ![Ziel](code/src/main/java/ch/scs/jumpstart/movierental/goal-class.png){width=45%} |
+<!-- markdownlint-enable -->
+
 ### Funktionalität unter Test bringen
 
 Vervollständige die Tests in CustomerControllerTest, so dass die Code Coverage in

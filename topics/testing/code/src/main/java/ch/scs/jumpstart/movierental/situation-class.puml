@@ -1,0 +1,62 @@
+@startuml
+
+class CustomerController {
+    + getInvoice(String customerName)
+    + <color:green>getJsonInvoice(String customerName)
+}
+
+note left of CustomerController::getJsonInvoice
+    New method with invoice in JSON format
+endnote
+
+
+class MovieController {
+}
+
+interface CustomerRepository
+
+interface MovieRepository
+
+package entities {
+
+    class Customer {
+      + name: String
+      + rentals: List<Rental>
+      
+      + String statement()
+    }
+    
+    note left of Customer::statement
+        Calculates the prices for the items
+        Calculates overall price
+        Formats the output with tabs
+    endnote
+    
+    class Movie {
+      + title: String
+    }
+    
+    enum PriceCode {
+      + CHILDREN 
+      + REGULAR 
+      + NEW_RELEASE 
+    }
+    
+    class Rental {
+      + id: int
+      + daysRented: int
+    }
+    
+    Customer "1" *--> "*" Rental
+    Rental "1" *--> "1" Movie
+    Movie "1" *--> "1" PriceCode
+
+}
+
+CustomerController "1" *--> "1" CustomerRepository
+CustomerRepository -[dashed]-> Customer : "repository for"
+CustomerController "1" *--> "1" MovieRepository
+MovieRepository -[dashed]-> Movie: "repository for"
+MovieController "1" *--> "1" MovieRepository
+
+@enduml
