@@ -105,7 +105,7 @@ nur Repositories (die Datenbank) gemockt.
 
 ### Funktionalität unter Test bringen
 
-Vervollständige die Tests in SolutionCustomerControllerTest, so dass die Code Coverage in
+Vervollständige die Tests in CustomerControllerTest, so dass die Code Coverage in
 CustomerController und Customer fast 100% beträgt.
 (Bis auf die Methode `CustomerController::getJsonInvoice` ist alles getestet.)
 
