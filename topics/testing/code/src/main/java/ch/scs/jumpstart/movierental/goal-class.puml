@@ -1,0 +1,100 @@
+@startuml
+
+class CustomerController {
+    + getInvoice(String customerName)
+    + <color:green>getJsonInvoice(String customerName)
+}
+
+note left of CustomerController::getJsonInvoice
+    New method with invoice in JSON format
+endnote
+
+
+class MovieController {
+}
+
+interface CustomerRepository
+
+interface MovieRepository
+
+class RentalStatementFactory #green {
+    + String createStatement(Customer customer)
+}
+
+note bottom
+    Calculates the prices for the items
+    Calculates overall price
+endnote
+
+class RentalStatementTextFormatter #green {
+    + String format(RentalStatement rentalStatement)
+}
+
+note bottom
+    Formats the output with tabs
+endnote
+
+package entities {
+
+    class Customer {
+      + name: String
+      + rentals: List<Rental>
+      
+      <color:red>+ String statement()
+    }
+    
+    note right of Customer::statement
+        not needed anymore
+    endnote
+    
+    class Movie {
+      + title: String
+    }
+    
+    enum PriceCode {
+      + CHILDREN 
+      + REGULAR 
+      + NEW_RELEASE 
+    }
+    
+    class Rental {
+      + id: int
+      + daysRented: int
+    }
+
+    Customer "1" *--> "*" Rental : rentals
+    Rental "1" *--> "1" Movie : movie
+    Movie "1" *--> "1" PriceCode : priceCode
+}
+
+package dto #green {
+    class RentalStatement {
+        + String customerName
+        + float amountOwed
+    }
+    
+    class RentalStatementMovie {
+        + String title
+        + float amount
+    }
+    
+    RentalStatement "1" *--> "*" RentalStatementMovie
+}
+
+note bottom: Data Transfer Objects
+
+CustomerController "1" *--> "1" CustomerRepository
+CustomerController "1" *--> "1" MovieRepository
+CustomerController "1" *--> "1" RentalStatementFactory
+CustomerController "1" *--> "1" RentalStatementTextFormatter
+
+CustomerRepository -[dashed]-> Customer : repository for
+
+MovieController "1" *--> "1" MovieRepository: movieRepository
+
+MovieRepository -[dashed]-> Movie: repository for
+
+RentalStatementFactory -[dashed]-> RentalStatement : creates
+RentalStatementTextFormatter -[dashed]-> RentalStatement : formats
+
+@enduml
