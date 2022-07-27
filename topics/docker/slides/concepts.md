@@ -76,6 +76,7 @@ Standartisierte Schnittstellen
     * `runtime-spec`
   * Implementiert durch:
     * `runc`
+    * alternative `runc` implementation: [sysbox]
 * Diese Definitionen sind Teil der *Cloud Native Computing Foundation (CNCF)*
 
 Siehe: [container_wording]

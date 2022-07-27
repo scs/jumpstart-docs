@@ -95,6 +95,8 @@ networks:
 Alternativen zu Docker
 ----------------------
 
+\colBegin{0.5}
+
 *[rkt]*
 
 * Ausgesprochen: Rocket
@@ -108,7 +110,19 @@ Alternativen zu Docker
 * Benötigt *keinen Daemon*
 * *1-zu-1 Ersatz* für Docker: `alias docker=podman`
 
+\colNext{0.05}
+\colNext{0.5}
+
+*[sysbox]*
+
+* alternative `runc` implementation
+* Rootless Container
+* bessere Isolierung
+* kann systemd, docker, etc. in Container laufen lassen
+
 *systemd-nspawn*
 
 * eher als Entwickler-Tool für Linux-Entwickler gedacht
 * kann komplettes OS (inkl. systemd und vollem rootfs) laufen lassen
+
+\colEnd

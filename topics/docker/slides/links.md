@@ -56,8 +56,10 @@ Docker
 
 [rkt]: https://github.com/rkt/rkt/
 [podman]: https://podman.io/
+[sysbox]: https://github.com/nestybox/sysbox
 
-* [rkt]
-* [podman]
+* [rkt] (veraltet)
+* [podman] (weniger Altlasten als Docker)
+* [sysbox] (bessere Isolation)
 
 \colEnd
