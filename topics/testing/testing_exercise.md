@@ -238,11 +238,13 @@ implementierst, sollte der Acceptance Test auch grün werden. Danach das Refacto
 ### Zusatzaufgabe: Formatierung
 
 #### Datum formatieren
+
 \
 Formatiere das Datum so, wie im deutschen Sprachgebrauch üblich:  
 06.06.2016 statt 2016-06-06
 
 #### Zahlen ausrichten
+
 \
 Richte die Zahlen so aus, dass immer die gleiche Stelle übereinander ausgegeben wird.
 Das Konto ist limitiert auf 8 stellige Beträge.
