@@ -31,6 +31,7 @@ Docker in Docker
 
 * *Docker daemon* in Container laufen lassen
 * Dieser Docker-in-Docker (dind) Container benötigt *privileged* Rechte
+  * oder man verwendet [sysbox]
 * Alle anderen Container kennen diesen *nested daemon*
 * Die CLI Tools kommunizieren über *TCP* (port: 2376) mit dem nested daemon
 * So gibt es einen *zentralen* Punkt wo alle nested Containers leben
