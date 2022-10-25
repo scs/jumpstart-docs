@@ -3,6 +3,8 @@ image: bacluc2/jumpstart-gitpod:latest
 tasks:
   - name: Start xvfb
     command: sudo Xvfb :99 &
+  - name: Set DISPLAY
+    command: export DISPLAY=:99
 
 vscode:
   extensions:
