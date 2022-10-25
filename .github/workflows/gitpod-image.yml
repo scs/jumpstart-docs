@@ -9,6 +9,7 @@ on:
       - 'main'
     paths:
       - 'gitpod/**'
+  workflow_dispatch:
 
 jobs:
   build-and-push-docker-image:
