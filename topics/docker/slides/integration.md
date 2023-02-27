@@ -149,13 +149,15 @@ Sollte *immer* im Docker Daemon konfiguriert werden: `/etc/docker/daemon.json`
 {
   "bip": "172.28.0.1/24",
   "default-address-pools": [
-    {"base":"172.28.0.0/16", "size":24}
+    {"base":"172.28.64.0/18", "size":24}
   ],
   "dns": [
     "172.18.0.100", "172.18.0.101", "172.20.4.1", "172.24.0.101", "8.8.8.8", "8.8.4.4"
   ]
 }
 ~~~
+
+Siehe auch: [docker_scs]
 
 
 Image-Registry
