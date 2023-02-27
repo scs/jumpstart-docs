@@ -56,6 +56,7 @@ Links
 [gitignore]: https://github.com/github/gitignore
 
 [git_inside_out]: https://codewords.recurse.com/issues/two/git-from-the-inside-out
+[git_deep_dive]: https://www.youtube.com/watch?v=YWX-taj2iH0
 
 * Wie schreibt man gute Commit Beschreibungen?:
   * [good_git_comments]
@@ -73,3 +74,4 @@ Links
   * [gitignore]
 * Git Internals:
   * [git_inside_out]
+  * [git_deep_dive]
