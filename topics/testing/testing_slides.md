@@ -380,6 +380,49 @@ Fragen bei Systemtests
 * Laufzeit der Tests?
 * Parallelisierung der Tests?
 
+Links
+-------
+[Effective Software Testing]: https://www.manning.com/books/effective-software-testing
+
+[Designing Data Intensive Applications]:https://dataintensive.net/
+[Pragmatic Programmer]:https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/
+[Your code as a crime scene]:https://pragprog.com/titles/atcrime/your-code-as-a-crime-scene/
+[Kevlin Henney Youtube Query]:https://www.youtube.com/results?search_query=kevlin+henney
+[Dave Farley]:https://www.youtube.com/@ContinuousDelivery
+[Fireship]:https://www.youtube.com/@Fireship
+[The Primeagen Youtube channel]:https://www.youtube.com/@ThePrimeagen
+[ArjanCodes Youtube channel]:https://www.youtube.com/@ArjanCodes
+[Sandro Mancuso Youtube channel]:https://www.youtube.com/@SandroMancuso
+[Sandro Mancuso Youtube query]:https://www.youtube.com/results?search_query=sandro+mancuso
+[Devvox]: https://www.youtube.com/channel/UCsVPQfo5RZErDL41LoWvk0A
+[InfoQ]: https://www.youtube.com/@infoq
+[Martin Fowler The Practical Test Pyramid]:https://martinfowler.com/articles/practical-test-pyramid.html
+[Design Patterns]:https://github.com/iluwatar/java-design-patterns
+
+
+* Bücher
+  * [Effective Software Testing]
+  * [Designing Data Intensive Applications]
+  * [Pragmatic Programmer]
+  * [Your code as a crime scene]
+* Youtube
+  * Kevlin Henney [Kevlin Henney Youtube Query]
+  * Dave Farley [Dave Farley]
+  * Fireship (Frontend) [Fireship]
+  * The Primeagen (JS + Rust) [The Primeagen Youtube channel]
+  * ArjanCodes (Python) [ArjanCodes Youtube channel]
+  * Sandro Mancuso [Sandro Mancuso Youtube channel],  
+  [Sandro Mancuso Youtube query]
+  * [Devvox]
+  * [InfoQ]
+
+Links 2
+-------
+
+* Websites and Blogs
+  * Martin Fowler, e.g. [Martin Fowler The Practical Test Pyramid]
+  * Design patterns, one example: [Design Patterns]
+
 Reserve
 -------
 
