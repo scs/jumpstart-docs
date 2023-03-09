@@ -1,0 +1,14 @@
+{
+  "ignorePatterns": [
+    {
+      "pattern": "^images/.*"
+    },
+    {
+      "pattern": "^http://localhost.*"
+    },
+    {
+      "pattern": ".*.sh"
+    }
+  ],
+  "aliveStatusCodes": [200, 206, 500]
+}
