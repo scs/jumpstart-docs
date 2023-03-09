@@ -9,7 +9,7 @@ Links - CMake
 
 *Knowledge/Tutorials*
 
-[cmake_tutorial_john_lamp]: https://www.johnlamp.net/cmake-tutorial-1-getting-started.html
+[cmake_tutorial_john_lamp]: https://www.johnlamp.net/?p=13
 [introduction_modern_cmake]: https://cliutils.gitlab.io/modern-cmake/
 [ultimate_guide_modern_cmake]: https://rix0r.nl/blog/2015/08/13/cmake-guide/
 [do_cmake_right]: https://pabloariasal.github.io/2018/02/19/its-time-to-do-cmake-right/

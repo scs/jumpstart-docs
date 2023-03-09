@@ -372,7 +372,7 @@ Others
 
 * Allow to diff binary files like PDF/xlsx/etc. [Generating diff text](https://git-scm.com/docs/gitattributes#_generating_diff_text)
 
-* Checkout only parts of repo: [git sparse checkout](https://briancoyner.github.io/2013/06/05/git-sparse-checkout.html)
+* Checkout only parts of repo: [git sparse checkout](https://briancoyner.github.io/articles/2013-06-05-git-sparse-checkout/)
 
 * Multiple worktrees with common object store: [git_worktree]
 

@@ -46,7 +46,7 @@ Links
 [uboot_commit_message_conventions]: http://www.denx.de/wiki/view/U-Boot/Patches#Commit_message_conventions
 [gitlint]: https://jorisroovers.com/gitlint/
 
-[caret_and_tilde]: http://www.paulboxley.com/blog/2011/06/git-caret-and-tilde
+[caret_and_tilde]: https://stackoverflow.com/questions/2221658/whats-the-difference-between-head-and-head-in-git
 [bisect]: https://git-scm.com/docs/git-bisect
 [git_submodule]: https://git-scm.com/docs/git-submodule
 [git_subtree]: https://www.atlassian.com/git/tutorials/git-subtree
