@@ -5,7 +5,7 @@ Praxis Block 2
 GitHub Actions
 --------------
 
-CI mit GitHub Actions aufsetzten: [github_actions_hello_world]
+CI mit GitHub Actions aufsetzten: [github_actions_hello_world] und [github_actions_ci]
 
 Varianten:
 

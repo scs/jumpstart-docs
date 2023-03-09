@@ -80,6 +80,7 @@ Links
 [awesome_jenkins]: https://github.com/sahilsk/awesome-jenkins
 [github_awesome_actions]: https://github.com/sdras/awesome-actions
 [github_actions_hello_world]: https://github.com/skills/hello-github-actions
+[github_actions_ci]: https://github.com/skills/continuous-integration
 
 * [ci_vs_cd]
 * [future_of_ci_cd]
@@ -88,5 +89,6 @@ Links
 * [awesome_jenkins]
 * [github_awesome_actions]
 * [github_actions_hello_world]
+* [github_actions_ci]
 
 \colEnd
