@@ -79,7 +79,7 @@ Links
 [awesome_ciandcd]: https://github.com/cicdops/awesome-ciandcd
 [awesome_jenkins]: https://github.com/sahilsk/awesome-jenkins
 [github_awesome_actions]: https://github.com/sdras/awesome-actions
-[github_actions_hello_world]: https://lab.github.com/githubtraining/github-actions:-hello-world
+[github_actions_hello_world]: https://github.com/skills/hello-github-actions
 
 * [ci_vs_cd]
 * [future_of_ci_cd]
