@@ -49,3 +49,5 @@ FROM base AS hostcontrold
 
 COPY --from=build /usr/sbin/hostcontrold /usr/sbin/
 COPY --from=build /etc/systemd/system/hostcontrold.service /etc/systemd/system/
+
+ENTRYPOINT ["/usr/sbin/hostcontrold"]
