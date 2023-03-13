@@ -21,6 +21,7 @@ Docker
 [dockerfile_reference]: https://docs.docker.com/engine/reference/builder/
 [dockerfile_best_practice]: https://docs.docker.com/develop/develop-images/dockerfile_best-practices/
 [docker_restart_policies]: https://docs.docker.com/config/containers/start-containers-automatically/
+[docker_compose_v2]: https://github.com/docker/compose
 [docker_compose_systemd_unit]: https://gist.github.com/mosquito/b23e1c1e5723a7fd9e6568e5cf91180f
 
 * [containers_vs_vms]
@@ -34,6 +35,7 @@ Docker
 * [dockerfile_reference]
 * [dockerfile_best_practice]
 * [docker_restart_policies]
+* [docker_compose_v2]
 * [docker_compose_systemd_unit]
 
 \colNext{0.5}

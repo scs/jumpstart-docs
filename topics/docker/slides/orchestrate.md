@@ -2,29 +2,34 @@ Orchestrieren
 =============
 
 
-docker-compose
+docker compose
 --------------
 
-* Container verbinden und koordinieren mit *docker-compose*
-* *Beschreibung* mehrerer Container, Port-Forwardings, Netzwerke, Volumes, etc. in: `docker-compose.yml`
+* Container verbinden und koordinieren mit *docker compose*
+* *Beschreibung* mehrerer Container, Netzwerke, Volumes, etc. in: `compose.yaml`
 * Starten und stoppen von *lokalen* Container-Infrastrukturen:
 
 ~~~ {.bash}
-docker-compose up
-docker-compose up --build
-docker-compose up --detach
-docker-compose down
-docker-compose logs
+docker compose up
+docker compose up --build
+docker compose up --detach
+docker compose down
+docker compose logs
 ~~~
 
+### Compose V2
 
-docker-compose.yml
-----------------
+* Ist neu ein *Docker Plugin*: [docker_compose_v2]
+* File Format V2 & V3 wurden *gemergt*.
+* Neu ist das `version` Feld *deprecated*.
+
+
+compose.yaml
+------------
 
 \colBegin{0.5}
 
 ~~~ {.yaml}
-version: '3.3'
 services:
   homeassistant:
     container_name: home-assistant

@@ -11,7 +11,7 @@ Container als Service
 docker run -d --restart always <image_tag>
 ~~~
 
-Oder besser mit *`docker-compose`*:
+Oder besser mit *`docker compose`*:
 
 ~~~ {.yaml}
 version: '3'

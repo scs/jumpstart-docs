@@ -116,7 +116,7 @@ Vagrant
 * Automatisierung von *VMs* (beste Unterstützung für virtualbox)
 * Sehr gut geeignet für die *Entwicklung*, z.b. für Ansible
 * *Provisioning* (z.b. Ansible) wird automatisch gestartet
-* Konfiguration in *`Vagrantfile`* (ähnlich `Dockerfile` + `docker-compose.yml`)
+* Konfiguration in *`Vagrantfile`* (ähnlich `Dockerfile` + `compose.yaml`)
 * kann auch *mehrere* VMs inkl. Netzwerk verwalten
 
 ~~~
