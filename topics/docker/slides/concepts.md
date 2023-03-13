@@ -49,7 +49,7 @@ Was ist Docker?
   * Container-Verwaltung (Image bauen und laufen lassen)
 * *Hauptbestandteile*:
   * `dockerd` Daemon (bietet Docker API an)
-  * `docker` und `docker-compose` CLI (Docker API Clients)
+  * `docker` CLI (Docker API Client)
 
 *Typische Abstraktionsschichten*
 
