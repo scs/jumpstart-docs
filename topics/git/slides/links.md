@@ -7,7 +7,11 @@ Links
 
 [git_scm_doc]: https://git-scm.com/doc
 [try_github]: https://try.github.io/
-[cheatsheet]: https://gist.github.com/hofmannsven/6814451
+
+[cheatsheet_gitlab]: https://about.gitlab.com/images/press/git-cheat-sheet.pdf
+[cheatsheet_github]: https://education.github.com/git-cheat-sheet-education.pdf
+[cheatsheet_atlassian]: https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet
+[cheatsheet_hofmannsven]: https://gist.github.com/hofmannsven/6814451
 
 [learn_git_branching]: https://learngitbranching.js.org
 [git_it]: https://github.com/jlord/git-it-electron
@@ -20,22 +24,33 @@ Links
 [trunk_based_development]: https://trunkbaseddevelopment.com/
 [git_grundlagen_workflows]: https://www.amazon.de/Git-Dezentrale-Versionsverwaltung-Grundlagen-Workflows/dp/3898648001
 
+\colBegin{0.5}
+
 * Unterlagen:
   * [git_scm_doc]
   * [try_github]
-  * [cheatsheet]
+* Cheat Sheets:
+  * [cheatsheet_gitlab]
+  * [cheatsheet_github]
+  * [cheatsheet_atlassian]
+  * [cheatsheet_hofmannsven]
+
+\colNext{0.5}
+
 * Interaktive Git Tutorials:
   * [learn_git_branching]
   * [git_it]
   * [oh_my_git]
   * [git_katas]
-* Atlassian Artikel über Workflows: [comparing_workflows]
 * Git workflows:
+  * [comparing_workflows]
   * [one_flow]
   * [git_flow]
   * [trunk_based_development]
   * [git_grundlagen_workflows]
   * or others
+
+\colEnd
 
 
 Links

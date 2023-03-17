@@ -2,6 +2,21 @@ Basic Tipps & Tricks
 ====================
 
 
+Grundlagen
+----------
+
+Git Grundlagen werden *vorausgesetzt*.
+Im Internet gibt es genügend *Tutorials* etc. um sich selber einzuarbeiten.
+Ein Teil wird im *Praxis Block 1* behandelt.
+
+Als Ergänzung können auch *Cheat Sheets* helfen:
+
+* [cheatsheet_gitlab]
+* [cheatsheet_github]
+* [cheatsheet_atlassian]
+* [cheatsheet_hofmannsven]
+
+
 Stash / WIP
 -----------
 
