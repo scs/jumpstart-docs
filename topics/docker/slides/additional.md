@@ -96,13 +96,6 @@ networks:
 Alternativen zu Docker
 ----------------------
 
-\colBegin{0.5}
-
-*[rkt]*
-
-* Ausgesprochen: Rocket
-* Projekt beendet
-
 *[podman]*
 
 * OpenSource Implementation des Docker Interfaces
@@ -110,9 +103,11 @@ Alternativen zu Docker
 * Durchdachteres *Rechte-Management*: Rootless Container
 * Benötigt *keinen Daemon*
 * *1-zu-1 Ersatz* für Docker: `alias docker=podman`
+* Nutzt [quay.io](https://quay.io/) als *Default-Registry* (anstatt [hub.docker.com](https://hub.docker.com/)): `/etc/containers/registries.conf`
 
-\colNext{0.05}
-\colNext{0.5}
+
+Alternativen zu Docker
+----------------------
 
 *[sysbox]*
 
@@ -126,4 +121,7 @@ Alternativen zu Docker
 * eher als Entwickler-Tool für Linux-Entwickler gedacht
 * kann komplettes OS (inkl. systemd und vollem rootfs) laufen lassen
 
-\colEnd
+*[rkt]*
+
+* Ausgesprochen: Rocket
+* Projekt beendet
