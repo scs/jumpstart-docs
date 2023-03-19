@@ -98,6 +98,7 @@ Ansible
 Ansible
 -------
 
+* Nutzt *idempotente* Funktionen $\rightarrow$ Vorteil gegenüber Skripts
 * Nur Ansible-Host braucht *Ansible-Installation*
   * zu verwaltende Clients brauchen nur *SSH* und *Python*
 * Konfiguration in *`YAML`*
