@@ -88,6 +88,12 @@ git checkout HEAD^1    # horizontal (multi-parent) index
   G               G = B~2 = B~~
 ~~~
 
+### *`HEAD`* & *`@`*
+
+*`HEAD`* zeigt immer auf den aktuellen Branch/Commit.
+Ein "rohes" *`@`* ist ein Alias für *`HEAD`*.
+Z.B.: `@~2` ist das gleiche wie `HEAD~2`.
+
 
 Bisect
 ------
