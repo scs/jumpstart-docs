@@ -1,8 +1,8 @@
 package ch.scs.jumpstart.movierental.exercise.common.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import java.util.Objects;
-import javax.persistence.Entity;
-import javax.persistence.Id;
 
 @Entity
 public class Movie {
