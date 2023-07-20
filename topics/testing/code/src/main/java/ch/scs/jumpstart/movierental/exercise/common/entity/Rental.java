@@ -1,6 +1,6 @@
 package ch.scs.jumpstart.movierental.exercise.common.entity;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 public class Rental {

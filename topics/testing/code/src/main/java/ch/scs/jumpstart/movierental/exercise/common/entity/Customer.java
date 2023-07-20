@@ -1,10 +1,10 @@
 package ch.scs.jumpstart.movierental.exercise.common.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import javax.persistence.*;
 
 @Entity
 public class Customer {
