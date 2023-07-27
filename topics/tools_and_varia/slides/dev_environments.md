@@ -103,9 +103,9 @@ Ansible
   * zu verwaltende Clients brauchen nur *SSH* und *Python*
 * Konfiguration in *`YAML`*
 * *Strukturierung* in:
-  * Modules
-  * Tasks
-  * Roles
+  * Modules (Grundfunktionalität von Ansible)
+  * Tasks (Verwendung von Modules)
+  * Roles (Sammlung von mehreren Tasks und Files, etc.)
 * Grosser *Katalog* an Modules
 * *eigene* Modules möglich
 * *Vorgefertigte* Roles via: [ansible_galaxy]
