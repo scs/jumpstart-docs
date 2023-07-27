@@ -167,7 +167,7 @@ Dazu musst du folgendes machen:
 
 1. Entferne den Aufruf von `RentalStatementTextFormatter::format` aus  
    `RentalStatementFactory::createStatement`
-1. Das Interface ändert sich, also musst du jetzt die Tests von `RentalStatementTextFormatter` anpassen.
+1. Das Interface ändert sich, also musst du jetzt die Tests von `RentalStatementFactory` anpassen.
 1. In `RentalStatementFactory` brauchst du jetzt keinen `RentalStatementTextFormatter` mehr, du kannst ihn als Konstruktor
    Parameter entfernen.
 1. CustomerController braucht jetzt aber `RentalStatementTextFormatter`, füge ihn deshalb hier als Konstruktor Parameter
