@@ -86,31 +86,6 @@ Container
 \colEnd
 
 
-Ansible
--------
-
-\centering
-![ansible_overview](images/ansible_overview.pdf){width=80%}
-
-[ansible_quick_guide]
-
-
-Ansible
--------
-
-* Nutzt *idempotente* Funktionen $\rightarrow$ Vorteil gegenüber Skripts
-* Nur Ansible-Host braucht *Ansible-Installation*
-  * zu verwaltende Clients brauchen nur *SSH* und *Python*
-* Konfiguration in *`YAML`*
-* *Strukturierung* in:
-  * Modules (Grundfunktionalität von Ansible)
-  * Tasks (Verwendung von Modules)
-  * Roles (Sammlung von mehreren Tasks und Files, etc.)
-* Grosser *Katalog* an Modules
-* *eigene* Modules möglich
-* *Vorgefertigte* Roles via: [ansible_galaxy]
-
-
 Vagrant
 -------
 
@@ -191,3 +166,28 @@ Putty
 
 * [kitty]
 * [solar_putty]
+
+
+Ansible
+-------
+
+\centering
+![ansible_overview](images/ansible_overview.pdf){width=80%}
+
+[ansible_quick_guide]
+
+
+Ansible
+-------
+
+* Nutzt *idempotente* Funktionen $\rightarrow$ Vorteil gegenüber Skripts
+* Nur Ansible-Host braucht *Ansible-Installation*
+  * zu verwaltende Clients brauchen nur *SSH* und *Python*
+* Konfiguration in *`YAML`*
+* *Strukturierung* in:
+  * Modules (Grundfunktionalität von Ansible)
+  * Tasks (Verwendung von Modules)
+  * Roles (Sammlung von mehreren Tasks und Files, etc.)
+* Grosser *Katalog* an Modules
+* *eigene* Modules möglich
+* *Vorgefertigte* Roles via: [ansible_galaxy]
