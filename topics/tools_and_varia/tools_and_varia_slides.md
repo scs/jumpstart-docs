@@ -9,8 +9,8 @@ Inhalt
 ------
 
 * Projekt-Teams
-* Entwicklungs-Umgebungen
 * Markup Languages
+* Entwicklungs-Umgebungen
 * *Praxis Block 1*
 * IDE
 * Best Practice
@@ -20,8 +20,8 @@ Inhalt
 * Weiterführendes
 
 <#include slides/project_teams.md>
-<#include slides/dev_environments.md>
 <#include slides/markup_languages.md>
+<#include slides/dev_environments.md>
 <#include slides/practice_1.md>
 <#include slides/ide.md>
 <#include slides/best_practice.md>
