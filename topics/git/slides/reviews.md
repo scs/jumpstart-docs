@@ -17,7 +17,7 @@ Was sollte nicht im Review angeschaut werden?
 ---------------------------------------------
 
 * Code-Style (wenn möglich $\to$ lenkt vom Inhalt ab)
-  * Style *definieren*
+  * Style *definieren* (z.B. auf Basis von [google_code_style_guides])
   * *Linter* einsetzten
 * andere Änderungen/Features *wünschen*
   * neues Issue öffnen

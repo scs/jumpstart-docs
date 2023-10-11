@@ -13,6 +13,9 @@ Links
 [cheatsheet_atlassian]: https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet
 [cheatsheet_hofmannsven]: https://gist.github.com/hofmannsven/6814451
 
+[google_dev_doc_style_guide]: https://developers.google.com/style
+[google_code_style_guides]: https://developers.google.com/style/code-in-text#code-style-guides
+
 [learn_git_branching]: https://learngitbranching.js.org
 [git_it]: https://github.com/jlord/git-it-electron
 [oh_my_git]: https://blinry.itch.io/oh-my-git
@@ -34,6 +37,9 @@ Links
   * [cheatsheet_github]
   * [cheatsheet_atlassian]
   * [cheatsheet_hofmannsven]
+* Style:
+  * [google_dev_doc_style_guide]
+  * [google_code_style_guides]
 
 \colNext{0.5}
 
