@@ -108,7 +108,7 @@ Verwendung von Libraries aus dem Internet
 Verwendung von Code aus dem Internet
 ------------------------------------
 
-*Stack-Overflow etc.:*
+*Stack-Overflow, ChatGPT, Github Copilot, etc.:*
 
 * Code muss grundsätzlich als *gefährlich* betrachtet werden
 * Wenn einsetzten, dann:
@@ -116,12 +116,13 @@ Verwendung von Code aus dem Internet
   * An Code-Style anpassen
   * Refactoren
   * Unit-Tests schreiben
+  * Lizenz- und Rechte-Themen abklären
 
-\vspace{1cm}
+\vspace{0.5cm}
 \huge
 ***Nicht einfach Copy-Paste!!!***
 \normalsize
-\vspace{1cm}
+\vspace{0.5cm}
 
 ### Hintergrund
 
