@@ -65,4 +65,10 @@ Docker
 * [podman] (weniger Altlasten als Docker)
 * [sysbox] (bessere Isolation)
 
+*Windows*:
+
+[introduction_to_windows_container]: https://justen.codes/a-short-introduction-to-windows-containers-db5adc0db536
+
+* [introduction_to_windows_container]
+
 \colEnd
