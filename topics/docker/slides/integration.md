@@ -172,8 +172,9 @@ Image-Registry
 
 * Docker Hub
 * Artifactory
+* GitLab Container Registry
 * GitHub Packages
-* private
+* local: e.g.: [registry](https://hub.docker.com/_/registry)
 
 ~~~ {.bash}
 # upload image to registry
