@@ -103,7 +103,7 @@ list:
 \colNext{0.55}
 
 ~~~{.yaml}
-dictionary:
+dictionary: &dictAnchor
   key: value
   another: "dictionaries are objects"
 
@@ -113,6 +113,7 @@ objectList:
     key3: { subKey1: true, subKey2: -1.2 }
   - otherStruct: 2
     inlineList: [ 1, 2, 3, 4 ]
+    usingAnchor: *dictAnchor
 ~~~
 
 \colEnd
