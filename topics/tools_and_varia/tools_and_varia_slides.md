@@ -16,6 +16,7 @@ Inhalt
 * Best Practice
 * Aufgaben lösen
 * Concurrency vs. Parallelism
+* Betriebssystem-Konzepte
 * Tools
 * *Praxis Block 2*
 * Weiterführendes
@@ -28,6 +29,7 @@ Inhalt
 <#include slides/best_practice.md>
 <#include slides/problem_solving.md>
 <#include slides/concurrency_vs_parallelism.md>
+<#include slides/os_concepts.md>
 <#include slides/tools.md>
 <#include slides/practice_2.md>
 <#include slides/links.md>
