@@ -1,0 +1,17 @@
+{
+    "name": "Jumpstart java",
+    "image": "mcr.microsoft.com/devcontainers/java:dev-17-jdk-bookworm",
+    "features": {
+        "ghcr.io/devcontainers-contrib/features/maven-sdkman": {
+            "jdkVersion": "17",
+            "jdkDistro": "tem"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "redhat.java",
+            ]
+        }
+    }
+}

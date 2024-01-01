@@ -119,6 +119,17 @@ Jetzt möchten wir, dass das hello-world Skript beim Aufstarten automatisch gest
 und die Meldungen ins journald schreibt.  
 Nutze für diese Übung vim.
 
+In Github Codespaces steht nicht direkt systemd zur Verfügung.
+Deshalb ist ein Container image vorbereitet, in dem wir systemd zur Verfügung haben.
+Führe deshalb folgende Befehle im ausgecheckten git repo auf Github Codespaces aus:
+
+```shell
+cd topics/linux/code
+docker compose build
+docker compose up -d
+docker compose exec -it systemd bash
+```
+
 1. Erstelle deine Service Konfiguration in /etc/systemd/system/hello-world.service
 1. Starte den Service nach systemd-user-sessions.service
 1. Vergiss nicht den Service zu enablen
@@ -128,7 +139,8 @@ Nutze für diese Übung vim.
 1. Passe das update Script so an, dass es den Service vor dem Update des Skripts stoppt, und danach wieder startet.
 1. Teste mit journald, was der hello-world service ausgibt.
 1. Stoppe den service. Werden keine neuen Meldungen mehr ins journald geschrieben?
-1. Starte die VM neu, startet der Service auch neu?
+1. Starte den Container (von ausserhalb des containers) mit `docker compose restart systemd` neu.
+Startet der Service auch neu?
 1. Disable den Service nach dem Ende der Übung, du willst dein Log nicht füllen.
 
 <#ifdef solution>
