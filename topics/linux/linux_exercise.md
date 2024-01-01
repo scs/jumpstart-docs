@@ -125,7 +125,6 @@ Führe deshalb folgende Befehle im ausgecheckten git repo auf Github Codespaces 
 
 ```shell
 cd topics/linux/code
-docker compose build
 docker compose up -d
 docker compose exec -it systemd bash
 ```
