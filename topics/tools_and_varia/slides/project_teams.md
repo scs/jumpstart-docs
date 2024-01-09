@@ -14,6 +14,7 @@ Effizientes Arbeiten
   * Task-Planning
   * Daily/Weekly-Meetings
   * Reviews
+  * Feedback *einholen* und *geben*
   * Kunden-Feedback
 * *Tools*
   * Jira, Confluence
