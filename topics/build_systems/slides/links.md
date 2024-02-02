@@ -75,7 +75,7 @@ Links
 
 [ci_vs_cd]: https://www.atlassian.com/continuous-delivery/principles/continuous-integration-vs-delivery-vs-deployment
 [future_of_ci_cd]: https://codecentric.de/wissens-hub/blog/github-actions-nextgen-cicd
-[scs_techstudie_ci_cd]: https://tools.scs.ch/wiki/x/oI4uBw
+[scs_techstudie_ci_cd]: https://supercomputingsystems.atlassian.net/l/cp/gaBKNUT1
 [awesome_ciandcd]: https://github.com/cicdops/awesome-ciandcd
 [awesome_jenkins]: https://github.com/sahilsk/awesome-jenkins
 [github_awesome_actions]: https://github.com/sdras/awesome-actions
