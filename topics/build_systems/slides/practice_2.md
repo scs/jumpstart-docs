@@ -2,6 +2,14 @@ Praxis Block 2
 ==============
 
 
+Bitbucket Pipelines
+-------------------
+
+Es soll die Aufgabe `bitbucket_pipelines_exercise.pdf` gelöst werden.
+
+Weitere SCS spezifische Vorlagen finden sich hier: [bitbucket-pipeline-template-docker]
+
+
 GitHub Actions
 --------------
 

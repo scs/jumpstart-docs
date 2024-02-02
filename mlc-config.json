@@ -8,6 +8,9 @@
     },
     {
       "pattern": ".*.sh"
+    },
+    {
+      "pattern": "^https://bitbucket.org/supercomputingsystems.*"
     }
   ],
   "aliveStatusCodes": [200, 206, 500]
