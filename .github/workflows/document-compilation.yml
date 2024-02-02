@@ -13,7 +13,7 @@ jobs:
     env:
       DISPLAY: ":99"
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: "start xvfb as a workaround for drawio-desktop does not work without an X server"
         run: Xvfb :99 &
