@@ -42,3 +42,4 @@ Die korrekte Zitierung ist hier beschrieben: [Creative Commons - Use & Remix](ht
 -----------------
 
 * [MIT - The Missing Semester](https://missing.csail.mit.edu)
+* [Open Source Society University - Computer Science](https://github.com/ossu/computer-science)
