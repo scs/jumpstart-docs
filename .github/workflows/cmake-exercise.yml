@@ -13,6 +13,8 @@ jobs:
       - name: configure and build
         working-directory: topics/build_systems/code
         run: |
+          rm CMakeLists.txt
+          mv CMakeLists_solution.txt CMakeLists.txt
           mkdir build
           cmake -S . -B build
           cmake --build build

@@ -85,10 +85,8 @@ Der typische Workflow, um ein CMake-basiertes Projekt zu kompilieren, sieht folg
 Aufgabe
 -------
 
-* Die Vorlage für die CMake-Konfiguration: `CMakeLists_exercise.txt` im entpackten `code`-Ordner
-  zu `CMakeLists.txt` umbenennen
-  und mit CLion dieses CMake-Projekt (`code`-Ordner) öffnen.
-  Dies sollte automatisch den CMake-Cache erzeugen.
+* Mit CLion das vorbereitete CMake-Projekt (`code`-Ordner) öffnen.
+  Dadurch sollte das `CMakeLists.txt` im entpackten `code`-Ordner automatisch geladen und der CMake-Cache erzeugt werden.
 * Das `CMakeLists.txt` so vervollständigen,
   dass die Hauptapplikation gebaut werden kann.
   Die Dokumentation zu folgenden Befehlen könnte helfen: `set`, `target_include_directories`, `add_executable`
