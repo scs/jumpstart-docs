@@ -7,7 +7,7 @@ js_exercise(build_systems_exercise build_systems_exercise.md)
 js_script(bitbucket_pipelines_exercise bitbucket_pipelines_exercise.md)
 
 file(GLOB_RECURSE code RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} "code/*")
-list(FILTER code EXCLUDE REGEX "code/CMakeLists.txt")
+list(FILTER code EXCLUDE REGEX "code/CMakeLists_solution.txt")
 js_add_to_global_archive_file_list(${code})
 
 if (JS_WITH_CODE)
