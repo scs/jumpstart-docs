@@ -1,0 +1,17 @@
+{
+  "name": "Jumpstart CMake exercise",
+  "image": "danger89/cmake:5.0",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "llvm-vs-code-extensions.vscode-clangd",
+        "matepek.vscode-catch2-test-adapter",
+        "ms-vscode.cmake-tools",
+        "twxs.cmake"
+      ],
+      "settings": {
+        "cmake.sourceDirectory": "${workspaceFolder}/topics/build_systems/code"
+      }
+    }
+  }
+}
