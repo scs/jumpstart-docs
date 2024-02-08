@@ -36,7 +36,7 @@ Damit einfach auf die Repos zugegriffen werden kann,
 sollte man unter [bitbucket.org/account/settings/ssh-keys](https://bitbucket.org/account/settings/ssh-keys/)
 seinen public Key registrieren.
 
-Danach kann das neue Repository in der `jumpstart-vm` oder lokal geklont werden:
+Danach kann das neue Repository geklont werden:
 
 ~~~
 git clone https://<user>@bitbucket.org/<user>-privat/bitbucket-pipelines-exercise.git

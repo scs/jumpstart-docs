@@ -17,7 +17,9 @@ Die generierten PDFs und der Code können als Artefakt des Releases heruntergela
 
 Die benötigten Tools und Accounts um am Kurs teilzunehmen sind unter
 [Vorbereitung](topics/admin/introduction.md#vorbereitung) aufgelistet.
-Die dazugehörige Entwicklungsumgebung ist hier dokumentiert: [jumpstart-vm](https://github.com/scs/jumpstart-vm)
+Als Entwicklungsumgebung wird meistens Github [Codespaces](topics/admin/codespaces.md) verwendet.
+Alternativ existiert eine dedizierte Entwicklungs-VM,
+die hier dokumentiert ist: [jumpstart-vm](https://github.com/scs/jumpstart-vm)
 
 
 Aufnahmen
