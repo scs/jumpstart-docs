@@ -14,5 +14,5 @@ Interactive Tutorials
 
 Freier Playground: [play_with_docker_playground]
 
-Wenn der Playground nicht geeignet ist,
-kann die Docker-Installation in der *jumpstart-vm* verwendet werden.
+Wenn der Playground nicht zuverlässig läuft,
+kann in Github eine Codespaces-Instanz mit "Default project Configuration" verwendet werden.

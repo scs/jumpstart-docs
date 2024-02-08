@@ -84,15 +84,9 @@ Ablauf
 Tools
 -----
 
-* vorbereitete *Ubuntu-VM* mit kompletter Entwicklungs-Umgebung
-* kann auch *personalisiert* werden
-
-\vspace{1cm}
 ### Vorbereitung
 
 * [GitHub-Account](https://github.com/signup)
 * [DockerHub-Account](https://hub.docker.com/signup)
 * [Bitbucket-Account](https://bitbucket.org/) (inkl. 2-Faktor-Athentifizierung)
 * Laptop (je nachdem zu zweit)
-* Virtualbox installieren
-* VM einrichten: [github.com/scs/jumpstart-vm](https://github.com/scs/jumpstart-vm)
