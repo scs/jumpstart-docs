@@ -32,7 +32,14 @@ Dazu muss auch ein Workspace und ein Projekt definiert werden.
 Als Workspace kann z.B. `<user>-privat` und als Projekt `Jumpstart` verwendet werden.
 Das Repository kann z.B. `bitbucket-pipelines-exercise` genannt werden.
 
-Damit einfach auf die Repos zugegriffen werden kann,
+Für die folgenden Aufgaben müssen nicht alzu viele Dateien erstellt/editiert werden.
+Dies kann direkt über das Web-UI von Bitbucket gemacht werden.
+
+
+Repo lokal klonen (optional)
+----------------------------
+
+Falls das Repo lokal bearbeitet werden soll,
 sollte man unter [bitbucket.org/account/settings/ssh-keys](https://bitbucket.org/account/settings/ssh-keys/)
 seinen public Key registrieren.
 
