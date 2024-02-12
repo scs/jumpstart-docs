@@ -69,4 +69,5 @@ fabric.properties
 ###########################################
 # Custom
 build
+nohup.out
 .idea/*
