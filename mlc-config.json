@@ -11,6 +11,9 @@
     },
     {
       "pattern": "^https://bitbucket.org/supercomputingsystems.*"
+    },
+    {
+      "pattern": "^https://stackoverflow.com.*"
     }
   ],
   "aliveStatusCodes": [200, 206, 500]
