@@ -1,0 +1,15 @@
+@startuml
+
+package domain {
+    class TransactionObserver
+    
+    interface TransactionRepository
+}
+
+package persistence {
+    class DBTransactionRepository implements domain.TransactionRepository
+}
+
+TransactionObserver --> TransactionRepository
+
+@enduml

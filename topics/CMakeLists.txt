@@ -5,6 +5,7 @@ add_subdirectory(build_systems)
 add_subdirectory(docker)
 add_subdirectory(git)
 add_subdirectory(linux)
+add_subdirectory(sw_concepts)
 add_subdirectory(testing)
 add_subdirectory(tools_and_varia)
 
