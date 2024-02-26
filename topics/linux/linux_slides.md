@@ -548,7 +548,7 @@ SSH Client
   * known_hosts: Falls du dich das erste Mal mit einem Host verbindest,  
 wirst du gefragt, ob du dem Public Key des Servers vertraust.  
 In diesem File sind die Hosts und die Hashes der Public Keys (1 pro Host), denen du vertraut hast.
-  * id_rsa, id_rsa.pub oder weitere Keys:  
+  * id_ed25519, id_ed25519.pub oder weitere Keys:  
 Private und Public Keys, die für ssh Verbindungen verwendet werden können.
   * config  
   Die SSH Config, falls welche Konfiguriert ist.
@@ -565,10 +565,13 @@ Hier sind die public keys, mit denen man sich als dieser User einloggen kann.
 
 Eigenen Key hinzufügen: `ssh-copy-id [USER@]HOST`  
 Oder manuell:  
-Auf lokaler Maschine: `cat ~/.ssh/id_rsa.pub`  
+Auf lokaler Maschine: `cat ~/.ssh/id_ed25519.pub`  
 Und dann remote den key ins authorized_keys File einfügen.
 
-Private Key erstellen: `ssh-keygen -t rsa -b 4096`
+Private Key erstellen: `ssh-keygen -t ed25519`
+
+(Bisher war der default rsa, das ist aber deprecated.
+Ab openssh 9.5 wird per default ed25519 verwendet. <https://www.openssh.com/releasenotes.html#9.5>)
 
 Authentication Agents
 -------
