@@ -1,0 +1,56 @@
+@startuml
+
+!theme plain
+skinparam linetype ortho
+
+class ArrayList<E> {
+}
+interface Cloneable << interface >>
+interface Collection<E> << interface >> {
+  + remove(Object): boolean
+  + clear(): void
+  + removeIf(Predicate<E>): boolean
+  + isEmpty(): boolean
+  + addAll(Collection<E>): boolean
+  + size(): int
+  + hashCode(): int
+  + contains(Object): boolean
+  + add(E): boolean
+}
+class LinkedHashSet<E> {
+}
+interface List<E> << interface >> {
+  + sort(Comparator<E>): void
+  + isEmpty(): boolean
+  + contains(Object): boolean
+  + add(E): boolean
+  + set(int, E): E
+  + remove(Object): boolean
+  + lastIndexOf(Object): int
+  + size(): int
+  + remove(int): E
+  + get(int): E
+  + add(int, E): void
+  + clear(): void
+  + indexOf(Object): int
+  + containsAll(Collection<?>): boolean
+}
+interface Serializable << interface >>
+interface Set<E> << interface >> {
+  + contains(Object): boolean
+  + add(E): boolean
+  + remove(Object): boolean
+  + isEmpty(): boolean
+  + clear(): void
+  + size(): int
+}
+
+ArrayList      -[#008200,dashed]--^  Cloneable
+ArrayList      -[#008200,dashed]--^  List
+ArrayList      -[#008200,dashed]--^  Serializable
+LinkedHashSet  -[#008200,dashed]--^  Cloneable
+LinkedHashSet  -[#008200,dashed]--^  Serializable
+LinkedHashSet  -[#008200,dashed]--^  Set
+List           -[#008200,plain]--^  Collection
+Set            -[#008200,plain]--^  Collection
+@enduml
