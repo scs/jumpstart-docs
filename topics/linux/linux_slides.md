@@ -246,6 +246,7 @@ tmux 2
   * `%` horizontal
   * `"` vertikal
 * Switch Pane:
+  * `o` Wechselt zur nächsten Pane
   * `q` Nummeriert die Panes, mit `[0-9]` die Pane auswählen
 * Neues Window (Tab): `c`
   * Navigieren zwischen Windows: `n` für next, `p` für previous, `0-9` um direkt zu Fenster zu springen.
