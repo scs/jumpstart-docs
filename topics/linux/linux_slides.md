@@ -34,12 +34,12 @@ Wer/Wo/Was bin ich?
 * Home Directory: `cd ~` oder einfach `cd`
 * Prozesse die laufen:
   * Für alle Prozesse `ps axjf`
-  * Für einen bestimmten Prozess: `ps fu -C sshd`
+  * Für einen bestimmten Prozess: `ps fu -C tail`
   * Übersicht: `top` oder `htop`
 * Prozess beenden:
   * `kill <pid> [-9]`
-  * `pkill firefox`
-  * `killall firefox`
+  * `pkill tail`
+  * `killall tail`
 * ip Adressen: `ip a`
 
 File manipulation
