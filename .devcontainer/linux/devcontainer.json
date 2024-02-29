@@ -5,5 +5,12 @@
         "ghcr.io/devcontainers/features/docker-in-docker:2": {
             "dockerDashComposeVersion": "v2"
         }
-    }
+    },
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.allowChords": false
+            }
+        }
+    },
 }
