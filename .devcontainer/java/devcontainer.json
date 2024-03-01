@@ -15,6 +15,7 @@
                 "ms-vscode.live-server"
             ],
             "settings": {
+                "coverage-gutters.showGutterCoverage": true,
                 "files.autoSave": "afterDelay",
                 "files.autoSaveDelay": 1000,
                 "java.compile.nullAnalysis.mode": "automatic"
