@@ -13,7 +13,10 @@
                 "redhat.java",
                 "ryanluker.vscode-coverage-gutters",
                 "ms-vscode.live-server"
-            ]
+            ],
+            "settings": {
+                "java.compile.nullAnalysis.mode": "automatic"
+            }
         }
     }
 }
