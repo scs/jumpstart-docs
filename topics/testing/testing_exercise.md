@@ -112,6 +112,12 @@ nur Repositories (die Datenbank) gemockt.
 Vervollständige die Tests in CustomerControllerTest, so dass die Code Coverage in
 CustomerController und Customer fast 100% beträgt.
 (Bis auf die Methode `CustomerController::getJsonInvoice` ist alles getestet.)
+Die Code Coverage kann mit folgendem Befehl aktualisiert werden:
+
+```bash
+package='ch.scs.jumpstart.movierental.exercise'
+mvn -f topics/testing/code/ '-Dtest='$package'.**.*Test' test
+```
 
 ### Verschieben des Aufrufs
 
@@ -128,8 +134,10 @@ Lasse den `CustomerControllerTest` laufen. Sind die nötigen Pfade abgedeckt?
 ### Inline von `Customer::statement`
 
 Jetzt kannst du mit Test Coverage die Methode `RentalStatementFactory::createStatement` umbauen.
-Wir fangen an, indem wir die Methode `Customer.statement()` inlinen (`Ctrl + Alt + N`). Dies ist ein von der IDE
-unterstütztes Refactoring, somit sollte die Funktionalität nicht ändern. Aber du überprüfst das natürlich, indem du
+Wir fangen an, indem wir die Methode `Customer.statement()` inlinen\
+(IntelliJ: `Ctrl + Alt + N`, VSCode: `Ctrl + .` $\rightarrow$ Inline Method).\
+Dies ist ein von der IDE unterstütztes Refactoring, somit sollte
+die Funktionalität nicht ändern. Aber du überprüfst das natürlich, indem du
 die Tests laufen lässt. Wir haben jetzt eine neue Klasse mit Funktionalität, aber ohne Unittests. Um die Klasse
 `RentalStatementFactory` später refactoren zu können, müssen wir sie auch wieder unter Test bringen. Auch bei TDD
 sollte man die Klassen nicht indirekt (z.b. über den `CustomerControllerTest`) testen.  
