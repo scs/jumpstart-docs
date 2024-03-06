@@ -78,6 +78,7 @@ jobs:
              compose_paths="$compose_paths -f $i"
           done
 
+          export REPO_NAME=$(basename $(pwd))
           docker compose $compose_paths config > /tmp/docker-compose.yml
           yq_pipe='.services.[]'
           yq_pipe=$yq_pipe'| select(.build != null)'
