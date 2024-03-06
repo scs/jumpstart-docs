@@ -1,0 +1,6 @@
+services:
+  linux-devcontainer:
+    image:  ${REGISTRY:-ghcr.io}/${REPO_OWNER:-scs}/${REPO_NAME:-jumpstart-docs}/linux-devcontainer:${VERSION:-latest}
+    build: .
+    volumes:
+      - "../../:/workspace:cached"
