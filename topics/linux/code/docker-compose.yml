@@ -1,6 +1,6 @@
 services:
   systemd:
-    image:  ${REGISTRY:-ghcr.io}/${REPO_OWNER:-scs}/jumpstart-docs/fedora-systemd:${VERSION:-latest}
+    image:  ${REGISTRY:-ghcr.io}/${REPO_OWNER:-scs}/${REPO_NAME:-jumpstart-docs}/fedora-systemd:${VERSION:-latest}
     build: container
     volumes:
       - ./hello_world_service:/hello_world_service/hello_world_service
