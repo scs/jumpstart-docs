@@ -1,6 +1,8 @@
 {
     "name": "Jumpstart linux part",
-    "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
+    "dockerComposeFile": "./docker-compose.yml",
+    "service": "linux-devcontainer",
+    "workspaceFolder": "/workspace",
     "features": {
         "ghcr.io/devcontainers/features/docker-in-docker:2": {
             "dockerDashComposeVersion": "v2"
