@@ -633,6 +633,21 @@ Systemd
 * Abhängigkeitsbaum Anzeigen: `systemctl list-dependencies`
 * Analyse: `systemd-analyze`
 
+Systemd Abhängigkeiten Beispiel
+-------
+
+\colBegin{0.5}
+![Systemd Abhängigkeiten Beispiel](images/systemd-list-dependencies.png)
+\colNext{0.5}
+
+* Ziel ist das **default.target**
+* Dafür brauchen wir **multi-user.target**
+* Für **multi-user.target** brauchen wir die weiteren Abhängigkeiten (**basic**,...)
+* **systemd-logind.service** und **systemd-networkd.service** können parallel gestartet werden,
+damit wir **multi-user.target** schneller erreichen können.
+
+\colEnd
+
 Systemd .service file
 -------
 
@@ -669,3 +684,4 @@ Zusammenfassung
 * Scripts
 * Root, Package Management, journalctl
 * SSH
+* systemd
