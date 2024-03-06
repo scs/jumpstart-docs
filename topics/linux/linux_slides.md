@@ -614,55 +614,6 @@ Linux Directory Struktur
 Grafik benutzt Material von [Wikipedia](https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard), Lizenz:
  [CC BY-SA](https://creativecommons.org/licenses/by-sa/3.0/)
 
-
-Daemons
--------
-
-* Prozesse hängen normalerweise an dem Prozess, der sie gestartet hat
-* Mit einem `&` am Ende des Befehls kann man den Prozess in den Hintergrund verschieben
-  * Wenn man die Shell schliesst, wird der Prozess trotzdem abgebrochen
-
-```shell
-# $$ gibt die PID es momentan laufenden Prozesses aus
-$ ps fu $$
-USER         PID  TIME COMMAND
-vagrant    44484  0:00 -bash
-vagrant    44634  0:00    \_ ps fu
-```
-
-Daemons 2
--------
-
-```shell
-# in der bash eine neue bash starten -> startet neuen Prozess
-$ bash
-$ ps fu $$
-USER         PID TIME COMMAND
-vagrant    44484 0:00 -bash
-vagrant    44607 0:00  \_ bash
-vagrant    44634 0:00      \_ ps fu
-```
-
-Daemons 3
--------
-
-```shell
-# in dieser bash einen Hintergrund Prozess starten
-$ watch echo 1 &
-$ ps fu $$
-USER         PID    TIME COMMAND
-vagrant    44484    0:00 -bash
-vagrant    44607    0:00  \_ bash
-vagrant    44677    0:00      \_ watch echo 1
-vagrant    44706    0:00      \_ ps fu
-
-# Den parent Prozess des Hintergrund Prozesses killen
-$ kill -9 44607
-# Hintergrund Prozess ist weg
-$ ps fu 44677
-USER         PID  TIME COMMAND
-```
-
 Systemd
 -------
 
@@ -718,4 +669,3 @@ Zusammenfassung
 * Scripts
 * Root, Package Management, journalctl
 * SSH
-* Daemons
