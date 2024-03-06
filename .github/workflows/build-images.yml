@@ -72,14 +72,13 @@ jobs:
         run: |
           set -x
           sudo snap install yq
-          
-          compose_paths=""
-          for i in $(find . -name docker-compose.yml); do 
-             compose_paths="$compose_paths -f $i"
-          done
 
           export REPO_NAME=$(basename $(pwd))
-          docker compose $compose_paths config > /tmp/docker-compose.yml
+          echo "services:" > /tmp/docker-compose.yml
+          for i in $(find . -name docker-compose.yml); do
+             docker compose -f $i config | yq .services | sed 's/^/  /' >> /tmp/docker-compose.yml
+          done
+
           yq_pipe='.services.[]'
           yq_pipe=$yq_pipe'| select(.build != null)'
           yq_pipe=$yq_pipe'| [.build * {"image": .image}]'
