@@ -148,3 +148,18 @@ Startet der Service auch neu?
 \lstinputlisting{code/solution/update-hello-world-service.sh}
 
 <#endif>
+
+### Learn Linux by Capture the Flag (CTF)
+
+Für die schnellen sind zusätzliche Übungen mit einem Capture the Flag vorbereitet.
+Starte das CTF mit:
+
+```shell
+cd topics/linux/code
+docker compose run learn-linux-by-ctf
+```
+
+Taken from:
+
+- [guye1296/learn-linux-by-ctf](https://github.com/guye1296/learn-linux-by-ctf), Lizenz: [GPL-3.0](https://github.com/guye1296/learn-linux-by-ctf#GPL-3.0-1-ov-file)
+- [fluxkompensat0r/learn-linux-by-ctf](https://github.com/fluxkompensat0r/learn-linux-by-ctf), Lizenz: [GPL-3.0](https://github.com/fluxkompensat0r/learn-linux-by-ctf#GPL-3.0-1-ov-file)

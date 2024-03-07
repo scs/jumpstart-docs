@@ -6,3 +6,7 @@ services:
       - ./hello_world_service:/hello_world_service/hello_world_service
       - ./solution:/hello_world_service/solution
     privileged: true
+  learn-linux-by-ctf:
+    image: ghcr.io/bacluc/learn-linux-by-ctf:2024-03
+    profiles:
+      - learn-linux-by-ctf
