@@ -323,30 +323,25 @@ Design Patterns
 
 <https://github.com/iluwatar/java-design-patterns>
 
-Factory (method)
+Factory
 -------
 
-<https://github.com/iluwatar/java-design-patterns/blob/master/factory-method/README.md>
+* Alias: Factory Method, Simple Factory
+* Use Case:
+  * Logik für die Erstellung eines Objekts kapseln und vereinheitlichen.
+  * Wissen um konkrete Implementationen eines Interfaces zentralisieren.
 
-Factory (method) Beispiel
+von [Java Design Patterns/Factory](https://github.com/iluwatar/java-design-patterns/tree/07663ce2bdd46ca4697307068b9eb0d4c8888ead/factory)
+
+Factory Beispiel: vorher
 ------
 
-```python
-class CasiceConfigurationFactory:
-    def create(config):
-        if not config.is_casice_available():
-            return CasiceConfiguration.not_available()
+![Factory Beispiel: vorher](images/factory/factory-bad-case.png){width=78%}
 
-        if config.get_casice_host_override():
-            return CasiceConfiguration.with_host(Observable.just(config.get_casice_host_override()))
+Factory Beispiel: nachher
+------
 
-        return CasiceConfiguration.with_host(
-            RetryUntilSuccess.create(
-                CasiceHostSupplier(config.get_casice_network_interface()),
-                Fibonacci.create(60).map(lambda i: 1000 * i)
-            )
-        )
-```
+![Factory Beispiel: nachher](images/factory/factory-good-case.png)
 
 AbstractFactory
 -------

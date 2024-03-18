@@ -1,0 +1,22 @@
+@startuml
+
+package domain {
+
+    interface Label
+
+    class LightLabel
+
+    class DarkLabel
+
+    Label <|.. LightLabel
+    Label <|.. DarkLabel
+}
+
+package views {
+    Header --> LightLabel : creates
+    Header --> DarkLabel : creates
+
+    MainView --> LightLabel : creates
+    MainView --> DarkLabel : creates
+}
+@enduml

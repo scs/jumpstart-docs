@@ -1,0 +1,27 @@
+@startuml
+
+package domain {
+
+    together {
+        interface Label
+
+        class DarkLabel
+
+        class LightLabel
+    }
+
+    class LabelFactory
+
+    Label <|.. LightLabel
+    Label <|.. DarkLabel
+
+    LabelFactory -> LightLabel : creates
+    LabelFactory -> DarkLabel : creates
+}
+
+package views {
+    Header --> LabelFactory: uses
+    MainView --> LabelFactory: uses
+}
+
+@enduml
