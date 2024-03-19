@@ -160,14 +160,26 @@ Ansible
 Ansible
 -------
 
-* Nutzt *idempotente* Funktionen $\rightarrow$ Vorteil gegenüber Skripts
+* Nutzt *idempotente* Funktionen
+  $\break\rightarrow$ Auch mehrmalige Ausführung führt immer zum *selben Endzustand*
+  $\break\rightarrow$ Vorteil gegenüber Skripts
 * Nur Ansible-Host braucht *Ansible-Installation*
   * zu verwaltende Clients brauchen nur *SSH* und *Python*
 * Konfiguration in *`YAML`*
-* *Strukturierung* in:
-  * Modules (Grundfunktionalität von Ansible)
-  * Tasks (Verwendung von Modules)
-  * Roles (Sammlung von mehreren Tasks und Files, etc.)
+
+
+Ansible
+-------
+
+*Strukturierung* in:
+
+Ansible                                               vergleichbar mit
+---------                                             -----------------
+Playbook (Aufruf von mehreren Rolen und Tasks)        Main-Funktion
+Roles (Sammlung von mehreren Tasks und Files, etc.)   Klassen
+Tasks (Verwendung von Modules)                        Funktionen
+Modules (Grundfunktionalität von Ansible)             API
+
 * Grosser *Katalog* an Modules
-* *eigene* Modules möglich
+* *eigene* Modules möglich (in Python geschrieben)
 * *Vorgefertigte* Roles via: [ansible_galaxy]
