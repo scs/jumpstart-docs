@@ -6,48 +6,29 @@ title: "Arbeitsblatt: Build-Systeme"
 
 
 
-Datei-Struktur
-==============
+Vorbereitung
+============
 
-Am Anfang eines Projektes stellt sich die Frage,
-wie der Source-Code, die Unit-Tests, andere Ressource-Files, Libraries, etc.
-im Repository organisiert werden sollen.
-Auch sollte man sich überlegen,
-welche Produkte aus einem Repo resultieren sollen;
-dies meist in Form von Libraries oder Executables.
-
-Ein üblicher Ansatz kann sein,
-das Repo nach einzelnen Deliverables zu organisieren
-und darin nach Source-Code, Unit-Test-Code und weiteren Ressourcen aufzuteilen.
-Sollte nur ein Deliverable pro Repo verwaltet werden,
-kann die erste Hierarchie-Stufe weggelassen werden.
-Zudem ergibt es sehr häufig Sinn,
-bei wachsender Anzahl Source-Files den Source-Folder thematisch in Unterordner aufzuteilen.
+Diese Übung zeigt an einem kleinen Beispielprojekt,
+wie man mit CMake ein C++ Programm und dessen Unittests kompilieren und managen kann.
+Als Erstes müssen wir die Entwicklungsumgebung
+und die Projekt-Basis vorbereiten.
 
 
 Aufgabe
 -------
 
 * [Codespace "Jumpstart CMake exercise" starten](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=351816701&skip_quickstart=true)
-* Die File-Struktur im Unterordner `topics/build_systems/code` analysieren
-  und alle möglichen Deliverables/Binaries versuchen zu erkennen.
+* Die File-Struktur im Unterordner `topics/build_systems/code` analysieren.
 
-
-<#ifdef solution>
 
 Lösung
 ------
 
-* Header-Only:
-  * `libs/catch/catch.hpp`
-  * `src/utils/*.hpp`
-* Eigene Library:
-  * `src/logging/logger.cpp`
-* Binaries:
-  * main-app: `src/main.cpp`
-  * test-app: `test/main.cpp`
-
-<#endif>
+* Unittest-Framework: `libs/catch/catch.hpp`
+* Hauptapplikation: `src/main.cpp`
+* Eigene Library: `src/logging/*` und `src/utils/*`
+* Unittests zur eigenen Library: `test/*`
 
 
 
@@ -64,8 +45,7 @@ CMake ist ein Meta-Build-System,
 welches eine Abstraktionsschicht über rohe Build-Systeme wie `make` legt.
 Zudem bietet es Unterstützung für unterschiedliche Tools, wie `gcc`, `vc`, `clang`, `make`, `ninja`, etc.
 
-Seit der Version 2017 verfügt VisualStudio über integrierte Unterstützung für CMake.
-Das bedeutet, dass nicht mehr das eigene Build-System von Microsoft zum Einsatz kommt.
+Die meisten heutigen IDEs haben Unterstützung für CMake.
 Zudem gibt es bereits IDEs, wie CLion, die komplett auf eigene Systeme verzichten
 und direkt auf CMake als Projekt-Verwaltung aufbauen.
 Natürlich kann ein Projekt aber auch nur mit CMake
@@ -86,20 +66,23 @@ Der typische Workflow, um ein CMake-basiertes Projekt zu kompilieren, sieht folg
 Aufgabe
 -------
 
-* Im Codespace links den Tab `cmake` öffnen und dort unter `Konfigurieren` das Kit auswählen: `GCC ...`.
+* Im Codespace links den Tab `CMake` öffnen und dort unter `Konfigurieren` das Kit auswählen: `GCC ...`.
 * Nun sollte vscode automatisch das noch leere CMake-Projekt (im `topics/build_systems/code`-Ordner) laden
   und den CMake-Cache erzeugen.
 * Das `CMakeLists.txt` so vervollständigen,
   dass die Hauptapplikation gebaut werden kann.
   Vscode erkennt Änderungen automatisch, sobald das `CMakeLists.txt` gespeichert wird.
-  Die Dokumentation zu folgenden Befehlen könnte helfen: `set`, `target_include_directories`, `add_executable`
 * Zu beachten: alle Pfadangaben sind relativ zur Position der aufrufenden Datei: `CMakeLists.txt`.
 
 
-<#ifdef solution>
-
 Lösung
 ------
+
+Wir definieren nun ein erstes CMake-Target mit dem Namen `bit-fields-app`.
+Dieser Name wird mit den Variablen `BF_TARGET` und `BF_TARGET_APP` erzeugt
+und im `add_executable` verwendet.
+Das `target_include_directories` wird benötigt,
+damit der Kompiler weiss, wo er Header-Files suchen muss.
 
 ~~~ {.cmake}
 cmake_minimum_required(VERSION 3.5)
@@ -120,7 +103,7 @@ target_include_directories(${BF_TARGET_APP} PUBLIC
 )
 ~~~
 
-<#endif>
+Jetzt kann das CMake-Target `bit-fields-app` (auch links im `CMake` Tab) kompiliert und auch gestartet werden.
 
 
 
@@ -145,8 +128,6 @@ Aufgabe
 * Automatisieren der Erstellung der Source-Datei-Liste im `CMakeLists.txt` mittels Globbing.
 
 
-<#ifdef solution>
-
 Lösung
 ------
 
@@ -156,8 +137,6 @@ file(GLOB_RECURSE BF_SRC_ALL "src/*.c*")
 ...
 add_executable(${BF_TARGET_APP} ${BF_SRC_ALL})
 ~~~
-
-<#endif>
 
 
 
@@ -178,26 +157,23 @@ Aufgabe
 
 * Auftrennen der Kompilierung in separate Applikation und Library.
   Folgende Befehle sind dazu nützlich: `add_library`, `target_link_libraries`.
-* Analysieren der unterschiedlichen Optionen von `add_library`.
-  Welcher Library-Typ ist am geeignetsten?
 * Nur `main.cpp` soll für die Applikation kompiliert werden.
   Alle anderen Dateien im `src` Ordner sollen zur Library gehören.
 * Ausführen der Applikation über die Konsole.
 
 
-<#ifdef solution>
-
 Lösung
 ------
 
-* Eine `STATIC` Library ist hier am geeignetsten,
-  da wir die Applikation als ein einziges Binary liefern
-  und keine Laufzeitabhängigkeiten haben möchten.
-  Dasselbe gilt für das Test-Binary.
-  Meist muss man dies aber gar nicht erst angeben.
-  Dann kann beim Aufruf von CMake über CLI-Argumente definiert werden,
-  wie interne Libraries gelinkt werden sollen:
-  [`BUILD_SHARED_LIBS`](https://cmake.org/cmake/help/latest/variable/BUILD_SHARED_LIBS.html)
+Zuerst müssen wir unterschiedliche Listen mit den Source-Files erstellen.
+Dazu verwenden wir erneut Globbing.
+Da das `main.cpp` ebenfalls im `src` Ordner liegt,
+entfernen wir es mit `REMOVE_ITEM` nachträglich aus der Liste `BF_SRC_ALL`.
+
+Bei der Definition des Library-Targets mit `add_library` verwenden hier eine `STATIC` Library,
+da wir die Applikation als ein einziges Binary liefern
+und keine Laufzeitabhängigkeiten haben möchten.
+Dasselbe gilt für das Test-Binary.
 
 ~~~ {.cmake}
 # search all relevant files
@@ -216,8 +192,6 @@ add_executable(${BF_TARGET_APP} ${BF_SRC_MAIN})
 target_link_libraries(${BF_TARGET_APP} PRIVATE ${BF_TARGET_LIB})
 ~~~
 
-<#endif>
-
 
 
 Unittest-Framework Catch2 einrichten
@@ -231,25 +205,14 @@ reicht dies vollkommen aus.
 Zudem ist es als Header-Only-Implementation verfügbar
 und lässt sich entsprechend einfach im Build-System einbinden.
 
-Zuerst muss die Datei `test/main.cpp` erstellt und darin eine entsprechende Main-Funktion implementiert werden.
-Dieses neue Main kann als Basis für das Test-Binary fungieren.
-Die vorbereitete Library kann zu diesem Binary gelinkt werden.
-
 
 Aufgabe
 -------
-
-* Implementation von `main.cpp` für die Tests.
-  Das File muss folgendermassen aussehen:
-
-  \lstinputlisting{code/test/main.cpp}
 
 * Erweiterung des Build-Systems durch das Test-Binary.
   Dies kann ähnlich wie bei der Hauptapplikation bewerkstelligt werden.
 * Ausführen der Test-Applikation über die Konsole.
 
-
-<#ifdef solution>
 
 Lösung
 ------
@@ -264,8 +227,6 @@ set(BF_TARGET_TEST ${BF_TARGET}-test)
 add_executable(${BF_TARGET_TEST} ${BF_TEST_ALL})
 target_link_libraries(${BF_TARGET_TEST} PRIVATE ${BF_TARGET_LIB})
 ~~~
-
-<#endif>
 
 
 
@@ -286,11 +247,8 @@ Aufgabe
 -------
 
 * Deklaration des Test-Binary für CMake als Test.
-  Relevante Befehle: `enable_testing`, `add_test`.
 * Ausführen der Tests entweder direkt durch `make test` oder über den `Test` Tab links in vscode.
 
-
-<#ifdef solution>
 
 Lösung
 ------
@@ -300,15 +258,10 @@ enable_testing()
 add_test(unittest ${BF_TARGET_TEST})
 ~~~
 
-<#endif>
 
-
-
-<#ifdef solution>
 
 Endversion von CMakeLists.txt
 =============================
 
-\lstinputlisting{code/CMakeLists.txt}
+\lstinputlisting{code/CMakeLists_solution.txt}
 
-<#endif>
