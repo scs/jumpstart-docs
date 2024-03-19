@@ -28,8 +28,9 @@ bei wachsender Anzahl Source-Files den Source-Folder thematisch in Unterordner a
 Aufgabe
 -------
 
-* Den `code` Unterordner an einem geeigneten Ort entpacken.
-* Die File-Struktur analysieren und alle möglichen Deliverables/Binaries versuchen zu erkennen.
+* [Codespace "Jumpstart CMake exercise" starten](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=351816701&skip_quickstart=true)
+* Die File-Struktur im Unterordner `topics/build_systems/code` analysieren
+  und alle möglichen Deliverables/Binaries versuchen zu erkennen.
 
 
 <#ifdef solution>
@@ -85,10 +86,12 @@ Der typische Workflow, um ein CMake-basiertes Projekt zu kompilieren, sieht folg
 Aufgabe
 -------
 
-* Mit CLion das vorbereitete CMake-Projekt (`code`-Ordner) öffnen.
-  Dadurch sollte das `CMakeLists.txt` im entpackten `code`-Ordner automatisch geladen und der CMake-Cache erzeugt werden.
+* Im Codespace links den Tab `cmake` öffnen und dort unter `Konfigurieren` das Kit auswählen: `GCC ...`.
+* Nun sollte vscode automatisch das noch leere CMake-Projekt (im `topics/build_systems/code`-Ordner) laden
+  und den CMake-Cache erzeugen.
 * Das `CMakeLists.txt` so vervollständigen,
   dass die Hauptapplikation gebaut werden kann.
+  Vscode erkennt Änderungen automatisch, sobald das `CMakeLists.txt` gespeichert wird.
   Die Dokumentation zu folgenden Befehlen könnte helfen: `set`, `target_include_directories`, `add_executable`
 * Zu beachten: alle Pfadangaben sind relativ zur Position der aufrufenden Datei: `CMakeLists.txt`.
 
@@ -284,7 +287,7 @@ Aufgabe
 
 * Deklaration des Test-Binary für CMake als Test.
   Relevante Befehle: `enable_testing`, `add_test`.
-* Ausführen Tests entweder direkt durch `make test` oder über das Configuration-DropDown in CLion.
+* Ausführen der Tests entweder direkt durch `make test` oder über den `Test` Tab links in vscode.
 
 
 <#ifdef solution>
