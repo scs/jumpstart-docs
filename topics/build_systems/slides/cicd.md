@@ -62,7 +62,7 @@ Tools
 
 *Integriert in Tool-Environment*
 
-* Atlassian: Bamboo
+* Atlassian: Bitbucket Pipelines
 * GitLab: GitLab CI/CD
 * GitHub: GitHub Actions: [github_awesome_actions]
 
