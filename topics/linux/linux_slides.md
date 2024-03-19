@@ -524,7 +524,7 @@ journalctl
 * Neuste Meldungen zuerst: `journalctl -r`, springe ans Ende: `journalctl -e`
 * Output Formate können definiert werden (z.b. jsonwill, json-pretty, cat)
 
-Quelle: [www.loggly.com/ultimate-guide/using-journalctl](https://web.archive.org/web/20210630131216/https://www.loggly.com/ultimate-guide/using-journalctl/?CMP=KNC-TAD-GGL-SW_DACH_X_PP_CPC_LD_EN_PROD_SW-LGL-12302661008~119270368964_g_c_-b~497490656877~~1003297~~)
+Quelle: [loggly.com/ultimate-guide/using-journalctl](https://www.loggly.com/ultimate-guide/using-journalctl/)
 
 SSH
 -------
