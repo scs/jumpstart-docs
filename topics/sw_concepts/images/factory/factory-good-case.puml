@@ -1,0 +1,27 @@
+@startuml
+
+package domain {
+
+    interface Coin
+
+    class GoldCoin implements Coin
+
+    class CopperCoin implements Coin
+
+    class SilverCoin implements Coin
+
+    class CoinFactory
+
+    CoinFactory -> SilverCoin : creates
+    CoinFactory -> GoldCoin : creates
+    CoinFactory -> CopperCoin : creates
+}
+
+package main {
+    Main --> CoinFactory: uses
+}
+
+package bank {
+    Bank --> CoinFactory: uses
+}
+@enduml
