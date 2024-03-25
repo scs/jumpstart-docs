@@ -1,0 +1,71 @@
+@startuml
+
+class Bootstrap
+
+package views {
+
+    class Header
+
+    class MainView
+
+}
+
+package components {
+
+    together {
+        interface Label
+
+        class LightLabel
+
+        class DarkLabel
+    }
+
+    together {
+        interface Button
+
+        class LightButton
+
+        class DarkButton
+    }
+
+    interface ComponentFactory
+
+    class LightComponentFactory implements ComponentFactory
+
+    class DarkComponentFactory implements ComponentFactory
+
+
+    Label <|.. LightLabel
+    Label <|.. DarkLabel
+
+    Button <|.. LightButton
+    Button <|.. DarkButton
+
+    DarkComponentFactory --> DarkLabel
+    DarkComponentFactory --> DarkButton
+
+    LightComponentFactory --> LightLabel
+    LightComponentFactory --> LightButton
+}
+
+package legend <<Rectangle>> {
+    <> example_diamond
+
+    note left of example_diamond
+        if darkmode
+    endnote
+}
+
+<> create
+
+Bootstrap "creates" ---> create
+create --> LightComponentFactory
+create --> DarkComponentFactory
+Bootstrap "creates" ---> Header
+Bootstrap ---> MainView
+
+Header --> ComponentFactory
+
+MainView --> ComponentFactory
+
+@enduml

@@ -351,28 +351,33 @@ class CasiceConfigurationFactory:
 AbstractFactory
 -------
 
-<https://github.com/iluwatar/java-design-patterns/blob/master/abstract-factory/README.md>
+* Use Case:
+  * Es gibt 2 oder mehr Gruppen von Komponenten. Es sollen immer nur Komponenten aus einer der Gruppen erstellt werden.
+    * Beispiel Light/Dark Theme: es soll entweder Light oder Dark Theme sein, aber nie gemischt.
+  * Die gleichen If-Statements tauchen wiederholt an unterschiedlichen Stellen im Code auf. Man möchte diese Code-Duplizierung
+  verhindern, indem man die If-Statements an einem zentralen Ort platziert.
 
-AbstractFactory Beispiel 1
+von [Java Design Patterns/AbstractFactory](https://github.com/iluwatar/java-design-patterns/tree/07663ce2bdd46ca4697307068b9eb0d4c8888ead/abstract-factory/README.md)
+
+AbstractFactory Beispiel: vorher
+------
+\colBegin{0.8}
+![AbstractFactory Beispiel: vorher](images/abstract-factory/abstract-factory-bad-case.png){width=100%}
+\colNext{0.2}
+\colEnd
+
+AbstractFactory Beispiel: nachher
 ------
 
-```python
-class ButtonFactory:
-    def get_bwd_button(self, name, dim, text):
-        return BwdButton(name, dim, text)
+\colBegin{0.8}
+![AbstractFactory Beispiel: nachher](images/abstract-factory/abstract-factory-good-case.png){width=100%}
+\colNext{0.2}
+\small
 
-    def get_fwd_button(self, name, dim, text):
-        return FwdButton(name, dim, text)
+* Die Anzahl "if darkmode" statements ist reduziert.
+* Es ist jetzt viel einfacher, ein "HighContrast"-Theme einzubauen.
 
-    def get_info_button(self, name, info_text):
-        return InfoButton(name, info_text)
-
-class ButtonFactoryC(ButtonFactory):
-    pass
-
-class ButtonFactoryL(ButtonFactory):
-    pass
-```
+\colEnd
 
 AbstractFactory Beispiel 2
 ------
