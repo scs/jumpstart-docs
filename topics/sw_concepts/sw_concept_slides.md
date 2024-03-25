@@ -147,6 +147,92 @@ Clean Code
 * **I**nterface Segregation
 * **D**ependency Inversion
 
+Grundlagen für Clean Code Beispiele
+-------
+
+* Was ist ein Interface in **O**bjekt**o**rientierter **P**rogrammierung?
+* Was ist **U**niform **M**odelling **L**anguage?
+
+Was ist ein Interface?
+-------
+
+* Definiert minimales Set an Fähigkeiten(Methoden), die ein Objekt haben muss.
+* Ziel ist es, das **Was** der Fähigkeit vom **Wie** zu trennen.
+* Beispiel: Wenn ich eine Person einstelle, um meine Wäsche zu waschen, dann brauche ich
+folgendes Interface:
+
+```java
+interface Washer {
+    void washClothes();
+}
+```
+
+Dabei ist es mir egal, wie die Person die Wäsche wäscht:
+
+\colBegin{0.5}
+
+```java
+class MashineWasher
+    implements ClothesWasher {
+
+    void washClothes(){}
+}
+```
+
+\colNext{0.5}
+
+```java
+class HandWasher
+    implements ClothesWasher {
+
+    void washClothes(){}
+}
+```
+
+\colEnd
+
+Interface mit mehreren Methoden
+-------
+
+Wenn ich jetzt zustäzlich mein Geschirr waschen lassen möchte,
+dann hat das Interface eine weitere Methode:
+
+```java
+interface Washer {
+    void washClothes();
+
+    void washDishes();
+}
+```
+
+Und die Implementationen sehen dann so aus:
+
+\colBegin{0.5}
+
+```java
+class MashineWasher
+    implements ClothesWasher {
+
+    void washClothes(){}
+
+    void washDishes(){}
+}
+```
+
+\colNext{0.5}
+
+```java
+class HandWasher
+    implements ClothesWasher {
+
+    void washClothes(){}
+
+    void washDishes(){}
+}
+```
+
+\colEnd
+
 Single Responsibility
 -------
 
