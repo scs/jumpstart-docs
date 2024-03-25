@@ -377,8 +377,8 @@ class ButtonFactoryL(ButtonFactory):
 AbstractFactory Beispiel 2
 ------
 
-![footer_m](images/button_factory/footer_m.png)
-![footer_c](images/button_factory/footer_c.png)
+![footer_m](images/abstract-factory/footer_m.png)
+![footer_c](images/abstract-factory/footer_c.png)
 
 Strategy
 -------
