@@ -117,6 +117,15 @@ YAGNI
 -------
 
 * **Y**ou **a**ren't **g**onna **n**eed **i**t
+* Beispiele:
+  * Performanceoptimierung, bevor Performance zu einem Problem wird.
+  * Design für Anforderungen, die möglicherweise in der Zukunft auftreten könnten.
+
+ "We should forget about small efficiencies, say about 97% of the time: premature
+ optimization is the root of all evil.
+ Yet we should not pass up our opportunities in that critical 3%."
+
+ [Knuth, Donald (December 1974). "Structured Programming with go to Statements"](https://pic.plover.com/knuth-GOTO.pdf)
 
 NIH
 -------
