@@ -1,0 +1,44 @@
+@startuml
+
+skinparam defaultFontSize 25
+
+package washing {
+
+    interface Washer {
+        void washClothes()
+
+        void washDishes()
+    }
+
+    note top of Washer
+        This is the interface Washer
+    endnote
+
+    note left of Washer::washClothes
+        This is a method of the interface
+    endnote
+
+    class HandWasher {
+        void washClothes()
+
+        void washDishes()
+    }
+
+    Washer <|... HandWasher
+    note on link: This arrow means implements
+
+    note top of HandWasher
+        This is the class HandWasher
+    endnote
+
+    class Bucket
+
+    HandWasher --> Bucket
+    note on link: HandWasher uses a Bucket
+}
+
+note top of washing
+    The interface and the classes are in a package.
+endnote
+
+@enduml
