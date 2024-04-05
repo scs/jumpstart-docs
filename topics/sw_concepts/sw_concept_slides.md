@@ -238,6 +238,22 @@ Kurze Übung Interface
 
 Überlegt euch zu zweit ein Beispiel für ein Interface mit 2 Methoden und 2 Implementationen.
 
+UML
+-------
+
+**U**nified **M**odeling **L**anguage
+
+* Ein standardisierter Weg um beispielsweise Teile einer Software zu visualisieren.
+* Einlesen lohnt sich.
+* Auf den nächsten Folien finden Sie eine kurze Übersicht über einen Teil des Klassendiagramms.
+
+von [UML: ISO/IEC 19501](https://www.omg.org/spec/UML/ISO/19501/PDF)
+
+UML Klassendiagramm
+-------
+
+![UML Klassendiagramm: verwendete Komponenten](images/uml/class-diagram-parts.png){width=70%}
+
 Single Responsibility
 -------
 
