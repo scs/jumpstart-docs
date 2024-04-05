@@ -18,7 +18,8 @@
       "matchFileNames": [
         ".github/**/*",
         "topics/linux/**/*",
-        "topics/testing/**/*"
+        "topics/testing/**/*",
+        "topics/sw_concepts/**/*"
       ],
       "vulnerabilityAlerts": {
         "automerge": true
