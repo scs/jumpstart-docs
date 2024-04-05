@@ -233,6 +233,11 @@ class HandWasher
 
 \colEnd
 
+Kurze Übung Interface
+-------
+
+Überlegt euch zu zweit ein Beispiel für ein Interface mit 2 Methoden und 2 Implementationen.
+
 Single Responsibility
 -------
 
