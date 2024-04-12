@@ -53,6 +53,7 @@ Ablauf:
 1. Weiteren Test schreiben
 1. Klasse erweitern, damit der Test durchkommt
 1. Refactor, falls die Klasse jetzt zu gross ist, zusätzliche Klassen extrahieren
+1. Tests für die extrahierten Klassen in die Unittests für die extrahierten Klassen verschieben.
 
 Red Green Refactor
 -------
@@ -133,6 +134,17 @@ Arrange, Act, Assert
 * Act: Trigger, der das zu testende Verhalten auslöst.
 * Assert: Überprüfen, dass nur das gewünschte Verhalten ausgelöst wurde.
 * *Kontrovers:* Diese Teile können auch wiederholt werden, falls ein Verhalten mit mehreren Schritten getestet wird.
+
+Übung TDD mit mehreren Klassen (PasswordValidator)
+-------
+
+Zusammenfassung TDD mit mehreren Klassen (PasswordValidator)
+-------
+
+* Funktionalität in neue Klasse auslagern + gleich integrieren, Test bleibt grün
+* Neue Tests zur ausgelagerten Klasse hinzufügen, alle Tests bleiben grün
+* Refactoring dazwischen nicht vergessen
+* Am Schluss Tests für detailliertes Verhalten an den Ort der Implementation verschieben
 
 Übung Mocking
 -------
@@ -240,18 +252,6 @@ Implementation von Mockito
 * Mockito.when(mockOrSpy): Implementiert das Verhalten von *Stubs* für *Mocks* oder *Spies*
 (*Spy* und *Stub* widersprechen sich eigentlich, ist aber so bei Mockito)
 * Mockito.verify(mockOrSpy): Wird verwendet, um die Aufgezeichneten Interaktionen zu verifizieren.
-
-
-Übung TDD mit mehreren Klassen (MovieRental Teil 1)
--------
-
-Zusammenfassung TDD mit mehreren Klassen (MovieRental Teil 1)
--------
-
-* Funktionalität in neue Klasse auslagern + gleich integrieren, Test bleibt grün
-* Neue Tests zur ausgelagerten Klasse hinzufügen, alle Tests bleiben grün
-* Refactoring dazwischen nicht vergessen
-* Am Schluss Tests für detailliertes Verhalten an den Ort der Implementation verschieben
 
 Teil 2
 -------
@@ -422,9 +422,3 @@ Links 2
 * Websites and Blogs
   * Martin Fowler, e.g. [Martin Fowler The Practical Test Pyramid]
   * Design patterns, one example: [Design Patterns]
-
-Reserve
--------
-
-Übung Integrationstests (MovieRental Part 2)
--------

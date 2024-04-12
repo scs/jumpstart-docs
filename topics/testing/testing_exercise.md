@@ -66,6 +66,62 @@ Für Zahlen `<=` 3999 gelten folgende Regeln:
 
 \newpage
 
+PasswordValidator
+-------
+
+In dieser Übung geht es darum, Test Driven Development (TDD) mit mehreren Klassen zu üben.\
+Damit es möglich ist, eine Klasse in kürzerer Zeit in mehrere Klassen aufzuteilen,\
+gelten folgende strikte Regeln für diese Übung:
+
+> 1\. In produktivem Code darf eine Methode nur 2 Statements enthalten. In Java werden Statements mit einem `;` abgeschlossen.\
+> 2\. In produktivem Code darf eine Klasse nur 2 Methoden haben.
+
+Als Erinnerung nochmals den Ablauf für TDD:
+
+1. Test schreiben
+1. Klasse schreiben, damit der Test kompiliert und passed
+1. Refactor
+1. Weiteren Test schreiben
+1. Klasse erweitern, damit der Test durchkommt
+1. Refactor, falls die Klasse jetzt zu gross ist, zusätzliche Klassen extrahieren
+1. Tests für die extrahierten Klassen in die Unittests für die extrahierten Klassen verschieben.
+
+Es gibt schon das Skelett für die Klasse PasswordValidator und den dazugehörigen Test PasswordValidatorTest.\
+Deine Aufgabe besteht nun darin, die folgenden Anforderungen Schritt für Schritt umzusetzen.\
+Es ist erlaubt, die Reihenfolge der Anforderungen zu ändern, um möglicherweise mit weniger Refactoring zur Lösung zu gelangen.
+Die Signatur der Klasse PasswordValidator darf angepasst werden.
+
+1. Das Passwort muss mindestens 12 Zeichen haben.
+1. Das Passwort muss Gross- und Kleinbuchstaben enthalten.
+1. Das Passwort muss mindestens eine Zahl enthalten.
+1. Der PasswordValidator soll nicht nur die erste fehlgeschlagene Validierung ausgeben,
+sondern alle fehlgeschlagenen Validierungen.
+Auf diese Weise benötigt es weniger Versuche, um ein gültiges Passwort zu erstellen.
+1. Das Passwort muss mindestens ein Sonderzeichen enthalten.
+1. Die Zahlen im Passwort müssen auf aufsummiert 25 ergeben.
+
+**WARNUNG**\
+Je größer die mögliche Entropie eines Passworts ist, desto sicherer ist es.
+Wenn das Passwort aus den Zeichen a-z besteht und 8 Zeichen lang ist, dann kann man damit
+$26^8=208’827’064’576$ unterschiedliche Passwörter bilden, was für einen Computer nicht viel ist.
+
+| Zeichensatz | Anzahl Zeichen | Anzahl Passwörter | Entropie[^1] | Stärke |
+| -: | - | -: | - | - |
+| a-z | 8 | $26^8 = 208’827’064’576$ | $log_2(26^8)=37.6$ | Schwach |
+| A-Za-z | 8 | $52^8 = 53'459'728'531'456$ | $log_2(52^8)=45.6$ | Schwach |
+| 1-9A-Za-z | 8 | $62^8 = 218'340'105'584'896$ | $log_2(62^8)=47.6$ | Schwach |
+| 1-9A-Za-z | 12 | $62^{12}=3'226'266'762'397'899'821'056$ | $log_2(62^{12})=71.5$ | Stark |
+
+[^1]: Wenn die Zeichen zufällig sind, d.h. keine Wörter beinhalten.
+
+Um sicherzustellen, dass Benutzer aus einem möglichst grossen Zeichensatz die Zeichen für ihr Passwort wählen,
+kann ein Password Strength Meter verwendet werden, z.b. [zxcvbn-ts](https://zxcvbn-ts.github.io/zxcvbn/demo/).\
+Quellen:
+
++ [**O**pen **W**eb **A**pplication **S**ecurity **P**roject - Authentication_Cheat_Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html#implement-proper-password-strength-controls)
++ [NIST - Memorized Secret Verifiers](https://pages.nist.gov/800-63-3/sp800-63b.html#-5112-memorized-secret-verifiers)
+
+
 Mocking
 --------
 
