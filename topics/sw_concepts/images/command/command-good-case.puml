@@ -1,0 +1,34 @@
+@startuml
+
+skinparam defaultFontSize 25
+
+together {
+    class DarkButton {
+        void setCommand(Command command)
+    }
+
+    class LightButton {
+        void setCommand(Command command)
+    }
+}
+
+together {
+    interface Command
+
+    class SetDarkThemeCommand
+
+    class SetLightThemeCommand
+
+    Command <|.. SetDarkThemeCommand
+    Command <|.. SetLightThemeCommand
+}
+
+class ThemeObservable
+
+DarkButton --> Command
+LightButton --> Command
+
+SetDarkThemeCommand ---> ThemeObservable
+SetLightThemeCommand ---> ThemeObservable
+
+@enduml
