@@ -272,8 +272,6 @@ public enum DirectionAndRazziaValue {
     RAZZIA
 }
 
-private static void updateCountersAndLogEjectedCoins(...)
-
 public SessionFactoryBuilder withUserAndPassword(String username, String password) {
     this.username = username;
     this.password = password;
@@ -294,9 +292,6 @@ public enum DirectionAndRazziaValue {
     DIRECTION_2,
     RAZZIA
 }
-
-// Trennen der zwei Aufgaben
-private static void updateCountersAndLogEjectedCoins(...)
 
 // in zwei Methoden aufteilen: es ist ja schon ein Builder
 public SessionFactoryBuilder withUserAndPassword(String username, String password) {
