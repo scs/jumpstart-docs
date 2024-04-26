@@ -528,28 +528,20 @@ class OrganisationPrefixRouteNumberStrategy(RouteNumberResolveStrategy):
 Observer
 -------
 
-<https://github.com/iluwatar/java-design-patterns/blob/master/observer/README.md>
+* Use Case:
+  * Wenn eine Änderung Auswirkungen auf viele andere Objekte haben soll.
+  * Man möchte den Auslöser von Änderungen entkoppeln von den Objekten,
+  die sich für die Änderung interessieren.
 
-Observer Beispiel
+Observer Beispiel: vorher
 -------
 
-```java
-public class CarouselProvider {
+![Observer bad case](images/observer/observer-bad-case.png)
 
- private final Set<CarouselObserver> carouselObservers = Collections.synchronizedSet(new HashSet<>());
- private List<String> files = new ArrayList<>();
- private int counter = 0;
+Observer Beispiel: nachher
+-------
 
- public void addCarouselObserver(CarouselObserver observer) {
-  carouselObservers.add(observer);
-  observer.fileChanged(getCurrentImage());
- }
-
- public void removeCarouselObserver(CarouselObserver observer) {
-    carouselObservers.remove(observer);
- }
-}
-```
+![Observer good case](images/observer/observer-good-case.png){height=90%}
 
 Command
 -------

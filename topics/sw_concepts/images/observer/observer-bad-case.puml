@@ -1,0 +1,45 @@
+@startuml
+
+skinparam defaultFontSize 25
+
+class DarkThemeButton {
+    void onAction()
+
+    void setEnable(bool enable)
+}
+
+note top of DarkThemeButton
+void onAction() {
+    theme.isDarkTheme = true
+    setEnable(false)
+    lightThemeButton.setEnable(true)
+}
+endnote
+
+class LightThemeButton {
+    void onAction()
+
+    void setEnable(bool enable)
+}
+
+note top of LightThemeButton
+void onAction() {
+    theme.isDarkTheme = false
+    setEnable(false)
+    darkThemeButton.setEnable(true)
+}
+endnote
+
+class Theme {
+   bool isDarkTheme
+}
+
+DarkThemeButton <-[thickness=8]> LightThemeButton
+note on link
+    Here we have a circular dependency
+end note
+DarkThemeButton --> Theme
+
+LightThemeButton --> Theme
+
+@enduml

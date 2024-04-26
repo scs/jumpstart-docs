@@ -1,0 +1,64 @@
+@startuml
+
+skinparam defaultFontSize 25
+
+together {
+
+    class DarkThemeButton {
+        void onAction()
+
+        void setEnable(bool enable)
+
+        void onThemeChanged(bool isDarkTheme)
+    }
+
+    note top of DarkThemeButton
+        void onAction() {
+            themeObservable.setIsDarkTheme(true)
+        }
+
+        void onThemeChanged(bool isDarkTheme)) {
+            setEnable(!isDarkTheme)
+        }
+    endnote
+
+    class LightThemeButton {
+        void onAction()
+
+        void setEnable(bool enable)
+
+        void onThemeChanged(bool isDarkTheme)
+    }
+
+    note top of LightThemeButton
+        void onAction() {
+            themeObservable.setIsDarkTheme(false)
+        }
+
+        void onThemeChanged(bool isDarkTheme)) {
+            setEnable(isDarkTheme)
+        }
+    endnote
+ }
+
+class ThemeObservable {
+   void setIsDarkTheme(bool isDarkTheme)
+
+   void addObserver(ThemeObserver observer)
+
+   void removeObserver(ThemeObserver observer)
+}
+
+interface ThemeObserver {
+    void onThemeChanged(bool isDarkTheme)
+}
+
+ThemeObserver <|.. DarkThemeButton
+ThemeObserver <|.. LightThemeButton
+
+LightThemeButton --> ThemeObservable
+DarkThemeButton --> ThemeObservable
+
+ThemeObservable --> ThemeObserver
+
+@enduml
