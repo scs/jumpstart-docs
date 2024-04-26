@@ -408,10 +408,16 @@ Interface Segregation
 * Man möchte vermeiden, dass jemand unerwartet eine Methode verwendet,
 die eigentlich nicht zur Verfügung gestellt werden sollte.
 
-Interface Segregation Example
+Interface Segregation Beispiel vorher
 ------
 
-![Interface Segregation](images/interface-segregation/java-interface-segregation.png){height=95%}
+![Interface Segregation bad case](images/interface-segregation/interface-segregation-bad-case.png)
+
+
+Interface Segregation Beispiel nachher
+------
+
+![Interface Segregation good case](images/interface-segregation/interface-segregation-good-case.png)
 
 Dependency Inversion
 ------
