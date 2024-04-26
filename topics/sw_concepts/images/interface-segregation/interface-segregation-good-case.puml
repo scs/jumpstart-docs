@@ -1,0 +1,36 @@
+@startuml
+
+skinparam defaultFontSize 25
+
+interface ClothesWasher {
+    void washClothes()
+}
+
+interface DishWasher {
+    void washDishes()
+}
+
+class HandWasher {
+    void washClothes()
+
+    void washDishes()
+}
+
+class DishWashingMachine {
+    void washDishes()
+}
+
+ClothesWasher <|... HandWasher
+DishWasher <|... HandWasher
+DishWasher <|... DishWashingMachine
+
+note left of HandWasher
+    The HandWasher still can do both
+endnote
+
+note right of DishWashingMachine
+    Now we don't have to implement a method
+    which will always throw an Exception
+endnote
+
+@enduml

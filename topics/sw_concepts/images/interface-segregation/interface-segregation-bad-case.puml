@@ -1,0 +1,40 @@
+@startuml
+
+skinparam defaultFontSize 25
+
+interface Washer {
+    void washClothes()
+
+    void washDishes()
+}
+
+class HandWasher {
+    void washClothes()
+
+    void washDishes()
+}
+
+class DishWashingMachine {
+    void washClothes()
+
+    void washDishes()
+}
+
+Washer <|... HandWasher
+Washer <|... DishWashingMachine
+
+note left of HandWasher
+    Humans are very flexible, they can
+    wash dishes and clothes
+endnote
+
+note right of DishWashingMachine::washClothes
+    just throws NotImplementedException
+endnote
+
+note top of DishWashingMachine
+    Machines are not flexible.
+    The DishWashingMachine cannot wash clothes.
+endnote
+
+@enduml
