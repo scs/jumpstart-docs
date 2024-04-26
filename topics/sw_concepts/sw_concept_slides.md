@@ -546,7 +546,19 @@ Observer Beispiel: nachher
 Command
 -------
 
-<https://github.com/iluwatar/java-design-patterns/blob/master/command/README.md>
+* Use Case:
+  * Man möchte von einer Funktionalität das Wie vom Wann trennen.
+  * Man möchte die Klasse, die ein Kommando auslöst, von der Klasse, an der das Kommando ausgeführt wird, trennen.
+
+Command Beispiel: vorher
+-------
+
+![Observer bad case](images/command/command-bad-case.png)
+
+Command Beispiel: nachher
+-------
+
+![Observer good case](images/command/command-good-case.png){height=90%}
 
 Zusammenfassung Abstraktion
 ------

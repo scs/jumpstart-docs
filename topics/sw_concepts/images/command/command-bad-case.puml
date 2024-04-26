@@ -1,0 +1,33 @@
+@startuml
+
+skinparam defaultFontSize 25
+
+together {
+    abstract class DarkThemeButton
+
+    class DarkDarkThemeButton
+
+    class LightDarkThemeButton
+
+    abstract class LightThemeButton
+
+    class DarkLightThemeButton
+
+    class LightLightThemeButton
+
+    DarkThemeButton <|.. DarkDarkThemeButton
+    DarkThemeButton <|.. LightDarkThemeButton
+
+    LightThemeButton <|.. DarkLightThemeButton
+    LightThemeButton <|.. LightLightThemeButton
+}
+
+class ThemeObservable {
+}
+
+DarkDarkThemeButton ---> ThemeObservable
+LightDarkThemeButton ---> ThemeObservable
+DarkLightThemeButton ---> ThemeObservable
+LightLightThemeButton ---> ThemeObservable
+
+@enduml
