@@ -424,11 +424,13 @@ Dependency Inversion
 
 * Um zwei Klassen zu entkoppeln, kann ein Interface verwendet werden.
 * Das verhindert, dass eine High-Level-Komponente von einer Low-Level-Komponente abhängt.
+* Es verhindert auch Abhängigkeiten von der Domäne auf die Infrastruktur Code, wie z.b. die Datenbank.
+* Teilweise können so zyklische Abhängigkeiten aufgelöst werden.
 
 Dependency Inversion Beispiel 1
 -----
 
-![No dependency inversion](images/dependency-inversion/no-dependency-inversion.png)
+![No dependency inversion](images/dependency-inversion/no-dependency-inversion.png){width=65%}
 
 Dependency Inversion Beispiel 2
 -----
