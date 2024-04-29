@@ -1,13 +1,18 @@
 @startuml
 
 package domain {
-    class TransactionObserver
+    class TransactionService
+
+    class Transaction
 }
 
 package persistence {
     class DBTransactionRepository
 }
 
-TransactionObserver --> DBTransactionRepository
+TransactionService -> DBTransactionRepository
+TransactionService -> Transaction
+
+DBTransactionRepository -up-> Transaction
 
 @enduml
