@@ -310,62 +310,29 @@ Open Closed
   * Bestehenden Code nicht anpassen
   * Möglichst nur neuen Code hinzufügen
 
-Open Closed Beispiel
+Open Closed Beispiel: vorher
 -------
+\colBegin{0.8}
+![Open Closed Beispiel: vorher](images/abstract-factory/abstract-factory-bad-case.png){width=100%}
+\colNext{0.2}
+\small
 
-Regeln für Dame:
+* Das Modul `views` ist `closed for extension`.
+Für GreyLabel und GreyButton müssen alle if statements geändert werden.
 
-* Eigenen Spielstein bewegen.
-* Ziel-Feld muss leer sein.
-* Bauer darf sich ein Feld weit bewegen, der König zwei Felder.
-* Bauer darf sich nur vorwärts bewegen.
-* Bewegung muss diagonal sein.
-* Beim Springen muss gegnerische Figur übersprungen werden.
-* Falls man springen kann, muss man springen.
+\colEnd
 
-<https://github.com/soco21/soco21-group8/blob/f4c0f734f759465c32a6a444ce8fa9656dacd6ec/assignment-1/exercise2/Class%20Diagramm%20Checkers.svg>
+Open Closed Beispiel: nachher
+------
 
-Open Closed Beispiel 2
--------
+\colBegin{0.8}
+![Open Closed Beispiel: nachher](images/abstract-factory/abstract-factory-good-case.png){width=100%}
+\colNext{0.2}
+\small
 
-Wenn alle Regeln in separaten Klassen sind, macht das den Inhalt klarer.
-Auch ist es jetzt einfacher, neue Regeln hinzuzufügen.
-<https://github.com/soco21/soco21-group8/tree/fb763220b26d3ed0260580d944b92fe9172f6c7b/assignment-1/exercise3/src/main/java/ch/uzh/group8/assignment1/exercise3/movevalidator>
+* Das Modul `views` ist jetzt `open` für weitere Implementationen von ComponentFactory.
 
-```java
-class StartPieceValid {}
-class TargetFieldEmpty {}
-class MoveLength {}
-class MoveIsForwardIfNotKing {}
-class MoveIsDiagonal {}
-class OpponentPieceBetweenJump {}
-class NoOtherJumpMovePossible {}
-```
-
-Open Closed Beispiel 3
--------
-
-Und es ermöglicht Komposition:
-
-```java
-  moveValidators = List.of(
-            startPieceValid,
-            targetFieldEmpty,
-            moveLength,
-            moveIsForwardIfNotKing,
-            moveIsDiagonal,
-            opponentPieceBetweenJump,
-            noOtherMoveToJumpPossible
-  );
-  winCondition = new WinCondition(List.of(
-            startPieceValid,
-            targetFieldEmpty,
-            moveLength,
-            moveIsForwardIfNotKing,
-            moveIsDiagonal,
-            opponentPieceBetweenJump
-  ));
-```
+\colEnd
 
 Liskov's substitution principle
 -------
