@@ -474,30 +474,25 @@ AbstractFactory Beispiel 2
 Strategy
 -------
 
-<https://github.com/iluwatar/java-design-patterns/blob/master/strategy/README.md>
-
-Strategy Example
-------
-
-```python
-class RouteNumberResolveStrategy:
-    """
-    Map the route number for lookup in assortment (menu structures, favorites, ...).
-    """
-    def resolve(self, route_number):
-        pass
+* Use Case:
+  * Man möchte von einer Funktionalität das Was vom Wie trennen.
+  * Wenn man das Was vom Wie trennt, kann man eventuell Funktionalität teilen
+  (DRY) und separat testen.
+  * Beispiele:
+    * Unterschiedliche Algorithmen für ein Ziel (z.b. Suchalgorithmen, Sortieralgorithmen)
+    * Daten können von verschiedenen Quellen kommen (RemoteConfigSourceStrategy, FileConfigSourceStrategy)
+  
 
 
-class IdentityRouteNumberStrategy(RouteNumberResolveStrategy):
-    def resolve(self, route_number):
-        return route_number
+Strategy Beispiel: vorher
+-------
 
-class OrganisationPrefixRouteNumberStrategy(RouteNumberResolveStrategy):
-    def __init__(self, organisation_supplier):
-        self.organisation_supplier = organisation_supplier
+![Observer bad case](images/strategy/strategy-bad-case.png)
 
-    def resolve(self, route_number):
-```
+Strategy Beispiel: nachher
+-------
+
+![Observer good case](images/strategy/strategy-good-case.png)
 
 Observer
 -------
