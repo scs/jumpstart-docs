@@ -334,7 +334,7 @@ Open Closed Beispiel: nachher
 
 \colEnd
 
-Liskov's substitution principle
+Liskov substitution principle
 -------
 
 * Implementationen eines Interfaces müssen ausgetauscht werden können.
@@ -342,29 +342,14 @@ Liskov's substitution principle
 * Sie geben maximal die gleichen Rückgabewerte zurück.
 * Werfen maximal die gleichen Exceptions (oder Subtypen der Exceptions).
 
-Beispiel einer Verletzung des Liskov's substitution principle
+Beispiel einer Verletzung des Liskov substitution principle
 -------
 
-```python
-class Vehicle:
-    pass
+![Liskov substitution principle bad case](images/interface-segregation/interface-segregation-bad-case.png)
 
-class Car(Vehicle):
-    pass
-
-class Bicycle(Vehicle):
-    pass
-
-class Garage:
-    def park(self, vehicle: Vehicle):
-        pass
-
-class BicycleGarage(Garage):
-    def park(self, vehicle: Vehicle):
-        if (not isinstance(vehicle, Bicycle)):
-            raise ValueError("BicycleGarage can only park bicycles")
-
-```
+Das Liskov Substitution Principle ist hier verletzt, da die `DishWashingMachine::washClothes`
+Methode sich nicht so verhält, wie das Interface verlangt.\
+`DishWashingMachine` kann nicht überall dort eingesetzt werden, so das Interface `Washer` verlangt wird.
 
 Interface Segregation
 -------
@@ -385,6 +370,8 @@ Interface Segregation Beispiel nachher
 ------
 
 ![Interface Segregation good case](images/interface-segregation/interface-segregation-good-case.png)
+
+Hier lösen wir die Verletzung des Liskov Substitution Principles mit Interface Segregation.
 
 Dependency Inversion
 ------
@@ -554,7 +541,7 @@ Zusammenfassung
 * SOLID Principles
   * Single Responsibility Principle
   * Open Closed Principle
-  * Liskov's Substitution Principle
+  * Liskov Substitution Principle
   * Interface Segregation Principle
   * Depdendency Inversion Principle
 * Design Patterns
