@@ -1,0 +1,52 @@
+@startuml
+
+interface Label {
+    void paintBackground()
+}
+
+class LightLabel {
+    void paintBackground()
+}
+
+class DarkLabel {
+    void paintBackground()
+}
+
+interface Button {
+    void paintBackground()
+}
+
+class LightButton {
+    void paintBackground()
+}
+
+class DarkButton {
+    void paintBackground()
+}
+
+interface PaintBackgroundStrategy {
+    void execute()
+}
+
+class LightBackgroundStrategy {
+    void execute()
+}
+
+class DarkBackgroundStrategy {
+    void execute()
+}
+
+PaintBackgroundStrategy <|.. LightBackgroundStrategy
+PaintBackgroundStrategy <|.. DarkBackgroundStrategy
+
+Label <|.. LightLabel
+Label <|.. DarkLabel
+
+Label --> PaintBackgroundStrategy
+
+Button <|.. LightButton
+Button <|.. DarkButton
+
+Button --> PaintBackgroundStrategy
+
+@enduml

@@ -1,0 +1,45 @@
+@startuml
+
+skinparam defaultFontSize 25
+
+interface Label {
+    void paintBackground()
+}
+
+class LightLabel {
+    void paintBackground()
+}
+
+class DarkLabel {
+    void paintBackground()
+}
+
+interface Button {
+    void paintBackground()
+}
+
+class LightButton {
+    void paintBackground()
+}
+
+class DarkButton {
+    void paintBackground()
+}
+
+
+Label <|.. LightLabel
+Label <|.. DarkLabel
+
+Button <|.. LightButton
+Button <|.. DarkButton
+
+note "These should paint a **dark** background" as darkBackgroundNote
+note "These should paint a **light** background" as lightBackgroundNote
+
+darkBackgroundNote -up-> DarkLabel::paintBackground
+darkBackgroundNote -up-> DarkButton::paintBackground
+
+lightBackgroundNote .up.> LightLabel::paintBackground
+lightBackgroundNote .up.> LightButton::paintBackground
+
+@enduml
