@@ -85,7 +85,7 @@
             <groupId>io.projectreactor</groupId>
             <artifactId>reactor-test</artifactId>
             <scope>test</scope>
-            <version>3.6.5</version>
+            <version>3.6.6</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
