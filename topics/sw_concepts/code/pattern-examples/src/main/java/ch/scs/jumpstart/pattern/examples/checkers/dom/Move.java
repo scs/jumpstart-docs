@@ -21,7 +21,7 @@ public record Move(
     BoardCoordinates start = parseBoardCoordinates(startAndEnd[0]);
     BoardCoordinates end = parseBoardCoordinates(startAndEnd[1]);
 
-    return Move.of(player, start, end);
+    return of(player, start, end);
   }
 
   public static Move of(Player player, BoardCoordinates start, BoardCoordinates end) {
@@ -54,7 +54,7 @@ public record Move(
 
     if (rowIndex >= 0 && rowIndex < rows.length && colIndex >= 0 && colIndex < columns.length) {
       return Optional.of(
-          Move.of(player, start, new BoardCoordinates(rows[rowIndex], columns[colIndex])));
+          of(player, start, new BoardCoordinates(rows[rowIndex], columns[colIndex])));
     }
     return Optional.empty();
   }

@@ -10,16 +10,7 @@ public class StartPieceValid implements MoveValidator {
   @Override
   public boolean validate(Move move, Board board) {
     BoardCoordinates start = move.start();
-
-    BoardCoordinates.Row[] row = BoardCoordinates.Row.values();
-    BoardCoordinates.Column[] col = BoardCoordinates.Column.values();
-
     Optional<Piece> startPiece = board.getPieceAt(start);
-
-    if (startPiece.isEmpty()) {
-      return false;
-    }
-
-    return startPiece.get().owner() == move.player();
+    return startPiece.filter(piece -> piece.owner() == move.player()).isPresent();
   }
 }

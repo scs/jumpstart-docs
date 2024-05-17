@@ -40,7 +40,7 @@ public class PointsCalculator {
         }
       }
     }
-    HashMap<Player, Integer> pointsOnBoard = new HashMap<>();
+    Map<Player, Integer> pointsOnBoard = new HashMap<>();
     pointsOnBoard.put(PLAYER_WHITE, pointsPlayerWhite);
     pointsOnBoard.put(PLAYER_RED, pointsPlayerRed);
 

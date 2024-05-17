@@ -97,7 +97,7 @@ class Store {
           if (columnPieceMap == null) {
             return new HashMap<>();
           } else {
-            HashMap<Column, Piece> columnPieceHashMap = new HashMap<>(columnPieceMap);
+            Map<Column, Piece> columnPieceHashMap = new HashMap<>(columnPieceMap);
             columnPieceHashMap.remove(start.column());
             return columnPieceHashMap;
           }
@@ -111,7 +111,7 @@ class Store {
           if (columnPieceMap == null) {
             return Map.of(boardCoordinates.column(), piece);
           } else {
-            HashMap<Column, Piece> columnPieceHashMap = new HashMap<>(columnPieceMap);
+            Map<Column, Piece> columnPieceHashMap = new HashMap<>(columnPieceMap);
             columnPieceHashMap.put(boardCoordinates.column(), piece);
             return columnPieceHashMap;
           }
