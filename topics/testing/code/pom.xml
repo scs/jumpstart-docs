@@ -142,6 +142,7 @@
                 <version>3.22.0</version>
                 <configuration>
                     <linkXRef>false</linkXRef>
+                    <printFailingErrors>true</printFailingErrors>
                     <rulesets>
                         <ruleset>pmd-config.xml</ruleset>
                     </rulesets>
