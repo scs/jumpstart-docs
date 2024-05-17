@@ -26,7 +26,7 @@ public record BoardCoordinates(Row row, Column column) {
 
     public Row getRowBetween(Row row) {
       int indexBetween = (this.ordinal() + row.ordinal()) / 2;
-      return Row.values()[indexBetween];
+      return values()[indexBetween];
     }
   }
 
@@ -46,7 +46,7 @@ public record BoardCoordinates(Row row, Column column) {
 
     public Column getColBetween(Column column) {
       int indexBetween = (this.ordinal() + column.ordinal()) / 2;
-      return Column.values()[indexBetween];
+      return values()[indexBetween];
     }
   }
 }
