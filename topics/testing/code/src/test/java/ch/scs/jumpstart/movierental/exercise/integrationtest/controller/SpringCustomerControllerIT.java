@@ -55,6 +55,7 @@ public class SpringCustomerControllerIT {
             .baseUrl("http://localhost:" + port)
             .build();
 
+    customerRepository.deleteAll();
     movieRepository.deleteAll();
     movieRepository.save(MOVIE_1);
   }
