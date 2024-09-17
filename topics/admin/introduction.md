@@ -8,8 +8,6 @@ title: "Jumpstart - Einführung"
 Über uns
 --------
 
-\colBegin{0.5}
-
 *Christian Lang*
 
 * [christian.lang@scs.ch](mailto:christian.lang@scs.ch)
@@ -24,7 +22,9 @@ title: "Jumpstart - Einführung"
   * C++
   * Optimierung
 
-\colNext{0.5}
+
+Über uns
+--------
 
 *Lucius Bachmann*
 
@@ -38,7 +38,21 @@ title: "Jumpstart - Einführung"
   * PHP
   * Datenbanken
 
-\colEnd
+
+Über uns
+--------
+
+*Luzian Bieri*
+
+* [luzian.bieri@scs.ch](mailto:luzian.bieri@scs.ch)
+* Jahrgang 1998
+* Studium: Master in Robotics, Systems and Control
+* SCS seit 2023
+  * AI & Robotics Abteilung
+* Spezialgebiete:
+  * Linux/Yocto
+  * Rust/C++
+  * Robotics
 
 
 Disclaimer
