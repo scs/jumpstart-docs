@@ -75,7 +75,7 @@ Configuration Management
 
 Infrastructure Management
 
-* Terraform (Cloud: AWS, Azure, etc.)
+* OpenTofu (Cloud: AWS, Azure, etc.)
 * Vagrant (nur für lokale Entwickler-VMs)
 
 Container
