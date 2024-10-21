@@ -109,5 +109,6 @@ Weitere Begriffe
   * Minikube (basiert auf VMs)
   * Kind (nutzt Docker-in-Docker)
   * K3s (Leichtgewichtiger Ersatz für K8s für echten Betrieb)
-* Docker Swarm (deprecated) war Dockers eigene Variante
+* Docker Swarm Mode ist Dockers eigene Variante
+  * (Nicht zu verwechseln mit dem veralteten Docker Classic Swarm)
 * CLI um Kubernetes o.Ä. zu verwalten: *`kubectl`*
