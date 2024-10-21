@@ -71,7 +71,7 @@ Links
 [win_main]: https://docs.microsoft.com/de-ch/windows/desktop/api/winbase/nf-winbase-winmain
 [glib_main_event_loop]: https://developer.gnome.org/glib/stable/glib-The-Main-Event-Loop.html
 [sd_event]: http://0pointer.net/blog/introducing-sd-event.html
-[boost_asio]: https://dieboostcppbibliotheken.de/boost.asio
+[boost_asio]: https://www.boost.org/doc/libs/1_86_0/doc/html/boost_asio.html
 
 * [wiki_event_loop]
 * [win_main]
