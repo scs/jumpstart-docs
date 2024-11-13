@@ -127,3 +127,4 @@ Verwendung von Code aus dem Internet
 ### Hintergrund
 
 Studie über die Gefahr von Code auf Code-Plattformen: [vulnerabilities_in_code_examples]
+oder Programmierhilfe von AI: [quality_chatgpt_as_code_help]
