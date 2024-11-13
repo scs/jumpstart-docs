@@ -21,6 +21,12 @@ Warum?
 * Oder sogar *forciert* werden (z.B: Style-Checks während Kompilation und nicht erst auf CI)
 
 
+Demo
+----
+
+![ci_demo_pipeline](images/ci_demo_pipeline.png)
+
+
 Unterschied: [ci_vs_cd]
 -----------------------
 
