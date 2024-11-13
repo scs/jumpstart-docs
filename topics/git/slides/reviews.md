@@ -55,6 +55,7 @@ Vor dem Öffnen eines PR
   * ein *effizientes Review* machen zu können
   * später Bugs zu suchen
   * ähnliche Arbeiten später wieder ähnlich zu machen
+  * einen grossen `dev`-Branch *einfacher rebasen* zu können
 
 
 Saubere History - von Anfang an
