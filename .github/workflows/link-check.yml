@@ -7,11 +7,10 @@ on:
     - cron: "0 9 * * *"
 jobs:
   link-check:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: gaurav-nelson/github-action-markdown-link-check@v1
+      - uses: umbrelladocs/action-linkspector@v1
         with:
-          use-quiet-mode: 'yes'
-          folder-path: 'topics'
-          config-file: 'mlc-config.json'
+          reporter: github-check
+          reviewdog_flags: -fail-level=any
