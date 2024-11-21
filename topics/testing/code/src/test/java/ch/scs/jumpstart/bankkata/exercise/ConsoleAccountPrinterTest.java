@@ -14,14 +14,14 @@ class ConsoleAccountPrinterTest {
   private ConsoleAccountPrinter consoleAccountPrinter;
 
   @BeforeEach
-  public void setup() {
+  void setup() {
     console = mock(Console.class);
     consoleAccountPrinter = new ConsoleAccountPrinter(console);
   }
 
   @Test
-  public void print_header_if_no_statement_line() {}
+  void print_header_if_no_statement_line() {}
 
   @Test
-  public void print_statements_in_descending_date_order() {}
+  void print_statements_in_descending_date_order() {}
 }

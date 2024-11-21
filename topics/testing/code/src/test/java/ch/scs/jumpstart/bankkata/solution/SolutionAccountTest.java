@@ -8,7 +8,7 @@ import java.util.Collections;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class SolutionAccountTest {
+class SolutionAccountTest {
 
   private static final LocalDate FIRST_DATE = LocalDate.now();
   private static final int DEPOSIT_AMOUNT = 1;
@@ -21,21 +21,21 @@ public class SolutionAccountTest {
   private SolutionClock clock;
 
   @BeforeEach
-  public void setup() {
+  void setup() {
     consoleAccountPrinter = mock(SolutionConsoleAccountPrinter.class);
     clock = mock(SolutionClock.class);
     account = new SolutionAccount(clock, consoleAccountPrinter);
   }
 
   @Test
-  public void print_empty_statement_list_when_no_transactions_in_account() {
+  void print_empty_statement_list_when_no_transactions_in_account() {
     account.print();
 
     verify(consoleAccountPrinter).print(Collections.emptyList());
   }
 
   @Test
-  public void print_the_transactions_and_sum_up_the_balance() {
+  void print_the_transactions_and_sum_up_the_balance() {
     when(clock.getLocalDate()).thenReturn(FIRST_DATE);
     account.deposit(DEPOSIT_AMOUNT);
     account.withdraw(WITHDRAW_AMOUNT);

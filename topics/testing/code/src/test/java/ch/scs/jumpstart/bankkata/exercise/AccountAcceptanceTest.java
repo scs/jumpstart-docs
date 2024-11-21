@@ -18,7 +18,7 @@ class AccountAcceptanceTest {
   private Account account;
 
   @BeforeEach
-  public void setup() {
+  void setup() {
     console = mock(Console.class);
     ConsoleAccountPrinter consoleAccountPrinter = new ConsoleAccountPrinter(console);
     clock = mock(Clock.class);
@@ -27,7 +27,7 @@ class AccountAcceptanceTest {
 
   @Disabled
   @Test
-  public void print_the_ledger_of_the_account() {
+  void print_the_ledger_of_the_account() {
     when(clock.getLocalDate()); /*thenReturn(...);*/
 
     account.deposit(100);

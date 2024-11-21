@@ -1,8 +1,7 @@
 package ch.scs.jumpstart.romannumerals.solution;
 
 import static ch.scs.jumpstart.romannumerals.solution.SolutionRomanNumeralsConverter.convert;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.is;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -30,7 +29,7 @@ class SolutionParametrizedRomanNumeralsConverterTest {
     "949,CMXLIX",
     "3999,MMMCMXCIX"
   })
-  public void return_roman_number_for_arabic_number(int arabic, String roman) {
-    assertThat(convert(arabic), is(roman));
+  void return_roman_number_for_arabic_number(int arabic, String roman) {
+    assertThat(convert(arabic)).isEqualTo(roman);
   }
 }
