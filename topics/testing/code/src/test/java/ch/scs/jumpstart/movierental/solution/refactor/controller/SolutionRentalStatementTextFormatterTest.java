@@ -1,7 +1,6 @@
 package ch.scs.jumpstart.movierental.solution.refactor.controller;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.is;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import ch.scs.jumpstart.movierental.exercise.refactor.controller.RentalStatementBuilder;
 import ch.scs.jumpstart.movierental.exercise.refactor.rentalstatement.RentalStatement;
@@ -22,33 +21,31 @@ class SolutionRentalStatementTextFormatterTest {
   private SolutionRentalStatementTextFormatter solutionRentalStatementTextFormatter;
 
   @BeforeEach
-  public void setup() {
+  void setup() {
     solutionRentalStatementTextFormatter = new SolutionRentalStatementTextFormatter();
   }
 
   @Test
-  public void format_empty_statement() {
+  void format_empty_statement() {
     var result = solutionRentalStatementTextFormatter.format(EMPTY_STATEMENT);
-    assertThat(
-        result,
-        is(
+    assertThat(result)
+        .isEqualTo(
             """
             Rental Record for customer1
             Amount owed is 0.0
-            """));
+            """);
   }
 
   @Test
-  public void format_lines() {
+  void format_lines() {
     var result = solutionRentalStatementTextFormatter.format(STATEMENT_WITH_LINES);
-    assertThat(
-        result,
-        is(
+    assertThat(result)
+        .isEqualTo(
             """
             Rental Record for customer1
             \tmovie1\t1.1
             \tmovie2\t100.2
             Amount owed is 101.299995
-            """));
+            """);
   }
 }

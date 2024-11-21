@@ -6,7 +6,7 @@ import java.time.LocalDate;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class AccountTest {
+class AccountTest {
 
   private static final LocalDate FIRST_DATE = LocalDate.now();
   private static final int DEPOSIT_AMOUNT = 1;
@@ -19,15 +19,15 @@ public class AccountTest {
   private Clock clock;
 
   @BeforeEach
-  public void setup() {
+  void setup() {
     consoleAccountPrinter = mock(ConsoleAccountPrinter.class);
     clock = mock(Clock.class);
     account = new Account(clock, consoleAccountPrinter);
   }
 
   @Test
-  public void print_empty_statement_list_when_no_transactions_in_account() {}
+  void print_empty_statement_list_when_no_transactions_in_account() {}
 
   @Test
-  public void print_the_transactions_and_sum_up_the_balance() {}
+  void print_the_transactions_and_sum_up_the_balance() {}
 }

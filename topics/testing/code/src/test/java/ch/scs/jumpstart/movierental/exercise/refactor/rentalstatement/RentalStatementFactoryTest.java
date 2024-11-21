@@ -1,7 +1,6 @@
 package ch.scs.jumpstart.movierental.exercise.refactor.rentalstatement;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.is;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import ch.scs.jumpstart.movierental.exercise.common.CustomerBuilder;
 import ch.scs.jumpstart.movierental.exercise.common.entity.Movie;
@@ -21,34 +20,33 @@ class RentalStatementFactoryTest {
   private RentalStatementFactory rentalStatementFactory;
 
   @BeforeEach
-  public void setup() {
+  void setup() {
     rentalStatementFactory = new RentalStatementFactory(new RentalStatementTextFormatter());
   }
 
   @Disabled
   @Test
-  public void return_correct_invoice_for_children_movie() {
+  void return_correct_invoice_for_children_movie() {
     var customer = CustomerBuilder.builder(CUSTOMER_NAME_1).withRental(MOVIE_1, 0).build();
 
-    assertThat(
-        rentalStatementFactory.createStatement(customer),
-        is(
+    assertThat(rentalStatementFactory.createStatement(customer))
+        .isEqualTo(
             """
                 Rental Record for 1
                 \t1\t1.5
                 Amount owed is 1.5
-                """));
+                """);
   }
 
   @Test
-  public void return_correct_invoice_for_children_movie_which_was_rented_for_more_than_3_days() {}
+  void return_correct_invoice_for_children_movie_which_was_rented_for_more_than_3_days() {}
 
   @Test
-  public void return_correct_invoice_for_new_release_movie() {}
+  void return_correct_invoice_for_new_release_movie() {}
 
   @Test
-  public void return_correct_invoice_for_regular_movie() {}
+  void return_correct_invoice_for_regular_movie() {}
 
   @Test
-  public void return_correct_invoice_for_multiple_movies() {}
+  void return_correct_invoice_for_multiple_movies() {}
 }

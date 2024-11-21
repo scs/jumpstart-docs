@@ -17,7 +17,7 @@ class SolutionAccountAcceptanceTest {
   private SolutionAccount account;
 
   @BeforeEach
-  public void setup() {
+  void setup() {
     console = mock(SolutionConsole.class);
     SolutionConsoleAccountPrinter consoleAccountPrinter =
         new SolutionConsoleAccountPrinter(console);
@@ -26,7 +26,7 @@ class SolutionAccountAcceptanceTest {
   }
 
   @Test
-  public void print_the_ledger_of_the_account() {
+  void print_the_ledger_of_the_account() {
     when(clock.getLocalDate()).thenReturn(DATE_1, DATE_2, DATE_3, DATE_4);
 
     account.deposit(100);

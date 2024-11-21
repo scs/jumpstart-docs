@@ -1,9 +1,7 @@
 package ch.scs.jumpstart.movierental.exercise.common.controller;
 
 import static ch.scs.jumpstart.movierental.exercise.common.controller.MovieController.PATH;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.is;
-import static org.hamcrest.Matchers.notNullValue;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import ch.scs.jumpstart.movierental.exercise.common.entity.Movie;
 import ch.scs.jumpstart.movierental.exercise.common.entity.PriceCode;
@@ -38,7 +36,7 @@ class MovieControllerIT {
   private WebTestClient webTestClient;
 
   @BeforeEach
-  public void setup() {
+  void setup() {
     webTestClient =
         WebTestClient.bindToServer()
             .responseTimeout(Duration.ofMinutes(1))
@@ -47,7 +45,7 @@ class MovieControllerIT {
   }
 
   @Test
-  public void return_added_movies() {
+  void return_added_movies() {
     var insertedMovie =
         webTestClient
             .post()
@@ -60,7 +58,7 @@ class MovieControllerIT {
             .returnResult()
             .getResponseBody();
 
-    assertThat(insertedMovie, is(MOVIE_1));
+    assertThat(insertedMovie).isEqualTo(MOVIE_1);
 
     var customers =
         webTestClient
@@ -73,7 +71,7 @@ class MovieControllerIT {
             .returnResult()
             .getResponseBody();
 
-    assertThat(customers, notNullValue());
-    assertThat(customers, is(List.of(MOVIE_1)));
+    assertThat(customers).isNotNull();
+    assertThat(customers).containsExactly(MOVIE_1);
   }
 }

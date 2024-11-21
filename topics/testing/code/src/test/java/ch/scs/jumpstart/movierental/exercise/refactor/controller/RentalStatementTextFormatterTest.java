@@ -18,13 +18,13 @@ class RentalStatementTextFormatterTest {
   private RentalStatementTextFormatter rentalStatementTextFormatter;
 
   @BeforeEach
-  public void setup() {
+  void setup() {
     rentalStatementTextFormatter = new RentalStatementTextFormatter();
   }
 
   @Test
-  public void format_empty_statement() {}
+  void format_empty_statement() {}
 
   @Test
-  public void format_lines() {}
+  void format_lines() {}
 }

@@ -2,8 +2,7 @@ package ch.scs.jumpstart.movierental.solution.integrationtest.controller;
 
 import static ch.scs.jumpstart.movierental.solution.integrationtest.controller.SolutionSpringCustomerController.PATH;
 import static ch.scs.jumpstart.movierental.solution.refactor.SolutionCustomerController.AddRental;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import ch.scs.jumpstart.movierental.exercise.common.CustomerBuilder;
 import ch.scs.jumpstart.movierental.exercise.common.entity.Customer;
@@ -26,7 +25,7 @@ import org.springframework.web.reactive.function.BodyInserters;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ActiveProfiles("test")
-public class SolutionSpringCustomerControllerIT {
+class SolutionSpringCustomerControllerIT {
   private static final ParameterizedTypeReference<List<Customer>> CUSTOMER_LIST =
       new ParameterizedTypeReference<>() {};
 
@@ -49,7 +48,7 @@ public class SolutionSpringCustomerControllerIT {
   private WebTestClient webTestClient;
 
   @BeforeEach
-  public void setup() {
+  void setup() {
     webTestClient =
         WebTestClient.bindToServer()
             .responseTimeout(Duration.ofMinutes(1))
@@ -63,7 +62,7 @@ public class SolutionSpringCustomerControllerIT {
   }
 
   @Test
-  public void return_found_customers() {
+  void return_found_customers() {
     var customerList =
         List.of(
             CustomerBuilder.builder(CUSTOMER_NAME_1).build(),
@@ -81,12 +80,12 @@ public class SolutionSpringCustomerControllerIT {
             .returnResult()
             .getResponseBody();
 
-    assertThat(customerList, notNullValue());
-    assertThat(customers, is(customerList));
+    assertThat(customers).isNotNull();
+    assertThat(customers).isEqualTo(customerList);
   }
 
   @Test
-  public void add_customer_and_return_added_customer() {
+  void add_customer_and_return_added_customer() {
     var customer = CustomerBuilder.builder(CUSTOMER_NAME_1).build();
 
     var insertedCustomer =
@@ -101,7 +100,7 @@ public class SolutionSpringCustomerControllerIT {
             .returnResult()
             .getResponseBody();
 
-    assertThat(insertedCustomer, is(customer));
+    assertThat(insertedCustomer).isEqualTo(customer);
 
     var customers =
         webTestClient
@@ -114,12 +113,12 @@ public class SolutionSpringCustomerControllerIT {
             .returnResult()
             .getResponseBody();
 
-    assertThat(customers, notNullValue());
-    assertThat(customers, is(List.of(customer)));
+    assertThat(customers).isNotNull();
+    assertThat(customers).isEqualTo(List.of(customer));
   }
 
   @Test
-  public void add_rental_and_return_added_rental() {
+  void add_rental_and_return_added_rental() {
     var customer = CustomerBuilder.builder(CUSTOMER_NAME_1).build();
     customerRepository.save(customer);
 
@@ -137,12 +136,12 @@ public class SolutionSpringCustomerControllerIT {
             .returnResult()
             .getResponseBody();
 
-    assertThat(customerWithRental, notNullValue());
-    assertThat(customerWithRental.getRentals(), hasSize(1));
+    assertThat(customerWithRental).isNotNull();
+    assertThat(customerWithRental.getRentals()).hasSize(1);
   }
 
   @Test
-  public void return_empty_text_invoice_of_customer() {
+  void return_empty_text_invoice_of_customer() {
     var customer = CustomerBuilder.builder(CUSTOMER_NAME_1).build();
     customerRepository.save(customer);
 
@@ -159,11 +158,11 @@ public class SolutionSpringCustomerControllerIT {
             .returnResult()
             .getResponseBody();
 
-    assertThat(invoice, is(notNullValue()));
+    assertThat(invoice).isNotNull();
   }
 
   @Test
-  public void return_text_invoice_of_customer() {
+  void return_text_invoice_of_customer() {
     var customer = CustomerBuilder.builder(CUSTOMER_NAME_1).withRental(MOVIE_1, 1).build();
     customerRepository.save(customer);
 
@@ -180,11 +179,11 @@ public class SolutionSpringCustomerControllerIT {
             .returnResult()
             .getResponseBody();
 
-    assertThat(invoice, is(notNullValue()));
+    assertThat(invoice).isNotNull();
   }
 
   @Test
-  public void return_json_invoice_of_customer() {
+  void return_json_invoice_of_customer() {
     var customer = CustomerBuilder.builder(CUSTOMER_NAME_1).withRental(MOVIE_1, 1).build();
     customerRepository.save(customer);
 
@@ -201,6 +200,6 @@ public class SolutionSpringCustomerControllerIT {
             .returnResult()
             .getResponseBody();
 
-    assertThat(invoice, notNullValue());
+    assertThat(invoice).isNotNull();
   }
 }
