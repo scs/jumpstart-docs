@@ -32,7 +32,12 @@ class RentalStatementFactoryTest {
 
     assertThat(
         rentalStatementFactory.createStatement(customer),
-        is("Rental Record for 1\n\t1\t1.5\nAmount owed is 1.5\n"));
+        is(
+            """
+                Rental Record for 1
+                \t1\t1.5
+                Amount owed is 1.5
+                """));
   }
 
   @Test

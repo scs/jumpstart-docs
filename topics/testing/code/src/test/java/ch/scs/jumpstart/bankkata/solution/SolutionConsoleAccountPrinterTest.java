@@ -37,7 +37,7 @@ class SolutionConsoleAccountPrinterTest {
 
     var inOrder = inOrder(console);
     inOrder.verify(console).printLine("Date || Amount || Balance");
-    inOrder.verify(console).printLine(D_2021_06_16 + " || 20 || 20");
-    inOrder.verify(console).printLine(D_2021_06_15 + " || 1 || 1");
+    inOrder.verify(console).printLine("%s || 20 || 20".formatted(D_2021_06_16));
+    inOrder.verify(console).printLine("%s || 1 || 1".formatted(D_2021_06_15));
   }
 }

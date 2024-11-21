@@ -29,7 +29,13 @@ class SolutionRentalStatementTextFormatterTest {
   @Test
   public void format_empty_statement() {
     var result = solutionRentalStatementTextFormatter.format(EMPTY_STATEMENT);
-    assertThat(result, is("Rental Record for customer1\nAmount owed is 0.0\n"));
+    assertThat(
+        result,
+        is(
+            """
+            Rental Record for customer1
+            Amount owed is 0.0
+            """));
   }
 
   @Test
@@ -38,9 +44,11 @@ class SolutionRentalStatementTextFormatterTest {
     assertThat(
         result,
         is(
-            "Rental Record for customer1\n"
-                + "\tmovie1\t1.1\n"
-                + "\tmovie2\t100.2\n"
-                + "Amount owed is 101.299995\n"));
+            """
+            Rental Record for customer1
+            \tmovie1\t1.1
+            \tmovie2\t100.2
+            Amount owed is 101.299995
+            """));
   }
 }

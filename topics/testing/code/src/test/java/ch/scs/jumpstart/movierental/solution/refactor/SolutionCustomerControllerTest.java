@@ -78,7 +78,7 @@ class SolutionCustomerControllerTest {
   public void return_not_found_if_customer_for_addRental_cannot_be_found() {
     when(customerRepository.findById(notNull())).thenReturn(Optional.empty());
 
-    assertThat(controller.addRental("", new AddRental()), is(notFound().build()));
+    assertThat(controller.addRental("", new AddRental("", 1)), is(notFound().build()));
   }
 
   @Test
@@ -115,7 +115,13 @@ class SolutionCustomerControllerTest {
 
     assertThat(
         controller.getInvoice(CUSTOMER_NAME_1),
-        is(ok("Rental Record for 1\n" + "\t1\t1.5\n" + "Amount owed is 1.5\n")));
+        is(
+            ok(
+                """
+                Rental Record for 1
+                \t1\t1.5
+                Amount owed is 1.5
+                """)));
   }
 
   @Test
@@ -125,7 +131,13 @@ class SolutionCustomerControllerTest {
 
     assertThat(
         controller.getInvoice(CUSTOMER_NAME_1),
-        is(ok("Rental Record for 1\n" + "\t2\t30.0\n" + "Amount owed is 30.0\n")));
+        is(
+            ok(
+                """
+                Rental Record for 1
+                \t2\t30.0
+                Amount owed is 30.0
+                """)));
   }
 
   @Test
@@ -135,7 +147,13 @@ class SolutionCustomerControllerTest {
 
     assertThat(
         controller.getInvoice(CUSTOMER_NAME_1),
-        is(ok("Rental Record for 1\n" + "\t3\t5.0\n" + "Amount owed is 5.0\n")));
+        is(
+            ok(
+                """
+                Rental Record for 1
+                \t3\t5.0
+                Amount owed is 5.0
+                """)));
   }
 
   @Test
@@ -152,11 +170,13 @@ class SolutionCustomerControllerTest {
         controller.getInvoice(CUSTOMER_NAME_1),
         is(
             ok(
-                "Rental Record for 1\n"
-                    + "\t2\t3.0\n"
-                    + "\t1\t1.5\n"
-                    + "\t3\t2.0\n"
-                    + "Amount owed is 6.5\n")));
+                """
+                Rental Record for 1
+                \t2\t3.0
+                \t1\t1.5
+                \t3\t2.0
+                Amount owed is 6.5
+                """)));
   }
 
   @Test

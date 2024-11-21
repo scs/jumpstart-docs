@@ -37,10 +37,10 @@ class SolutionAccountAcceptanceTest {
 
     var inOrder = inOrder(console);
     inOrder.verify(console).printLine("Date || Amount || Balance");
-    inOrder.verify(console).printLine(DATE_4 + " || -250 || 1275");
-    inOrder.verify(console).printLine(DATE_3 + " || 1500 || 1525");
-    inOrder.verify(console).printLine(DATE_2 + " || -75 || 25");
-    inOrder.verify(console).printLine(DATE_1 + " || 100 || 100");
+    inOrder.verify(console).printLine("%s || -250 || 1275".formatted(DATE_4));
+    inOrder.verify(console).printLine("%s || 1500 || 1525".formatted(DATE_3));
+    inOrder.verify(console).printLine("%s || -75 || 25".formatted(DATE_2));
+    inOrder.verify(console).printLine("%s || 100 || 100".formatted(DATE_1));
     inOrder.verifyNoMoreInteractions();
   }
 }

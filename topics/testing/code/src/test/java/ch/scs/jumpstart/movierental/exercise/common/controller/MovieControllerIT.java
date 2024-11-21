@@ -42,7 +42,7 @@ class MovieControllerIT {
     webTestClient =
         WebTestClient.bindToServer()
             .responseTimeout(Duration.ofMinutes(1))
-            .baseUrl("http://localhost:" + port)
+            .baseUrl("http://localhost:%d".formatted(port))
             .build();
   }
 

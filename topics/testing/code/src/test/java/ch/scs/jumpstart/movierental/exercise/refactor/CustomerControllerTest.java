@@ -99,7 +99,13 @@ class CustomerControllerTest {
 
     assertThat(
         controller.getInvoice(CUSTOMER_NAME_1),
-        is(ok("Rental Record for 1\n" + "\t1\t1.5\n" + "Amount owed is 1.5\n")));
+        is(
+            ok(
+                """
+                Rental Record for 1
+                \t1\t1.5
+                Amount owed is 1.5
+                """)));
   }
 
   @Test
@@ -126,11 +132,13 @@ class CustomerControllerTest {
         controller.getInvoice(CUSTOMER_NAME_1),
         is(
             ok(
-                "Rental Record for 1\n"
-                    + "\t2\t3.0\n"
-                    + "\t1\t1.5\n"
-                    + "\t3\t2.0\n"
-                    + "Amount owed is 6.5\n")));
+                """
+                    Rental Record for 1
+                    \t2\t3.0
+                    \t1\t1.5
+                    \t3\t2.0
+                    Amount owed is 6.5
+                    """)));
   }
 
   @Test
