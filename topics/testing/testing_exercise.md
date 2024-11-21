@@ -174,13 +174,14 @@ Du darfst einen public Konstruktor hinzufügen.
 Vorgehen:
 
 1. Schreibe einen Acceptance Test für die Klasse Account.
-    1. Du wirst dafür die Clock mocken müssen. Du musst also eine Wrapper Klasse (z.b. Clock) schreiben,
+    1. Du wirst dafür die Clock mocken müssen. Du musst also eine Wrapper Klasse (z.b. Clock) verwenden,
     bei der die Klasse Account das Datum für die Transaktion abfragen kann.
     1. Du wirst dafür den Konsolenoutput (in Java statisch mit System.out.println) überprüfen müssen. Auch hier brauchst
     du eine Wrapper Klasse.
     1. Überlege dir vor dem Implementieren des Tests das Design. Soll die Klasse Account auch den Konsolen Output
     formattieren? Welche Klasse sorgt dafür, dass die Transaktionen von neu nach alt sortiert werden?
     Welche Klasse summiert den Kontostand? Was sind die Interfaces der verschiedenen Klassen?
+    Eventuell ist ein Design für diese Aspekte schon vorbereitet.
 1. Implementiere die Klasse Account Test driven. Du brauchst für die Klasse Account jetzt zusätzlich einen Unittest.
 1. Implementiere alle weiteren Klassen aus deinem Design Test driven. Wenn du den letzten Unittest der letzten Klasse
 implementierst, sollte der Acceptance Test auch grün werden. Danach das Refactoring nicht vergessen.
