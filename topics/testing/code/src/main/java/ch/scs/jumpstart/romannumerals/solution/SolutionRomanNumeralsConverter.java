@@ -4,19 +4,19 @@ import java.util.ArrayList;
 
 public class SolutionRomanNumeralsConverter {
   private enum RomanNumeralValues {
-    THOUSAND(1000, "M"),
-    NINE_HUNDRED(900, "CM"),
-    FIVE_HUNDRED(500, "D"),
-    FOUR_HUNDRED(400, "CD"),
-    HUNDRED(100, "C"),
-    NINETY(90, "XC"),
-    FIFTY(50, "L"),
-    FORTY(40, "XL"),
-    TEN(10, "X"),
-    NINE(9, "IX"),
-    FIVE(5, "V"),
-    FOUR(4, "IV"),
-    ONE(1, "I");
+    _1000(1000, "M"),
+    __900(900, "CM"),
+    __500(500, "D"),
+    __400(400, "CD"),
+    __100(100, "C"),
+    ___90(90, "XC"),
+    ___50(50, "L"),
+    ___40(40, "XL"),
+    ___10(10, "X"),
+    ____9(9, "IX"),
+    ____5(5, "V"),
+    ____4(4, "IV"),
+    ____1(1, "I");
 
     private final int arabicValue;
     private final String romanCypher;
