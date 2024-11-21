@@ -398,6 +398,7 @@ Links
 [InfoQ]: https://www.youtube.com/@infoq
 [Martin Fowler The Practical Test Pyramid]:https://martinfowler.com/articles/practical-test-pyramid.html
 [Design Patterns]:https://github.com/iluwatar/java-design-patterns
+[Jetbrains shortcuts]:https://github.com/BacLuc/jetbrains-showcase
 
 
 * Bücher
@@ -422,3 +423,5 @@ Links 2
 * Websites and Blogs
   * Martin Fowler, e.g. [Martin Fowler The Practical Test Pyramid]
   * Design patterns, one example: [Design Patterns]
+* Github repos:
+  * Jetbrains features and shortcuts: [Jetbrains shortcuts]
