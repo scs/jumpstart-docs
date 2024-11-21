@@ -154,7 +154,7 @@ Dann soll auf der Konsole folgendes ausgegeben werden:
 Date || Amount || Balance
 2021-06-16 || -250 || 1275
 2021-06-15 || 1500 || 1525
-2021-06-15 || -75 || 25
+2021-06-12 || -75 || 25
 2021-01-01 || 100 || 100
 ```
 
