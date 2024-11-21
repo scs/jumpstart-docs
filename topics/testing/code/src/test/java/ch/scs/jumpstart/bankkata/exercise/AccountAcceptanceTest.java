@@ -36,7 +36,7 @@ class AccountAcceptanceTest {
 
     var inOrder = inOrder(console);
     inOrder.verify(console).printLine("Date || Amount || Balance");
-    inOrder.verify(console).printLine(DATE_1 + " || 100 || 100");
+    inOrder.verify(console).printLine("%s || 100 || 100".formatted(DATE_1));
     // add missing lines
     inOrder.verifyNoMoreInteractions();
   }

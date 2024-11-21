@@ -25,9 +25,8 @@ public class SolutionAccount {
     int balance = 0;
     var statementLines = new ArrayList<SolutionStatementLine>();
     for (SolutionStatement statement : statementList) {
-      balance += statement.getAmount();
-      statementLines.add(
-          SolutionStatementLine.of(statement.getAmount(), statement.getDate(), balance));
+      balance += statement.amount();
+      statementLines.add(SolutionStatementLine.of(statement.amount(), statement.date(), balance));
     }
     consoleAccountPrinter.print(statementLines);
   }
