@@ -1,7 +1,6 @@
 package ch.scs.jumpstart.movierental.solution.refactor.rentalstatement;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.is;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import ch.scs.jumpstart.movierental.exercise.common.CustomerBuilder;
 import ch.scs.jumpstart.movierental.exercise.common.entity.Movie;
@@ -20,60 +19,56 @@ class SolutionRentalStatementFactoryTest {
   private SolutionRentalStatementFactory solutionRentalStatementFactory;
 
   @BeforeEach
-  public void setup() {
+  void setup() {
     solutionRentalStatementFactory = new SolutionRentalStatementFactory();
   }
 
   @Test
-  public void return_correct_invoice_for_children_movie() {
+  void return_correct_invoice_for_children_movie() {
     var customer = CustomerBuilder.builder(CUSTOMER_NAME_1).withRental(MOVIE_1, 0).build();
 
-    assertThat(
-        solutionRentalStatementFactory.createStatement(customer),
-        is(
+    assertThat(solutionRentalStatementFactory.createStatement(customer))
+        .isEqualTo(
             RentalStatementBuilder.builder(CUSTOMER_NAME_1)
                 .withStatementMovie(MOVIE_1.getTitle(), 1.5f)
-                .build()));
+                .build());
   }
 
   @Test
-  public void return_correct_invoice_for_children_movie_which_was_rented_for_more_than_3_days() {
+  void return_correct_invoice_for_children_movie_which_was_rented_for_more_than_3_days() {
     var customer = CustomerBuilder.builder(CUSTOMER_NAME_1).withRental(MOVIE_1, 4).build();
 
-    assertThat(
-        solutionRentalStatementFactory.createStatement(customer),
-        is(
+    assertThat(solutionRentalStatementFactory.createStatement(customer))
+        .isEqualTo(
             RentalStatementBuilder.builder(CUSTOMER_NAME_1)
                 .withStatementMovie(MOVIE_1.getTitle(), 3f)
-                .build()));
+                .build());
   }
 
   @Test
-  public void return_correct_invoice_for_new_release_movie() {
+  void return_correct_invoice_for_new_release_movie() {
     var customer = CustomerBuilder.builder(CUSTOMER_NAME_1).withRental(MOVIE_2, 10).build();
 
-    assertThat(
-        solutionRentalStatementFactory.createStatement(customer),
-        is(
+    assertThat(solutionRentalStatementFactory.createStatement(customer))
+        .isEqualTo(
             RentalStatementBuilder.builder(CUSTOMER_NAME_1)
                 .withStatementMovie(MOVIE_2.getTitle(), 30f)
-                .build()));
+                .build());
   }
 
   @Test
-  public void return_correct_invoice_for_regular_movie() {
+  void return_correct_invoice_for_regular_movie() {
     var customer = CustomerBuilder.builder(CUSTOMER_NAME_1).withRental(MOVIE_3, 4).build();
 
-    assertThat(
-        solutionRentalStatementFactory.createStatement(customer),
-        is(
+    assertThat(solutionRentalStatementFactory.createStatement(customer))
+        .isEqualTo(
             RentalStatementBuilder.builder(CUSTOMER_NAME_1)
                 .withStatementMovie(MOVIE_3.getTitle(), 5.0f)
-                .build()));
+                .build());
   }
 
   @Test
-  public void return_correct_invoice_for_multiple_movies() {
+  void return_correct_invoice_for_multiple_movies() {
     var customer =
         CustomerBuilder.builder(CUSTOMER_NAME_1)
             .withRental(MOVIE_2, 1)
@@ -81,13 +76,12 @@ class SolutionRentalStatementFactoryTest {
             .withRental(MOVIE_3, 1)
             .build();
 
-    assertThat(
-        solutionRentalStatementFactory.createStatement(customer),
-        is(
+    assertThat(solutionRentalStatementFactory.createStatement(customer))
+        .isEqualTo(
             RentalStatementBuilder.builder(CUSTOMER_NAME_1)
                 .withStatementMovie(MOVIE_2.getTitle(), 3.0f)
                 .withStatementMovie(MOVIE_1.getTitle(), 1.5f)
                 .withStatementMovie(MOVIE_3.getTitle(), 2.0f)
-                .build()));
+                .build());
   }
 }

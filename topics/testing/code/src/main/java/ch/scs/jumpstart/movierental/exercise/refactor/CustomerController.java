@@ -37,12 +37,12 @@ public class CustomerController {
     if (customerOptional.isEmpty()) {
       return ResponseEntity.notFound().build();
     }
-    var movie = movieRepository.findById(addRental.getMovieTitle());
+    var movie = movieRepository.findById(addRental.movieTitle());
     if (movie.isEmpty()) {
       return ResponseEntity.notFound().build();
     }
 
-    var rental = new Rental(movie.get(), addRental.getDaysRented());
+    var rental = new Rental(movie.get(), addRental.daysRented());
     var customer = customerOptional.get();
     customer.addRental(rental);
     customerRepository.save(customer);

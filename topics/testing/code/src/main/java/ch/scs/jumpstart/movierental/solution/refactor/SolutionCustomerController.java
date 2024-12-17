@@ -44,12 +44,12 @@ public class SolutionCustomerController {
     if (customerOptional.isEmpty()) {
       return ResponseEntity.notFound().build();
     }
-    var movie = movieRepository.findById(addRental.getMovieTitle());
+    var movie = movieRepository.findById(addRental.movieTitle());
     if (movie.isEmpty()) {
       return ResponseEntity.notFound().build();
     }
 
-    var rental = new Rental(movie.get(), addRental.getDaysRented());
+    var rental = new Rental(movie.get(), addRental.daysRented());
     var customer = customerOptional.get();
     customer.addRental(rental);
     customerRepository.save(customer);
@@ -82,23 +82,5 @@ public class SolutionCustomerController {
     return Optional.of(solutionRentalStatementFactory.createStatement(customerOptional.get()));
   }
 
-  public static class AddRental {
-    private String movieTitle;
-    private int daysRented;
-
-    public AddRental() {}
-
-    public AddRental(String movieTitle, int daysRented) {
-      this.movieTitle = movieTitle;
-      this.daysRented = daysRented;
-    }
-
-    public String getMovieTitle() {
-      return movieTitle;
-    }
-
-    public int getDaysRented() {
-      return daysRented;
-    }
-  }
+  public record AddRental(String movieTitle, int daysRented) {}
 }

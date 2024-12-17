@@ -35,7 +35,7 @@ public class RentalStatementFactory {
   @SuppressWarnings("PMD.UnusedPrivateMethod")
   private String step_3(Customer customer) {
     double totalAmount = 0;
-    String result = "Rental Record for " + customer.getName() + "\n";
+    String result = "Rental Record for %s\n".formatted(customer.getName());
 
     for (Rental each : customer.getRentals()) {
       double thisAmount = 0;
@@ -57,12 +57,12 @@ public class RentalStatementFactory {
 
       // show figures for this rental
       //noinspection StringConcatenationInLoop
-      result += "\t" + each.getMovie().getTitle() + "\t" + thisAmount + "\n";
+      result += "\t%s\t%s\n".formatted(each.getMovie().getTitle(), thisAmount);
       totalAmount += thisAmount;
     }
 
     // add footer lines
-    result += "Amount owed is " + totalAmount + "\n";
+    result += "Amount owed is %s\n".formatted(totalAmount);
 
     return result;
   }
@@ -108,11 +108,11 @@ public class RentalStatementFactory {
     }
 
     // create string from data structure
-    String result = "Rental Record for " + customer.getName() + "\n";
+    String result = "Rental Record for %s\n".formatted(customer.getName());
     for (RentalStatementMovie rentalStatementMovie : rentalStatementMovies) {
       //noinspection StringConcatenationInLoop
       result +=
-          "\t" + rentalStatementMovie.getTitle() + "\t" + rentalStatementMovie.getAmount() + "\n";
+          "\t%s\t%s\n".formatted(rentalStatementMovie.getTitle(), rentalStatementMovie.getAmount());
     }
     result += "Amount owed is " + sum + "\n";
 

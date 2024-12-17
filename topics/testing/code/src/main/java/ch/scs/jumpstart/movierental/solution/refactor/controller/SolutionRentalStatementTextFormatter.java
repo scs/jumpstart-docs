@@ -12,7 +12,7 @@ public class SolutionRentalStatementTextFormatter {
     for (RentalStatementMovie rentalStatementMovie : rentalStatement.getRentalStatementMovies()) {
       //noinspection StringConcatenationInLoop
       result +=
-          "\t" + rentalStatementMovie.getTitle() + "\t" + rentalStatementMovie.getAmount() + "\n";
+          "\t%s\t%s\n".formatted(rentalStatementMovie.getTitle(), rentalStatementMovie.getAmount());
     }
     result += "Amount owed is " + rentalStatement.getAmountOwed() + "\n";
 

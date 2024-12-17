@@ -19,16 +19,16 @@ class OpenApiDocIT {
   private WebTestClient webTestClient;
 
   @BeforeEach
-  public void setup() {
+  void setup() {
     webTestClient =
         WebTestClient.bindToServer()
             .responseTimeout(Duration.ofMinutes(1))
-            .baseUrl("http://localhost:" + port)
+            .baseUrl("http://localhost:%d".formatted(port))
             .build();
   }
 
   @Test
-  public void swagger_ui_returns_200() {
+  void swagger_ui_returns_200() {
     webTestClient
         .get()
         .uri("/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config")

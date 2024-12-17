@@ -24,7 +24,7 @@ class SolutionMoviePrinterTest {
   }
 
   @Test
-  public void do_nothing_for_print_all_movies_when_repo_empty() {
+  void do_nothing_for_print_all_movies_when_repo_empty() {
     when(movieRepository.getAllMovies()).thenReturn(List.of());
 
     solutionMoviePrinter.printAllMovies();
@@ -44,14 +44,14 @@ class SolutionMoviePrinterTest {
   }
 
   @Test
-  public void do_nothing_in_printMovie_if_movie_does_not_exist() {
+  void do_nothing_in_printMovie_if_movie_does_not_exist() {
     solutionMoviePrinter.printMovie(42);
 
     verify(printer, never()).print(any());
   }
 
   @Test
-  public void print_movie_in_printMovie() {
+  void print_movie_in_printMovie() {
     when(movieRepository.getById(MOVIE_1_ID)).thenReturn(MOVIE_1);
 
     solutionMoviePrinter.printMovie(MOVIE_1_ID);

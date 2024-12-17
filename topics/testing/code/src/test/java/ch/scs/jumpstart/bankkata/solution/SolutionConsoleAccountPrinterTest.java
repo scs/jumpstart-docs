@@ -16,20 +16,20 @@ class SolutionConsoleAccountPrinterTest {
   private SolutionConsoleAccountPrinter consoleAccountPrinter;
 
   @BeforeEach
-  public void setup() {
+  void setup() {
     console = mock(SolutionConsole.class);
     consoleAccountPrinter = new SolutionConsoleAccountPrinter(console);
   }
 
   @Test
-  public void print_header_if_no_statement_line() {
+  void print_header_if_no_statement_line() {
     consoleAccountPrinter.print(Collections.emptyList());
 
     verify(console).printLine("Date || Amount || Balance");
   }
 
   @Test
-  public void print_statements_in_descending_date_order() {
+  void print_statements_in_descending_date_order() {
     consoleAccountPrinter.print(
         List.of(
             SolutionStatementLine.of(1, D_2021_06_15, 1),
@@ -37,7 +37,7 @@ class SolutionConsoleAccountPrinterTest {
 
     var inOrder = inOrder(console);
     inOrder.verify(console).printLine("Date || Amount || Balance");
-    inOrder.verify(console).printLine(D_2021_06_16 + " || 20 || 20");
-    inOrder.verify(console).printLine(D_2021_06_15 + " || 1 || 1");
+    inOrder.verify(console).printLine("%s || 20 || 20".formatted(D_2021_06_16));
+    inOrder.verify(console).printLine("%s || 1 || 1".formatted(D_2021_06_15));
   }
 }

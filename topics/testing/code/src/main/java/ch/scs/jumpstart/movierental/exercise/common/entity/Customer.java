@@ -40,7 +40,7 @@ public class Customer {
     you need to separate these concerns
      */
     double totalAmount = 0;
-    String result = "Rental Record for " + getName() + "\n";
+    String result = "Rental Record for %s\n".formatted(getName());
 
     for (Rental each : rentals) {
       double thisAmount = 0;
@@ -62,12 +62,12 @@ public class Customer {
 
       // show figures for this rental
       //noinspection StringConcatenationInLoop
-      result += "\t" + each.getMovie().getTitle() + "\t" + thisAmount + "\n";
+      result += "\t%s\t%s\n".formatted(each.getMovie().getTitle(), thisAmount);
       totalAmount += thisAmount;
     }
 
     // add footer lines
-    result += "Amount owed is " + totalAmount + "\n";
+    result += "Amount owed is %s\n".formatted(totalAmount);
 
     return result;
   }

@@ -4,5 +4,5 @@ import org.junit.jupiter.api.Test;
 
 class RomanNumeralsConverterTest {
   @Test
-  public void test() {}
+  void test() {}
 }

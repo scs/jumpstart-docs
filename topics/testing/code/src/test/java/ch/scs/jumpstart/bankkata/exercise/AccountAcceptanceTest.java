@@ -18,7 +18,7 @@ class AccountAcceptanceTest {
   private Account account;
 
   @BeforeEach
-  public void setup() {
+  void setup() {
     console = mock(Console.class);
     ConsoleAccountPrinter consoleAccountPrinter = new ConsoleAccountPrinter(console);
     clock = mock(Clock.class);
@@ -27,7 +27,7 @@ class AccountAcceptanceTest {
 
   @Disabled
   @Test
-  public void print_the_ledger_of_the_account() {
+  void print_the_ledger_of_the_account() {
     when(clock.getLocalDate()); /*thenReturn(...);*/
 
     account.deposit(100);
@@ -36,7 +36,7 @@ class AccountAcceptanceTest {
 
     var inOrder = inOrder(console);
     inOrder.verify(console).printLine("Date || Amount || Balance");
-    inOrder.verify(console).printLine(DATE_1 + " || 100 || 100");
+    inOrder.verify(console).printLine("%s || 100 || 100".formatted(DATE_1));
     // add missing lines
     inOrder.verifyNoMoreInteractions();
   }

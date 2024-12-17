@@ -161,7 +161,7 @@ Date || Amount || Balance
 Das Ziel ist, dass du Mockito.mock, Mockito.when, Mockito.verify und Mockito.inOrder verwendest.
 Mockito.inOrder brauchst du, um die Reihenfolge der Methodenaufrufe zu überprüfen. Mockito.verify überprüft nur,
 ob irgendwann in deinem Test die Methode mit den definierten Parametern aufgerufen wird.
-Du brauchst für diese Übung keine MatcherAssert.assertThat von Hamcrest.
+Du brauchst für diese Übung keine Assertions.
 
 \textbf{Es ist nicht erlaubt, das Interface der Klasse Account zu ändern.} Interface nicht ändern heisst: keine public oder
 protected Methoden hinzufügen oder entfernen. Die Signatur der Methoden darf nicht geändert werden.
