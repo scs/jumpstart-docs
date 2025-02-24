@@ -1,4 +1,11 @@
 {
     "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
     "cmake.generator": "Unix Makefiles",
+    "codeium.disableSupercomplete": true,
+    "codeium.enableExplainProblem": false,
+    "codeium.enableInComments": false,
+    "codeium.enableCodeLens": false,
+    "codeium.enableConfig": {
+        "*": false
+    },
 }
