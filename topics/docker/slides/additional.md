@@ -1,6 +1,60 @@
 Weiterführendes
 ===============
 
+Devcontainer
+------------
+
+[devcontainer]
+
+* Bieten eine vorkonfigurierte, reproduzierbare Entwicklungsumgebung mit Docker-Containern.
+* Entwicklungsumgebung funktioniert konsistent auf Windows, macOS und Linux.
+* `devcontainer.json` definiert das Container-Image sowie Erweiterungen und Tools.
+* Nahtlose Integration mit VS Code, GitHub Codespaces und Intellij IDEs.
+* Ermöglicht die genaue Festlegung von Toolchains, Dependencies und Runtimes, ohne das lokale System zu beeinflussen.
+
+
+Devcontainer
+------------
+
+`devcontainer.json`:
+
+~~~ {.json}
+{
+  "name": "Python DevContainer",
+  "image": "mcr.microsoft.com/devcontainers/python:3.11",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-python.python"]
+    }
+  },
+  "postCreateCommand": "pip install --upgrade pip",
+  "remoteUser": "vscode"
+}
+~~~
+
+
+Devcontainer
+------------
+
+`devcontainer.json` mit lokalem Dockerfile:
+
+~~~ {.json}
+{
+  "build": { "dockerfile": "Dockerfile" },
+
+  "customizations": {
+    "vscode": {
+      "extensions": ["dbaeumer.vscode-eslint"]
+    }
+  },
+
+  "forwardPorts": [3000]
+}
+~~~
+
 
 Container als Service
 ---------------------
