@@ -74,7 +74,6 @@ Links
 *CI/CD*
 
 [ci_vs_cd]: https://www.atlassian.com/continuous-delivery/principles/continuous-integration-vs-delivery-vs-deployment
-[future_of_ci_cd]: https://codecentric.de/wissens-hub/blog/github-actions-nextgen-cicd
 [scs_techstudie_ci_cd]: https://supercomputingsystems.atlassian.net/l/cp/gaBKNUT1
 [awesome_ciandcd]: https://github.com/cicdops/awesome-ciandcd
 [awesome_jenkins]: https://github.com/sahilsk/awesome-jenkins
@@ -84,7 +83,6 @@ Links
 [bitbucket-pipeline-template-docker]: https://bitbucket.org/supercomputingsystems/bitbucket-pipeline-template-docker/src/main/
 
 * [ci_vs_cd]
-* [future_of_ci_cd]
 * [scs_techstudie_ci_cd]
 * [awesome_ciandcd]
 * [awesome_jenkins]
