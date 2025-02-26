@@ -72,7 +72,7 @@ Tools
 * GitLab: GitLab CI/CD
 * GitHub: GitHub Actions: [github_awesome_actions]
 
-Siehe: [future_of_ci_cd], [awesome_ciandcd]
+Siehe: [awesome_ciandcd]
 
 *Selbständige Tools*
 
