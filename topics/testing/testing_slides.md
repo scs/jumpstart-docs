@@ -388,7 +388,7 @@ Links
 [Pragmatic Programmer]:https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/
 [Your code as a crime scene]:https://pragprog.com/titles/atcrime/your-code-as-a-crime-scene/
 [Kevlin Henney Youtube Query]:https://www.youtube.com/results?search_query=kevlin+henney
-[Dave Farley]:https://www.youtube.com/@ContinuousDelivery
+[Dave Farley]:https://www.youtube.com/@ModernSoftwareEngineeringYT
 [Fireship]:https://www.youtube.com/@Fireship
 [The Primeagen Youtube channel]:https://www.youtube.com/@ThePrimeagen
 [ArjanCodes Youtube channel]:https://www.youtube.com/@ArjanCodes
