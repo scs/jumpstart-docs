@@ -102,5 +102,5 @@ Tools
 
 * [GitHub-Account](https://github.com/signup)
 * [DockerHub-Account](https://hub.docker.com/signup)
-* [Bitbucket-Account](https://bitbucket.org/) (inkl. 2-Faktor-Athentifizierung)
+* Privaten [Bitbucket-Account](https://bitbucket.org/) (Nicht der SCS oder Studenten-Account)(inkl. 2-Faktor-Athentifizierung)
 * Laptop (je nachdem zu zweit)
