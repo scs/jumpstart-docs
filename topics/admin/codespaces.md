@@ -28,6 +28,18 @@ Im folgenden Screen kann die DevContainer Config ausgewählt werden:
 Nun kann im aktiven Codespace direkt gearbeitet werden.
 
 
+Browser
+-------
+
+Codespaces funktionieren am besten in Chrome oder Edge.
+Firefox macht Probleme.
+Alternativ kann man einen gestarteten Codespace auch direkt in einem lokalen VS Code öffnen:
+
+![codespaces_open_in_vscode](images/codespaces_open_in_vscode.png)
+
+Da fragt er automatisch, die passende Erweiterung zu installieren und sich einzuloggen.
+
+
 Wichtig
 -------
 

@@ -6,8 +6,7 @@
       "extensions": [
         "llvm-vs-code-extensions.vscode-clangd",
         "matepek.vscode-catch2-test-adapter",
-        "ms-vscode.cmake-tools",
-        "twxs.cmake"
+        "ms-vscode.cmake-tools"
       ],
       "settings": {
         "cmake.sourceDirectory": "${workspaceFolder}/topics/build_systems/code"
