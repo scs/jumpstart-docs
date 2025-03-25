@@ -46,6 +46,7 @@ Links
 [pretty_putty]: https://github.com/jacektrocinski/pretty-putty
 [kitty]: http://www.9bis.net/kitty/#!index.md
 [solar_putty]: https://www.solarwinds.com/free-tools/solar-putty
+[mobaxterm]: https://mobaxterm.mobatek.net/
 
 [gitpod]: https://www.gitpod.io/
 [github_codespaces]: https://github.com/features/codespaces

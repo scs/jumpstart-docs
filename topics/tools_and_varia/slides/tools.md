@@ -20,3 +20,4 @@ Putty
 
 * [kitty]
 * [solar_putty]
+* [mobaxterm]
