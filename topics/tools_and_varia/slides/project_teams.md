@@ -60,3 +60,4 @@ Neu in existierendem Projekt-Team
     * Pair-Programming
     * Prototyp bauen
     * CoP
+    * ChatGPT
