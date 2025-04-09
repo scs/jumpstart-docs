@@ -8,9 +8,9 @@ date: \today
 Was ist hier falsch?
 -------
 
-Code Beispiel: [abstractions.py](code/abstractions.py)
+Code Beispiel: [Abstractions.java](code/pattern-examples/src/main/java/ch/scs/jumpstart/pattern/examples/Abstractions.java)
 
-abstractions.py Zusammenfassung
+Abstractions.java Zusammenfassung
 -------
 
 * Fast keine Strukturierung durch Methoden/Funktionen
