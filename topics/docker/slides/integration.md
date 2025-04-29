@@ -153,7 +153,8 @@ Sollte *immer* im Docker Daemon konfiguriert werden: `/etc/docker/daemon.json`
   ],
   "dns": [
     "172.18.0.100", "172.18.0.101", "172.20.4.1", "172.24.0.101", "8.8.8.8", "8.8.4.4"
-  ]
+  ],
+  "registry-mirrors": ["https://docker-cache.scs.ch"]
 }
 ~~~
 
