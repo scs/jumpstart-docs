@@ -8,6 +8,7 @@ Physisch oder virtuell?
 *Varianten*:
 
 * physischer PC
+* WSL2
 * lokale VM
 * VM im Rechenzentrum
 * Container (auf physischem PC, in VM oder in Cloud)
@@ -17,13 +18,7 @@ Physisch oder virtuell?
 
 * Spezifisches Frontend, z.B: virtualbox GUI
 * SSH mit X-Forwarding
-
-*Einsatzzwecke*:
-
-* isolierte Entwicklungsumgebung
-* Test-Systeme
-* Produktive Server-Infrastruktur
-* Kapselung von Microservices/Tools
+* WSL2 mit Wayland ([WLSg](https://github.com/microsoft/wslg))
 
 
 Betriebssystem
