@@ -22,7 +22,7 @@ Links
 [git_katas]: https://github.com/eficode-academy/git-katas
 
 [comparing_workflows]: https://www.atlassian.com/git/tutorials/comparing-workflows
-[one_flow]: http://endoflineblog.com/oneflow-a-git-branching-model-and-workflow
+[one_flow]: https://endoflineblog.com/oneflow-a-git-branching-model-and-workflow
 [git_flow]: https://www.atlassian.com/de/git/tutorials/comparing-workflows/gitflow-workflow
 [trunk_based_development]: https://trunkbaseddevelopment.com/
 [git_grundlagen_workflows]: https://www.amazon.de/Git-Dezentrale-Versionsverwaltung-Grundlagen-Workflows/dp/3898648001
@@ -64,7 +64,7 @@ Links
 
 [good_git_comments]: https://chris.beams.io/posts/git-commit/
 [practical_guide_git_comments]: https://www.freecodecamp.org/news/writing-good-commit-messages-a-practical-guide/
-[uboot_commit_message_conventions]: http://www.denx.de/wiki/view/U-Boot/Patches#Commit_message_conventions
+[uboot_commit_message_conventions]: https://docs.u-boot.org/en/latest/#Commit_message_conventions
 [gitlint]: https://jorisroovers.com/gitlint/
 
 [caret_and_tilde]: https://stackoverflow.com/questions/2221658/whats-the-difference-between-head-and-head-in-git

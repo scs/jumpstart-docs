@@ -15,7 +15,7 @@ Links - CMake
 [do_cmake_right]: https://pabloariasal.github.io/2018/02/19/its-time-to-do-cmake-right/
 [effective_modern_cmake]: https://gist.github.com/mbinna/c61dbb39bca0e4fb7d1f73b0d66a4fd1
 [cmake_is_like_inheritance]: https://kubasejdak.com/blog/modern-cmake-is-like-inheritance
-[cmake_useful_variables]: http://www.cmake.org/Wiki/CMake_Useful_Variables
+[cmake_useful_variables]: https://gitlab.kitware.com/cmake/community/-/wikis/doc/cmake/Useful-Variables
 [cmake_properties]: https://cmake.org/cmake/help/latest/manual/cmake-properties.7.html
 [cmake_dependencies]: https://samthursfield.wordpress.com/2015/11/21/cmake-dependencies-between-targets-and-files-and-custom-commands/
 [talk_pfeifer_effective_cmake]: https://www.youtube.com/watch?v=bsXLMQ6WgIk

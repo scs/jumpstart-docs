@@ -44,7 +44,7 @@ Links
 [choco_create_packages]: https://docs.chocolatey.org/en-us/create/create-packages
 
 [pretty_putty]: https://github.com/jacektrocinski/pretty-putty
-[kitty]: http://www.9bis.net/kitty/#!index.md
+[kitty]: https://www.9bis.net/kitty
 [solar_putty]: https://www.solarwinds.com/free-tools/solar-putty
 [mobaxterm]: https://mobaxterm.mobatek.net/
 
@@ -71,7 +71,7 @@ Links
 [wiki_event_loop]: https://en.wikipedia.org/wiki/Event_loop
 [win_main]: https://docs.microsoft.com/de-ch/windows/desktop/api/winbase/nf-winbase-winmain
 [glib_main_event_loop]: https://developer.gnome.org/glib/stable/glib-The-Main-Event-Loop.html
-[sd_event]: http://0pointer.net/blog/introducing-sd-event.html
+[sd_event]: https://www.freedesktop.org/software/systemd/man/latest/sd-event.html
 [boost_asio]: https://www.boost.org/doc/libs/1_86_0/doc/html/boost_asio.html
 
 * [wiki_event_loop]
