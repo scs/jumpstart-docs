@@ -4,10 +4,11 @@ jumpstart-docs
 ==============
 
 [![Document compilation](https://github.com/scs/jumpstart-docs/actions/workflows/document-compilation.yml/badge.svg)](https://github.com/scs/jumpstart-docs/actions/workflows/document-compilation.yml)
-[![Link Check](https://github.com/scs/jumpstart-docs/actions/workflows/link-check.yml/badge.svg)](https://github.com/scs/jumpstart-docs/actions/workflows/link-check.yml)
+[![Link check](https://github.com/scs/jumpstart-docs/actions/workflows/link-check.yml/badge.svg)](https://github.com/scs/jumpstart-docs/actions/workflows/link-check.yml)
 [![CMake exercise](https://github.com/scs/jumpstart-docs/actions/workflows/cmake-exercise.yml/badge.svg)](https://github.com/scs/jumpstart-docs/actions/workflows/cmake-exercise.yml)
 [![Docker exercise](https://github.com/scs/jumpstart-docs/actions/workflows/docker-exercise.yml/badge.svg)](https://github.com/scs/jumpstart-docs/actions/workflows/docker-exercise.yml)
 [![Java exercise](https://github.com/scs/jumpstart-docs/actions/workflows/java-exercise.yml/badge.svg)](https://github.com/scs/jumpstart-docs/actions/workflows/java-exercise.yml)
+[![Pattern examples](https://github.com/scs/jumpstart-docs/actions/workflows/pattern-examples.yml/badge.svg)](https://github.com/scs/jumpstart-docs/actions/workflows/pattern-examples.yml)
 
 Die SCS Jumpstart-Kurse bieten einen effizienten Einstieg in den praktischen Alltag eines Entwicklers.
 
