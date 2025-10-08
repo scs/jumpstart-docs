@@ -11,7 +11,6 @@ Links - CMake
 
 [cmake_tutorial_john_lamp]: https://www.johnlamp.net/?p=13
 [introduction_modern_cmake]: https://cliutils.gitlab.io/modern-cmake/
-[ultimate_guide_modern_cmake]: https://rix0r.nl/blog/2015/08/13/cmake-guide/
 [do_cmake_right]: https://pabloariasal.github.io/2018/02/19/its-time-to-do-cmake-right/
 [effective_modern_cmake]: https://gist.github.com/mbinna/c61dbb39bca0e4fb7d1f73b0d66a4fd1
 [cmake_is_like_inheritance]: https://kubasejdak.com/blog/modern-cmake-is-like-inheritance
@@ -22,7 +21,6 @@ Links - CMake
 
 * [cmake_tutorial_john_lamp]
 * [introduction_modern_cmake]
-* [ultimate_guide_modern_cmake]
 * [do_cmake_right]
 * [effective_modern_cmake]
 * [cmake_is_like_inheritance]
