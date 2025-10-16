@@ -14,6 +14,9 @@ wie man mit CMake ein C++ Programm und dessen Unittests kompilieren und managen 
 Als Erstes müssen wir die Entwicklungsumgebung
 und die Projekt-Basis vorbereiten.
 
+Für einfacheres Copy-Paste des Codes kann die Ursprungsdatei auf Github verwendet werden:
+[build_systems_exercise.md](https://github.com/scs/jumpstart-docs/blob/main/topics/build_systems/build_systems_exercise.md)
+
 
 Aufgabe
 -------

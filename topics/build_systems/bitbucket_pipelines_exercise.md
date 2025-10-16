@@ -35,6 +35,9 @@ Das Repository kann z.B. `bitbucket-pipelines-exercise` genannt werden.
 Für die folgenden Aufgaben müssen nicht alzu viele Dateien erstellt/editiert werden.
 Dies kann direkt über das Web-UI von Bitbucket gemacht werden.
 
+Für einfacheres Copy-Paste des Codes kann die Ursprungsdatei auf Github verwendet werden:
+[bitbucket_pipelines_exercise.md](https://github.com/scs/jumpstart-docs/blob/main/topics/build_systems/bitbucket_pipelines_exercise.md)
+
 
 Repo lokal klonen (optional)
 ----------------------------
