@@ -13,7 +13,7 @@ list(REMOVE_ITEM BF_SRC_ALL ${BF_SRC_MAIN})
 # internal library target
 set(BF_TARGET_LIB ${BF_TARGET}-lib)
 add_library(${BF_TARGET_LIB} STATIC ${BF_SRC_ALL})
-target_include_directories(${BF_TARGET_LIB} PUBLIC "libs" "src")
+target_include_directories(${BF_TARGET_LIB} PUBLIC "src")
 
 # main app target
 set(BF_TARGET_APP ${BF_TARGET}-app)
@@ -24,5 +24,6 @@ target_link_libraries(${BF_TARGET_APP} PRIVATE ${BF_TARGET_LIB})
 set(BF_TARGET_TEST ${BF_TARGET}-test)
 enable_testing()
 add_executable(${BF_TARGET_TEST} ${BF_TEST_ALL})
+target_include_directories(${BF_TARGET_TEST} PRIVATE "libs")
 add_test(unittest ${BF_TARGET_TEST})
 target_link_libraries(${BF_TARGET_TEST} PRIVATE ${BF_TARGET_LIB})
