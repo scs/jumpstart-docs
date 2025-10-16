@@ -211,7 +211,7 @@ Aufgabe
 
 * Erweiterung des Build-Systems durch das Test-Binary.
   Dies kann ähnlich wie bei der Hauptapplikation bewerkstelligt werden.
-* Ausführen der Test-Applikation über die Konsole.
+* Ausführen der Test-Applikation über die Konsole: `./bit-fields-test`.
 
 
 Lösung
