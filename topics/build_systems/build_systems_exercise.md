@@ -85,7 +85,7 @@ Das `target_include_directories` wird benötigt,
 damit der Kompiler weiss, wo er Header-Files suchen muss.
 
 ~~~ {.cmake}
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.10)
 
 # project settings
 project(bit_fields)
