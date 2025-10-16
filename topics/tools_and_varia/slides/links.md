@@ -12,10 +12,12 @@ Links
 [ansible_quick_guide]: https://www.tutorialspoint.com/ansible/ansible_quick_guide.htm
 [ansible_galaxy]: https://galaxy.ansible.com/
 [ansible_interactive_tutorial]: https://github.com/turkenh/ansible-interactive-tutorial
+[ansible_awx]: https://github.com/ansible/awx
 
 * [ansible_quick_guide]
 * [ansible_galaxy]
 * [ansible_interactive_tutorial]
+* [ansible_awx]
 
 *IDE*
 

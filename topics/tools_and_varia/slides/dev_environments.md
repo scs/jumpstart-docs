@@ -178,3 +178,4 @@ Modules (Grundfunktionalität von Ansible)             API
 * Grosser *Katalog* an Modules
 * *eigene* Modules möglich (in Python geschrieben)
 * *Vorgefertigte* Roles via: [ansible_galaxy]
+* Runtime Umgebung und Manager: [ansible_awx]
