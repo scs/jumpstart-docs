@@ -54,10 +54,11 @@ Neu in existierendem Projekt-Team
   * Team-Mitglied
   * PL
   * TA
+  * ChatGPT
   * gesamte SCS (E-Mail oder Teams)
   * Andere Möglichkeiten
     * Beispiele im Netz suchen
     * Pair-Programming
     * Prototyp bauen
     * CoP
-    * ChatGPT
+    * CleanCoders, TechTalk, Hackday
