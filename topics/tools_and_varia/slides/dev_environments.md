@@ -131,16 +131,19 @@ Chocolatey
 * Wenn ein Programm nicht existiert, reiche ein *eigenes Packet* ein: [choco_create_packages]
 
 ~~~
-choco list --local-only
+choco list
 choco install -y <package>
 choco uninstall <package>
 choco upgrade <package>
 choco upgrade -y all
-choco pin add -n git
 choco pin add -n git --version 1.2.3
 choco info <package>
 choco search --id-starts-with <pattern>
 ~~~
+
+### Alternative
+
+WinGet, UniGetUI
 
 
 Ansible
