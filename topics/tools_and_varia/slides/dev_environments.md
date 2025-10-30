@@ -58,20 +58,22 @@ Infrastruktur
 
 *Tools*:
 
-\colBegin{0.5}
+\colBegin{0.45}
 
 Configuration Management
 
 * Ansible
 * Chef
 * Puppet
+* Nix
 
-\colNext{0.5}
+\colNext{0.55}
 
 Infrastructure Management
 
 * OpenTofu (Cloud: AWS, Azure, etc.)
 * Vagrant (nur für lokale Entwickler-VMs)
+* NixOs
 
 Container
 
