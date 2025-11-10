@@ -19,5 +19,6 @@
   "aliveStatusCodes": [200, 206, 403, 500],
   "retryOn429": true,
   "retryCount": 5,
-  "fallbackRetryDelay": "30s"
+  "timeout": "60s",
+  "fallbackRetryDelay": "60s"
 }
