@@ -30,7 +30,7 @@ jobs:
           script: |
             return context.repo.owner.toLowerCase()
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Set nightly tag if commit was on main
         id: add-nightly-tag
@@ -102,7 +102,7 @@ jobs:
       tags: ${{ needs.build-info.outputs.tags }}
       repo-owner: ${{ needs.build-info.outputs.repo-owner }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - run: |
           echo "inputs:"
