@@ -8,7 +8,7 @@ jumpstart-docs
 [![CMake exercise](https://github.com/scs/jumpstart-docs/actions/workflows/cmake-exercise.yml/badge.svg)](https://github.com/scs/jumpstart-docs/actions/workflows/cmake-exercise.yml)
 [![Docker exercise](https://github.com/scs/jumpstart-docs/actions/workflows/docker-exercise.yml/badge.svg)](https://github.com/scs/jumpstart-docs/actions/workflows/docker-exercise.yml)
 [![Java exercise](https://github.com/scs/jumpstart-docs/actions/workflows/java-exercise.yml/badge.svg)](https://github.com/scs/jumpstart-docs/actions/workflows/java-exercise.yml)
-[![Pattern examples](https://github.com/scs/jumpstart-docs/actions/workflows/pattern-examples.yml/badge.svg)](https://github.com/scs/jumpstart-docs/actions/workflows/pattern-examples.yml)
+[![Python Design Patterns](https://github.com/scs/jumpstart-docs/actions/workflows/python-patterns.yml/badge.svg)](https://github.com/scs/jumpstart-docs/actions/workflows/python-patterns.yml)
 
 Die SCS Jumpstart-Kurse bieten einen effizienten Einstieg in den praktischen Alltag eines Entwicklers.
 
