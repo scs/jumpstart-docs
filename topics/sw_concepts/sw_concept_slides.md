@@ -252,7 +252,14 @@ von [UML: ISO/IEC 19501](https://www.omg.org/spec/UML/ISO/19501/PDF)
 UML Klassendiagramm
 -------
 
-![UML Klassendiagramm: verwendete Komponenten](images/uml/class-diagram-parts.png){width=70%}
+\colBegin{0.8}
+![UML Klassendiagramm: verwendete Komponenten](images/uml/class-diagram-parts.png){width=90%}
+\colNext{0.2}
+\small
+
+[class-diagram-parts.py](code/slides/uml/class-diagram-parts.py)
+
+\colEnd
 
 Single Responsibility
 -------
@@ -317,8 +324,9 @@ Open Closed Beispiel: vorher
 \colNext{0.2}
 \small
 
+* [abstract-factory-bad-case.py](code/slides/abstract-factory/abstract-factory-bad-case.py)
 * Das Modul `views` ist `closed for extension`.
-Für GreyLabel und GreyButton müssen alle if statements geändert werden.
+* Für GreyLabel und GreyButton müssen alle if statements geändert werden.
 
 \colEnd
 
@@ -330,6 +338,7 @@ Open Closed Beispiel: nachher
 \colNext{0.2}
 \small
 
+* [abstract-factory-good-case.py](code/slides/abstract-factory/abstract-factory-good-case.py)
 * Das Modul `views` ist jetzt `open` für weitere Implementationen von ComponentFactory.
 
 \colEnd
@@ -346,6 +355,7 @@ Beispiel einer Verletzung des Liskov substitution principle
 -------
 
 ![Liskov substitution principle bad case](images/interface-segregation/interface-segregation-bad-case.png)
+
 
 Das Liskov Substitution Principle ist hier verletzt, da die `DishWashingMachine::washClothes`
 Methode sich nicht so verhält, wie das Interface verlangt.\
@@ -365,11 +375,15 @@ Interface Segregation Beispiel vorher
 
 ![Interface Segregation bad case](images/interface-segregation/interface-segregation-bad-case.png)
 
+[interface-segregation-bad-case.py](code/slides/interface-segregation/interface-segregation-bad-case.py)
+
 
 Interface Segregation Beispiel nachher
 ------
 
 ![Interface Segregation good case](images/interface-segregation/interface-segregation-good-case.png)
+
+[interface-segregation-bad-case.py](code/slides/interface-segregation/interface-segregation-bad-case.py)
 
 Hier lösen wir die Verletzung des Liskov Substitution Principles mit Interface Segregation.
 
@@ -386,10 +400,14 @@ Dependency Inversion Beispiel 1
 
 ![No dependency inversion](images/dependency-inversion/no-dependency-inversion.png){width=65%}
 
+[no-dependency-inversion.py](code/slides/dependency-inversion/no-dependency-inversion.py)
+
 Dependency Inversion Beispiel 2
 -----
 
-![Dependency inversion](images/dependency-inversion/with-dependency-inversion.png){height=95%}
+![Dependency inversion](images/dependency-inversion/with-dependency-inversion.png){height=80%}
+
+[with-dependency-inversion.py](code/slides/dependency-inversion/with-dependency-inversion.py)
 
 Design Patterns
 -------
@@ -416,10 +434,15 @@ Factory Beispiel: vorher
 
 ![Factory Beispiel: vorher](images/factory/factory-bad-case.png){width=78%}
 
+[factory-bad-case.py](code/slides/factory/factory-bad-case.py)
+
 Factory Beispiel: nachher
 ------
 
 ![Factory Beispiel: nachher](images/factory/factory-good-case.png)
+
+[factory-good-case.py](code/slides/factory/factory-good-case.py)
+
 
 AbstractFactory
 -------
@@ -439,6 +462,9 @@ AbstractFactory Beispiel: vorher
 \colNext{0.2}
 \colEnd
 
+[abstract-factory-bad-case.py](code/slides/abstract-factory/abstract-factory-bad-case.py)
+
+
 AbstractFactory Beispiel: nachher
 ------
 
@@ -447,6 +473,7 @@ AbstractFactory Beispiel: nachher
 \colNext{0.2}
 \small
 
+* [abstract-factory-good-case.py](code/slides/abstract-factory/abstract-factory-good-case.py)
 * Die Anzahl "if darkmode" statements ist reduziert.
 * Es ist jetzt viel einfacher, ein "HighContrast"-Theme einzubauen.
 
@@ -474,12 +501,16 @@ Strategy
 Strategy Beispiel: vorher
 -------
 
-![Observer bad case](images/strategy/strategy-bad-case.png)
+![Strategy bad case](images/strategy/strategy-bad-case.png)
+
+[strategy-bad-case.py](code/slides/strategy/strategy-bad-case.py)
 
 Strategy Beispiel: nachher
 -------
 
-![Observer good case](images/strategy/strategy-good-case.png)
+![Strategy good case](images/strategy/strategy-good-case.png)
+
+[strategy-good-case.py](code/slides/strategy/strategy-good-case.py)
 
 Observer
 -------
@@ -509,12 +540,16 @@ Command
 Command Beispiel: vorher
 -------
 
-![Observer bad case](images/command/command-bad-case.png)
+![Command bad case](images/command/command-bad-case.png)
+
+[command-bad-case.py](code/slides/command/command-bad-case.py)
 
 Command Beispiel: nachher
 -------
 
-![Observer good case](images/command/command-good-case.png){height=90%}
+![Command good case](images/command/command-good-case.png){height=85%}
+
+[command-good-case.py](code/slides/command/command-good-case.py)
 
 Zusammenfassung Abstraktion
 ------
