@@ -2,7 +2,7 @@
     "name": "Jumpstart java",
     "image": "mcr.microsoft.com/devcontainers/java:dev-21-jdk-bookworm",
     "features": {
-        "ghcr.io/devcontainers-contrib/features/maven-sdkman": {
+        "ghcr.io/devcontainers-extra/features/maven-sdkman": {
             "jdkVersion": "21",
             "jdkDistro": "tem"
         }
@@ -10,7 +10,6 @@
     "customizations": {
         "vscode": {
             "extensions": [
-                "Codeium.codeium",
                 "GitHub.copilot",
                 "redhat.java",
                 "ryanluker.vscode-coverage-gutters",
