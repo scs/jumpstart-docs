@@ -1,0 +1,14 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/python
+{
+	"name": "Jumpstart Python 3",
+	"image": "mcr.microsoft.com/devcontainers/python:2-3.14-trixie",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"GitHub.copilot",
+				"ms-python.python"
+			]
+		}
+	}
+}
