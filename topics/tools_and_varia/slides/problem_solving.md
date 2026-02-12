@@ -105,6 +105,18 @@ Verwendung von Libraries aus dem Internet
 * Gibt es bessere Forks? [active_forks]
 
 
+AI Coding Assistants
+--------------------
+
+Die meisten IDEs unterstützen mittlerweile AI Coding Assistants, die den Programmierprozess unterstützen können.
+In der SCS verwenden wir z.B. GitHub Copilot (siehe [scs-copilot-infos] für weitere Infos).
+
+* Copilot über die SCS beziehen: [scs-copilot-infos]
+* Immer in Absprache mit dem PL und Team, ob und wie AI-Tools eingesetzt werden dürfen.
+* Wie immer mit AI-Tools: *Kritisch hinterfragen, was vorgeschlagen wird und nicht blind übernehmen!*
+* Das Tool kann durchaus nützlich sein — man sollte etwas Erfahrung sammeln, wie es am besten eingesetzt werden kann.
+
+
 Verwendung von Code aus dem Internet
 ------------------------------------
 
