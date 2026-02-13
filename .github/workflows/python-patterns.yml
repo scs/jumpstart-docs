@@ -74,6 +74,17 @@ jobs:
           echo "Testing UML examples..."
           python topics/sw_concepts/code/slides/uml/class-diagram-parts.py
           
+          echo "Testing exercise examples (where possible)..."
+          python topics/sw_concepts/code/exercise/01-intro.py
+          python topics/sw_concepts/code/exercise/05-observer-bad-case.py
+          
+          echo "Testing solution examples..."
+          python topics/sw_concepts/code/solution/01-intro-refactored.py
+          python topics/sw_concepts/code/solution/02-interfaces.py
+          python topics/sw_concepts/code/solution/03-factory.py
+          python topics/sw_concepts/code/solution/04-abstract-factory.py
+          python topics/sw_concepts/code/solution/05-observer-good-case.py
+          
           echo "All Python pattern examples executed successfully!"
 
       - name: Run type checking (if mypy is available)
