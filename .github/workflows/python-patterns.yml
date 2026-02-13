@@ -1,0 +1,94 @@
+name: Python Design Patterns
+
+on:
+  push:
+    paths:
+      - 'topics/sw_concepts/code/**/*.py'
+      - '.github/workflows/python-patterns.yml'
+      - 'pyproject.toml'
+  pull_request:
+    paths:
+      - 'topics/sw_concepts/code/**/*.py'
+      - '.github/workflows/python-patterns.yml'
+      - 'pyproject.toml'
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.14']
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install ruff
+
+      - name: Lint with ruff
+        run: |
+          # Check for linting issues
+          ruff check topics/sw_concepts/code/ --output-format=github
+
+      - name: Format check with ruff
+        run: |
+          # Check if code is formatted correctly
+          ruff format topics/sw_concepts/code/ --check
+
+      - name: Run Python pattern examples
+        run: |
+          # Run all Python files to ensure they execute without errors
+          echo "Testing abstract factory patterns..."
+          python topics/sw_concepts/code/slides/abstract-factory/abstract-factory-bad-case.py
+          python topics/sw_concepts/code/slides/abstract-factory/abstract-factory-good-case.py
+          
+          echo "Testing command patterns..."
+          python topics/sw_concepts/code/slides/command/command-bad-case.py
+          python topics/sw_concepts/code/slides/command/command-good-case.py
+          
+          echo "Testing dependency inversion..."
+          python topics/sw_concepts/code/slides/dependency-inversion/no-dependency-inversion.py
+          python topics/sw_concepts/code/slides/dependency-inversion/with-dependency-inversion.py
+          
+          echo "Testing factory patterns..."
+          python topics/sw_concepts/code/slides/factory/factory-bad-case.py
+          python topics/sw_concepts/code/slides/factory/factory-good-case.py
+          
+          echo "Testing interface segregation..."
+          python topics/sw_concepts/code/slides/interface-segregation/interface-segregation-bad-case.py
+          python topics/sw_concepts/code/slides/interface-segregation/interface-segregation-good-case.py
+          
+          echo "Testing strategy patterns..."
+          python topics/sw_concepts/code/slides/strategy/strategy-bad-case.py
+          python topics/sw_concepts/code/slides/strategy/strategy-good-case.py
+          
+          echo "Testing UML examples..."
+          python topics/sw_concepts/code/slides/uml/class-diagram-parts.py
+          
+          echo "Testing exercise examples (where possible)..."
+          python topics/sw_concepts/code/exercise/01-intro.py
+          python topics/sw_concepts/code/exercise/05-observer-bad-case.py
+          
+          echo "Testing solution examples..."
+          python topics/sw_concepts/code/solution/01-intro-refactored.py
+          python topics/sw_concepts/code/solution/02-interfaces.py
+          python topics/sw_concepts/code/solution/03-factory.py
+          python topics/sw_concepts/code/solution/04-abstract-factory.py
+          python topics/sw_concepts/code/solution/05-observer-good-case.py
+          
+          echo "All Python pattern examples executed successfully!"
+
+      - name: Run type checking (if mypy is available)
+        continue-on-error: true
+        run: |
+          pip install mypy
+          mypy topics/sw_concepts/code/slides/ --ignore-missing-imports || true

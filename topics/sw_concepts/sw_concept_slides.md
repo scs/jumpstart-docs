@@ -5,16 +5,21 @@ title: "SW Konzepte"
 date: \today
 ---
 
-Was ist hier falsch?
+Was ist hier schlecht?
 -------
 
-Code Beispiel: [Abstractions.java](code/pattern-examples/src/main/java/ch/scs/jumpstart/pattern/examples/Abstractions.java)
+Code Beispiel: [01-intro.py](code/exercise/01-intro.py)
 
-Abstractions.java Zusammenfassung
+intro.py Zusammenfassung
 -------
 
-* Fast keine Strukturierung durch Methoden/Funktionen
+* Fast keine Strukturierung durch Methoden/Funktionen/Datenmodelle
 * Code duplication
+* Magic numbers
+* Business Logik und Präsentation vermischt
+
+-> Besser: [01-intro-refactored.py](code/solution/01-intro-refactored.py)
+
 
 Abstraktion: Nachteile
 -------
@@ -23,33 +28,6 @@ Abstraktion: Nachteile
 * Änderung der Abstraktion haben Auswirkungen auf alle User
 * Die Abstraktion am falschen Ort (Vertikal)
 * Die Abstraktion versteckt wichtige Features
-
-Abstraktion am falschen Ort
-------
-
-```java
-public void initialize() {
-    carouselDisposable.dispose();
-    carouselDisposable = contactlessPMod.getCarouselProvider()
-    .addCarouselObserver(
-        imagePath -> JfxThreadingUtils.invokeOnFx(() -> setContactlessLogo(imagePath))
-    );
-}
-
-private void setContactlessLogo(String imagePath) {
-    if (imagePath == null || getAcceptance() != ACCEPTED) {
-        final String imageFileName = getImageFileName()
-        final String imageUrl = IMAGES_PATH + imageFileName;
-        contactlessLogo.setImage(new Image(imageUrl));
-    } else {
-        if (contactlessPMod.isCarouselEnabled()) {
-            contactlessLogo.setImage(new Image(imagePath));
-        } else {
-            contactlessLogo.setImage(new Image(IMAGES_PATH + "static_carousel.png"));
-        }
-    }
-}
-```
 
 Agenda
 -------
@@ -96,21 +74,14 @@ KISS
   (Keep it simple stupid)
 
 ```python
-# num % (modulo) 2 with a bitwise operator:
-num & 1
-# it is simpler and more readable
-# to use the % operator.
-num % 2
-```
+# Good example (KISS)
+result = sum(numbers) / len(numbers)
 
-Erklärung Modulo 2 mit Bit operator
--------
-
-```md
-5   = 00000101 &
-1   = 00000001
---------------
-      00000001 -> ungerade
+# Bad example (unnecessarily complex)
+result = 0
+for num in numbers:
+  result += num
+result = result / len(numbers)
 ```
 
 YAGNI
@@ -136,7 +107,19 @@ NIH
 NIH Beispiel 1
 -------
 
-<https://github.com/ecamp/ecamp3/blob/9709aa8a7b83b0c65ce1a0ce0a94710a77a6ebdd/api/src/Service/CampCouponService.php>
+```python
+def custom_sort(numbers):
+    for i in range(len(numbers)):
+        for j in range(i + 1, len(numbers)):
+            if numbers[i] > numbers[j]:
+                numbers[i], numbers[j] = numbers[j], numbers[i]
+    return numbers
+
+sorted_list = custom_sort([3, 1, 4, 1, 5])
+
+# Besser: built-in Funktion verwenden
+sorted_list = sorted([3, 1, 4, 1, 5])
+```
 
 Clean Code
 -------
@@ -236,7 +219,24 @@ class HandWasher
 Kurze Übung Interface
 -------
 
-Überlegt euch zu zweit ein Beispiel für ein Interface mit 2 Methoden und 2 Implementationen.
+Implementiert das Interface `Washer` für die Klasse `MashineWasher` und `HandWasher` in Python.
+(Verwendet simple print statements für die Implementierung der Methoden.)
+
+Das Interface in Python könnte so aussehen (siehe auch [exercise/02-03-interfaces.py](code/exercise/02-03-interfaces.py)):
+
+```python
+from abc import ABC, abstractmethod
+
+class Washer(ABC):
+    @abstractmethod
+    def wash_clothes(self, item: str):
+        pass
+
+    @abstractmethod
+    def wash_dishes(self, item: str):
+        pass
+```
+
 
 UML
 -------
@@ -252,7 +252,14 @@ von [UML: ISO/IEC 19501](https://www.omg.org/spec/UML/ISO/19501/PDF)
 UML Klassendiagramm
 -------
 
-![UML Klassendiagramm: verwendete Komponenten](images/uml/class-diagram-parts.png){width=70%}
+\colBegin{0.8}
+![UML Klassendiagramm: verwendete Komponenten](images/uml/class-diagram-parts.png){width=90%}
+\colNext{0.2}
+\small
+
+[class-diagram-parts.py](code/slides/uml/class-diagram-parts.py)
+
+\colEnd
 
 Single Responsibility
 -------
@@ -299,7 +306,6 @@ public SessionFactoryBuilder withUserAndPassword(String username, String passwor
     this.password = password;
     return this;
 }
-
 ```
 
 Open Closed
@@ -317,8 +323,9 @@ Open Closed Beispiel: vorher
 \colNext{0.2}
 \small
 
+* [abstract-factory-bad-case.py](code/slides/abstract-factory/abstract-factory-bad-case.py)
 * Das Modul `views` ist `closed for extension`.
-Für GreyLabel und GreyButton müssen alle if statements geändert werden.
+* Für GreyLabel und GreyButton müssen alle if statements geändert werden.
 
 \colEnd
 
@@ -330,6 +337,7 @@ Open Closed Beispiel: nachher
 \colNext{0.2}
 \small
 
+* [abstract-factory-good-case.py](code/slides/abstract-factory/abstract-factory-good-case.py)
 * Das Modul `views` ist jetzt `open` für weitere Implementationen von ComponentFactory.
 
 \colEnd
@@ -346,6 +354,7 @@ Beispiel einer Verletzung des Liskov substitution principle
 -------
 
 ![Liskov substitution principle bad case](images/interface-segregation/interface-segregation-bad-case.png)
+
 
 Das Liskov Substitution Principle ist hier verletzt, da die `DishWashingMachine::washClothes`
 Methode sich nicht so verhält, wie das Interface verlangt.\
@@ -365,11 +374,15 @@ Interface Segregation Beispiel vorher
 
 ![Interface Segregation bad case](images/interface-segregation/interface-segregation-bad-case.png)
 
+[interface-segregation-bad-case.py](code/slides/interface-segregation/interface-segregation-bad-case.py)
+
 
 Interface Segregation Beispiel nachher
 ------
 
 ![Interface Segregation good case](images/interface-segregation/interface-segregation-good-case.png)
+
+[interface-segregation-bad-case.py](code/slides/interface-segregation/interface-segregation-bad-case.py)
 
 Hier lösen wir die Verletzung des Liskov Substitution Principles mit Interface Segregation.
 
@@ -386,10 +399,14 @@ Dependency Inversion Beispiel 1
 
 ![No dependency inversion](images/dependency-inversion/no-dependency-inversion.png){width=65%}
 
+[no-dependency-inversion.py](code/slides/dependency-inversion/no-dependency-inversion.py)
+
 Dependency Inversion Beispiel 2
 -----
 
-![Dependency inversion](images/dependency-inversion/with-dependency-inversion.png){height=95%}
+![Dependency inversion](images/dependency-inversion/with-dependency-inversion.png){height=80%}
+
+[with-dependency-inversion.py](code/slides/dependency-inversion/with-dependency-inversion.py)
 
 Design Patterns
 -------
@@ -416,10 +433,26 @@ Factory Beispiel: vorher
 
 ![Factory Beispiel: vorher](images/factory/factory-bad-case.png){width=78%}
 
+[factory-bad-case.py](code/slides/factory/factory-bad-case.py)
+
 Factory Beispiel: nachher
 ------
 
 ![Factory Beispiel: nachher](images/factory/factory-good-case.png)
+
+[factory-good-case.py](code/slides/factory/factory-good-case.py)
+
+Factory Übung
+------
+
+Erweitert die Übung [exercise/02-03-interfaces.py](code/exercise/02-03-interfaces.py) um eine Factory,
+die `Washer`-Objekte erstellt basierend darauf, ob die Items sensible sind oder nicht.
+Die Factory könnte so aussehen (muss nicht zwangsläufig eine klasse sein):
+
+```python
+def washer_factory(can_wash_fragile_things: bool) -> Washer:
+  pass
+```
 
 AbstractFactory
 -------
@@ -439,6 +472,9 @@ AbstractFactory Beispiel: vorher
 \colNext{0.2}
 \colEnd
 
+[abstract-factory-bad-case.py](code/slides/abstract-factory/abstract-factory-bad-case.py)
+
+
 AbstractFactory Beispiel: nachher
 ------
 
@@ -447,6 +483,7 @@ AbstractFactory Beispiel: nachher
 \colNext{0.2}
 \small
 
+* [abstract-factory-good-case.py](code/slides/abstract-factory/abstract-factory-good-case.py)
 * Die Anzahl "if darkmode" statements ist reduziert.
 * Es ist jetzt viel einfacher, ein "HighContrast"-Theme einzubauen.
 
@@ -458,6 +495,24 @@ AbstractFactory Beispiel 2
 ![footer_m](images/abstract-factory/footer_m.png)
 ![footer_c](images/abstract-factory/footer_c.png)
 
+AbstractFactory Übung
+------
+
+Wir haben die vorherige Übung etwas erweitert (Interface Segregation).
+Nutzt [04-abstract-factory.py](code/exercise/04-abstract-factory.py) als Ausgangspunkt um eine Abstract Factory zu implementieren.
+
+```python
+class WasherFactory(ABC):
+  @abstractmethod
+  def create_clothes_washer(self) -> ClothesWasher:
+    pass
+
+  @abstractmethod
+  def create_dish_washer(self) -> DishWasher:
+    pass
+
+```
+
 Strategy
 -------
 
@@ -468,18 +523,21 @@ Strategy
   * Beispiele:
     * Unterschiedliche Algorithmen für ein Ziel (z.b. Suchalgorithmen, Sortieralgorithmen)
     * Daten können von verschiedenen Quellen kommen (RemoteConfigSourceStrategy, FileConfigSourceStrategy)
-  
 
 
 Strategy Beispiel: vorher
 -------
 
-![Observer bad case](images/strategy/strategy-bad-case.png)
+![Strategy bad case](images/strategy/strategy-bad-case.png)
+
+[strategy-bad-case.py](code/slides/strategy/strategy-bad-case.py)
 
 Strategy Beispiel: nachher
 -------
 
-![Observer good case](images/strategy/strategy-good-case.png)
+![Strategy good case](images/strategy/strategy-good-case.png)
+
+[strategy-good-case.py](code/slides/strategy/strategy-good-case.py)
 
 Observer
 -------
@@ -494,10 +552,26 @@ Observer Beispiel: vorher
 
 ![Observer bad case](images/observer/observer-bad-case.png)
 
+[05-observer-bad-case.py](code/exercises/05-observer-bad-case.py)
+
 Observer Beispiel: nachher
 -------
 
 ![Observer good case](images/observer/observer-good-case.png){height=90%}
+
+Observer Übung
+-------
+
+Implementiert das Observer Pattern für die folgende Situation.
+Nehmt dafür
+[05-observer-bad-case.py](code/exercises/05-observer-bad-case.py) als Ausgangspunkt.
+
+![Observer good case](images/observer/observer-good-case.png){height=75%}
+
+Observer Lösung
+-------
+
+Lösung: [05-observer-good-case.py](code/solutions/05-observer-good-case.py)
 
 Command
 -------
@@ -509,12 +583,16 @@ Command
 Command Beispiel: vorher
 -------
 
-![Observer bad case](images/command/command-bad-case.png)
+![Command bad case](images/command/command-bad-case.png)
+
+[command-bad-case.py](code/slides/command/command-bad-case.py)
 
 Command Beispiel: nachher
 -------
 
-![Observer good case](images/command/command-good-case.png){height=90%}
+![Command good case](images/command/command-good-case.png){height=85%}
+
+[command-good-case.py](code/slides/command/command-good-case.py)
 
 Zusammenfassung Abstraktion
 ------
