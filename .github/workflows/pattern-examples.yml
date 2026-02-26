@@ -34,7 +34,7 @@ jobs:
         working-directory: topics/sw_concepts/code/pattern-examples
         run: mvn test
 
-      - uses: actions/upload-artifact@v4.6.2
+      - uses: actions/upload-artifact@v7.0.0
         if: always()
         with:
           path: 'topics/sw_concepts/code/pattern-examples/target'
