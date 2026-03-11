@@ -44,7 +44,8 @@ Links
 *Tools*
 
 [choco_create_packages]: https://docs.chocolatey.org/en-us/create/create-packages
-
+[regex101]: https://regex101.com/
+[regexr]: https://regexr.com/
 [pretty_putty]: https://github.com/jacektrocinski/pretty-putty
 [kitty]: https://www.9bis.net/kitty
 [solar_putty]: https://www.solarwinds.com/free-tools/solar-putty
@@ -54,6 +55,8 @@ Links
 [github_codespaces]: https://github.com/features/codespaces
 
 * [choco_create_packages]
+* [regex101]
+* [regexr]
 * [pretty_putty]
 * [kitty]
 * [solar_putty]
