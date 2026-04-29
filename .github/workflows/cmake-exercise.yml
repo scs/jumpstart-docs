@@ -8,7 +8,7 @@ jobs:
   cmake-exercise:
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: configure and build
         working-directory: topics/build_systems/code
