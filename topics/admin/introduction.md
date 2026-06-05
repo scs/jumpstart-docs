@@ -26,17 +26,17 @@ title: "Jumpstart - Einführung"
 Über uns
 --------
 
-*Lucius Bachmann*
+*Oliver Kamer*
 
-* [lucius.bachmann@scs.ch](mailto:lucius.bachmann@scs.ch)
-* Jahrgang 1992
-* Studium: Bachelor in Medienwissenschaft und Informatik
-* SCS seit 2017
-  * Software Solutions Abteilung
+* [oliver.kamer@scs.ch](mailto:oliver.kamer@scs.ch)
+* Jahrgang 1997
+* Studium: Master in Software Systems
+* SCS seit 2023
+  * Division Kopernikus (Working Title)
 * Spezialgebiete:
   * Java
-  * PHP
-  * Datenbanken
+  * SQL Datenbanken
+  * Web Technologien
 
 
 Über uns
