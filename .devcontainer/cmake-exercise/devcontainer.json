@@ -1,6 +1,6 @@
 {
   "name": "Jumpstart CMake exercise",
-  "image": "danger89/cmake:5.0",
+  "image": "danger89/cmake:noble-cppcheck-2.20.0",
   "customizations": {
     "vscode": {
       "extensions": [
