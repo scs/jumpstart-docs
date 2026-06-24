@@ -17,6 +17,7 @@ Links
 [google_code_style_guides]: https://developers.google.com/style/code-in-text#code-style-guides
 
 [learn_git_branching]: https://learngitbranching.js.org
+[git_by_bit]: https://gitbybit.com/
 [git_it]: https://github.com/jlord/git-it-electron
 [oh_my_git]: https://blinry.itch.io/oh-my-git
 [git_katas]: https://github.com/eficode-academy/git-katas
@@ -45,6 +46,7 @@ Links
 
 * Interaktive Git Tutorials:
   * [learn_git_branching]
+  * [git_by_bit]
   * [git_it]
   * [oh_my_git]
   * [git_katas]

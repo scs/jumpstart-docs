@@ -15,5 +15,6 @@ Varianten:
 * Web-Game (bevorzugt): [learn_git_branching]
   * Die Hilfe findet sich unten Rechts beim *`?`*
   * letzten Befehl rückgängig machen: *`undo`*
+* VS code: [git_by_bit]
 * Electron-Game: [git_it]
 * Desktop-Game: [oh_my_git]
