@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 from enum import StrEnum, auto
+from typing import override
 
 
 class Washer(ABC):
@@ -12,18 +13,22 @@ class Washer(ABC):
         pass
 
 
-class MachineWasher:
+class MachineWasher(Washer):
+    @override
     def wash_clothes(self, item: str):
         print(f"Machine washing {item}.")
 
+    @override
     def wash_dishes(self, item: str):
         print(f"Machine washing {item}.")
 
 
-class HandWasher:
+class HandWasher(Washer):
+    @override
     def wash_clothes(self, item: str):
         print(f"Hand washing {item}.")
 
+    @override
     def wash_dishes(self, item: str):
         print(f"Hand washing {item}.")
 
