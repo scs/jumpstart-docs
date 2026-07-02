@@ -36,10 +36,12 @@ Links
 [json_tutorial]: https://www.guru99.com/json-tutorial-example.html
 [yaml_syntax]: https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html
 [markdown_guide]: https://www.markdownguide.org/basic-syntax/
+[typst_tutorial]: https://typst.app/docs/tutorial/
 
 * [json_tutorial]
 * [yaml_syntax]
 * [markdown_guide]
+* [typst_tutorial]
 
 *Tools*
 

@@ -28,6 +28,7 @@ Beispiele
 * *ReST*: reStructuredText
 * *LaTeX*
 * *Markdown*
+* *Typst*
 
 
 JSON
@@ -153,9 +154,9 @@ Content   Number
 
 > Zitat
 
-`Code`
+`Inline Code`
 
-~~~
+~~~{.cpp}
 Code
 Block
 ~~~
@@ -179,6 +180,73 @@ Block
 [reference_link]: reference_link.html
 [reference_link]
 [Reference Link][reference_link]
+~~~
+
+\colEnd
+
+
+Typst
+-----
+
+* Inoffizieller Nachfolger von LaTeX
+* Eigene Programmiersprache: Code nach *`#`*, Text in *`[]`*
+* Flexibel erweiterbar: Packages, Templates
+* Tutorial: [typst_tutorial]
+
+\colBegin{0.32}
+\scriptsize
+
+~~~
+= Heading 1
+== Heading 2
+=== Heading 3
+
+#table(
+  columns: 3,
+  [],      [T1], [T2],
+  [John],   [1], [2],
+  [Mary],   [a], [b],
+  [Robert], [x], [y],
+)
+~~~
+
+\colNext{0.38}
+\scriptsize
+
+~~~
+_emphasis_
+*strong*
+_*strong_emphasis_*_
+
+#set quote(block: true)
+#quote(attribution: [Author])[
+  Zitat-Text
+]
+
+`Inline Code`
+
+```rust
+Code
+Block
+```
+~~~
+
+\colNext{0.4}
+\scriptsize
+
+~~~
+- Unordered List A
+  - Sublist
+- Unordered List B
+
++ Ordered List A
++ Ordered List B
+
+#image("bild.jpeg", width: 20%)
+
+#link("https://example.com")[
+  See example.com
+]
 ~~~
 
 \colEnd
