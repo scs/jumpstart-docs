@@ -54,7 +54,7 @@ Neu in existierendem Projekt-Team
   * Team-Mitglied
   * PL
   * TA
-  * ChatGPT
+  * Chat AI (ChatGPT, Claude, etc.)
   * gesamte SCS (E-Mail oder Teams)
   * Andere Möglichkeiten
     * Beispiele im Netz suchen
