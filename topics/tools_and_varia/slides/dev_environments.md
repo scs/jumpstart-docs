@@ -18,7 +18,7 @@ Physisch oder virtuell?
 
 * Spezifisches Frontend, z.B: virtualbox GUI
 * SSH mit X-Forwarding
-* WSL2 mit Wayland ([WLSg](https://github.com/microsoft/wslg))
+* WSL2 mit Wayland ([WSLg](https://github.com/microsoft/wslg))
 
 
 Betriebssystem
