@@ -1,6 +1,7 @@
 include(js_document)
 
 add_subdirectory(admin)
+add_subdirectory(agentic_ai)
 add_subdirectory(build_systems)
 add_subdirectory(docker)
 add_subdirectory(git)
