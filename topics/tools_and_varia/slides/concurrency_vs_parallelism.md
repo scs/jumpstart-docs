@@ -15,6 +15,8 @@ $\to$ benötigt nur *1 CPU-Core*
 * Concurrency: *zeitlich unabhängige Tasks* (Async)
 * Parallelism: *Problem schneller lösen*
 
+Youtube Video: [threads_vs_coroutines]
+
 
 Implementation von Concurrency
 ------------------------------

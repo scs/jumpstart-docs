@@ -76,12 +76,14 @@ Links
 *Concurrency vs. Parallelism*
 
 [wiki_event_loop]: https://en.wikipedia.org/wiki/Event_loop
+[threads_vs_coroutines]: https://www.youtube.com/watch?v=txffplpsSzg
 [win_main]: https://docs.microsoft.com/de-ch/windows/desktop/api/winbase/nf-winbase-winmain
 [glib_main_event_loop]: https://developer.gnome.org/glib/stable/glib-The-Main-Event-Loop.html
 [sd_event]: https://www.freedesktop.org/software/systemd/man/latest/sd-event.html
 [boost_asio]: https://www.boost.org/doc/libs/1_86_0/doc/html/boost_asio.html
 
 * [wiki_event_loop]
+* [threads_vs_coroutines]
 * [win_main]
 * [glib_main_event_loop]
 * [sd_event]
