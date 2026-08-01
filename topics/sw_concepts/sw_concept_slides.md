@@ -552,7 +552,7 @@ Observer Beispiel: vorher
 
 ![Observer bad case](images/observer/observer-bad-case.png)
 
-[05-observer-bad-case.py](code/exercises/05-observer-bad-case.py)
+[05-observer-bad-case.py](code/exercise/05-observer-bad-case.py)
 
 Observer Beispiel: nachher
 -------
@@ -563,15 +563,14 @@ Observer Übung
 -------
 
 Implementiert das Observer Pattern für die folgende Situation.
-Nehmt dafür
-[05-observer-bad-case.py](code/exercises/05-observer-bad-case.py) als Ausgangspunkt.
+Nehmt dafür [05-observer-bad-case.py](code/exercise/05-observer-bad-case.py) als Ausgangspunkt.
 
 ![Observer good case](images/observer/observer-good-case.png){height=75%}
 
 Observer Lösung
 -------
 
-Lösung: [05-observer-good-case.py](code/solutions/05-observer-good-case.py)
+Lösung: [05-observer-good-case.py](code/solution/05-observer-good-case.py)
 
 Command
 -------
