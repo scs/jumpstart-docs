@@ -101,7 +101,7 @@ Links
 [boost]: https://www.boost.org/
 [poco]: https://pocoproject.org/
 [active_forks]: https://github.com/techgaun/active-forks
-[vulnerabilities_in_code_examples]: https://arxiv.org/ftp/arxiv/papers/1910/1910.01321.pdf
+[vulnerabilities_in_code_examples]: https://arxiv.org/abs/1910.01321
 [quality_chatgpt_as_code_help]: https://www.golem.de/news/ki-im-kreuzfeuer-der-kritik-massive-qualitaetsmaengel-bei-chatgpt-als-programmierhilfe-2405-185442.html
 [scs-copilot-infos]: https://supercomputingsystems.atlassian.net/wiki/x/6oMhIQ
 

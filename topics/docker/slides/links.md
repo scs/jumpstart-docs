@@ -17,7 +17,7 @@ Docker
 [docker_bind_mounts]: https://docs.docker.com/storage/bind-mounts/
 [docker_tmpfs_mounts]: https://docs.docker.com/storage/tmpfs/
 [docker_storage_driver]: https://docs.docker.com/storage/storagedriver/
-[docker_network_bridge]: https://docs.docker.com/network/network-tutorial-standalone/
+[docker_network_bridge]: https://docs.docker.com/engine/network/drivers/bridge/
 [docker_scs]: https://supercomputingsystems.atlassian.net/wiki/x/GwnhAQ
 [dockerfile_reference]: https://docs.docker.com/engine/reference/builder/
 [dockerfile_best_practice]: https://docs.docker.com/develop/develop-images/dockerfile_best-practices/
