@@ -130,6 +130,7 @@ function(js_slides name sources)
     list(FILTER code EXCLUDE REGEX ".*.idea/.*")
 
     get_subdirs(include_paths ${CMAKE_CURRENT_SOURCE_DIR})
+    list(APPEND include_paths ${CMAKE_CURRENT_SOURCE_DIR})
     list(FILTER include_paths EXCLUDE REGEX ".*/target/.*")
     list(FILTER include_paths EXCLUDE REGEX ".*/code")
     list(APPEND include_paths ${code})
