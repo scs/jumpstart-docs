@@ -17,8 +17,8 @@ Factory
 
 * Alias: Factory Method, Simple Factory
 * Use Case:
-    * Logik für die Erstellung eines Objekts kapseln und vereinheitlichen.
-    * Wissen um konkrete Implementationen eines Interfaces zentralisieren.
+  * Logik für die Erstellung eines Objekts kapseln und vereinheitlichen.
+  * Wissen um konkrete Implementationen eines Interfaces zentralisieren.
 
 von [Java Design Patterns/Factory](https://github.com/iluwatar/java-design-patterns/tree/07663ce2bdd46ca4697307068b9eb0d4c8888ead/factory)
 
@@ -52,10 +52,10 @@ AbstractFactory
 -------
 
 * Use Case:
-    * Es gibt 2 oder mehr Gruppen von Komponenten. Es sollen immer nur Komponenten aus einer der Gruppen erstellt werden.
-        * Beispiel Light/Dark Theme: es soll entweder Light oder Dark Theme sein, aber nie gemischt.
-    * Die gleichen If-Statements tauchen wiederholt an unterschiedlichen Stellen im Code auf. Man möchte diese Code-Duplizierung
-      verhindern, indem man die If-Statements an einem zentralen Ort platziert.
+  * Es gibt 2 oder mehr Gruppen von Komponenten. Es sollen immer nur Komponenten aus einer der Gruppen erstellt werden.
+    * Beispiel Light/Dark Theme: es soll entweder Light oder Dark Theme sein, aber nie gemischt.
+  * Die gleichen If-Statements tauchen wiederholt an unterschiedlichen Stellen im Code auf. Man möchte diese Code-Duplizierung
+    verhindern, indem man die If-Statements an einem zentralen Ort platziert.
 
 von [Java Design Patterns/AbstractFactory](https://github.com/iluwatar/java-design-patterns/tree/07663ce2bdd46ca4697307068b9eb0d4c8888ead/abstract-factory/README.md)
 
@@ -111,12 +111,12 @@ Strategy
 -------
 
 * Use Case:
-    * Man möchte von einer Funktionalität das Was vom Wie trennen.
-    * Wenn man das Was vom Wie trennt, kann man eventuell Funktionalität teilen
-      (DRY) und separat testen.
-    * Beispiele:
-        * Unterschiedliche Algorithmen für ein Ziel (z.b. Suchalgorithmen, Sortieralgorithmen)
-        * Daten können von verschiedenen Quellen kommen (RemoteConfigSourceStrategy, FileConfigSourceStrategy)
+  * Man möchte von einer Funktionalität das Was vom Wie trennen.
+  * Wenn man das Was vom Wie trennt, kann man eventuell Funktionalität teilen
+    (DRY) und separat testen.
+  * Beispiele:
+    * Unterschiedliche Algorithmen für ein Ziel (z.b. Suchalgorithmen, Sortieralgorithmen)
+    * Daten können von verschiedenen Quellen kommen (RemoteConfigSourceStrategy, FileConfigSourceStrategy)
 
 
 Strategy Beispiel: vorher
@@ -137,9 +137,9 @@ Observer
 -------
 
 * Use Case:
-    * Wenn eine Änderung Auswirkungen auf viele andere Objekte haben soll.
-    * Man möchte den Auslöser von Änderungen entkoppeln von den Objekten,
-      die sich für die Änderung interessieren.
+  * Wenn eine Änderung Auswirkungen auf viele andere Objekte haben soll.
+  * Man möchte den Auslöser von Änderungen entkoppeln von den Objekten,
+    die sich für die Änderung interessieren.
 
 Observer Beispiel: vorher
 -------
@@ -171,8 +171,8 @@ Command
 -------
 
 * Use Case:
-    * Man möchte von einer Funktionalität das Wie vom Wann trennen.
-    * Man möchte die Klasse, die ein Kommando auslöst, von der Klasse, an der das Kommando ausgeführt wird, trennen.
+  * Man möchte von einer Funktionalität das Wie vom Wann trennen.
+  * Man möchte die Klasse, die ein Kommando auslöst, von der Klasse, an der das Kommando ausgeführt wird, trennen.
 
 Command Beispiel: vorher
 -------
@@ -192,12 +192,12 @@ Zusammenfassung Abstraktion
 ------
 
 * Mit Abstraktionen
-    * \+
-        * Strukturieren wir den Code
-        * Geben Konzepten (Abläufen, Konstanten) einen Namen
-        * Verstecken Details vor höheren Abstraktionsebenen
-        * Machen den Code DRY
-    * \-
-        * Erhöhen wir die Komplexität
-        * Verstecken Funktionalität
-        * Koppeln die User der Abstraktion
+  * \+
+    * Strukturieren wir den Code
+    * Geben Konzepten (Abläufen, Konstanten) einen Namen
+    * Verstecken Details vor höheren Abstraktionsebenen
+    * Machen den Code DRY
+  * \-
+    * Erhöhen wir die Komplexität
+    * Verstecken Funktionalität
+    * Koppeln die User der Abstraktion

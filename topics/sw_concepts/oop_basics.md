@@ -17,6 +17,7 @@ public private
 Vererbung (Inheritance): Nicht zu stark nutzten, nicht zu viele Hierarchie-Level
 
 Abstrakte Methode
+
 * keine Implementation
 * kann default haben
 * use Case:INterface. Dann aber nie ein default mitgeben
@@ -132,27 +133,3 @@ class Washer(ABC):
     def wash_dishes(self, item: str):
         pass
 ```
-
-UML
----
-
-**U**nified **M**odeling **L**anguage
-
-* Ein standardisierter Weg um beispielsweise Teile einer Software zu visualisieren.
-* Einlesen lohnt sich.
-* Auf den nächsten Folien finden Sie eine kurze Übersicht über einen Teil des Klassendiagramms.
-
-von [UML: ISO/IEC 19501](https://www.omg.org/spec/UML/ISO/19501/PDF)
-
-
-UML Klassendiagramm
--------
-
-\colBegin{0.8}
-![UML Klassendiagramm: verwendete Komponenten](images/uml/class-diagram-parts.png){width=90%}
-\colNext{0.2}
-\small
-
-[class-diagram-parts.py](code/slides/uml/class-diagram-parts.py)
-
-\colEnd

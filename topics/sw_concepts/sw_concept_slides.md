@@ -18,7 +18,9 @@ Inhalt
 
 
 <#include dev_concepts.md>
-<#include clean_code.md>
+<#include uml_basics.md>
+<#include oop_basics.md>
+<#include clean_code.md>            // hier wird UML benötigt
 <#include design_patterns.md>
 
 TODO: MVC und API Design

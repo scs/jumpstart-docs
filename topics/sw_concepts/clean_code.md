@@ -64,8 +64,8 @@ Open Closed
 
 * "Open for extension, closed for modification"
 * Für neue Funktionalität
-    * Bestehenden Code nicht anpassen
-    * Möglichst nur neuen Code hinzufügen
+  * Bestehenden Code nicht anpassen
+  * Möglichst nur neuen Code hinzufügen
 
 Open Closed Beispiel: vorher
 -------

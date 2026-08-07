@@ -55,8 +55,8 @@ YAGNI
 
 * **Y**ou **a**ren't **g**onna **n**eed **i**t
 * Beispiele:
-    * Performanceoptimierung, bevor Performance zu einem Problem wird.
-    * Design für Anforderungen, die möglicherweise in der Zukunft auftreten könnten.
+  * Performanceoptimierung, bevor Performance zu einem Problem wird.
+  * Design für Anforderungen, die möglicherweise in der Zukunft auftreten könnten.
 
 "We should forget about small efficiencies, say about 97% of the time: premature
 optimization is the root of all evil.
