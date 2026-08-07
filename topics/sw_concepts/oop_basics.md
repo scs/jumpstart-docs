@@ -34,6 +34,7 @@ Interfaces
 Abstrakte Base Class
 Anti-Patterns: Generelle abstrakte Klassen, Interface mit defaults
 
+
 Was ist ein Interface?
 -------
 

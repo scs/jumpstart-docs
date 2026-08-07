@@ -4,13 +4,14 @@ Was ist hier schlecht?
 Code Beispiel: [01-intro.py](code/exercise/01-intro.py)
 
 
-intro.py Zusammenfassung
+Beobachtungen
 -------
 
-* Fast keine Strukturierung durch Methoden/Funktionen/Datenmodelle
+* Fast keine Strukturierung durch Klassen/Methoden/Funktionen/Datenmodelle
 * Code duplication
 * Magic numbers
 * Business Logik und Präsentation vermischt
+* etc.
 
 
 Verbesserte Variante
@@ -46,7 +47,7 @@ Ein Name soll:
 
 * vollständig aber nicht zu lang sein
 * im aktuellen Kontext (Namespace/Klasse/Funktion) verständlich sein
-* keine Abkürzung sein (meistens)
+* (meistens) keine Abkürzung sein
 
 
 Dev-Environment für die Übungen

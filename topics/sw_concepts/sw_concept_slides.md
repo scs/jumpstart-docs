@@ -21,4 +21,6 @@ Inhalt
 <#include clean_code.md>
 <#include design_patterns.md>
 
+TODO: MVC und API Design
+
 <#include links.md>
