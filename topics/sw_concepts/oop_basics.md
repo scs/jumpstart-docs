@@ -1,5 +1,5 @@
-OOP Basics
-==========
+Basics: Objektorientierte Programmierung (OOP)
+==============================================
 
 
 Grundlagen für Code Beispiele

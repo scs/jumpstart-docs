@@ -13,28 +13,32 @@ DRY
 * Der Name der extrahierten Methode (z.b. für Verhalten)
   oder Konstante (z.b. für Information) sollte den Inhalt beschreiben.
 
-DRY Beispiel für Konstanten 1
-------
+
+DRY Beispiel für Konstanten
+---------------------------
+
+*Magic Numbers:*
 
 ```java
-assertEquals(new DateTime(2013, 6, 5, 12, 54).toDate(), view.getServiceStartDate());
-assertEquals(new Long(4), view.getServiceSerialId());
-assertEquals(new Long(2), view.getServicePeriodSerialId());
-assertEquals("RGS_EMPTYING_TO_RETURNTRAY", view.getServiceType());
+assertEquals(new DateTime(2013, 6, 5, 12, 35).toDate(), view.getServiceStartDate());
+assertEquals(new DateTime(2013, 6, 5, 15, 50).toDate(), view.getServiceEndDate());
+assertEquals(new Duration(3, 25), view.getServiceDuration());
 ```
 
-DRY Beispiel für Konstanten 2
-------
+
+*Besser:*
 
 ```java
-assertEquals(SERVICE_START_DATE, view.getServiceStartDate());
-assertEquals(SERVICE_SERIAL_ID, view.getServiceSerialId());
-assertEquals(SERVICE_PERIOD_SERIAL_ID, view.getServicePeriodSerialId());
-assertEquals(ServiceType.RGS_EMPTYING_TO_RETURNTRAY, view.getServiceType());
+assertEquals(EXPECTED_SERVICE_START_DATE, view.getServiceStartDate());
+assertEquals(EXPECTED_SERVICE_END_DATE, view.getServiceEndDate());
+
+final var expected_service_duration
+  = EXPECTED_SERVICE_END_DATE - EXPECTED_SERVICE_START_DATE
+assertEquals(expected_service_duration, view.getServiceDuration());
 ```
 
 KISS
--------
+----
 
 * **K**eep **i**t **S**hort and **S**imple\
   (Keep it simple stupid)
@@ -51,7 +55,7 @@ result = result / len(numbers)
 ```
 
 YAGNI
--------
+-----
 
 * **Y**ou **a**ren't **g**onna **n**eed **i**t
 * Beispiele:
@@ -64,14 +68,16 @@ Yet we should not pass up our opportunities in that critical 3%."
 
 [Knuth, Donald (December 1974). "Structured Programming with go to Statements"](https://pic.plover.com/knuth-GOTO.pdf)
 
+
 NIH
--------
+---
 
 * **N**ot **i**nvented **h**ere
 * Dinge nicht selber implementieren, die schon in der Sprache oder einer Library enthalten sind.
 
+
 NIH Beispiel 1
--------
+--------------
 
 ```python
 def custom_sort(numbers):

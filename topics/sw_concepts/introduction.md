@@ -37,7 +37,7 @@ Unterschätzt: Naming
 --------------------
 
 * Einer der wichtigsten Aspekte in Software sind gute Namen.
-* Leider ist Namensgebung auch einer der schwierigsten Aufgaben!
+* Leider ist Namensgebung auch eine der schwierigsten Aufgaben!
 * Gilt für alles in Software:
   Variablen, Parameter, Funktionen, Klassen, Namespaces, Ordner, Binaries, etc.
 

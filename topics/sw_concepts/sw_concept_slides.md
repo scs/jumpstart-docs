@@ -13,8 +13,12 @@ Inhalt
 ------
 
 * Entwicklungs-Prinzipien
+* UML Basics
+* OOP Basics
 * Clean Code
 * Software Design Patterns
+* API Design
+* Model View Controller
 
 
 <#include dev_concepts.md>
