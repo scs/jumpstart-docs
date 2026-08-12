@@ -107,3 +107,4 @@ Tools
   * Wichtig: 2FA gibt es für Atlassian und Bitbucket separat:
     [Bitbucket 2FA](https://bitbucket.org/account/settings/two-step-verification/manage)
 * Laptop (je nachdem zu zweit)
+* [Einrichtung GitHub Copilot](https://supercomputingsystems.atlassian.net/wiki/spaces/SCSCTO/pages/555844586/GitHub+CoPilot) mit dem SCS Account
