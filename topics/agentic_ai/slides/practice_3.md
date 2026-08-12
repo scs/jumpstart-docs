@@ -12,3 +12,12 @@ Alle Daten sollten im json-Format im- und exportiert werden können.
 Ihr sollt diese Änderung umsetzen.
 
 Ergebnis: Ausführbarer Code, der die Rezepte-App um die Import- und Export-Funktionalität erweitert.
+
+
+Tools
+-----
+
+- [NVM](https://www.nvmnode.com/guide/download.html)
+- [Node.js](https://nodejs.org/en) (über NVM)
+- Angular: `npm install -g @angular/cli`
+- IntelliJ, VSCode o.ä.

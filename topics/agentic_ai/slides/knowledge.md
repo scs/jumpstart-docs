@@ -4,43 +4,17 @@ Wissensblock
 
 Inhalt
 ------
-* Sicherheit
-* AGENTS.md
-* Skills
-* MCP Server
 * Modelle und Kosten
-* Kontext
 * Prompting
   * Was kann ich alles an die KI delegieren?
   * Was für Ergebnisse kann ich erwarten?
-  * Wie gehe ich vor, damit die KI mir gute Ergebnisse liefert?
   * Taskgrösse und Detailgrad der Anweisungen
-
-
-Sicherheit
-----------
-
-\Large
-
-*KI-Tools haben Zugriff auf die Shell und können theoretisch alles ausführen, was euer Benutzer auch kann (ssh auf Kundensysteme, terraform etc.)!*
-
-\normalsize
-
-* Prüft jedes Command, was die KI ausführen will. Bis zum Ende scrollen!
-* Setzt die Entwicklungsumgebung ggf. in einem Container auf, um den Zugriff auf Umsysteme zu beschränken
-* Niemals mit `--yolo`-Flag ausführen
-
-\Large
-
-*GitHub CoPilot darf nur mit dem SCS-Konto verwendet werden.*
-
-\normalsize
-
-Ansonsten funktioniert die Blacklist nicht und die Vereinbarung mit GitHub (DSG, Vertraulichkeit) wird nicht eingehalten.
-
-Ausserdem:
-* Keine Secrets von KI-Tools generieren lassen
-* Generierten Code immer selber prüfen und testen
+  * Wie gehe ich vor, damit die KI mir gute Ergebnisse liefert?
+* Kontext
+  * AGENTS.md
+  * Skills
+  * MCP Server
+* Sicherheit
 
 
 Heads up
@@ -52,84 +26,6 @@ Heads up
 > Dinge können sich von heute auf morgen ändern. Darauf müssen wir uns einstellen, flexibel bleiben und jeweils anpassen!*
 
 \normalsize
-
-
-AGENTS.md
----------
-
-> AGENTS.md is the README for Agents.
-> 
-> <cite>https://agents.md/</cite>
-
-* Enthält Kontext und Anweisungen für Agenten, z.B.
-  * Kommandos, um Tests auszuführen
-  * (Verweise auf) Best Practices
-  * Patterns in der Codebase
-  * Ziele und Fokus der aktuellen Projektphase
-* Kann Technologie- und Projektspezifisch angepasst werden
-* Kann individuelle Anweisungen enthalten, z.B. "Gib mir Feedback zum Prompt" (sehr empfehlenswert am Anfang!)
-* Github Copilot und co. können AGENTS.md automatisch generieren lassen
-
-Beispiel und Tipps: https://supercomputingsystems.atlassian.net/wiki/spaces/SCSPL/pages/1524334693/Phase+7+Realisierung
-
-*Warum sollte ich AGENTS.md nutzen?*
-
-* Es lässt den Agenten zielgerichteter arbeiten
-* Ihr müsst nicht alles im Prompt angeben
-* Ihr müsst euch nicht in jeder Session wiederholen
-
-Richtig eingesetzt erhöht AGENTS.md die Qualität der Ergebnisse und kann Kosten reduzieren (direkt oder indirekt).
-
-
-Skills
-------
-
-> A standardized way to give AI agents new capabilities and expertise.
-> 
-> <cite>https://agentskills.io/home</cite>
-
-* Skills sind Fähigkeiten, die Agenten haben können, z.B. "Code Review", "Design", "Dokumentation schreiben", ...
-* Ordner mit SKILL.md, SKILL.md enthält mindestens `name` und `description`
-* Kann z.B. Anweisungen zu Workflows oder Kontext zum Unternehmen, Projekt oder Codebase enthalten
-
-*Was ist der Unterschied zwischen AGENTS.md und Skills?*
-
-* AGENTS.md ist allgemein, beschreiben das *Was*
-* Skills sind *spezifisch für einen Aufgabentyp*, beschreiben einen Workflow (das *wie*) und enthalten den dafür nötigen Kontext
-
-*Wann sollte ich Skills nutzen?*
-
-* Wenn ihr Agenten Fähigkeiten beibringen wollt, die sie nicht von Haus aus haben
-* Wenn ihr den Fokus auf bestimmte Fähigkeiten legen wollt
-
-*Man muss nicht für alles gleich einen Skill nutzen. Manches kann man auch kompakt im Prompt formulieren.*
-
-
-MCP Server
-----------
-
-> MCP (Model Context Protocol) is an open-source standard for connecting AI applications to external systems.
-> 
-> <cite>https://modelcontextprotocol.io/docs/getting-started/intro</cite>
-
-* Erlaubt Agenten, sich mit externen Datenquellen zu verbinden, z.B. Jira, Confluence, Figma, Datenbanken, ...
-* So kann der Agent direkt die Jira-Tasks lesen, die er umsetzen soll und die Views "wie in Figma" implementieren
-* SCS unterstützt derzeit nur Figma MCP, bei weiterem Bedarf bitte an TAs wenden
-
-Einrichten: Je nach IDE/Tool unterschiedlich. In IntelliJ mit Github Copilot z.B. Werkzeug-Knopf > "Add more tools".
-
-Im mcp.json eintragen:
-
-```json
-{
-  "servers": {
-    "figma": {
-      "type": "http",
-      "url": "https://mcp.figma.com/mcp"
-    }
-  }
-}
-```
 
 
 Modelle und Kosten
@@ -149,26 +45,6 @@ Jeder SCS-MA hat ein monatliches Budget von 10'000 AI Credits. Dies kann bei Bed
 *Tokendurchsatz ist in der SCS kein Entwickler-KPI!*
 
 
-Kontext
--------
-
-Der Agent baut sich über die Zeit einen Kontext auf. Dort fliesst ein:
-* Der Prompt
-* Files, die ihr der KI mitgebt
-* Files, die die KI im Rahmen der Aufgabe liest
-* Die Antwort, die die KI generiert
-
-Auf das richtige Mass kommt es an!
-
-* Zu wenig: Die KI versteht die Aufgabe oder die bestehende Codebase nicht und liefert unbrauchbare Ergebnisse
-* Zu viel: Die KI verliert den Fokus, die Ergebnisse verlieren an Qualität und die Kosten steigen unnötig
-
-Darum:
-* Neues Chatfenster für neuen Task
-* Bei related Tasks ggf. im gleichen Chatfenster bleiben, Kontext aufzubauen verbraucht Tokens
-* Nicht zu viele FIles mitgeben, viele relevante Files kann die KI selbst finden
-
-
 Prompting
 ---------
 
@@ -181,7 +57,7 @@ Grundsätzlich:
 * Ergebnis prüfen
   * ggf. Erklären lassen, kritisch nachfragen, nachbessern (lassen)
 * *Code review durch weitere Person immer noch sinnvoll*
- 
+
 
 Was kann ich alles an die KI delegieren?
 ----------------------------------------
@@ -214,6 +90,23 @@ Was für Ergebnisse kann ich erwarten?
   * Sonstiges, was nicht direkt mit der Aufgabe zu tun hat
 
 
+Taskgrösse und Detailgrad der Anweisungen
+-----------------------------------------
+
+Taskgrösse und Detailgrad müssen nicht korrelieren.
+
+* Je *strikter/konkreter die Zielvorgabe*, desto detaillierter muss der Prompt sein
+* Je weniger Details im Prompt, desto mehr Spielraum hat der Agent für "Annahmen"
+* *Statt sich auf eine Lösung einzuschiessen, kann es hilfreich sein, die KI um Vorschläge und begründete Empfehlungen zu bitten*
+
+
+* Je grösser der Task, desto grösser die Gefahr, dass etwas untergeht oder missverstanden wird
+* Je kleiner die Tasks, desto ineffizienter werden wir (Agent-Micromanagement)
+* *Task-Planung mit KI durchführen*: Task beschreiben, Plan einfordern
+  * Plan festhalten lassen: `docs/tasks/some_task.md`
+  * Drüberlesen und korrigieren lassen!
+
+
 Wie gehe ich vor, damit die KI mir gute Ergebnisse liefert?
 -----------------------------------------------------------
 
@@ -232,18 +125,132 @@ Dies vom Agenten explizit einfordern, z.B. über:
 Daher: Lieber klaren Fokus pro Prompt/Session setzen und mit weiteren Prompt/Agenten nachbessern.
 
 
-Taskgrösse und Detailgrad der Anweisungen
------------------------------------------
+Kontext
+-------
 
-Taskgrösse und Detailgrad müssen nicht korrelieren.
+Der Agent baut sich über die Zeit einen Kontext auf. Dort fliesst ein:
+* Euer Prompt
+* System Prompt vom Modell
+* AGENTS.md, Skills, MCP-Server
+* Weitere Files, die ihr der KI mitgebt
+* Files, die die KI während der Bearbeitung der Aufgabe liest
+* Der Output, den die KI generiert
 
-* Je *strikter/konkreter die Zielvorgabe*, desto detaillierter muss der Prompt sein
-* Je weniger Details im Prompt, desto mehr Spielraum hat der Agent für "Annahmen"
-* *Statt sich auf eine Lösung einzuschiessen, kann es hilfreich sein, die KI um Vorschläge und begründete Empfehlungen zu bitten*
+Auf das richtige Mass kommt es an!
+
+* Zu wenig: Die KI versteht die Aufgabe oder die bestehende Codebase nicht und liefert unbrauchbare Ergebnisse
+* Zu viel: Die KI verliert den Fokus, die Ergebnisse verlieren an Qualität und die Kosten steigen unnötig
+
+Darum:
+* Neues Chatfenster für neuen Task
+* Bei related Tasks ggf. im gleichen Chatfenster bleiben, Kontext aufzubauen verbraucht Tokens
+* Nicht zu viele Files mitgeben, viele relevante Files kann die KI selbst finden
 
 
-* Je grösser der Task, desto grösser die Gefahr, dass etwas untergeht oder missverstanden wird
-* Je kleiner die Tasks, desto ineffizienter werden wir (Agent-Micromanagement)
-* *Task-Planung mit KI durchführen*: Task beschreiben, Plan einfordern
-  * Plan festhalten lassen: `docs/tasks/some_task.md`
-  * Drüberlesen und korrigieren lassen!
+AGENTS.md
+---------
+
+> AGENTS.md is the README for Agents.
+> 
+> <cite>https://agents.md/</cite>
+
+* Enthält Kontext und Anweisungen für Agenten, z.B.
+  * Kommandos, um Tests auszuführen
+  * (Verweise auf) Best Practices
+  * Patterns in der Codebase
+  * Ziele und Fokus der aktuellen Projektphase
+* Kann Technologie- und Projektspezifisch angepasst werden
+* Kann individuelle Anweisungen enthalten, z.B. "Gib mir Feedback zum Prompt" (sehr empfehlenswert am Anfang!)
+* Github Copilot und co. können AGENTS.md automatisch generieren lassen
+
+Beispiel und Tipps: https://supercomputingsystems.atlassian.net/wiki/spaces/SCSPL/pages/1524334693/Phase+7+Realisierung
+
+*Warum sollte ich AGENTS.md nutzen?*
+
+* Es lässt den Agenten zielgerichteter arbeiten
+* Ihr müsst nicht alles im Prompt angeben
+* Ihr müsst euch nicht in jeder Session wiederholen
+* Gute Coding Guidelines in AGENTS.md führen zu weniger Spaghetti-Code
+* Der Agent verbraucht weniger Tokens, wenn er Kommandos in AGENTS.md findet, statt (falsch) zu raten
+
+Richtig eingesetzt erhöht AGENTS.md die Qualität der Ergebnisse und kann Kosten reduzieren (direkt oder indirekt).
+
+
+Skills
+------
+
+> A standardized way to give AI agents new capabilities and expertise.
+> 
+> <cite>https://agentskills.io/home</cite>
+
+* Skills sind Fähigkeiten, die Agenten haben können, z.B. "Code Review", "Design", "Dokumentation schreiben", ...
+* Ordner mit SKILL.md, SKILL.md enthält mindestens `name` und `description`
+* Kann z.B. Anweisungen zu Workflows oder Kontext zum Unternehmen, Projekt oder Codebase enthalten
+
+*Was ist der Unterschied zwischen AGENTS.md und Skills?*
+
+* AGENTS.md ist allgemein. Es enthält Anweisungen, die *immer* beachtet werden sollen, unabhängig von der Aufgabe (kann und soll im Laufe des Projekts an die jeweils aktuellen Bedürfnisse angepasst werden!)
+* Skills sind *spezifisch für einen Aufgabentyp* und enthalten den dafür nötigen Kontext
+
+*Wann sollte ich Skills nutzen?*
+
+* Wenn ihr Agenten Fähigkeiten beibringen wollt, die sie nicht von Haus aus haben
+* Wenn ihr den Fokus auf bestimmte Fähigkeiten/Tätigkeiten legen wollt
+* Wenn ihr dem Agenten spezifisches Wissen vermitteln wollt
+
+Beispiel: SCS-Ausschreibungsskill
+
+*Man muss nicht für alles gleich einen Skill nutzen. Manches kann man auch kompakt im Prompt formulieren.*
+
+
+MCP Server
+----------
+
+> MCP (Model Context Protocol) is an open-source standard for connecting AI applications to external systems.
+> 
+> <cite>https://modelcontextprotocol.io/docs/getting-started/intro</cite>
+
+* Erlaubt Agenten, sich mit externen Datenquellen zu verbinden, z.B. Jira, Confluence, Figma, Datenbanken, ...
+* So kann der Agent direkt die Jira-Tasks lesen, die er umsetzen soll und die Views "wie in Figma" implementieren
+* SCS unterstützt derzeit nur Figma MCP, bei weiterem Bedarf bitte an TAs wenden
+
+Einrichten: Je nach IDE/Tool unterschiedlich. In IntelliJ mit Github Copilot z.B. Werkzeug-Knopf > "Add more tools".
+
+Im mcp.json eintragen:
+
+```json
+{
+  "servers": {
+    "figma": {
+      "type": "http",
+      "url": "https://mcp.figma.com/mcp"
+    }
+  }
+}
+```
+
+
+Sicherheit
+----------
+
+\Large
+
+*KI-Tools haben Zugriff auf die Shell und können theoretisch alles ausführen, was euer Benutzer auch kann (ssh auf Kundensysteme, terraform etc.)!*
+
+\normalsize
+
+* Prüft jedes Command, was die KI ausführen will. Bis zum Ende scrollen!
+* Setzt die Entwicklungsumgebung ggf. in einem Container auf, um den Zugriff auf Umsysteme zu beschränken
+* Niemals mit `--yolo`-Flag ausführen
+
+\Large
+
+*GitHub CoPilot darf nur mit dem SCS-Konto verwendet werden.*
+
+\normalsize
+
+Ansonsten funktioniert die Blacklist nicht und die Vereinbarung mit GitHub (DSG, Vertraulichkeit) wird nicht eingehalten.
+
+Ausserdem:
+* Keine Secrets von KI-Tools generieren lassen
+* Generierten Code immer selber prüfen und testen

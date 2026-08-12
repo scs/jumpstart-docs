@@ -15,13 +15,10 @@ Inhalt
   * Chancen nutzen, Risiken minimieren - wie?
 * *Übung 1*
 * Wissensblock
-  * Sicherheit
-  * AGENTS.md
-  * Skills
-  * MCP Server
   * Modelle und Kosten
-  * Kontext
   * Prompting
+  * Kontext
+  * Sicherheit
 * *Übung 2*
 * Agentic AI im Projektkontext
 * *Übung 3*
