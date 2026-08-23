@@ -3,8 +3,8 @@ on:
   push:
   pull_request:
   schedule:
-    # Run every day at 9:23 AM (See https://pubs.opengroup.org/onlinepubs/9699919799/utilities/crontab.html#tag_20_25_07)
-    - cron: "23 9 * * *"
+    # Run only on Monday at 9:23 AM (See https://pubs.opengroup.org/onlinepubs/9699919799/utilities/crontab.html#tag_20_25_07)
+    - cron: "23 9 * * 1"
 jobs:
   link-check:
     runs-on: ubuntu-latest
