@@ -16,9 +16,9 @@
       "pattern": "^https://stackoverflow.com.*"
     }
   ],
-  "aliveStatusCodes": [200, 206, 403, 500],
-  "retryOn429": true,
+  "aliveStatusCodes": [200, 206, 403, 429, 500],
+  "retryOn429": false,
   "retryCount": 5,
-  "timeout": "60s",
-  "fallbackRetryDelay": "60s"
+  "fallbackRetryDelay": "60s",
+  "timeout": "60s"
 }
